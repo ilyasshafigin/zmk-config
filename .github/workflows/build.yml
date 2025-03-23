@@ -5,8 +5,8 @@ on:
     paths:
     - "config/*.keymap"
     - "config/*.dtsi"
-    - "config/boards/shields/*.conf"
-    - "config/boards/shields/*.overlay"
+    - "config/boards/*/*/*.conf"
+    - "config/boards/*/*/*.overlay"
     - "config/boards/*/*/*.keymap"
 
 jobs:

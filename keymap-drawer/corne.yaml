@@ -1,0 +1,246 @@
+layout: {zmk_keyboard: corne}
+layers:
+  default:
+  - ESC
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: '[', h: fbuttons}
+  - TAB
+  - A
+  - S
+  - D
+  - '&tdF'
+  - G
+  - H
+  - '&tdJ'
+  - K
+  - L
+  - ;
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ']', h: RALT}
+  - LCTRL
+  - lower
+  - {t: RET, h: LGUI}
+  - {t: SPACE, h: raise}
+  - BSPC
+  - CAPSLOCK
+  lower:
+  - '~'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F17
+  - '`'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - F18
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gui+F11
+  - Gui+F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F14
+  - adjust
+  - {type: held}
+  - LGUI
+  - KP 1
+  - KP 2
+  - KP 3
+  raise:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PG UP
+  - UP
+  - PG DN
+  - HOME
+  - ^
+  - PG UP
+  - UP
+  - PG DN
+  - HOME
+  - F17
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - END
+  - '-'
+  - LEFT
+  - DOWN
+  - RIGHT
+  - END
+  - F18
+  - OUT TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F15
+  - F16
+  - F23
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT TOG
+  - {t: ▽, type: trans}
+  - Gui+F11
+  - Gui+F12
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  fbuttons:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LALT
+  - LSHFT
+  - LCTRL
+  - {type: held}
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  adjust:
+  - '&bootloader'
+  - '&sys_reset'
+  - OUT TOG
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - OUT TOG
+  - '&sys_reset'
+  - '&bootloader'
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: BT, h: '4'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '0'}
+  - BT CLR
+  - ''
+  - KP NUM
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [4, 5]
+  k: (
+- p: [6, 7]
+  k: )
+- p: [16, 17]
+  k: '['
+- p: [18, 19]
+  k: ']'
+- p: [28, 29]
+  k: '{'
+- p: [30, 31]
+  k: '}'
+- p: [15, 16]
+  k: '"'
+- p: [19, 20]
+  k: ''''
+- p: [0, 12]
+  k: '~'
+- p: [12, 24]
+  k: '`'
+- p: [3, 4]
+  k: '-'
+- p: [2, 3]
+  k: +
+- p: [7, 8]
+  k: _
+- p: [8, 9]
+  k: '|'
