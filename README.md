@@ -76,24 +76,70 @@
 
 ```json
 {
-    "description": "Replace F13/14/15 to ,.?",
+    "description": "Replace F13/14/15 to to ,.?",
     "manipulators": [
         {
-            "from": { "key_code": "f13" },
+            "conditions": [
+                {
+                    "input_sources": [{ "language": "en" }],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "f13",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "comma" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "input_sources": [{ "language": "ru" }],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "f13",
+                "modifiers": { "optional": ["any"] }
+            },
             "to": [
                 {
-                    "key_code": "period",
-                    "modifiers": []
+                    "key_code": "6",
+                    "modifiers": ["left_shift"]
                 }
             ],
             "type": "basic"
         },
         {
-            "from": { "key_code": "f14" },
+            "conditions": [
+                {
+                    "input_sources": [{ "language": "en" }],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "f14",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "period" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "input_sources": [{ "language": "ru" }],
+                    "type": "input_source_if"
+                }
+            ],
+            "from": {
+                "key_code": "f14",
+                "modifiers": { "optional": ["any"] }
+            },
             "to": [
                 {
-                    "key_code": "comma",
-                    "modifiers": []
+                    "key_code": "7",
+                    "modifiers": ["left_shift"]
                 }
             ],
             "type": "basic"
