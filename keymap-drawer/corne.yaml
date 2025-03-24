@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: corne}
 layers:
-  default:
+  Base:
   - ESC
   - Q
   - W
@@ -12,15 +12,15 @@ layers:
   - I
   - O
   - P
-  - {t: '[', h: fbuttons}
+  - {t: '[', h: Functions}
   - TAB
   - A
   - S
   - D
-  - '&tdF'
+  - F
   - G
   - H
-  - '&tdJ'
+  - J
   - K
   - L
   - ;
@@ -38,12 +38,12 @@ layers:
   - /
   - {t: ']', h: RALT}
   - LCTRL
-  - lower
-  - {t: RET, h: LGUI}
-  - {t: SPACE, h: raise}
+  - Lower
+  - {t: SPACE, h: LGUI}
+  - {t: RET, h: Raise}
   - BSPC
-  - CAPSLOCK
-  lower:
+  - DELETE
+  Lower:
   - '~'
   - '1'
   - '2'
@@ -55,7 +55,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - F17
+  - '-'
   - '`'
   - '!'
   - '@'
@@ -67,69 +67,69 @@ layers:
   - '*'
   - (
   - )
-  - F18
+  - _
   - LSHFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui+F11
-  - Gui+F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - '&PLUS'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F14
-  - adjust
+  - Settings
   - {type: held}
   - LGUI
   - KP 1
   - KP 2
   - KP 3
-  raise:
+  Raise:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG UP
   - UP
   - PG DN
   - HOME
-  - ^
+  - HOME
   - PG UP
   - UP
   - PG DN
-  - HOME
-  - F17
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
   - DOWN
   - RIGHT
   - END
-  - '-'
+  - END
   - LEFT
   - DOWN
   - RIGHT
-  - END
-  - F18
-  - OUT TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - F15
-  - F16
-  - F23
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - OUT TOG
   - {t: ▽, type: trans}
-  - Gui+F11
-  - Gui+F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  fbuttons:
+  Functions:
   - F1
   - F2
   - F3
@@ -172,7 +172,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  adjust:
+  Settings:
   - '&bootloader'
   - '&sys_reset'
   - OUT TOG
@@ -228,9 +228,9 @@ combos:
   k: '{'
 - p: [30, 31]
   k: '}'
-- p: [15, 16]
+- p: [27, 28]
   k: '"'
-- p: [19, 20]
+- p: [31, 32]
   k: ''''
 - p: [0, 12]
   k: '~'
@@ -240,7 +240,13 @@ combos:
   k: '-'
 - p: [2, 3]
   k: +
+- p: [26, 27]
+  k: '='
 - p: [7, 8]
   k: _
 - p: [8, 9]
   k: '|'
+- p: [15, 16]
+  k: Gui+F11
+- p: [19, 20]
+  k: Gui+F12

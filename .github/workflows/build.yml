@@ -5,9 +5,9 @@ on:
     paths:
     - "config/*.keymap"
     - "config/*.dtsi"
-    - "config/boards/*/*/*.conf"
-    - "config/boards/*/*/*.overlay"
-    - "config/boards/*/*/*.keymap"
+    - "boards/*/*/*.conf"
+    - "boards/*/*/*.overlay"
+    - "boards/*/*/*.keymap"
 
 jobs:
   build:
