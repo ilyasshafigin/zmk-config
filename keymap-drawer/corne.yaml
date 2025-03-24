@@ -38,11 +38,11 @@ layers:
   - /
   - {t: ']', h: Ctrl}
   - {t: ↹, h: Shift}
-  - Gui
-  - {t: ␣, h: lower}
+  - ⌘
+  - {t: Space, h: lower}
   - {t: ⏎, h: raise}
   - ⌫
-  - DELETE
+  - ⌦
   lower:
   - '~'
   - '1'
@@ -244,5 +244,7 @@ combos:
   k: '|'
 - p: [15, 16]
   k: Gui+F11
+  draw_separate: true
 - p: [19, 20]
   k: Gui+F12
+  draw_separate: true

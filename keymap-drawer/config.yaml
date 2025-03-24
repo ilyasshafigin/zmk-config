@@ -54,16 +54,17 @@ parse_config:
     RCTRL: Ctrl
     LALT: Alt
     RALT: Alt
-    LGUI: Gui
-    RGUI: Gui
+    LGUI: ⌘
+    RGUI: ⌘
     LSHFT: Shift
     RSHFT: Shift
     ESC: Esc
-    SPACE: ␣
+    SPACE: Space
     BSPC: ⌫
     RET: ⏎
     TAB: ↹
     DEL: ⌦
+    DELETE: ⌦
 
     PG_UP: Page Up
     PG_DN: Page Down
@@ -157,7 +158,7 @@ parse_config:
     KP_SLASH: "KP /"
 
   zmk_combos:
-    combo_lang_ru:
+    lang_ru:
       draw_separate: true
-    combo_lang_en:
+    lang_en:
       draw_separate: true
