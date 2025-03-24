@@ -12,13 +12,15 @@
 
 После изменения конфигурации прошивка будет собрана в Actions. Там же можно ее скачать.
 
+1. Подключить по usb сначала донгл (если есть), потом левую и правую половины
+2. Зажать два раза кнопку Reset (или замкнуть контакты RST и GND).
+3. В проводнике появться подключенная флешка. Перекинуть на нее нужную прошивку.
+
 ### С донглом
 
 Для донгла:
 - с контроллером nice! - "corne_central_dongle-nice-nano-v2-zmk.uf2"
 - с контроллером xiao - "corne_central_dongle-seeeduino_xiao_ble-zmk.uf2"
-
-Также, если вы используете ключ, загрузите "периферийный" uf2 для левой и правой частей
 
 Для левой половины - "corne_peripheral_left-nice_nano_v2-zmk.uf2".
 Для правой половины - "corne_peripheral_right-nice_nano_v2-zmk.uf2".
@@ -118,3 +120,4 @@
 1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
 2. [one-zmk-config](https://github.com/ergonautkb/one-zmk-config) от @ergonautkb
 3. [keymap-editor](https://nickcoutsos.github.io/keymap-editor/) - сайт, на котором можно редактировать лайауты в gui
+4. [keymap-drawer](https://github.com/caksoylar/keymap-drawer/) - отрисовка keymap
