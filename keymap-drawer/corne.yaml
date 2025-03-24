@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Base:
-  - ESC
+  base:
+  - Esc
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - {t: '[', h: Functions}
-  - TAB
+  - {t: '[', h: fn}
+  - LEFT ALT
   - A
   - S
   - D
@@ -24,8 +24,8 @@ layers:
   - K
   - L
   - ;
-  - ''''
-  - LSHFT
+  - {t: '''''', h: RIGHT ALT}
+  - Ctrl
   - Z
   - X
   - C
@@ -36,14 +36,14 @@ layers:
   - ','
   - .
   - /
-  - {t: ']', h: RALT}
-  - LCTRL
-  - Lower
-  - {t: SPACE, h: LGUI}
-  - {t: RET, h: Raise}
-  - BSPC
+  - {t: ']', h: Ctrl}
+  - {t: ↹, h: Shift}
+  - Gui
+  - {t: ␣, h: lower}
+  - {t: ⏎, h: raise}
+  - ⌫
   - DELETE
-  Lower:
+  lower:
   - '~'
   - '1'
   - '2'
@@ -56,7 +56,7 @@ layers:
   - '9'
   - '0'
   - '-'
-  - '`'
+  - {t: '`', h: LEFT ALT}
   - '!'
   - '@'
   - '#'
@@ -67,8 +67,8 @@ layers:
   - '*'
   - (
   - )
-  - _
-  - LSHFT
+  - {t: _, h: RIGHT ALT}
+  - Ctrl
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -79,57 +79,57 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Ctrl
   - {t: ▽, type: trans}
-  - Settings
+  - {t: ▽, type: trans}
   - {type: held}
-  - LGUI
+  - F13
+  - F14
+  - F15
+  raise:
+  - KP NUM
+  - KP SLASH
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP MINUS
+  - VOLUME UP
+  - Home
+  - Print Scrn
+  - Page Up
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT ALT
+  - KP MULTIPLY
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP PLUS
+  - 🔇
+  - ←
+  - UP ARROW
+  - →
+  - {t: ▽, type: trans}
+  - RIGHT ALT
+  - Ctrl
+  - KP 0
   - KP 1
   - KP 2
   - KP 3
-  Raise:
+  - KP DOT
+  - VOLUME DOWN
+  - End
+  - ↓
+  - Page Down
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - PG UP
-  - UP
-  - PG DN
-  - HOME
-  - HOME
-  - PG UP
-  - UP
-  - PG DN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - DOWN
-  - RIGHT
-  - END
-  - END
-  - LEFT
-  - DOWN
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctrl
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Functions:
+  fn:
   - F1
   - F2
   - F3
@@ -138,9 +138,9 @@ layers:
   - F6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
-  - LSHFT
-  - LCTRL
+  - Alt
+  - Shift
+  - Ctrl
   - {type: held}
   - F7
   - F8
@@ -172,32 +172,32 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Settings:
-  - '&bootloader'
-  - '&sys_reset'
-  - OUT TOG
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  adjust:
+  - Boot
   - ''
   - OUT TOG
-  - '&sys_reset'
-  - '&bootloader'
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - {t: BT, h: '4'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '0'}
-  - BT CLR
   - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - OUT TOG
+  - ''
+  - Boot
+  - BT CLR
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - BT 5
+  - BT 4
+  - BT 3
+  - BT 2
+  - BT 1
+  - BT CLR
+  - Reset
   - KP NUM
   - ''
   - ''
@@ -208,11 +208,11 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - {type: held}
-  - {type: held}
+  - Reset
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:

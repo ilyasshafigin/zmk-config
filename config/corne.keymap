@@ -12,116 +12,127 @@
 #define DEF 0
 #define LWR 1
 #define RSE 2
-#define FLR 3
+#define FUN 3
 #define ADJ 4
 
-quick-tap-ms = <200>;};
+&lt {
+    quick-tap-ms = <200>;
+};
 
-quick-tap-ms {
-    = <200>;};
+&mt {
+    quick-tap-ms = <200>;
+};
 
-/
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri-layer {
+            if-layers = <LWR RSE>;
+            then-layer = <ADJ>;
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
 
-        ParaLeft {
+        para_left {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <4 5>;
             timeout-ms = <20>;
         };
 
-        ParaRight {
+        para_right {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <6 7>;
             timeout-ms = <20>;
         };
 
-        BrakLeft {
+        brak_left {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <16 17>;
             timeout-ms = <20>;
         };
 
-        BrakRight {
+        brak_right {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <18 19>;
             timeout-ms = <20>;
         };
 
-        BraceLeft {
+        brace_left {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <28 29>;
             timeout-ms = <20>;
         };
 
-        BraceRight {
+        brace_right {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <30 31>;
             timeout-ms = <20>;
         };
 
-        DoubleQuote {
+        double_quote {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <27 28>;
             timeout-ms = <20>;
         };
 
-        SingleQuote {
+        single_quote {
             bindings = <&kp APOSTROPHE>;
             key-positions = <31 32>;
             timeout-ms = <20>;
         };
 
-        TildaSign {
+        tilda {
             bindings = <&kp TILDE>;
             key-positions = <0 12>;
             timeout-ms = <20>;
         };
 
-        GraveSign {
+        grave {
             bindings = <&kp GRAVE>;
             key-positions = <12 24>;
             timeout-ms = <20>;
         };
 
-        MinusSign {
+        minus {
             bindings = <&kp MINUS>;
             key-positions = <3 4>;
             timeout-ms = <20>;
         };
 
-        PlusSign {
+        plus {
             bindings = <&kp PLUS>;
             key-positions = <2 3>;
             timeout-ms = <20>;
         };
 
-        EqualSign {
+        equal {
             bindings = <&kp EQUAL>;
             key-positions = <26 27>;
             timeout-ms = <20>;
         };
 
-        UnderscoreSign {
+        underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <7 8>;
             timeout-ms = <20>;
         };
 
-        PipeSign {
+        pipe {
             bindings = <&kp PIPE>;
             key-positions = <8 9>;
             timeout-ms = <20>;
         };
 
-        LangRu {
+        lang_ru {
             bindings = <&kp LG(F11)>;
             key-positions = <15 16>;
             timeout-ms = <20>;
         };
 
-        LangUs {
+        lang_en {
             bindings = <&kp LG(F12)>;
             key-positions = <19 20>;
             timeout-ms = <20>;
@@ -136,60 +147,51 @@ quick-tap-ms {
         default_layer {
             display-name = "base";
             bindings = <
-&kp ESC       &kp Q  &kp W  &kp E          &kp R     &kp T          &kp Y        &kp U     &kp I       &kp O    &kp P     &lt FLR LEFT_BRACKET
-&kp LEFT_ALT  &kp A  &kp S  &kp D          &kp F     &kp G          &kp H        &kp J     &kp K       &kp L    &kp SEMI  &mt RIGHT_ALT SQT
-&kp LCTRL     &kp Z  &kp X  &kp C          &kp V     &kp B          &kp N        &kp M     &kp COMMA   &kp DOT  &kp FSLH  &mt RCTRL RIGHT_BRACKET
-                            &mt LSHFT TAB  &kp LGUI  &lt 1 SPACE    &lt RSE RET  &kp BSPC  &kp DELETE
+                &kp ESC       &kp Q  &kp W  &kp E          &kp R     &kp T          &kp Y        &kp U     &kp I       &kp O    &kp P     &lt FUN LEFT_BRACKET
+                &kp LEFT_ALT  &kp A  &kp S  &kp D          &kp F     &kp G          &kp H        &kp J     &kp K       &kp L    &kp SEMI  &mt RIGHT_ALT SQT
+                &kp LCTRL     &kp Z  &kp X  &kp C          &kp V     &kp B          &kp N        &kp M     &kp COMMA   &kp DOT  &kp FSLH  &mt RCTRL RIGHT_BRACKET
+                                            &mt LSHFT TAB  &kp LGUI  &lt 1 SPACE    &lt RSE RET  &kp BSPC  &kp DELETE
             >;
         };
 
         lower_layer {
             display-name = "lower";
             bindings = <
-&kp TILDE           &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-&mt LEFT_ALT GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &mt RIGHT_ALT UNDERSCORE
-&kp LCTRL           &trans    &trans  &trans    &trans    &trans       &kp EQUAL  &kp PLUS  &trans     &trans    &trans    &kp RCTRL
-                                      &trans    &trans    &trans       &kp F13    &kp F14   &kp F15
+                &kp TILDE           &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
+                &mt LEFT_ALT GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &mt RIGHT_ALT UNDERSCORE
+                &kp LCTRL           &trans    &trans  &trans    &trans    &trans       &kp EQUAL  &kp PLUS  &trans     &trans    &trans    &kp RCTRL
+                                                      &trans    &trans    &trans       &kp F13    &kp F14   &kp F15
             >;
         };
 
         raise_layer {
             display-name = "raise";
             bindings = <
-&kp KP_NUM    &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS    &kp C_VOLUME_UP    &kp HOME  &kp PSCRN     &kp PG_UP  &trans  &trans
-&kp LEFT_ALT  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS     &kp C_MUTE         &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans  &kp RIGHT_ALT
-&kp LCTRL     &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT      &kp C_VOLUME_DOWN  &kp END   &kp DOWN      &kp PG_DN  &trans  &kp RCTRL
-                                          &trans     &trans     &trans          &trans             &trans    &trans
+                &kp KP_NUM    &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS    &kp C_VOLUME_UP    &kp HOME  &kp PSCRN     &kp PG_UP  &trans  &trans
+                &kp LEFT_ALT  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS     &kp C_MUTE         &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans  &kp RIGHT_ALT
+                &kp LCTRL     &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT      &kp C_VOLUME_DOWN  &kp END   &kp DOWN      &kp PG_DN  &trans  &kp RCTRL
+                                                          &trans     &trans     &trans          &trans             &trans    &trans
             >;
         };
 
         fbuttons_layer {
             display-name = "fn";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &trans  &kp LALT  &kp LSHFT  &kp LCTRL  &trans
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans  &trans  &trans    &trans     &trans     &trans
-&trans  &trans  &trans  &trans   &trans   &trans     &trans  &trans  &trans    &trans     &trans     &trans
-                        &trans   &trans   &trans     &trans  &trans  &trans
+                &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &trans  &kp LALT  &kp LSHFT  &kp LCTRL  &trans
+                &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans  &trans  &trans    &trans     &trans     &trans
+                &trans  &trans  &trans  &trans   &trans   &trans     &trans  &trans  &trans    &trans     &trans     &trans
+                                        &trans   &trans   &trans     &trans  &trans  &trans
             >;
         };
 
         adjust_layer {
             display-name = "adjust";
             bindings = <
-&bootloader  &none         &out OUT_TOG  &none         &none         &none           &none         &none         &none         &out OUT_TOG  &none         &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-&sys_reset   &kp KP_NUM    &none         &none         &none         &none           &none         &none         &none         &none         &none         &sys_reset
-                                         &trans        &trans        &trans          &trans        &trans        &trans
+                &bootloader  &none         &out OUT_TOG  &none         &none         &none           &none         &none         &none         &out OUT_TOG  &none         &bootloader
+                &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+                &sys_reset   &kp KP_NUM    &none         &none         &none         &none           &none         &none         &none         &none         &none         &sys_reset
+                                                         &trans        &trans        &trans          &trans        &trans        &trans
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri-layer {
-            if-layers = <1 2>;
-            then-layer = <4>;
         };
     };
 };
