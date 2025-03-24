@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - {t: '[', h: fn}
-  - LEFT ALT
+  - Alt
   - A
   - S
   - D
@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - ;
-  - {t: '''''', h: RIGHT ALT}
+  - {t: '''', h: Alt}
   - Ctrl
   - Z
   - X
@@ -56,7 +56,7 @@ layers:
   - '9'
   - '0'
   - '-'
-  - {t: '`', h: LEFT ALT}
+  - {t: '`', h: Alt}
   - '!'
   - '@'
   - '#'
@@ -67,7 +67,7 @@ layers:
   - '*'
   - (
   - )
-  - {t: _, h: RIGHT ALT}
+  - {t: _, h: Alt}
   - Ctrl
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -80,7 +80,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctrl
-  - {t: ▽, type: trans}
+  - adjust
   - {t: ▽, type: trans}
   - {type: held}
   - F13
@@ -88,35 +88,35 @@ layers:
   - F15
   raise:
   - KP NUM
-  - KP SLASH
+  - KP /
   - KP 7
   - KP 8
   - KP 9
-  - KP MINUS
+  - KP -
   - VOLUME UP
   - Home
   - Print Scrn
   - Page Up
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT ALT
-  - KP MULTIPLY
+  - {t: '=', h: Alt}
+  - KP *
   - KP 4
   - KP 5
   - KP 6
-  - KP PLUS
-  - 🔇
+  - KP +
+  - Mute
   - ←
-  - UP ARROW
+  - ↑
   - →
   - {t: ▽, type: trans}
-  - RIGHT ALT
+  - Alt
   - Ctrl
   - KP 0
   - KP 1
   - KP 2
   - KP 3
-  - KP DOT
+  - KP .
   - VOLUME DOWN
   - End
   - ↓
@@ -209,10 +209,10 @@ layers:
   - ''
   - ''
   - Reset
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {type: held}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
@@ -232,10 +232,6 @@ combos:
   k: '"'
 - p: [31, 32]
   k: ''''
-- p: [0, 12]
-  k: '~'
-- p: [12, 24]
-  k: '`'
 - p: [3, 4]
   k: '-'
 - p: [2, 3]
