@@ -1,6 +1,5 @@
 draw_config:
   dark_mode: auto
-  separate_combo_diagrams: false
 
 parse_config:
   raw_binding_map:
@@ -46,9 +45,9 @@ parse_config:
     "&mkp MB5": Forward Click
 
   zmk_keycode_map:
-    C_VOL_UP: 🔊
-    C_VOL_DN: 🔉
-    C_MUTE: 🔇
+    C_VOL_UP: Vol Up
+    C_VOL_DN: Vol Down
+    C_MUTE: Mute
     C_AL_CALC: Calc
 
     LCTRL: Ctrl
@@ -141,9 +140,9 @@ parse_config:
     RPAR: ")"
     SEMI: ";"
     SEMICOLON: ";"
-    SINGLE_QUOTE: "''"
+    SINGLE_QUOTE: "'"
     SLASH: "/"
-    SQT: "''"
+    SQT: "'"
     STAR: "*"
     TILDE: "~"
     TILDE2: "~"
@@ -151,6 +150,11 @@ parse_config:
     UNDERSCORE: "_"
     LAQUO": "«"
     RAQUO": "»"
+    KP_MINUS: "KP -"
+    KP_PLUS: "KP +"
+    KP_DOT: "KP ."
+    KP_MULTIPLY: "KP *"
+    KP_SLASH: "KP /"
 
   zmk_combos:
     combo_lang_ru:
