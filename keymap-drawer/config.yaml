@@ -1,32 +1,66 @@
-draw_config:
-  dark_mode: auto
-
 parse_config:
+  mark_alternate_layer_activators: true
+  sticky_label: $$mdi:gesture-tap-hold$$
+  trans_legend:
+    tap: $$mdi:transfer$$
+    type: trans
+
   raw_binding_map:
-    "&sys_reset": Reset
-    "&bootloader": Boot
-    "&swapper": Win Next
-    "&caps_word": Caps Word
-    "&inv_qm": ¿
+    # Empty
+    "&none":
+      tap: $$mdi:minus-circle-outline$$
+      type: none
 
-    "&kp LC(LG(LEFT))": Desk Left
-    "&kp LC(LG(RIGHT))": Desk Right
-    "&kp LC(TAB)": Tab Right
-    "&kp LC(LS(TAB))": Tab Left
-    "&kp LA(F4)": Win Close
-    "&kp LC(F4)": Tab Close
-    "&kp LS(TAB)": Win Prev
-    "&kp LS(INS)": Paste
-    "&kp LG(L)": Lock
+    # Whitespace
+    "&bkspc_del":
+      type: backspace
+      tap: $$mdi:backspace$$
+      shifted: $$mdi:backspace-reverse-outline$$
 
-    "&out OUT_USB": Out USB
-    "&out OUT_BLE": Out BLE
+    # Bluetooth
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 1
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 2
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 3
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 4
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 5
+    "&out OUT_TOG":
+      shifted: $$mdi:usb$$
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+    "&out OUT_USB":
+      tap: $$mdi:usb$$
+    "&out OUT_BLE":
+      tap: $$mdi:bluetooth$$
 
-    "&bt BT_SEL 0": BT 1
-    "&bt BT_SEL 1": BT 2
-    "&bt BT_SEL 2": BT 3
-    "&bt BT_SEL 3": BT 4
-    "&bt BT_SEL 4": BT 5
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+    "&rst_boot 0 0":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+      hold: $$mdi:progress-download$$
+
+    # Others
+    "&kp LG(F11)": "ru"
+    "&kp LG(F12)": "en"
 
     "&mmv MOVE_UP": Mouse ↑
     "&mmv MOVE_DOWN": Mouse ↓
@@ -44,113 +78,222 @@ parse_config:
     "&mkp MB4": Back Click
     "&mkp MB5": Forward Click
 
+  # ZMK
   zmk_keycode_map:
-    C_VOL_UP: Vol Up
-    C_VOL_DN: Vol Down
-    C_MUTE: Mute
-    C_AL_CALC: Calc
-
-    LCTRL: Ctrl
-    RCTRL: Ctrl
-    LALT: Alt
-    RALT: Alt
-    LGUI: ⌘
-    RGUI: ⌘
-    LSHFT: Shift
-    RSHFT: Shift
-    ESC: Esc
-    SPACE: Space
-    BSPC: ⌫
-    RET: ⏎
-    TAB: ↹
-    DEL: ⌦
-    DELETE: ⌦
-
-    PG_UP: Page Up
-    PG_DN: Page Down
-    INS: Insert
-    HOME: Home
-    END: End
-    CAPS: Caps Lock
-    PSCRN: Print Scrn
-    PAUSE_BREAK: Pause Break
-
-    UP: ↑
-    DOWN: ↓
-    LEFT: ←
-    RIGHT: →
-
-    C_PP: ⏯ # Play Pause
-    C_NEXT: ⏭️
-    C_PREV: ⏮️
-
-    # defaults
+    # Symbols
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: "$"
+    DLLR: "$"
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: "^"
     AMPERSAND: "&"
     AMPS: "&"
-    APOS: "'"
-    APOSTROPHE: "'"
     ASTERISK: "*"
     ASTRK: "*"
-    AT: "@"
-    AT_SIGN: "@"
-    BACKSLASH: "\""
-    BSLH: "\""
-    CARET: "^"
-    COLON: ":"
-    COMMA: ","
-    DLLR: "$"
-    DOLLAR: "$"
-    DOT: "."
-    DOUBLE_QUOTES: "\""
-    DQT: "\""
-    EQUAL: "="
-    EXCL: "!"
-    EXCLAMATION: "!"
-    FSLH: "/"
-    GRAVE: "`"
-    GREATER_THAN: ">"
-    GT: ">"
-    HASH: "#"
-    LBKT: "["
-    LBRC: "{"
-    LEFT_BRACE: "{"
-    LEFT_BRACKET: "["
+    STAR: "*"
     LEFT_PARENTHESIS: "("
-    LESS_THAN: "<"
     LPAR: "("
-    LT: "<"
-    MINUS: "-"
-    NON_US_BACKSLASH: "\\"
-    NON_US_BSLH: "|"
-    NON_US_HASH: "#"
-    NUHS: "#"
-    PERCENT: "%"
-    PERIOD: "."
-    PIPE: "|"
-    PIPE2: "|"
-    PLUS: "+"
-    POUND: "#"
-    PRCNT: "%"
-    QMARK: "?"
-    QUESTION: "?"
-    RBKT: "]"
-    RBRC: "}"
-    RIGHT_BRACE: "}"
-    RIGHT_BRACKET: "]"
     RIGHT_PARENTHESIS: ")"
     RPAR: ")"
-    SEMI: ";"
-    SEMICOLON: ";"
-    SINGLE_QUOTE: "'"
-    SLASH: "/"
-    SQT: "'"
-    STAR: "*"
-    TILDE: "~"
-    TILDE2: "~"
-    UNDER: "_"
+    EQUAL:
+      tap: "="
+      shifted: "+"
+    PLUS: "+"
+    MINUS:
+      tap: "-"
+      shifted: "_"
     UNDERSCORE: "_"
+    UNDER: "_"
+    SLASH:
+      tap: "/"
+      shifted: "?"
+    FSLH:
+      tap: "/"
+      shifted: "?"
+    QUESTION: "?"
+    QMARK: "?"
+    BACKSLASH:
+      tap: "\\"
+      shifted: "|"
+    BSLH:
+      tap: "\\"
+      shifted: "|"
+    PIPE: "|"
+    NON_US_BACKSLASH: "\\"
+    PIPE2: "|"
+    NON_US_BSLH: "|"
+    SEMICOLON:
+      tap: ";"
+      shifted: ":"
+    SEMI:
+      tap: ";"
+      shifted: ":"
+    COLON: ":"
+    SINGLE_QUOTE:
+      tap: "'"
+      shifted: "\""
+    SQT:
+      tap: "'"
+      shifted: "\""
+    APOSTROPHE: "<"
+    APOS: .
+    DOUBLE_QUOTES: "\""
+    DQT: "\""
+
+    LESS_THAN: "<"
+    LT: "<"
+    DOT:
+      tap: "."
+      shifted: ">"
+    COMMA:
+      tap: ","
+      shifted: "<"
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET:
+      tap: "["
+      shifted: "{"
+    LBKT:
+      tap: "["
+      shifted: "{"
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET:
+      tap: "]"
+      shifted: "}"
+    RBKT:
+      tap: "]"
+      shifted: "}"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE:
+      tap: "`"
+      shifted: "~"
+    TILDE: "~"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    TILDE2: "~"
+
     LAQUO": "«"
     RAQUO": "»"
+
+    # Numbers
+    N1:
+      tap: 1
+      shifted: "!"
+    N2:
+      tap: 2
+      shifted: "@"
+    N3:
+      tap: 3
+      shifted: "#"
+    N4:
+      tap: 4
+      shifted: "$"
+    N5:
+      tap: 5
+      shifted: "%"
+    N6:
+      tap: 6
+      shifted: "^"
+    N7:
+      tap: 7
+      shifted: "&"
+    N8:
+      tap: 8
+      shifted: "*"
+    N9:
+      tap: 9
+      shifted: "("
+    N0:
+      tap: 0
+      shifted: ")"
+
+    # Modifiers
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    LCMD: $$mdi:apple-keyboard-command$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RSHIFT: $$mdi:apple-keyboard-shift$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    RCMD: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apple-keyboard-command$$
+
+    # Arrows
+    UP: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
+    LEFT: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
+    # PG_UP: $$mdi:transfer-up$$
+    # PG_DN: $$mdi:transfer-down$$
+
+    # Whitespace
+    ENTER:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    RET:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    ESC: $$mdi:keyboard-esc$$
+    TAB: $$mdi:keyboard-tab$$
+    LS(TAB): $$mdi:keyboard-tab-reverse$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE:
+      type: backspace
+      tap: $$mdi:backspace$$
+    BSPC:
+      type: backspace
+      tap: $$mdi:backspace$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # Locks
+    CAPSLOCK: $$mdi:apple-keyboard-caps$$
+    CAPS: $$mdi:apple-keyboard-caps$$
+
+    # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOLUME_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+    C_VOLUME_DOWN: $$mdi:volume-low$$
+
+    # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+
+    # Bluetooth
+    BT_CLR: $$mdi:bluetooth-off$$
+    BT_SEL: $$mdi:bluetooth-connect$$
+
+    # Settings
+    C_BRI_UP: $$mdi:brightness-5$$
+    C_BRI_DN: $$mdi:brightness-7$$
+
+    # System
+    C_POWER: $$mdi:power-standby$$
+    C_AL_LOCK: $$mdi:lock$$
+    K_CANCEL: $$mdi:close-box$$
+
+    # Others
+    PG_UP: page up
+    PG_DN: page down
+    INS: insert
+    HOME: home
+    END: end
+    PSCRN: print scrn
+    PAUSE_BREAK: pause break
     KP_MINUS: "KP -"
     KP_PLUS: "KP +"
     KP_DOT: "KP ."
@@ -159,6 +302,443 @@ parse_config:
 
   zmk_combos:
     lang_ru:
-      draw_separate: true
+      draw_separate: false
     lang_en:
-      draw_separate: true
+      draw_separate: false
+
+draw_config:
+  # key dimensions, non-ortho layouts use key_h for width as well
+  key_h: 80
+
+  # keys border radius
+  key_rx: 4
+  key_ry: 4
+
+  # key labels line spacing for multi-line labels
+  line_spacing: 1
+
+  # combo box dimensions
+  combo_w: 30
+  combo_h: 30
+
+  # padding from the edge of cap to top and bottom legends
+  small_pad: 4
+
+  # Padding between keys
+  inner_pad_w: 1.5
+  inner_pad_h: 1.5
+
+  # padding between layers
+  # outer_pad_w: 0
+  # outer_pad_h: 0
+
+  # gap between two halves for ortho layout generator
+  # split_gap: 20
+
+  # as it reads on the tin can, this comment is here for consistency
+  append_colon_to_layer_header: false
+
+  # shrink font size for legends wider than this many chars, set to 0 to disable
+  # ideal value depends on the font size defined in svg_style and width of the boxes
+  shrink_wide_legends: 5
+
+  # Glyphs dimensions
+  glyph_tap_size: 22
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
+
+  # Custom CSS
+  svg_style: |
+    /* inherit to force styles through use tags */
+    svg path {
+        fill: inherit;
+    }
+
+    /* font and background color specifications */
+    svg.keymap {
+      /*
+       * ====================
+       * Theme Variables
+       * ====================
+       */
+
+      --logo-path: none;
+      --logo-size: 12%;
+      --logo-position: 49.5% 5%;
+
+      /* === Colors === */
+
+      --color--material--blue--50: rgb(227, 242, 253);
+      --color--material--blue--100: rgb(187, 222, 251);
+      --color--material--blue--200: rgb(144, 202, 249);
+      --color--material--blue--300: rgb(100, 181, 246);
+      --color--material--blue--400: rgb(66, 165, 245);
+      --color--material--blue--500: rgb(33, 150, 243);
+      --color--material--blue--600: rgb(30, 136, 229);
+      --color--material--blue--700: rgb(25, 118, 210);
+      --color--material--blue--800: rgb(21, 101, 192);
+      --color--material--blue--900: rgb(13, 71, 161);
+      --color--material--blue--a100: rgb(130, 177, 255);
+      --color--material--blue--a200: rgb(68, 138, 255);
+      --color--material--blue--a400: rgb(41, 121, 255);
+      --color--material--blue--a700: rgb(41, 98, 255);
+
+      --color--material--blue-gray--50: rgb(236, 239, 241);
+      --color--material--blue-gray--100: rgb(207, 216, 220);
+      --color--material--blue-gray--200: rgb(176, 190, 197);
+      --color--material--blue-gray--300: rgb(144, 164, 174);
+      --color--material--blue-gray--400: rgb(120, 144, 156);
+      --color--material--blue-gray--500: rgb(96, 125, 139);
+      --color--material--blue-gray--600: rgb(84, 110, 122);
+      --color--material--blue-gray--700: rgb(69, 90, 100);
+      --color--material--blue-gray--800: rgb(55, 71, 79);
+      --color--material--blue-gray--900: rgb(38, 50, 56);
+
+      --color--material--blue-light--50: rgb(225, 245, 254);
+      --color--material--blue-light--100: rgb(179, 229, 252);
+      --color--material--blue-light--200: rgb(129, 212, 250);
+      --color--material--blue-light--300: rgb(79, 195, 247);
+      --color--material--blue-light--400: rgb(41, 182, 246);
+      --color--material--blue-light--500: rgb(3, 169, 244);
+      --color--material--blue-light--600: rgb(3, 155, 229);
+      --color--material--blue-light--700: rgb(2, 136, 209);
+      --color--material--blue-light--800: rgb(2, 119, 189);
+      --color--material--blue-light--900: rgb(1, 87, 155);
+      --color--material--blue-light--a100: rgb(128, 216, 255);
+      --color--material--blue-light--a200: rgb(64, 196, 255);
+      --color--material--blue-light--a400: rgb(0, 176, 255);
+      --color--material--blue-light--a700: rgb(0, 145, 234);
+
+      --color--material--purple--50: rgb(243, 229, 245);
+      --color--material--purple--100: rgb(225, 190, 231);
+      --color--material--purple--200: rgb(206, 147, 216);
+      --color--material--purple--300: rgb(186, 104, 200);
+      --color--material--purple--400: rgb(171, 71, 188);
+      --color--material--purple--500: rgb(156, 39, 176);
+      --color--material--purple--600: rgb(142, 36, 170);
+      --color--material--purple--700: rgb(123, 31, 162);
+      --color--material--purple--800: rgb(106, 27, 154);
+      --color--material--purple--900: rgb(74, 20, 140);
+      --color--material--purple--a100: rgb(234, 128, 252);
+      --color--material--purple--a200: rgb(224, 64, 251);
+      --color--material--purple--a400: rgb(213, 0, 249);
+      --color--material--purple--a700: rgb(170, 0, 255);
+
+      --color--material--red--50: rgb(255, 235, 238);
+      --color--material--red--100: rgb(255, 205, 210);
+      --color--material--red--200: rgb(239, 154, 154);
+      --color--material--red--300: rgb(229, 115, 115);
+      --color--material--red--400: rgb(239, 83, 80);
+      --color--material--red--500: rgb(244, 67, 54);
+      --color--material--red--600: rgb(229, 57, 53);
+      --color--material--red--700: rgb(211, 47, 47);
+      --color--material--red--800: rgb(198, 40, 40);
+      --color--material--red--900: rgb(183, 28, 28);
+      --color--material--red--a100: rgb(255, 138, 128);
+      --color--material--red--a200: rgb(255, 82, 82);
+      --color--material--red--a400: rgb(255, 23, 68);
+      --color--material--red--a700: rgb(213, 0, 0);
+
+      --color--material--teal--50: rgb(224, 242, 241);
+      --color--material--teal--100: rgb(178, 223, 219);
+      --color--material--teal--200: rgb(128, 203, 196);
+      --color--material--teal--300: rgb(77, 182, 172);
+      --color--material--teal--400: rgb(38, 166, 154);
+      --color--material--teal--500: rgb(0, 150, 136);
+      --color--material--teal--600: rgb(0, 137, 123);
+      --color--material--teal--700: rgb(0, 121, 107);
+      --color--material--teal--800: rgb(0, 105, 92);
+      --color--material--teal--900: rgb(0, 77, 64);
+      --color--material--teal--a100: rgb(167, 255, 235);
+      --color--material--teal--a200: rgb(100, 255, 218);
+      --color--material--teal--a400: rgb(29, 233, 182);
+      --color--material--teal--a700: rgb(0, 191, 165);
+
+      --color--material--yellow--50: rgb(255, 253, 231);
+      --color--material--yellow--100: rgb(255, 249, 196);
+      --color--material--yellow--200: rgb(255, 245, 157);
+      --color--material--yellow--300: rgb(255, 241, 118);
+      --color--material--yellow--400: rgb(255, 238, 88);
+      --color--material--yellow--500: rgb(255, 235, 59);
+      --color--material--yellow--600: rgb(253, 216, 53);
+      --color--material--yellow--700: rgb(251, 192, 45);
+      --color--material--yellow--800: rgb(249, 168, 37);
+      --color--material--yellow--900: rgb(245, 127, 23);
+      --color--material--yellow--a100: rgb(255, 255, 141);
+      --color--material--yellow--a200: rgb(255, 255, 0);
+      --color--material--yellow--a400: rgb(255, 234, 0);
+      --color--material--yellow--a700: rgb(255, 214, 0);
+
+      --color--turquoise--500: rgb(51, 204, 204);
+
+      --color--bg: transparent;
+      --color--text: var(--color--material--blue-gray--900);
+
+      --color--layer--text: var(--color--material--blue-gray--400);
+
+      --color--key--bg: var(--color--material--blue-gray--50);
+      --color--key--border: white;
+      --color--key--bg--held: var(--color--material--red--200);
+      --color--key--border--held: var(--color--material--red--100);
+      --color--key--text--tap: var(--color--text);
+      --color--key--text--shifted: var(--color--material--blue-gray--400);
+      --color--key--text--hold: var(--color--material--blue-gray--400);
+
+      --color--combo--bg: var(--color--material--blue-gray--100);
+      --color--combo--border: var(--color--combo--bg);
+      --color--combo--dendron: var(--color--combo--border);
+      --color--combo--text--tap: var(--color--material--blue-gray--800);
+      --color--combo--text--shifted: var(--color--material--blue-gray--400);
+      --color--combo--text--hold: var(--color--combo--text--tap);
+
+      /*
+       * ====================
+       * /End Theme Variables
+       * ====================
+       */
+
+      font-family: system-ui, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+      fill: var(--color--text);
+      background-color: var(--color--bg);
+      background-image: var(--logo-path);
+      background-repeat: no-repeat;
+      background-position: var(--logo-position);
+      background-size: var(--logo-size) auto;
+    }
+
+    rect,
+    path {
+      shape-rendering: geometricPrecision;
+    }
+
+    text {
+      text-anchor: middle;
+      dominant-baseline: middle;
+      line-height: 1;
+    }
+
+    /* Layer labels */
+    text.label {
+      font-size: 36px;
+      text-anchor: start;
+      paint-order: stroke;
+      fill: var(--color--layer--text);
+    }
+
+    /* Keys */
+    rect.key,
+    rect.combo {
+      fill: var(--color--key--bg);
+      stroke: var(--color--key--border);
+    }
+    rect.held,
+    rect.combo.held {
+      fill: var(--color--key--bg--held);
+      stroke: var(--color--key--border--held);
+    }
+    .tap {
+      fill: var(--color--key--text--tap);
+    }
+    .shifted,
+    .hold {
+      font-size: 16px;
+      text-anchor: middle;
+    }
+
+    .shifted {
+      dominant-baseline: hanging;
+      fill: var(--color--key--text--shifted);
+      translate: 26px 2px;
+    }
+    .shifted.glyph {
+      translate: 26px 0px;
+    }
+
+    .hold {
+      dominant-baseline: ideographic;
+      fill: var(--color--key--text--hold);
+      translate: 26px 4px;
+    }
+    .hold.glyph {
+      translate: 26px 2px;
+    }
+
+    /*
+     * Combos
+     */
+    .combo {
+      --color--key--bg: var(--color--combo--bg);
+      --color--key--border: var(--color--combo--border);
+      --color--key--text--tap: var(--color--combo--text--tap);
+      --color--key--text--shifted: var(--color--combo--text--shifted);
+      --color--key--text--hold: var(--color--combo--text--hold);
+    }
+    rect.combo {
+      opacity: 0.8;
+      stroke-width: 0;
+    }
+    path.combo {
+      stroke-width: 1;
+      stroke: var(--color--combo--dendron);
+      fill: none;
+    }
+    .combo.tap {
+      font-size: 16px;
+    }
+    .combo.shifted {
+      font-size: 10px;
+      translate: -9px -3px;
+    }
+    .combo.shifted.glyph {
+      translate: -9px -5px;
+    }
+    .combo.hold {
+      font-size: 16px;
+      translate: 0 0;
+    }
+
+    /*
+     * Transparent, None, and Ghost Keys
+     */
+    .trans,
+    .none,
+    .ghost {
+      opacity: 0.4;
+    }
+
+    /*
+     * Overrides
+     */
+    /* Outer column + thumb keys */
+    .keypos-0 .key,
+    .keypos-11 .key,
+    .keypos-12 .key,
+    .keypos-23 .key,
+    .keypos-24 .key,
+    .keypos-35 .key,
+    .keypos-36 .key,
+    .keypos-37 .key,
+    .keypos-38 .key,
+    .keypos-39 .key,
+    .keypos-40 .key,
+    .keypos-41 .key {
+      --color--key--bg: var(--color--material--blue-gray--100);
+      --color--key--border: var(--color--material--blue-gray--50);
+    }
+
+    .keypos-0 .shifted,
+    .keypos-1 .shifted,
+    .keypos-2 .shifted,
+    .keypos-3 .shifted,
+    .keypos-4 .shifted,
+    .keypos-5 .shifted,
+    .keypos-12 .shifted,
+    .keypos-13 .shifted,
+    .keypos-14 .shifted,
+    .keypos-15 .shifted,
+    .keypos-16 .shifted,
+    .keypos-17 .shifted,
+    .keypos-24 .shifted,
+    .keypos-25 .shifted,
+    .keypos-26 .shifted,
+    .keypos-27 .shifted,
+    .keypos-28 .shifted,
+    .keypos-29 .shifted,
+    .keypos-36 .shifted,
+    .keypos-37 .shifted,
+    .keypos-38 .shifted {
+      translate: -26px 2px;
+    }
+
+    /* Layer labels */
+    .keypos-38 .shifted,
+    .keypos-39 .shifted {
+      translate: 0px 2px;
+    }
+
+    .keypos-0 .hold,
+    .keypos-1 .hold,
+    .keypos-2 .hold,
+    .keypos-3 .hold,
+    .keypos-4 .hold,
+    .keypos-5 .hold,
+    .keypos-12 .hold,
+    .keypos-13 .hold,
+    .keypos-14 .hold,
+    .keypos-15 .hold,
+    .keypos-16 .hold,
+    .keypos-17 .hold,
+    .keypos-24 .hold,
+    .keypos-25 .hold,
+    .keypos-26 .hold,
+    .keypos-27 .hold,
+    .keypos-28 .hold,
+    .keypos-29 .hold,
+    .keypos-36 .hold,
+    .keypos-37 .hold,
+    .keypos-38 .hold {
+      translate: -26px 4px;
+    }
+
+    /* Layer labels */
+    .keypos-38 .hold,
+    .keypos-39 .hold {
+      translate: 0px 4px;
+    }
+
+    .keypos-0 .hold.glyph,
+    .keypos-1 .hold.glyph,
+    .keypos-2 .hold.glyph,
+    .keypos-3 .hold.glyph,
+    .keypos-4 .hold.glyph,
+    .keypos-5 .hold.glyph,
+    .keypos-12 .hold.glyph,
+    .keypos-13 .hold.glyph,
+    .keypos-14 .hold.glyph,
+    .keypos-15 .hold.glyph,
+    .keypos-16 .hold.glyph,
+    .keypos-17 .hold.glyph,
+    .keypos-24 .hold.glyph,
+    .keypos-25 .hold.glyph,
+    .keypos-26 .hold.glyph,
+    .keypos-27 .hold.glyph,
+    .keypos-28 .hold.glyph,
+    .keypos-29 .hold.glyph,
+    .keypos-36 .hold.glyph,
+    .keypos-38 .hold.glyph,
+    .keypos-37 .hold.glyph {
+      translate: -26px 2px;
+    }
+
+    /* Layer labels */
+    .keypos-38 .hold.glyph,
+    .keypos-39 .hold.glyph {
+      translate: 0px 2px;
+    }
+
+    .shifted.mdi\:alpha-w-box {
+      translate: 0px 8px;
+    }
+    .keypos-38 .shifted.mdi\:alpha-w-box,
+    .keypos-39 .shifted.mdi\:alpha-w-box {
+      translate: 0px 20px;
+    }
+
+    .hold.mdi\:gesture-tap-hold {
+      translate: 0px -8px;
+    }
+    .keypos-38 .hold.mdi\:gesture-tap-hold,
+    .keypos-39 .hold.mdi\:gesture-tap-hold {
+      translate: 0px -20px;
+    }
+
+    .key .mdi\:toggle-switch ~ .mdi\:usb {
+      translate: -22px 26px;
+    }
+    .key .mdi\:toggle-switch ~ .mdi\:bluetooth {
+      translate: 22px -26px;
+    }

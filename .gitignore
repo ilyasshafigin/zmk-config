@@ -1,0 +1,9 @@
+build/
+zmk/
+zephyr/*
+!zephyr/module.yml
+modules/
+tools/
+.west/
+.DS_Store
+.venv/

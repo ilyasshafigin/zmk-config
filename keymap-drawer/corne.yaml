@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   base:
-  - Esc
+  - $$mdi:keyboard-esc$$
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - {t: '[', h: fn}
-  - Alt
+  - {t: '[', h: fn, s: '{'}
+  - $$mdi:apple-keyboard-shift$$
   - A
   - S
   - D
@@ -23,9 +23,9 @@ layers:
   - J
   - K
   - L
-  - ;
-  - {t: '''', h: Alt}
-  - Ctrl
+  - {t: ;, s: ':'}
+  - {t: '''', h: '$$mdi:apple-keyboard-shift$$', s: '"'}
+  - $$mdi:apple-keyboard-control$$
   - Z
   - X
   - C
@@ -33,30 +33,30 @@ layers:
   - B
   - N
   - M
-  - ','
-  - .
-  - /
-  - {t: ']', h: Ctrl}
-  - {t: ↹, h: Shift}
-  - ⌘
-  - {t: Space, h: lower}
-  - {t: ⏎, h: raise}
-  - ⌫
-  - ⌦
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - {t: ']', h: '$$mdi:apple-keyboard-control$$', s: '}'}
+  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-option$$'}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:keyboard-space$$', h: lower}
+  - {t: '$$mdi:keyboard-return$$', h: raise}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:backspace-reverse-outline$$
   lower:
-  - '~'
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - '-'
-  - {t: '`', h: Alt}
+  - {t: '`', s: '~'}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '-', s: _}
+  - {t: '~', h: '$$mdi:apple-keyboard-shift$$'}
   - '!'
   - '@'
   - '#'
@@ -67,21 +67,21 @@ layers:
   - '*'
   - (
   - )
-  - {t: _, h: Alt}
-  - Ctrl
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '='
+  - {t: _, h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - +
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctrl
+  - {t: '=', s: +}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-control$$
   - adjust
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - F13
   - F14
@@ -93,42 +93,42 @@ layers:
   - KP 8
   - KP 9
   - KP -
-  - VOLUME UP
-  - Home
-  - Print Scrn
-  - Page Up
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '=', h: Alt}
+  - $$mdi:volume-high$$
+  - home
+  - print scrn
+  - page up
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '=', h: '$$mdi:apple-keyboard-shift$$', s: +}
   - KP *
   - KP 4
   - KP 5
   - KP 6
   - KP +
-  - Mute
-  - ←
-  - ↑
-  - →
-  - {t: ▽, type: trans}
-  - Alt
-  - Ctrl
+  - $$mdi:volume-off$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
   - KP 0
   - KP 1
   - KP 2
   - KP 3
   - KP .
-  - VOLUME DOWN
-  - End
-  - ↓
-  - Page Down
-  - {t: ▽, type: trans}
-  - Ctrl
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - $$mdi:volume-low$$
+  - end
+  - $$mdi:arrow-down-bold$$
+  - page down
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   fn:
   - F1
   - F2
@@ -136,94 +136,94 @@ layers:
   - F4
   - F5
   - F6
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Alt
-  - Shift
-  - Ctrl
-  - {type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
   - F7
   - F8
   - F9
   - F10
   - F11
   - F12
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   adjust:
-  - Boot
-  - ''
-  - OUT TOG
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - OUT TOG
-  - ''
-  - Boot
-  - BT CLR
-  - BT 1
-  - BT 2
-  - BT 3
-  - BT 4
-  - BT 5
-  - BT 5
-  - BT 4
-  - BT 3
-  - BT 2
-  - BT 1
-  - BT CLR
-  - Reset
-  - KP NUM
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - Reset
+  - $$mdi:progress-download$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:progress-download$$
+  - $$mdi:bluetooth-off$$
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {type: held}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [4, 5]
   k: (
 - p: [6, 7]
   k: )
 - p: [16, 17]
-  k: '['
+  k: {t: '[', s: '{'}
 - p: [18, 19]
-  k: ']'
+  k: {t: ']', s: '}'}
 - p: [28, 29]
   k: '{'
 - p: [30, 31]
@@ -231,20 +231,20 @@ combos:
 - p: [27, 28]
   k: '"'
 - p: [31, 32]
-  k: ''''
+  k: <
 - p: [3, 4]
-  k: '-'
+  k: {t: '-', s: _}
 - p: [2, 3]
   k: +
 - p: [26, 27]
-  k: '='
+  k: {t: '=', s: +}
 - p: [7, 8]
   k: _
 - p: [8, 9]
   k: '|'
 - p: [15, 16]
-  k: Gui+F11
-  draw_separate: true
+  k: ru
+  draw_separate: false
 - p: [19, 20]
-  k: Gui+F12
-  draw_separate: true
+  k: en
+  draw_separate: false

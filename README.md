@@ -165,5 +165,7 @@
 
 1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
 2. [one-zmk-config](https://github.com/ergonautkb/one-zmk-config) от @ergonautkb
-3. [keymap-editor](https://nickcoutsos.github.io/keymap-editor/) - сайт, на котором можно редактировать лайауты в gui
-4. [keymap-drawer](https://github.com/caksoylar/keymap-drawer/) - отрисовка keymap
+3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
+4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
+5. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) - сайт, на котором можно редактировать лайауты в gui
+6. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - отрисовка keymap
