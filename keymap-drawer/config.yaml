@@ -141,8 +141,8 @@ parse_config:
     SQT:
       tap: "'"
       shifted: "\""
-    APOSTROPHE: "<"
-    APOS: .
+    APOSTROPHE: "'"
+    APOS: "'"
     DOUBLE_QUOTES: "\""
     DQT: "\""
 

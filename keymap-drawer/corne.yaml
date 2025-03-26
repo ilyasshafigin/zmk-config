@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - {t: '[', h: fn, s: '{'}
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-option$$
   - A
   - S
   - D
@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - {t: ;, s: ':'}
-  - {t: '''', h: '$$mdi:apple-keyboard-shift$$', s: '"'}
+  - {t: '''', h: '$$mdi:apple-keyboard-option$$', s: '"'}
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -37,10 +37,10 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: ']', h: '$$mdi:apple-keyboard-control$$', s: '}'}
-  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-option$$'}
-  - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:keyboard-space$$', h: lower}
-  - {t: '$$mdi:keyboard-return$$', h: raise}
+  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-command$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-return$$', h: lower}
+  - {t: '$$mdi:keyboard-space$$', h: raise}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:backspace-reverse-outline$$
   lower:
@@ -56,7 +56,7 @@ layers:
   - {t: '9', s: (}
   - {t: '0', s: )}
   - {t: '-', s: _}
-  - {t: '~', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '~', h: '$$mdi:apple-keyboard-option$$'}
   - '!'
   - '@'
   - '#'
@@ -67,7 +67,7 @@ layers:
   - '*'
   - (
   - )
-  - {t: _, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: _, h: '$$mdi:apple-keyboard-option$$'}
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -80,7 +80,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-control$$
-  - adjust
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - F13
@@ -99,7 +99,7 @@ layers:
   - page up
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '=', h: '$$mdi:apple-keyboard-shift$$', s: +}
+  - {t: '=', h: '$$mdi:apple-keyboard-option$$', s: +}
   - KP *
   - KP 4
   - KP 5
@@ -110,7 +110,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - KP 0
   - KP 1
@@ -128,7 +128,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - adjust
   fn:
   - F1
   - F2
@@ -209,12 +209,12 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [4, 5]
   k: (
@@ -231,17 +231,7 @@ combos:
 - p: [27, 28]
   k: '"'
 - p: [31, 32]
-  k: <
-- p: [3, 4]
-  k: {t: '-', s: _}
-- p: [2, 3]
-  k: +
-- p: [26, 27]
-  k: {t: '=', s: +}
-- p: [7, 8]
-  k: _
-- p: [8, 9]
-  k: '|'
+  k: {t: '''', s: '"'}
 - p: [15, 16]
   k: ru
   draw_separate: false
