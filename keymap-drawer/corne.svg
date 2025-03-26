@@ -473,8 +473,8 @@ path.combo {
   translate: 22px -26px;
 }
 </style>
-<g transform="translate(30, 0)" class="layer-base">
-<text x="0" y="28" class="label" id="base">base</text>
+<g transform="translate(30, 0)" class="layer-default">
+<text x="0" y="28" class="label" id="default">default</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>

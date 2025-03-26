@@ -5,7 +5,9 @@ on:
   push:
     paths:
     - "config/*.keymap"
-    - "boards/shields/*/*.dtsi"
+    - "config/*.dtsi"
+    - "config/*/*.dtsi"
+    - "boards/*/*/*.dtsi"
     - "keymap-drawer/config.yaml"
     - ".github/workflows/draw-keymaps.yml"
 

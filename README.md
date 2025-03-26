@@ -2,6 +2,11 @@
 
 Конфигурация и прошивка для клавиатур Corne, Nijuni, Dao и других Corne-подобных клавиатур.
 
+## Особенности
+
+- Переключение языка на RU/EN происходит через комбо: D+F → RU, J+K → EN
+- Запятая, точка, вопрос выведены в отдельный слой чтобы не зависеть от раскладки, сделано через клавиши F13/14/15
+
 ## Keymap
 
 ![Keymap Representation](./keymap-drawer/corne.svg?raw=true "Keymap Representation")
@@ -29,11 +34,6 @@
 
 Для левой половины - "corne_central_left-nice_nano_v2-zmk.uf2".
 Для правой половины - "corne_peripheral_right-nice_nano_v2-zmk.uf2".
-
-## Особенности
-
-- Переключение языка на RU/EN происходит через комбо: D+F → RU, J+K → EN
-- Запятая, точка, вопрос выведены в отдельный слой чтобы не зависеть от раскладки, сделано через клавиши F13/14/15
 
 ## Дополнительные настройки ОС
 
@@ -163,9 +163,12 @@
 
 ## Ссылки
 
-1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-2. [one-zmk-config](https://github.com/ergonautkb/one-zmk-config) от @ergonautkb
-3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
-4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
-5. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) - сайт, на котором можно редактировать лайауты в gui
-6. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - отрисовка keymap
+1. Примеры конфигураций:
+   1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
+   2. [one-zmk-config](https://github.com/ergonautkb/one-zmk-config) от @ergonautkb
+   3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
+   4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
+2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) - сайт, на котором можно редактировать лайауты в gui
+3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - отрисовка keymap
+4. [universal-layout](https://github.com/braindefender/universal-layout) - универсальная раскладка от @braindefender
+   1. [wellum](https://github.com/braindefender/wellum) - универсальная раскладка для split-клавиатур от @braindefender
