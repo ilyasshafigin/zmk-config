@@ -8,10 +8,10 @@
 #define DEF 0
 #define SYM 1
 #define NAV 2
-#define NUM 3
-#define ALT 4
-#define GAM 5
-#define GFN 6
+#define ALT 3
+#define GAM 4
+#define GFN 5
+#define FN  6
 #define ADJ 7
 
 // Behaviors Constants
@@ -30,8 +30,8 @@
 #define THUMBS 36 37 38 39 40 41
 
 // Keys
-#define SPACE_L LC(LG(LEFT))
-#define SPACE_R LC(LG(RIGHT))
+#define SPACE_L LC(LEFT)
+#define SPACE_R LC(RIGHT)
 #define TAB_L LC(LS(TAB))
 #define TAB_R LC(TAB)
 #define WIN_L LG(TAB)
@@ -45,8 +45,8 @@
 #include "layer_def.dtsi"
 #include "layer_sym.dtsi"
 #include "layer_nav.dtsi"
-#include "layer_num.dtsi"
 #include "layer_alt.dtsi"
 #include "layer_gam.dtsi"
 #include "layer_gfn.dtsi"
+#include "layer_fn.dtsi"
 #include "layer_adj.dtsi"

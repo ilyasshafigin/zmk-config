@@ -1,6 +1,7 @@
 parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
+  toggle_label: $$mdi:toggle-switch$$
   trans_legend:
     tap: $$mdi:transfer$$
     type: trans
@@ -110,9 +111,7 @@ parse_config:
     SLASH:
       tap: "/"
       shifted: "?"
-    FSLH:
-      tap: "/"
-      shifted: "?"
+    FSLH: "&" # universal layout standart
     QUESTION: "?"
     QMARK: "?"
     BACKSLASH:
@@ -130,15 +129,17 @@ parse_config:
     NON_US_BACKSLASH: "\\"
     PIPE2: "|"
     NON_US_BSLH: "|"
-    SEMICOLON: "=>" # universal layout standart
-    SEMI: "=>" # universal layout standart
+    SEMICOLON:
+      tap: "~" # universal layout standart
+      shifted: "≈" # universal layout standart
+    SEMI: "~" # universal layout standart
     COLON: ":"
     SINGLE_QUOTE:
-      tap: "'"
-      shifted: "\""
+      tap: " " # universal layout standart
+      shifted: " " # universal layout standart
     SQT:
-      tap: "'"
-      shifted: "\""
+      tap: " " # universal layout standart
+      shifted: " " # universal layout standart
     APOSTROPHE: "'"
     APOS: "'"
     DOUBLE_QUOTES: "\""
@@ -146,11 +147,11 @@ parse_config:
     LESS_THAN: "<"
     LT: "<"
     DOT:
-      tap: "."
-      shifted: ">"
+      tap: "." # universal layout standart
+      shifted: ":" # universal layout standart
     COMMA:
-      tap: ","
-      shifted: "<"
+      tap: "," # universal layout standart
+      shifted: ";" # universal layout standart
     GREATER_THAN: ">"
     GT: ">"
     LEFT_BRACKET:
@@ -355,12 +356,12 @@ parse_config:
     PG_DN: page down
     HOME: home
     END: end
-    LC(LG(LEFT)): "space left"
-    LC(LG(RIGHT)): "space right"
+    LC(LEFT): "space left"
+    LC(RIGHT): "space right"
     LC(LS(TAB)): "tab left"
     LC(TAB): "tab right"
-    LG(LS(TAB)): "window left"
-    LG(TAB): "window right"
+    LG(LS(TAB)): "window right"
+    LG(TAB): "window left"
 
     # Others
     INS: insert

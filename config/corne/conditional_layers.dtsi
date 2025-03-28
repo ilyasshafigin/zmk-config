@@ -1,10 +1,6 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        num_layer {
-            if-layers = <SYM NAV>;
-            then-layer = <NUM>;
-        };
 
         adjust_layer {
             if-layers = <SYM ALT>;
