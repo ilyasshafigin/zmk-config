@@ -56,6 +56,8 @@ make build_corne
 
 В папке layout лежит кастомная раскладка на основе [universal-layout](https://github.com/braindefender/universal-layout). Ее нужно установить.
 
+В ней находятся две раскладки (русская и английская). У каждой есть иконка.
+
 [Здесь](https://4te.me/post/flags-tray-macos/) описано как убрать стандартную английскую раскладку.
 
 ## Ссылки

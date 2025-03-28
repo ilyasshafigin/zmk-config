@@ -61,16 +61,7 @@
         //     timeout-ms = <20>;
         // };
 
-        // lang_ru {
-        //     bindings = <&kp LG(F11)>;
-        //     key-positions = <15 16>;
-        //     timeout-ms = <20>;
-        // };
-
-        // lang_en {
-        //     bindings = <&kp LG(F12)>;
-        //     key-positions = <19 20>;
-        //     timeout-ms = <20>;
-        // };
+        COMBO(lang_ru, &kp LG(F11), 15 16, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(lang_en, &kp LG(F12), 19 20, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     };
 };

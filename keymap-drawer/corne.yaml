@@ -37,8 +37,8 @@ layers:
   - {t: ., s: ':'}
   - '&'
   - {t: ']', h: '$$mdi:apple-keyboard-control$$', s: '}'}
-  - {t: lang, h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: NAV}
   - {t: '$$mdi:keyboard-return$$', h: SYM}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -369,3 +369,11 @@ combos:
 - p: [31, 32]
   k: {t: '''', s: '"'}
   l: [DEF, SYM, ALT]
+- p: [15, 16]
+  k: ru
+  l: [DEF, SYM, ALT]
+  draw_separate: false
+- p: [19, 20]
+  k: en
+  l: [DEF, SYM, ALT]
+  draw_separate: false
