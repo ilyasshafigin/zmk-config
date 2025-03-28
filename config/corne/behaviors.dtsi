@@ -20,6 +20,13 @@
 
 / {
     behaviors {
-
+        mt_caps: mt_caps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            bindings = <&kp>, <&macro_caps>;
+            display-name = "Mod-Tap-Caps";
+        };
     };
 };

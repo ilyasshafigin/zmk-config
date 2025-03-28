@@ -1,5 +1,11 @@
 / {
     macros {
-
+        // https://github.com/deepdarkcavedweller/zmk-config/issues/1
+        ZMK_MACRO(
+            macro_caps,
+            wait-ms = <100>;   // Additional wait to ensure recognition
+            tap-ms = <100>;    // Add delay for MacOS Caps Lock recognition
+            bindings = <&kp CAPS>;
+        )
     };
 };

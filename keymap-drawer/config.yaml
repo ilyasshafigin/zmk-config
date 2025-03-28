@@ -59,6 +59,9 @@ parse_config:
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
 
+    # Macros
+    "&macro_caps": lang
+
     # Others
     "&mmv MOVE_UP": Mouse ↑
     "&mmv MOVE_DOWN": Mouse ↓
@@ -370,6 +373,9 @@ parse_config:
 
     LG(F11): "ru"
     LG(F12): "en"
+
+    # Macros
+    macro_caps: lang
 
   zmk_combos:
     combo_lang_ru:
