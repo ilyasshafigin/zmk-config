@@ -59,9 +59,6 @@ parse_config:
       hold: $$mdi:progress-download$$
 
     # Others
-    "&kp LG(F11)": "ru"
-    "&kp LG(F12)": "en"
-
     "&mmv MOVE_UP": Mouse ↑
     "&mmv MOVE_DOWN": Mouse ↓
     "&mmv MOVE_LEFT": Mouse ←
@@ -119,21 +116,22 @@ parse_config:
     QUESTION: "?"
     QMARK: "?"
     BACKSLASH:
-      tap: "\\"
-      shifted: "|"
+      tap: "/" # universal layout standart
+      shifted: "|" # universal layout standart
+    LA(BACKSLASH): "\\" # universal layout standart
+    LS(LA(BACKSLASH)): "¦" # universal layout standart
     BSLH:
-      tap: "\\"
-      shifted: "|"
+      tap: "/" # universal layout standart
+      shifted: "|" # universal layout standart
+    LA(BSLH): "\\" # universal layout standart
+    LS(LA(BSLH)): "¦" # universal layout standart
+    LS(BSLH): "|" # universal layout standart
     PIPE: "|"
     NON_US_BACKSLASH: "\\"
     PIPE2: "|"
     NON_US_BSLH: "|"
-    SEMICOLON:
-      tap: ";"
-      shifted: ":"
-    SEMI:
-      tap: ";"
-      shifted: ":"
+    SEMICOLON: "=>" # universal layout standart
+    SEMI: "=>" # universal layout standart
     COLON: ":"
     SINGLE_QUOTE:
       tap: "'"
@@ -145,7 +143,6 @@ parse_config:
     APOS: "'"
     DOUBLE_QUOTES: "\""
     DQT: "\""
-
     LESS_THAN: "<"
     LT: "<"
     DOT:
@@ -159,61 +156,103 @@ parse_config:
     LEFT_BRACKET:
       tap: "["
       shifted: "{"
+    LS(LEFT_BRACKET): "{" # universal layout standart
     LBKT:
       tap: "["
       shifted: "{"
+    LS(LBKT): "{" # universal layout standart
     LEFT_BRACE: "{"
     LBRC: "{"
     RIGHT_BRACKET:
       tap: "]"
       shifted: "}"
+    LS(RIGHT_BRACKET): "}" # universal layout standart
     RBKT:
       tap: "]"
       shifted: "}"
+    LS(RBKT): "}" # universal layout standart
     RIGHT_BRACE: "}"
     RBRC: "}"
     GRAVE:
-      tap: "`"
-      shifted: "~"
+      tap: "'" # universal layout standart
+      shifted: "\"" # universal layout standart
+    LA(GRAVE): "`" # universal layout standart
+    LS(GRAVE): "\"" # universal layout standart
     TILDE: "~"
     NON_US_HASH: "#"
     NUHS: "#"
     TILDE2: "~"
-
     LAQUO": "«"
     RAQUO": "»"
 
+    # universal layout standart
+    LA(Q): "ψ"
+    LA(W): "ω"
+    LA(E): "€"
+    LA(R): "®"
+    LA(T): "ё"
+    LA(Y): "¥"
+    LA(U): "λ"
+    LA(I): "щ"
+    LA(O): " "
+    LA(P): "π"
+    LA(LBKT): "["
+
+    LA(A): "α"
+    LA(S): "§"
+    LA(D): "°"
+    LA(F): "£"
+    LA(G): "γ"
+    LA(H): "₽"
+    LA(J): "ø"
+    LA(K): "=>"
+    LA(L): "«"
+    LA(SEMI): "»"
+    LA(SQT): "~"
+
+    LA(Z): "μ"
+    LA(X): "×"
+    LA(C): "©"
+    LA(V): "√"
+    LA(B): "β"
+    LA(N): "η"
+    LA(M): "ъ"
+    LA(COMMA): "<"
+    LA(DOT): ">"
+    LA(FSLH): "&"
+    LA(RBKT): "]"
+
     # Numbers
     N1:
-      tap: 1
-      shifted: "!"
+      shifted: "1"
+      tap: "!"
     N2:
-      tap: 2
-      shifted: "@"
+      shifted: "2"
+      tap: "@"
     N3:
-      tap: 3
-      shifted: "#"
+      shifted: "3"
+      tap: "#"
     N4:
-      tap: 4
-      shifted: "$"
+      shifted: "4"
+      tap: "$"
     N5:
-      tap: 5
-      shifted: "%"
+      shifted: "5"
+      tap: "%"
     N6:
-      tap: 6
-      shifted: "^"
+      shifted: "6"
+      tap: "^"
     N7:
-      tap: 7
-      shifted: "&"
+      shifted: "7"
+      tap: "&"
     N8:
-      tap: 8
-      shifted: "*"
+      shifted: "8"
+      tap: "*"
     N9:
-      tap: 9
-      shifted: "("
+      shifted: "9"
+      tap: "("
     N0:
-      tap: 0
-      shifted: ")"
+      shifted: "0"
+      tap: ")"
 
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
@@ -258,8 +297,16 @@ parse_config:
     DEL: $$mdi:backspace-reverse-outline$$
 
     # Locks
-    CAPSLOCK: $$mdi:apple-keyboard-caps$$
-    CAPS: $$mdi:apple-keyboard-caps$$
+    # CAPSLOCK: $$mdi:apple-keyboard-caps$$
+    # CAPS: $$mdi:apple-keyboard-caps$$
+    # CLCK: $$mdi:apple-keyboard-caps$$
+    CAPSLOCK: lang
+    CAPS: lang
+    CLCK: lang
+    SCROLLLOCK: scroll lock
+    SLCK: scroll lock
+    LOCKING_NUM: num lock
+    LNLCK: num lock
 
     # Sound
     C_MUTE: $$mdi:volume-off$$
@@ -286,24 +333,47 @@ parse_config:
     C_AL_LOCK: $$mdi:lock$$
     K_CANCEL: $$mdi:close-box$$
 
-    # Others
+    # Key pad
+    KP_N1: "1"
+    KP_N2: "2"
+    KP_N3: "3"
+    KP_N4: "4"
+    KP_N5: "5"
+    KP_N6: "6"
+    KP_N7: "7"
+    KP_N8: "8"
+    KP_N9: "9"
+    KP_N0: "0"
+    KP_MINUS: "-"
+    KP_PLUS: "+"
+    KP_DOT: "."
+    KP_MULTIPLY: "*"
+    KP_SLASH: "/"
+
+    # Navigation
     PG_UP: page up
     PG_DN: page down
-    INS: insert
     HOME: home
     END: end
+    LC(LG(LEFT)): "space left"
+    LC(LG(RIGHT)): "space right"
+    LC(LS(TAB)): "tab left"
+    LC(TAB): "tab right"
+    LG(LS(TAB)): "window left"
+    LG(TAB): "window right"
+
+    # Others
+    INS: insert
     PSCRN: print scrn
     PAUSE_BREAK: pause break
-    KP_MINUS: "KP -"
-    KP_PLUS: "KP +"
-    KP_DOT: "KP ."
-    KP_MULTIPLY: "KP *"
-    KP_SLASH: "KP /"
+
+    LG(F11): "ru"
+    LG(F12): "en"
 
   zmk_combos:
-    lang_ru:
+    combo_lang_ru:
       draw_separate: false
-    lang_en:
+    combo_lang_en:
       draw_separate: false
 
 draw_config:
@@ -654,12 +724,6 @@ draw_config:
       translate: -26px 2px;
     }
 
-    /* Layer labels */
-    .keypos-38 .shifted,
-    .keypos-39 .shifted {
-      translate: 0px 2px;
-    }
-
     .keypos-0 .hold,
     .keypos-1 .hold,
     .keypos-2 .hold,
@@ -682,12 +746,6 @@ draw_config:
     .keypos-37 .hold,
     .keypos-38 .hold {
       translate: -26px 4px;
-    }
-
-    /* Layer labels */
-    .keypos-38 .hold,
-    .keypos-39 .hold {
-      translate: 0px 4px;
     }
 
     .keypos-0 .hold.glyph,
@@ -714,27 +772,21 @@ draw_config:
       translate: -26px 2px;
     }
 
-    /* Layer labels */
-    .keypos-38 .hold.glyph,
-    .keypos-39 .hold.glyph {
-      translate: 0px 2px;
-    }
+    # .shifted.mdi\:alpha-w-box {
+    #   translate: 0px 8px;
+    # }
+    # .keypos-38 .shifted.mdi\:alpha-w-box,
+    # .keypos-39 .shifted.mdi\:alpha-w-box {
+    #   translate: 0px 20px;
+    # }
 
-    .shifted.mdi\:alpha-w-box {
-      translate: 0px 8px;
-    }
-    .keypos-38 .shifted.mdi\:alpha-w-box,
-    .keypos-39 .shifted.mdi\:alpha-w-box {
-      translate: 0px 20px;
-    }
-
-    .hold.mdi\:gesture-tap-hold {
-      translate: 0px -8px;
-    }
-    .keypos-38 .hold.mdi\:gesture-tap-hold,
-    .keypos-39 .hold.mdi\:gesture-tap-hold {
-      translate: 0px -20px;
-    }
+    # .hold.mdi\:gesture-tap-hold {
+    #   translate: 0px -8px;
+    # }
+    # .keypos-38 .hold.mdi\:gesture-tap-hold,
+    # .keypos-39 .hold.mdi\:gesture-tap-hold {
+    #   translate: 0px -20px;
+    # }
 
     .key .mdi\:toggle-switch ~ .mdi\:usb {
       translate: -22px 26px;

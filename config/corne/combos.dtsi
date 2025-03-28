@@ -22,53 +22,14 @@
                       ╰────────────╯  ╰────────────╯
         */
 
-        para_left {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 5>;
-            timeout-ms = <20>;
-        };
-
-        para_right {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <6 7>;
-            timeout-ms = <20>;
-        };
-
-        brak_left {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <16 17>;
-            timeout-ms = <20>;
-        };
-
-        brak_right {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <18 19>;
-            timeout-ms = <20>;
-        };
-
-        brace_left {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <28 29>;
-            timeout-ms = <20>;
-        };
-
-        brace_right {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <30 31>;
-            timeout-ms = <20>;
-        };
-
-        double_quote {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <27 28>;
-            timeout-ms = <20>;
-        };
-
-        single_quote {
-            bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <31 32>;
-            timeout-ms = <20>;
-        };
+        COMBO(para_left, &kp LEFT_PARENTHESIS, 4 5, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(para_right, &kp RIGHT_PARENTHESIS, 6 7, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(brak_left, &kp LEFT_BRACKET, 16 17, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(brak_right, &kp RIGHT_BRACKET, 18 19, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(brace_left, &kp LEFT_BRACE, 28 29, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(brace_right, &kp RIGHT_BRACE, 30 31, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(double_quote, &kp DOUBLE_QUOTES, 27 28, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(single_quote, &kp SINGLE_QUOTE, 31 32, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
 
         // minus {
         //     bindings = <&kp MINUS>;
@@ -100,16 +61,16 @@
         //     timeout-ms = <20>;
         // };
 
-        lang_ru {
-            bindings = <&kp LG(F11)>;
-            key-positions = <15 16>;
-            timeout-ms = <20>;
-        };
+        // lang_ru {
+        //     bindings = <&kp LG(F11)>;
+        //     key-positions = <15 16>;
+        //     timeout-ms = <20>;
+        // };
 
-        lang_en {
-            bindings = <&kp LG(F12)>;
-            key-positions = <19 20>;
-            timeout-ms = <20>;
-        };
+        // lang_en {
+        //     bindings = <&kp LG(F12)>;
+        //     key-positions = <19 20>;
+        //     timeout-ms = <20>;
+        // };
     };
 };

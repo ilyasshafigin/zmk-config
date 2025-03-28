@@ -1,14 +1,14 @@
 name: Compile ZMK
 on:
   workflow_dispatch:
-  push:
-    paths:
-    - "config/*.keymap"
-    - "config/*.dtsi"
-    - "config/*/*.dtsi"
-    - "boards/*/*/*.conf"
-    - "boards/*/*/*.overlay"
-    - "boards/*/*/*.keymap"
+  # push:
+  #   paths:
+  #   - "config/*.keymap"
+  #   - "config/*.dtsi"
+  #   - "config/*/*.dtsi"
+  #   - "boards/*/*/*.conf"
+  #   - "boards/*/*/*.overlay"
+  #   - "boards/*/*/*.keymap"
 
 jobs:
   build:

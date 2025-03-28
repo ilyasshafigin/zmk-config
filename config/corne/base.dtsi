@@ -6,15 +6,19 @@
 
 // Layers
 #define DEF 0
-#define LWR 1
-#define RSE 2
-#define FUN 3
-#define ADJ 4
+#define SYM 1
+#define NAV 2
+#define NUM 3
+#define ALT 4
+#define GAM 5
+#define GFN 6
+#define ADJ 7
 
 // Behaviors Constants
 #define TAPPING_TERM_MS 280
 #define QUICK_TAP_MS 200
 #define REQUIRE_PRIOR_IDLE_MS 150
+#define RELEASE_AFTER_KEY_MS 2000
 
 // Combos Constants
 #define COMBO_TERM_DEFAULT 30
@@ -25,12 +29,24 @@
 #define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
 #define THUMBS 36 37 38 39 40 41
 
+// Keys
+#define SPACE_L LC(LG(LEFT))
+#define SPACE_R LC(LG(RIGHT))
+#define TAB_L LC(LS(TAB))
+#define TAB_R LC(TAB)
+#define WIN_L LG(TAB)
+#define WIN_R LG(LS(TAB))
+
 #include "behaviors.dtsi"
 #include "macros.dtsi"
 #include "combos.dtsi"
+#include "conditional_layers.dtsi"
 
-#include "layer_default.dtsi"
-#include "layer_lower.dtsi"
-#include "layer_raise.dtsi"
-#include "layer_fn.dtsi"
-#include "layer_adjust.dtsi"
+#include "layer_def.dtsi"
+#include "layer_sym.dtsi"
+#include "layer_nav.dtsi"
+#include "layer_num.dtsi"
+#include "layer_alt.dtsi"
+#include "layer_gam.dtsi"
+#include "layer_gfn.dtsi"
+#include "layer_adj.dtsi"

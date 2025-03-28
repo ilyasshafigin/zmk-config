@@ -4,8 +4,8 @@
 
 ## Особенности
 
-- Переключение языка на RU/EN происходит через комбо: D+F → RU, J+K → EN
-- Запятая, точка, вопрос выведены в отдельный слой чтобы не зависеть от раскладки, сделано через клавиши F13/14/15
+- Работает с универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
+- За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
 
 ## Keymap
 
