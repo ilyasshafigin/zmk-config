@@ -37,12 +37,12 @@ layers:
   - {t: ., s: ':'}
   - '&'
   - {t: ']', h: '$$mdi:apple-keyboard-control$$', s: '}'}
-  - {t: lang, h: '$$mdi:apple-keyboard-command$$'}
-  - $$mdi:keyboard-space$$
+  - {t: lang, h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-space$$', h: NAV}
   - {t: '$$mdi:keyboard-return$$', h: SYM}
-  - $$mdi:apple-keyboard-shift$$
-  - ALT
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: ALT}
   SYM:
   - '~'
   - {t: '!', s: '1'}
