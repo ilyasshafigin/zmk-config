@@ -329,7 +329,11 @@ parse_config:
     BT_SEL: $$mdi:bluetooth-connect$$
 
     # Settings
+    C_BRIGHTNESS_INC: $$mdi:brightness-5$$
+    C_BRI_INC: $$mdi:brightness-5$$
     C_BRI_UP: $$mdi:brightness-5$$
+    C_BRIGHTNESS_DEC: $$mdi:brightness-7$$
+    C_BRI_DEC: $$mdi:brightness-7$$
     C_BRI_DN: $$mdi:brightness-7$$
 
     # System
@@ -361,6 +365,8 @@ parse_config:
     END: end
     LC(LEFT): "space left"
     LC(RIGHT): "space right"
+    LC(UP): "space up"
+    LC(DOWN): "space down"
     LC(LS(TAB)): "tab left"
     LC(TAB): "tab right"
     LG(LS(TAB)): "window right"
@@ -423,6 +429,8 @@ draw_config:
   glyph_tap_size: 22
   glyph_hold_size: 16
   glyph_shifted_size: 16
+
+  n_columns: 2
 
   # Custom CSS
   svg_style: |

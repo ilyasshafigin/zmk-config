@@ -56,7 +56,7 @@ layers:
   - {t: (, s: '9'}
   - {t: ), s: '0'}
   - {t: '''', s: '"'}
-  - '`'
+  - {t: '`', h: '$$mdi:apple-keyboard-option$$'}
   - '1'
   - '2'
   - '3'
@@ -67,8 +67,8 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '"'
-  - ¦
+  - {t: '"', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: ¦, h: '$$mdi:apple-keyboard-control$$'}
   - \
   - '{'
   - {t: '[', s: '{'}
@@ -79,7 +79,7 @@ layers:
   - {t: ']', s: '}'}
   - '}'
   - {t: /, s: '|'}
-  - '|'
+  - {t: '|', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -92,38 +92,38 @@ layers:
   - '7'
   - '8'
   - '9'
-  - $$mdi:keyboard-esc$$
-  - $$mdi:keyboard-esc$$
+  - space up
+  - $$mdi:volume-high$$
   - home
   - $$mdi:arrow-up-bold$$
   - page up
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:backspace-reverse-outline$$
-  - space left
+  - $$mdi:brightness-7$$
+  - $$mdi:brightness-5$$
+  - {t: space left, h: '$$mdi:apple-keyboard-option$$'}
   - space right
   - '4'
   - '5'
   - '6'
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:volume-off$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: GAM, h: '$$mdi:toggle-switch$$'}
-  - window left
+  - {t: window left, h: '$$mdi:apple-keyboard-control$$'}
   - window right
   - '1'
   - '2'
   - '3'
-  - $$mdi:keyboard-tab$$
-  - $$mdi:keyboard-tab$$
+  - space down
+  - $$mdi:volume-low$$
   - end
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
   - print scrn
   - num lock
-  - '0'
+  - {t: '0', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}

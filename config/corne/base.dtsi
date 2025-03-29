@@ -30,8 +30,10 @@
 #define THUMBS 36 37 38 39 40 41
 
 // Keys
-#define SPACE_L LC(LEFT)
-#define SPACE_R LC(RIGHT)
+#define SPACE_L LC(LEFT)    // Ctrl+<-
+#define SPACE_R LC(RIGHT)   // Ctrl+->
+#define SPACE_U LC(UP)      // Ctrl+Up – Mission Control
+#define SPACE_D LC(DOWN)    // Ctrl+Down
 #define TAB_L LC(LS(TAB))
 #define TAB_R LC(TAB)
 #define WIN_L LG(TAB)

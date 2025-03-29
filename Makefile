@@ -164,9 +164,11 @@ draw_corne:
 	keymap="corne"; \
 	keymap_input_file="${config}/$$keymap.keymap"; \
 	keymap_svg="${keymap_drawer}/$$keymap.svg"; \
+	keymap_png="${keymap_drawer}/$$keymap.png"; \
 	keymap_yaml="${keymap_drawer}/$$keymap.yaml"; \
-	draw_config="${keymap_drawer}/config.yaml"; \
+	draw_config="${config}/keymap-drawer.yaml"; \
 	keymap -c "$$draw_config" parse -z "$$keymap_input_file" > "$$keymap_yaml"; \
 	keymap -c "$$draw_config" draw "$$keymap_yaml" > "$$keymap_svg"
+#	inkscape --export-type png --export-filename $$keymap_png --export-dpi 300 --export-background=white $$keymap_svg
 
 # vim: set ft=make fdm=marker:
