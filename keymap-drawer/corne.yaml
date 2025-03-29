@@ -95,7 +95,7 @@ layers:
   - $$mdi:keyboard-esc$$
   - $$mdi:keyboard-esc$$
   - home
-  - print scrn
+  - $$mdi:arrow-up-bold$$
   - page up
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:backspace-reverse-outline$$
@@ -107,7 +107,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: GAM, h: '$$mdi:toggle-switch$$'}
@@ -119,9 +119,9 @@ layers:
   - $$mdi:keyboard-tab$$
   - $$mdi:keyboard-tab$$
   - end
-  - $$mdi:arrow-down-bold$$
-  - page down
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - page down
+  - print scrn
   - num lock
   - '0'
   - {t: '$$mdi:transfer$$', type: trans}
@@ -173,48 +173,48 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   GAM:
-  - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-esc$$
+  - Y
   - Q
-  - X
+  - W
   - E
   - R
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:arrow-up-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - H
   - A
-  - W
+  - S
   - D
   - F
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: DEF, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-control$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - B
   - Z
-  - S
+  - X
   - C
   - V
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-down-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - GFN
-  - {t: DEF, h: '$$mdi:toggle-switch$$'}
-  - $$mdi:keyboard-space$$
-  - print scrn
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   GFN:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '5'
@@ -254,8 +254,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
