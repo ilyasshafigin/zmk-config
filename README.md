@@ -60,6 +60,38 @@ make build_corne
 
 [Здесь](https://4te.me/post/flags-tray-macos/) описано как убрать стандартную английскую раскладку.
 
+Для поддержки переключения языка через комбо нужно установить программу Karabiner-Elements. В настройках, в Complex Modifications добавить свое правило и вставить этот код:
+
+```json
+{
+    "description": "Set language on GUI+F11/F12",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "f11",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [{ "select_input_source": { "language": "ru" } }],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "f12",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [{ "select_input_source": { "language": "en" } }],
+            "type": "basic"
+        }
+    ]
+}
+```
+
 ## Ссылки
 
 1. Примеры конфигураций:
