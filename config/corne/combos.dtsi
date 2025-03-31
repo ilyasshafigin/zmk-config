@@ -30,37 +30,8 @@
         COMBO(brace_right, &kp RIGHT_BRACE, 30 31, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
         COMBO(double_quote, &kp LS(GRAVE), 27 28, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
         COMBO(single_quote, &kp GRAVE, 31 32, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-
-        // minus {
-        //     bindings = <&kp MINUS>;
-        //     key-positions = <3 4>;
-        //     timeout-ms = <20>;
-        // };
-
-        // plus {
-        //     bindings = <&kp PLUS>;
-        //     key-positions = <2 3>;
-        //     timeout-ms = <20>;
-        // };
-
-        // equal {
-        //     bindings = <&kp EQUAL>;
-        //     key-positions = <26 27>;
-        //     timeout-ms = <20>;
-        // };
-
-        // underscore {
-        //     bindings = <&kp UNDERSCORE>;
-        //     key-positions = <7 8>;
-        //     timeout-ms = <20>;
-        // };
-
-        // pipe {
-        //     bindings = <&kp PIPE>;
-        //     key-positions = <8 9>;
-        //     timeout-ms = <20>;
-        // };
-
+        COMBO(backslash, &kp LA(BSLH), 14 15, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
+        COMBO(slash, &kp BSLH, 20 21, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
         COMBO(lang_ru, &kp LG(F11), 15 16, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
         COMBO(lang_en, &kp LG(F12), 19 20, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
     };

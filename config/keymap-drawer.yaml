@@ -201,7 +201,6 @@ parse_config:
     LA(O): " "
     LA(P): "π"
     LA(LBKT): "["
-
     LA(A): "α"
     LA(S): "§"
     LA(D): "°"
@@ -213,7 +212,6 @@ parse_config:
     LA(L): "«"
     LA(SEMI): "»"
     LA(SQT): "~"
-
     LA(Z): "μ"
     LA(X): "×"
     LA(C): "©"
@@ -247,7 +245,7 @@ parse_config:
       tap: "^"
     N7:
       shifted: "7"
-      tap: "&"
+      tap: "?"
     N8:
       shifted: "8"
       tap: "*"
@@ -363,14 +361,14 @@ parse_config:
     PG_DN: page down
     HOME: home
     END: end
-    LC(LEFT): "space left"
-    LC(RIGHT): "space right"
-    LC(UP): "space up"
-    LC(DOWN): "space down"
-    LC(LS(TAB)): "tab left"
-    LC(TAB): "tab right"
-    LG(LS(TAB)): "window right"
-    LG(TAB): "window left"
+    LC(LEFT): space left
+    LC(RIGHT): space right
+    LC(UP): space up
+    LC(DOWN): space down
+    LC(LS(TAB)): tab left
+    LC(TAB): tab right
+    LG(LS(TAB)): window right
+    LG(TAB): window left
 
     # Others
     INS: insert
@@ -382,12 +380,6 @@ parse_config:
 
     # Macros
     macro_caps: lang
-
-  zmk_combos:
-    combo_lang_ru:
-      draw_separate: false
-    combo_lang_en:
-      draw_separate: false
 
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well
