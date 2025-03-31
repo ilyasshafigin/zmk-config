@@ -112,11 +112,11 @@ parse_config:
     UNDERSCORE: "_"
     UNDER: "_"
     SLASH:
-      tap: "/"
-      shifted: "?"
+      tap: "&" # universal layout standart
+      shifted: "&" # universal layout standart
     FSLH: "&" # universal layout standart
-    QUESTION: "?"
-    QMARK: "?"
+    QUESTION: "&" # universal layout standart
+    QMARK: "&" # universal layout standart
     BACKSLASH:
       tap: "/" # universal layout standart
       shifted: "|" # universal layout standart
@@ -135,26 +135,24 @@ parse_config:
     SEMICOLON:
       tap: "~" # universal layout standart
       shifted: "≈" # universal layout standart
-    SEMI: "~" # universal layout standart
+    SEMI:
+      tap: "~" # universal layout standart
+      shifted: "≈" # universal layout standart
     COLON: ":"
-    SINGLE_QUOTE:
-      tap: " " # universal layout standart
-      shifted: " " # universal layout standart
-    SQT:
-      tap: " " # universal layout standart
-      shifted: " " # universal layout standart
-    APOSTROPHE: "'"
-    APOS: "'"
-    DOUBLE_QUOTES: "\""
-    DQT: "\""
-    LESS_THAN: "<"
-    LT: "<"
+    SINGLE_QUOTE: " " # universal layout standart
+    SQT: " " # universal layout standart
+    APOSTROPHE: " " # universal layout standart
+    APOS: " " # universal layout standart
+    DOUBLE_QUOTES: " " # universal layout standart
+    DQT: " " # universal layout standart
     DOT:
       tap: "." # universal layout standart
       shifted: ":" # universal layout standart
     COMMA:
       tap: "," # universal layout standart
       shifted: ";" # universal layout standart
+    LESS_THAN: "<"
+    LT: "<"
     GREATER_THAN: ">"
     GT: ">"
     LEFT_BRACKET:
@@ -182,47 +180,105 @@ parse_config:
       shifted: "\"" # universal layout standart
     LA(GRAVE): "`" # universal layout standart
     LS(GRAVE): "\"" # universal layout standart
-    TILDE: "~"
+    TILDE: "\"" # universal layout standart
     NON_US_HASH: "#"
     NUHS: "#"
-    TILDE2: "~"
-    LAQUO": "«"
-    RAQUO": "»"
+    TILDE2: "\"" # universal layout standart
 
     # universal layout standart
-    LA(Q): "ψ"
-    LA(W): "ω"
-    LA(E): "€"
-    LA(R): "®"
-    LA(T): "ё"
-    LA(Y): "¥"
-    LA(U): "λ"
-    LA(I): "щ"
-    LA(O): " "
-    LA(P): "π"
-    LA(LBKT): "["
-    LA(A): "α"
-    LA(S): "§"
-    LA(D): "°"
-    LA(F): "£"
-    LA(G): "γ"
-    LA(H): "₽"
-    LA(J): "ø"
-    LA(K): "=>"
-    LA(L): "«"
-    LA(SEMI): "»"
-    LA(SQT): "~"
-    LA(Z): "μ"
-    LA(X): "×"
-    LA(C): "©"
-    LA(V): "√"
-    LA(B): "β"
-    LA(N): "η"
-    LA(M): "ъ"
-    LA(COMMA): "<"
-    LA(DOT): ">"
-    LA(FSLH): "&"
-    LA(RBKT): "]"
+    LA(Q):
+      tap: "ψ"
+      shifted: "Ψ"
+    LA(W):
+      tap: "ω"
+      shifted: "Ω"
+    LA(E):
+      tap: "€"
+    LA(R):
+      tap: "®"
+    LA(T):
+      tap: "ё"
+      shifted: "Ë"
+    LA(Y):
+      tap: "¥"
+    LA(U):
+      tap: "λ"
+      shifted: "Λ"
+    LA(I):
+      tap: " "
+      shifted: " "
+    LA(O):
+      tap: " "
+      shifted: " "
+    LA(P):
+      tap: "π"
+      shifted: "Π"
+    LA(LBKT):
+      tap: "["
+      shifted: "{"
+    LA(A):
+      tap: "α"
+      shifted: "Α"
+    LA(S):
+      tap: "§"
+      shifted: "Σ"
+    LA(D):
+      tap: "°"
+      shifted: "Δ"
+    LA(F):
+      tap: "£"
+    LA(G):
+      tap: "γ"
+      shifted: "Γ"
+    LA(H):
+      tap: "₽"
+    LA(J):
+      tap: "ø"
+      shifted: "Ø"
+    LA(K):
+      tap: "=>"
+      shifted: "->"
+    LA(L):
+      tap: "«"
+      shifted: "←"
+    LA(SEMI):
+      tap: "»"
+      shifted: "→"
+    LA(SQT):
+      tap: "~"
+      shifted: "≈"
+    LA(Z):
+      tap: "μ"
+      shifted: "Μ"
+    LA(X):
+      tap: "×"
+    LA(C):
+      tap: "©"
+      shifted: "¢"
+    LA(V):
+      tap: "√"
+      shifted: "V"
+    LA(B):
+      tap: "β"
+      shifted: "Β"
+    LA(N):
+      tap: "η"
+      shifted: "Η"
+    LA(M):
+      tap: "ъ"
+      shifted: "Ъ"
+    LA(COMMA):
+      tap: "<"
+      shifted: "≤"
+    LA(DOT):
+      tap: ">"
+      shifted: "≥"
+    LA(FSLH):
+      tap: "&"
+      shifted: "…"
+    LA(RBKT):
+      tap: "]"
+      shifted: "}"
 
     # Numbers
     N1:

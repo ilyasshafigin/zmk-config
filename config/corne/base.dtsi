@@ -39,6 +39,7 @@
 #define WIN_L LG(TAB)
 #define WIN_R LG(LS(TAB))
 
+#include "../universal_layout.dtsi"
 #include "behaviors.dtsi"
 #include "macros.dtsi"
 #include "combos.dtsi"
