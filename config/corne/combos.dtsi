@@ -1,40 +1,14 @@
-/* Copied (modified) from https://github.com/caksoylar/zmk-config */
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
-    combo_##NAME { \
-        timeout-ms = <TERM>; \
-        bindings = <BINDINGS>; \
-        key-positions = <KEYPOS>; \
-        layers = <LAYERS>; \
-        require-prior-idle-ms = <QUICKTAP>; \
-    };
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        /*
-          KEY POSITIONS
-          ╭────────────────────────╮  ╭────────────────────────╮
-          │ 0   1   2   3   4   5  │  │ 6   7   8   9   10  11 │
-          │ 12  13  14  15  16  17 │  │ 18  19  20  21  22  23 │
-          │ 24  25  26  27  28  29 │  │ 30  31  32  33  34  35 │
-          ╰───────────╮ 36  37  38 │  │ 39  40  41 ╭───────────╯
-                      ╰────────────╯  ╰────────────╯
-        */
-
-        COMBO(para_left, &kp N9, 4 5, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(para_right, &kp N0, 6 7, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(brak_left, &kp LBKT, 16 17, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(brak_right, &kp RBKT, 18 19, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(brace_left, &kp LBRC, 28 29, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(brace_right, &kp RBRC, 30 31, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(single_quote, &kp UL_SQT, 27 28, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(double_quote, &kp UL_DQT, 31 32, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(grave, &kp UL_GRAVE, 3 4, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(tilde, &kp UL_TILDE, 7 8, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(backslash, &kp UL_BSLH, 14 15, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(slash, &kp UL_FSLH, 20 21, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(lang_ru, &kp LG(F11), 15 16, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-        COMBO(lang_en, &kp LG(F12), 19 20, DEF SYM ALT, COMBO_TERM_DEFAULT, COMBO_QUICK_TAP_MS)
-    };
-};
+ZMK_COMBO(para_left, &kp N9, LT0 LT1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(para_right, &kp N0, RT0 RT1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brak_left, &kp LBKT, LM0 LM1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brak_right, &kp RBKT, RM0 RM1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brace_left, &kp LBRC, LB0 LB1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brace_right, &kp RBRC, RB0 RB1, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(single_quote, &kp UL_SQT, LB1 LB2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(double_quote, &kp UL_DQT, RB1 RB2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(grave, &kp UL_GRAVE, LT1 LT2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(tilde, &kp UL_TILDE, RT1 RT2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(backslash, &kp UL_BSLH, LM2 LM3, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(slash, &kp UL_FSLH, RM2 RM3, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(lang_ru, &kp LG(F11), LM1 LM2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(lang_en, &kp LG(F12), RM1 RM2, DEF SYM ALT, COMBO_TERM, COMBO_IDLE)

@@ -1,22 +1,28 @@
 ### config
-extra_modules_dir=${PWD}
-extra_modules= -DZMK_EXTRA_MODULES="/boards"
-config=${PWD}/config
-keymap_drawer=${PWD}/keymap-drawer
-nice_mount=/Volumes/NICENANO
-xiao_mount=/Volumes/XIAO-SENSE
+dir_extra_modules=${PWD}
+dir_zmk=${PWD}/zmk
+dir_config=${PWD}/config
+dir_keymap_drawer=${PWD}/keymap-drawer
+
+arg_zmk_extra_modules=-DZMK_EXTRA_MODULES="/boards"
+arg_zmk_config=-DZMK_CONFIG="/zmk-config"
+arg_cmake_export_commands=-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+mount_nice=/Volumes/NICENANO
+mount_xiao=/Volumes/XIAO-SENSE
+board_nice=nice_nano_v2
+board_xiao=seeeduino_xiao_ble
+
 zmk_image=zmkfirmware/zmk-dev-arm:stable
-nice=nice_nano_v2
-xiao=seeeduino_xiao_ble
 container=zmk-codebase
 docker_opts= \
 	--interactive \
 	--tty \
 	--name zmk-$@ \
 	--workdir /zmk \
-	--volume "${config}:/zmk-config:Z" \
-	--volume "${PWD}/zmk:/zmk:Z" \
-	--volume "${extra_modules_dir}:/boards:Z" \
+	--volume "${dir_config}:/zmk-config:Z" \
+	--volume "${dir_zmk}:/zmk:Z" \
+	--volume "${dir_extra_modules}:/boards:Z" \
 	${zmk_image}
 
 clone_zmk:
@@ -24,32 +30,27 @@ clone_zmk:
 
 codebase: clone_zmk
 	docker run ${docker_opts} sh -c '\
-		west init -l /zmk/app/; \
+		west init -l /zmk/app/ --mf /zmk-config/west.yml; \
 		west update'
 
 ### name
-keyboard_name_nice= '-DCONFIG_ZMK_KEYBOARD_NAME="Nice_Corne_View"'
-keyboard_name_nice_dongle= '-DCONFIG_ZMK_KEYBOARD_NAME="Nice_Dongle"'
-keyboard_name_xiao_dongle= '-DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Dongle"'
+arg_zmk_keyboard_name_nice='-DCONFIG_ZMK_KEYBOARD_NAME="Nice_Corne"'
+arg_zmk_keyboard_name_nice_dongle='-DCONFIG_ZMK_KEYBOARD_NAME="Nice_Dongle"'
+arg_zmk_keyboard_name_xiao_dongle='-DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Dongle"'
 
 ### west
 west_built_nice= \
-		west build /zmk/app --pristine --board "${nice}"
+		west build /zmk/app --pristine --board "${board_nice}"
 
 west_built_xiao= \
-		west build /zmk/app --pristine --board "${xiao}"
+		west build /zmk/app --pristine --board "${board_xiao}"
 
 ### shields
-shield_settings_reset= \
-		-- -DSHIELD="settings_reset" -DZMK_CONFIG="/zmk-config"
-shield_corne_central_dongle= \
-		-- -DSHIELD="corne_central_dongle" -DZMK_CONFIG="/zmk-config"
-shield_corne_central_left= \
-		-- -DSHIELD="corne_central_left" -DZMK_CONFIG="/zmk-config"
-shield_corne_peripheral_left= \
-		-- -DSHIELD="corne_peripheral_left" -DZMK_CONFIG="/zmk-config"
-shield_corne_peripheral_right= \
-		-- -DSHIELD="corne_peripheral_right" -DZMK_CONFIG="/zmk-config"
+arg_shield_settings_reset=-DSHIELD="settings_reset"
+arg_shield_corne_central_dongle=-DSHIELD="corne_central_dongle"
+arg_shield_corne_central_left=-DSHIELD="corne_central_left"
+arg_shield_corne_peripheral_left=-DSHIELD="corne_peripheral_left"
+arg_shield_corne_peripheral_right=-DSHIELD="corne_peripheral_right"
 
 ### uf2
 uf2_copy_nice_settings_reset=/zmk/build/zephyr/zmk.uf2 firmware/nice_settings_reset.uf2
@@ -72,42 +73,42 @@ uf2_chmod_xiao_corne_central_dongle=chmod go+wrx firmware/xiao_corne_central_don
 ### build
 build_nice_settings_reset:
 	docker run --rm ${docker_opts} \
-		${west_built_nice} ${shield_settings_reset}
+		${west_built_nice} -- ${arg_shield_settings_reset} ${arg_zmk_config} ${arg_cmake_export_commands}
 	docker cp ${container}:${uf2_copy_nice_settings_reset}
 	${uf2_chmod_nice_settings_reset}
 build_nice_corne_central_dongle:
 	docker run --rm ${docker_opts} \
-		${west_built_nice} ${shield_corne_central_dongle} \
-		${keyboard_name_nice_dongle} ${extra_modules}
+		${west_built_nice} -- ${arg_shield_corne_central_dongle} ${arg_zmk_config} ${arg_cmake_export_commands} \
+		${arg_zmk_keyboard_name_nice_dongle} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_central_dongle}
 	${uf2_chmod_nice_corne_central_dongle}
 build_nice_corne_central_left:
 	docker run --rm ${docker_opts} \
-		${west_built_nice} ${shield_corne_central_left} \
-		${keyboard_name_nice} ${extra_modules}
+		${west_built_nice} -- ${arg_shield_corne_central_left} ${arg_zmk_config} ${arg_cmake_export_commands} \
+		${arg_zmk_keyboard_name_nice} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_central_left}
 	${uf2_chmod_nice_corne_central_left}
 build_nice_corne_peripheral_left:
 	docker run --rm ${docker_opts} \
-		${west_built_nice} ${shield_corne_peripheral_left} \
-		${keyboard_name_nice} ${extra_modules}
+		${west_built_nice} -- ${arg_shield_corne_peripheral_left} ${arg_zmk_config} ${arg_cmake_export_commands} \
+		${arg_zmk_keyboard_name_nice} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_peripheral_left}
 	${uf2_chmod_nice_corne_peripheral_left}
 build_nice_corne_peripheral_right:
 	docker run --rm ${docker_opts} \
-		${west_built_nice} ${shield_corne_peripheral_right} \
-		${keyboard_name_nice} ${extra_modules}
+		${west_built_nice} -- ${arg_shield_corne_peripheral_right} ${arg_zmk_config} ${arg_cmake_export_commands} \
+		${arg_zmk_keyboard_name_nice} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_peripheral_right}
 	${uf2_chmod_nice_corne_peripheral_right}
 build_xiao_settings_reset:
 	docker run --rm ${docker_opts} \
-		${west_built_xiao} ${shield_settings_reset}
+		${west_built_xiao} -- ${arg_shield_settings_reset} ${arg_zmk_config} ${arg_cmake_export_commands}
 	docker cp ${container}:${uf2_copy_xiao_settings_reset}
 	${uf2_chmod_xiao_settings_reset}
 build_xiao_corne_central_dongle:
 	docker run --rm ${docker_opts} \
-		${west_built_xiao} ${shield_corne_central_dongle} \
-		${keyboard_name_xiao_dongle} ${extra_modules}
+		${west_built_xiao} -- ${arg_shield_corne_central_dongle} ${arg_zmk_config} ${arg_cmake_export_commands} \
+		${arg_zmk_keyboard_name_xiao_dongle} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_xiao_corne_central_dongle}
 	${uf2_chmod_xiao_corne_central_dongle}
 
@@ -126,24 +127,24 @@ shell:
 
 # flash
 flash_nice_corne_central_dongle:
-	@ printf "Waiting for ${nice} bootloader to appear at ${nice_mount}.."
-	@ while [ ! -d ${nice_mount} ]; do sleep 1; printf "."; done; printf "\n"
-	cp -av firmware/nice_corne_central_dongle.uf2 ${nice_mount}
+	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
+	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av firmware/nice_corne_central_dongle.uf2 ${mount_nice}
 
 flash_nice_corne_central_left:
-	@ printf "Waiting for ${nice} bootloader to appear at ${nice_mount}.."
-	@ while [ ! -d ${nice_mount} ]; do sleep 1; printf "."; done; printf "\n"
-	cp -av firmware/nice_corne_central_left.uf2 ${nice_mount}
+	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
+	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av firmware/nice_corne_central_left.uf2 ${mount_nice}
 
 flash_nice_corne_left:
-	@ printf "Waiting for ${nice} bootloader to appear at ${nice_mount}.."
-	@ while [ ! -d ${nice_mount} ]; do sleep 1; printf "."; done; printf "\n"
-	cp -av firmware/nice_corne_peripheral_left.uf2 ${nice_mount}
+	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
+	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av firmware/nice_corne_peripheral_left.uf2 ${mount_nice}
 
 flash_nice_corne_right:
-	@ printf "Waiting for ${nice} bootloader to appear at ${nice_mount}.."
-	@ while [ ! -d ${nice_mount} ]; do sleep 1; printf "."; done; printf "\n"
-	cp -av firmware/nice_corne_peripheral_right.uf2 ${nice_mount}
+	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
+	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	cp -av firmware/nice_corne_peripheral_right.uf2 ${mount_nice}
 
 # Clean
 clean_firmware:
@@ -162,11 +163,11 @@ clean_all: clean clean_firmware
 # Draw
 draw_corne:
 	keymap="corne"; \
-	keymap_input_file="${config}/$$keymap.keymap"; \
-	keymap_svg="${keymap_drawer}/$$keymap.svg"; \
-	keymap_png="${keymap_drawer}/$$keymap.png"; \
-	keymap_yaml="${keymap_drawer}/$$keymap.yaml"; \
-	draw_config="${config}/keymap-drawer.yaml"; \
+	keymap_input_file="${dir_config}/$$keymap.keymap"; \
+	keymap_svg="${dir_keymap_drawer}/$$keymap.svg"; \
+	keymap_png="${dir_keymap_drawer}/$$keymap.png"; \
+	keymap_yaml="${dir_keymap_drawer}/$$keymap.yaml"; \
+	draw_config="${dir_config}/keymap-drawer.yaml"; \
 	keymap -c "$$draw_config" parse -z "$$keymap_input_file" > "$$keymap_yaml"; \
 	keymap -c "$$draw_config" draw "$$keymap_yaml" > "$$keymap_svg"
 #	inkscape --export-type png --export-filename $$keymap_png --export-dpi 300 --export-background=white $$keymap_svg

@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
-  DEF:
-  - $$mdi:keyboard-esc$$
+  def:
+  - {t: '$$mdi:keyboard-esc$$', h: mse}
   - Q
   - W
   - E
@@ -39,97 +39,97 @@ layers:
   - {t: ']', h: '$$mdi:apple-keyboard-control$$', s: '}'}
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:keyboard-space$$', h: NAV}
-  - {t: '$$mdi:keyboard-return$$', h: SYM}
+  - {t: '$$mdi:keyboard-space$$', h: nav}
+  - {t: '$$mdi:keyboard-return$$', h: sym}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace-reverse-outline$$', h: ALT}
-  SYM:
-  - '`'
-  - {t: '!', s: '1'}
-  - {t: '@', s: '2'}
-  - {t: '#', s: '3'}
-  - {t: $, s: '4'}
-  - {t: '%', s: '5'}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: alt}
+  sym:
   - {t: ^, s: '6'}
-  - {t: '?', s: '7'}
-  - {t: '*', s: '8'}
+  - {t: $, s: '4'}
+  - {t: '#', s: '3'}
+  - {t: '@', s: '2'}
   - {t: (, s: '9'}
   - {t: ), s: '0'}
-  - {t: '''', s: '"'}
-  - {t: '~', h: '$$mdi:apple-keyboard-option$$', s: ≈}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
+  - {t: '!', s: '1'}
   - '7'
   - '8'
   - '9'
-  - '0'
-  - {t: '"', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: ¦, h: '$$mdi:apple-keyboard-control$$'}
-  - \
-  - '{'
-  - {t: '[', s: '{'}
-  - _
   - {t: '-', s: _}
   - +
-  - {t: '=', s: +}
+  - {t: '~', h: '$$mdi:apple-keyboard-option$$', s: ≈}
+  - '`'
+  - {t: '''', s: '"'}
+  - '"'
+  - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - '}'
+  - {t: '?', s: '7'}
+  - '4'
+  - '5'
+  - '6'
+  - {t: '*', s: '8'}
+  - {t: '=', h: '$$mdi:apple-keyboard-option$$', s: +}
+  - {t: ¦, h: '$$mdi:apple-keyboard-control$$'}
+  - '|'
+  - \
   - {t: /, s: '|'}
-  - {t: '|', h: '$$mdi:apple-keyboard-control$$'}
+  - '{'
+  - '}'
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - _
+  - {t: '%', h: '$$mdi:apple-keyboard-control$$', s: '5'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  NAV:
-  - tab left
-  - tab right
-  - '7'
-  - '8'
-  - '9'
-  - space up
+  nav:
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - tab prev
+  - tab next
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-high$$
   - home
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
   - $$mdi:brightness-7$$
   - $$mdi:brightness-5$$
-  - {t: space left, h: '$$mdi:apple-keyboard-option$$'}
-  - space right
-  - '4'
-  - '5'
-  - '6'
+  - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:volume-off$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - space prev
+  - space next
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:volume-low$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: GAM, h: '$$mdi:toggle-switch$$'}
-  - {t: window left, h: '$$mdi:apple-keyboard-control$$'}
-  - window right
-  - '1'
-  - '2'
-  - '3'
-  - space down
-  - $$mdi:volume-low$$
+  - {t: gam, h: '$$mdi:toggle-switch$$'}
+  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - window prev
+  - window next
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:volume-off$$
   - end
   - $$mdi:arrow-down-bold$$
   - page down
   - print scrn
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '0', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  ALT:
+  alt:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: ψ, s: Ψ}
   - {t: ω, s: Ω}
@@ -172,7 +172,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  GAM:
+  gam:
   - $$mdi:keyboard-esc$$
   - T
   - Q
@@ -196,7 +196,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: DEF, h: '$$mdi:toggle-switch$$'}
+  - {t: def, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-control$$
   - B
   - Z
@@ -209,13 +209,13 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - GFN
+  - gfn
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
-  GFN:
+  gfn:
   - {t: '$$mdi:transfer$$', type: trans}
   - '5'
   - '1'
@@ -301,7 +301,50 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  ADJ:
+  mse:
+  - {type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Right Click
+  - Scroll ↓
+  - Mouse ↑
+  - Scroll ↑
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Scroll ←
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
+  - Scroll →
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Back Click
+  - Middle Click
+  - Forward Click
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Left Click
+  - Right Click
+  - {t: '$$mdi:transfer$$', type: trans}
+  adj:
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
@@ -345,45 +388,45 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
 combos:
-- p: [4, 5]
+- p: [5, 4]
   k: {t: (, s: '9'}
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [6, 7]
   k: {t: ), s: '0'}
-  l: [DEF, SYM, ALT]
-- p: [16, 17]
+  l: [def, sym, alt]
+- p: [17, 16]
   k: {t: '[', s: '{'}
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [18, 19]
   k: {t: ']', s: '}'}
-  l: [DEF, SYM, ALT]
-- p: [28, 29]
+  l: [def, sym, alt]
+- p: [29, 28]
   k: '{'
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [30, 31]
   k: '}'
-  l: [DEF, SYM, ALT]
-- p: [27, 28]
+  l: [def, sym, alt]
+- p: [28, 27]
   k: {t: '''', s: '"'}
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [31, 32]
   k: '"'
-  l: [DEF, SYM, ALT]
-- p: [3, 4]
+  l: [def, sym, alt]
+- p: [4, 3]
   k: '`'
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [7, 8]
   k: {t: '~', s: ≈}
-  l: [DEF, SYM, ALT]
-- p: [14, 15]
+  l: [def, sym, alt]
+- p: [15, 14]
   k: \
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [20, 21]
   k: {t: /, s: '|'}
-  l: [DEF, SYM, ALT]
-- p: [15, 16]
+  l: [def, sym, alt]
+- p: [16, 15]
   k: ru
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]
 - p: [19, 20]
   k: en
-  l: [DEF, SYM, ALT]
+  l: [def, sym, alt]

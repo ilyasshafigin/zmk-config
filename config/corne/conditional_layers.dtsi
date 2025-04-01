@@ -1,10 +1,2 @@
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        adjust_layer {
-            if-layers = <SYM ALT>;
-            then-layer = <ADJ>;
-        };
-    };
-};
+// SYM + ALT -> ADJ
+ZMK_CONDITIONAL_LAYER(adjust_layer, SYM ALT, ADJ)

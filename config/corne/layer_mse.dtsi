@@ -1,19 +1,19 @@
 /**
- * NAV Layer
+ * Mouse Layer
  */
 
-ZMK_LAYER(nav,
+ZMK_LAYER(mse,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // │0              │1              │2              │3              │4              │5              │   │6              │7              │8              │9              │10             │11             │
-    &none           &none           &none           &kp TAB_P       &swtn           &none               &kp C_VOL_UP    &kp HOME        &none           &kp PG_UP       &kp C_BRI_DN    &kp C_BRI_UP
+    &trans          &none           &none           &none           &none           &none               &mkp RCLK       &msc SCRL_DOWN  &mkp MCLK       &msc SCRL_UP    &none           &none
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // │12             │13             │14             │15             │16             │17             │   │18             │19             │20             │21             │22             │23             │
-    &kp LALT        &none           &none           &kp SPACE_P     &kp SPACE_N     &none               &kp C_VOL_DN    &kp LEFT        &kp UP          &kp RIGHT       &none           &to GAM
+    &none           &none           &none           &none           &none           &none               &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT &msc SCRL_RIGHT &none
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // │24             │25             │26             │27             │28             │29             │   │30             │31             │32             │33             │34             │35             │
-    &kp LCTRL       &none           &none           &kp WIN_P       &swwn           &none               &kp C_MUTE      &kp END         &kp DOWN        &kp PG_DN       &kp PSCRN       &none
+    &none           &none           &none           &none           &none           &none               &none           &mkp MB4        &mmv MOVE_DOWN  &mkp MB5        &none           &none
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 │36             │37             │38             │   │39             │40             │41             │
-                                                    &trans          &trans          &trans              &trans          &trans          &trans
+                                                    &none           &none           &none               &mkp LCLK       &mkp RCLK       &trans
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 )

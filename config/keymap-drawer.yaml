@@ -1,4 +1,9 @@
 parse_config:
+  zmk_additional_includes:
+  # for ci
+  - "modules/zmk/helpers/include"
+  # for local
+  - "zmk/modules/zmk/helpers/include"
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   toggle_label: $$mdi:toggle-switch$$
@@ -59,8 +64,10 @@ parse_config:
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
 
-    # Macros
+    # Macros/Behaviors
     "&macro_caps": lang
+    "&swtn": tab next
+    "&swwn": window next
 
     # Others
     "&mmv MOVE_UP": Mouse ↑
@@ -311,6 +318,16 @@ parse_config:
     N0:
       shifted: "0"
       tap: ")"
+    LS(N1): "1"
+    LS(N2): "2"
+    LS(N3): "3"
+    LS(N4): "4"
+    LS(N5): "5"
+    LS(N6): "6"
+    LS(N7): "7"
+    LS(N8): "8"
+    LS(N9): "9"
+    LS(N0): "0"
 
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
@@ -417,14 +434,14 @@ parse_config:
     PG_DN: page down
     HOME: home
     END: end
-    LC(LEFT): space left
-    LC(RIGHT): space right
+    LC(RIGHT): space next
+    LC(LEFT): space prev
     LC(UP): space up
     LC(DOWN): space down
-    LC(LS(TAB)): tab left
-    LC(TAB): tab right
-    LG(LS(TAB)): window right
-    LG(TAB): window left
+    LC(TAB): tab next
+    LC(LS(TAB)): tab prev
+    LG(TAB): window next
+    LG(LS(TAB)): window prev
 
     # Others
     INS: insert
@@ -433,9 +450,6 @@ parse_config:
 
     LG(F11): "ru"
     LG(F12): "en"
-
-    # Macros
-    macro_caps: lang
 
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well
@@ -660,6 +674,11 @@ draw_config:
       text-anchor: start;
       paint-order: stroke;
       fill: var(--color--layer--text);
+      translate: 575px 166px;
+    }
+
+    text.layer-activator {
+      text-decoration: underline;
     }
 
     /* Keys */

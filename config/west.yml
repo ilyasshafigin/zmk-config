@@ -2,10 +2,22 @@ manifest:
   remotes:
   - name: zmkfirmware
     url-base: https://github.com/zmkfirmware
+  - name: urob
+    url-base: https://github.com/urob
+  - name: caksoylar
+    url-base: https://github.com/caksoylar
   projects:
   - name: zmk
     remote: zmkfirmware
     revision: main
     import: app/west.yml
+  - name: zmk-helpers
+    remote: urob
+    revision: main
+    path: modules/zmk/helpers
+  - name: zmk-smart-toggle
+    remote: caksoylar
+    revision: main
+    path: modules/zmk/smart-toggle
   self:
     path: config
