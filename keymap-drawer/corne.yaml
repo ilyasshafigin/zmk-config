@@ -66,7 +66,7 @@ layers:
   - '4'
   - '5'
   - '6'
-  - {t: '*', s: '8'}
+  - _
   - {t: '=', h: '$$mdi:apple-keyboard-option$$', s: +}
   - {t: ¦, h: '$$mdi:apple-keyboard-control$$'}
   - '|'
@@ -78,7 +78,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - _
+  - {t: '*', s: '8'}
   - {t: '%', h: '$$mdi:apple-keyboard-control$$', s: '5'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -89,7 +89,7 @@ layers:
   nav:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - space up
   - tab prev
   - tab next
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -101,7 +101,7 @@ layers:
   - $$mdi:brightness-5$$
   - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - space down
   - space prev
   - space next
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -121,7 +121,7 @@ layers:
   - end
   - $$mdi:arrow-down-bold$$
   - page down
-  - print scrn
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
