@@ -8,7 +8,7 @@
 #define DEF 0
 #define SYM 1
 #define NAV 2
-#define ALT 3
+#define NUM 3
 #define GAM 4
 #define GFN 5
 #define FN  6
@@ -26,14 +26,14 @@
 #define COMBO_IDLE 100
 
 // Keys
-#define SPACE_N LC(RIGHT)   // Ctrl+->      - Space next
-#define SPACE_P LC(LEFT)    // Ctrl+<-      - Space prev
-#define SPACE_U LC(UP)      // Ctrl+Up      - Mission Control
-#define SPACE_D LC(DOWN)    // Ctrl+Down    - Show windows
-#define TAB_N LC(TAB)       // Ctrl+Tab     - Tab next
-#define TAB_P LC(LS(TAB))   // Ctrl+Shft+Tab- Tab prev
-#define WIN_N LG(TAB)       // Cmd+Tab      - Win next
-#define WIN_P LG(LS(TAB))   // Cmd+Shft+Tab - Win prev
+#define SPACE_N   LC(RIGHT)     // Ctrl+->      - Space next
+#define SPACE_P   LC(LEFT)      // Ctrl+<-      - Space prev
+#define SPACE_U   LC(UP)        // Ctrl+Up      - Mission Control
+#define SPACE_D   LC(DOWN)      // Ctrl+Down    - Show windows
+#define TAB_N     LC(TAB)       // Ctrl+Tab     - Tab next
+#define TAB_P     LC(LS(TAB))   // Ctrl+Shft+Tab- Tab prev
+#define WIN_N     LG(TAB)       // Cmd+Tab      - Win next
+#define WIN_P     LG(LS(TAB))   // Cmd+Shft+Tab - Win prev
 
 /*
   ╭─────────────────────────┬─────────────────────────╮

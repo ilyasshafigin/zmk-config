@@ -145,7 +145,7 @@ parse_config:
     SEMI:
       tap: "~" # universal layout standart
       shifted: "≈" # universal layout standart
-    COLON: ":"
+    COLON: "≈" # universal layout standart
     SINGLE_QUOTE: " " # universal layout standart
     SQT: " " # universal layout standart
     APOSTROPHE: " " # universal layout standart
@@ -155,9 +155,11 @@ parse_config:
     DOT:
       tap: "." # universal layout standart
       shifted: ":" # universal layout standart
+    LS(DOT): ":" # universal layout standart
     COMMA:
       tap: "," # universal layout standart
       shifted: ";" # universal layout standart
+    LS(COMMA): ";" # universal layout standart
     LESS_THAN: "<"
     LT: "<"
     GREATER_THAN: ">"

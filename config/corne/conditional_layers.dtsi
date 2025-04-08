@@ -1,2 +1,2 @@
-// SYM + ALT -> ADJ
-ZMK_CONDITIONAL_LAYER(adjust_layer, SYM ALT, ADJ)
+// SYM + NAV -> NUM
+ZMK_CONDITIONAL_LAYER(num_layer, SYM NAV, NUM)
