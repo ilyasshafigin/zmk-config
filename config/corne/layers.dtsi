@@ -48,7 +48,7 @@ ZMK_LAYER(nav,
     &kp LALT        &none           &kp SPACE_D     &kp SPACE_P     &kp SPACE_N     &kp C_BRI_DN        &kp C_VOL_DN    &kp LEFT        &kp UP          &kp RIGHT       &none           &none
 // ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 // │24             │25             │26             │27             │28             │29             │   │30             │31             │32             │33             │34             │35             │
-    &kp LCTRL       &none           &none           &kp WIN_P       &swwn           &none               &kp C_MUTE      &kp END         &kp DOWN        &kp PG_DN       &none           &to GAM
+    &kp LCTRL       &none           &none           &kp WIN_P       &swwn           &none               &kp C_MUTE      &kp END         &kp DOWN        &kp PG_DN       &kp CAPS        &to GAM
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 │36             │37             │38             │   │39             │40             │41             │
                                                     &trans          &trans          &trans              &trans          &trans          &trans

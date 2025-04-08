@@ -121,7 +121,7 @@ layers:
   - end
   - $$mdi:arrow-down-bold$$
   - page down
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - lang
   - {t: gam, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
