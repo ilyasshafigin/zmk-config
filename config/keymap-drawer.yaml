@@ -89,26 +89,26 @@ parse_config:
   # ZMK
   zmk_keycode_map:
     # Symbols
-    EXCLAMATION: "!"
-    EXCL: "!"
-    AT_SIGN: "@"
-    AT: "@"
-    HASH: "#"
-    POUND: "#"
-    DOLLAR: "$"
-    DLLR: "$"
-    PERCENT: "%"
-    PRCNT: "%"
-    CARET: "^"
-    AMPERSAND: "&"
-    AMPS: "&"
-    ASTERISK: "*"
-    ASTRK: "*"
-    STAR: "*"
-    LEFT_PARENTHESIS: "("
-    LPAR: "("
-    RIGHT_PARENTHESIS: ")"
-    RPAR: ")"
+    EXCLAMATION: "1"
+    EXCL: "1"
+    AT_SIGN: "2"
+    AT: "2"
+    HASH: "3"
+    POUND: "3"
+    DOLLAR: "4"
+    DLLR: "4"
+    PERCENT: "5"
+    PRCNT: "5"
+    CARET: "6"
+    AMPERSAND: "7"
+    AMPS: "7"
+    ASTERISK: "8"
+    ASTRK: "8"
+    STAR: "8"
+    LEFT_PARENTHESIS: "9"
+    LPAR: "9"
+    RIGHT_PARENTHESIS: "0"
+    RPAR: "0"
     EQUAL:
       tap: "="
       shifted: "+"
@@ -119,82 +119,94 @@ parse_config:
     UNDERSCORE: "_"
     UNDER: "_"
     SLASH:
-      tap: "&" # universal layout standart
-      shifted: "&" # universal layout standart
-    FSLH: "&" # universal layout standart
-    QUESTION: "&" # universal layout standart
-    QMARK: "&" # universal layout standart
+      tap: "]"
+      shifted: "}"
+    LS(SLASH): "}"
+    LA(SLASH):
+      tap: "]"
+      shifted: "}"
+    LA(LS(SLASH)): "}"
+    FSLH:
+      tap: "]"
+      shifted: "}"
+    LS(FSLH): "}"
+    LA(FSLH):
+      tap: "]"
+      shifted: "}"
+    LA(LS(FSLH)): "}"
+    QUESTION: "}"
+    QMARK: "}"
     BACKSLASH:
-      tap: "/" # universal layout standart
-      shifted: "|" # universal layout standart
-    LA(BACKSLASH): "\\" # universal layout standart
-    LS(LA(BACKSLASH)): "¦" # universal layout standart
+      tap: "/"
+      shifted: "|"
+    LA(BACKSLASH): "\\"
+    LS(LA(BACKSLASH)): "¦"
     BSLH:
-      tap: "/" # universal layout standart
-      shifted: "|" # universal layout standart
-    LA(BSLH): "\\" # universal layout standart
-    LS(LA(BSLH)): "¦" # universal layout standart
-    LS(BSLH): "|" # universal layout standart
+      tap: "/"
+      shifted: "|"
+    LA(BSLH): "\\"
+    LS(LA(BSLH)): "¦"
+    LS(BSLH): "|"
     PIPE: "|"
-    NON_US_BACKSLASH: "\\"
-    PIPE2: "|"
-    NON_US_BSLH: "|"
+    #NON_US_BACKSLASH: "\\"
+    #PIPE2: "|"
+    #NON_US_BSLH: "|"
     SEMICOLON:
-      tap: "~" # universal layout standart
-      shifted: "≈" # universal layout standart
+      tap: "~"
+      shifted: "≈"
     SEMI:
-      tap: "~" # universal layout standart
-      shifted: "≈" # universal layout standart
-    COLON: "≈" # universal layout standart
-    SINGLE_QUOTE: " " # universal layout standart
-    SQT: " " # universal layout standart
-    APOSTROPHE: " " # universal layout standart
-    APOS: " " # universal layout standart
-    DOUBLE_QUOTES: " " # universal layout standart
-    DQT: " " # universal layout standart
+      tap: "~"
+      shifted: "≈"
+    COLON: "≈"
+    SINGLE_QUOTE: " "
+    SQT: " "
+    APOSTROPHE: " "
+    APOS: " "
+    DOUBLE_QUOTES: " "
+    DQT: " "
     DOT:
-      tap: "." # universal layout standart
-      shifted: ":" # universal layout standart
-    LS(DOT): ":" # universal layout standart
-    COMMA:
-      tap: "," # universal layout standart
-      shifted: ";" # universal layout standart
-    LS(COMMA): ";" # universal layout standart
-    LESS_THAN: "<"
-    LT: "<"
-    GREATER_THAN: ">"
-    GT: ">"
+      tap: "["
+      shifted: "{"
+    LS(DOT): "{"
+    LA(DOT):
+      tap: "["
+      shifted: "{"
+    LA(LS(DOT)): "{"
+    COMMA: "&"
+    LESS_THAN: "&"
+    LT: "&"
+    GREATER_THAN: "{"
+    GT: "{"
     LEFT_BRACKET:
-      tap: "["
-      shifted: "{"
-    LS(LEFT_BRACKET): "{" # universal layout standart
+      tap: ","
+      shifted: ";"
+    LS(LEFT_BRACKET): ";"
     LBKT:
-      tap: "["
-      shifted: "{"
-    LS(LBKT): "{" # universal layout standart
-    LEFT_BRACE: "{"
-    LBRC: "{"
+      tap: ","
+      shifted: ";"
+    LS(LBKT): ";"
+    LEFT_BRACE: ";"
+    LBRC: ";"
     RIGHT_BRACKET:
-      tap: "]"
-      shifted: "}"
-    LS(RIGHT_BRACKET): "}" # universal layout standart
+      tap: "."
+      shifted: ":"
+    LS(RIGHT_BRACKET): ":"
     RBKT:
-      tap: "]"
-      shifted: "}"
-    LS(RBKT): "}" # universal layout standart
-    RIGHT_BRACE: "}"
-    RBRC: "}"
+      tap: "."
+      shifted: ":"
+    LS(RBKT): ":"
+    RIGHT_BRACE: ":"
+    RBRC: ":"
     GRAVE:
-      tap: "'" # universal layout standart
-      shifted: "\"" # universal layout standart
-    LA(GRAVE): "`" # universal layout standart
-    LS(GRAVE): "\"" # universal layout standart
-    TILDE: "\"" # universal layout standart
-    NON_US_HASH: "#"
-    NUHS: "#"
-    TILDE2: "\"" # universal layout standart
+      tap: "'"
+      shifted: "\""
+    LA(GRAVE): "`"
+    LS(GRAVE): "\""
+    TILDE: "\""
+    #NON_US_HASH: "#"
+    #NUHS: "#"
+    #TILDE2: "\""
 
-    # universal layout standart
     LA(Q):
       tap: "ψ"
       shifted: "Ψ"
@@ -214,17 +226,20 @@ parse_config:
       tap: "λ"
       shifted: "Λ"
     LA(I):
-      tap: " "
-      shifted: " "
+      tap: "щ"
+      shifted: "Щ"
     LA(O):
-      tap: " "
-      shifted: " "
+      tap: "<"
+      shifted: "≤"
     LA(P):
-      tap: "π"
-      shifted: "Π"
+      tap: ">"
+      shifted: "≥"
     LA(LBKT):
-      tap: "["
-      shifted: "{"
+      tap: ","
+      shifted: ";"
+    LA(RBKT):
+      tap: "."
+      shifted: ":"
     LA(A):
       tap: "α"
       shifted: "Α"
@@ -254,8 +269,8 @@ parse_config:
       tap: "»"
       shifted: "→"
     LA(SQT):
-      tap: "~"
-      shifted: "≈"
+      tap: " "
+      shifted: " "
     LA(Z):
       tap: "μ"
       shifted: "Μ"
@@ -277,15 +292,12 @@ parse_config:
       tap: "ъ"
       shifted: "Ъ"
     LA(COMMA):
-      tap: "<"
-      shifted: "≤"
-    LA(DOT):
-      tap: ">"
-      shifted: "≥"
-    LA(FSLH):
       tap: "&"
       shifted: "…"
-    LA(RBKT):
+    # LA(DOT):
+    #   tap: "["
+    #   shifted: "{"
+    LA(FSLH):
       tap: "]"
       shifted: "}"
 

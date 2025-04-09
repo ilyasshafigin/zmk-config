@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: '[', h: fn, s: '{'}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
   - A
   - S
@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - {t: '~', s: ≈}
-  - ' '
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -33,18 +33,18 @@ layers:
   - B
   - N
   - M
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
   - '&'
+  - {t: '[', s: '{'}
   - {t: ']', s: '}'}
+  - {t: /, h: fn, s: '|'}
   - $$mdi:apple-keyboard-command$$
   - nav
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', h: sym}
-  - {t: '$$mdi:backspace-reverse-outline$$', h: '$$mdi:apple-keyboard-option$$'}
+  - sym
+  - $$mdi:apple-keyboard-option$$
   sym:
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-esc$$
   - {t: '@', s: '2'}
   - {t: '#', s: '3'}
   - {t: $, s: '4'}
@@ -55,7 +55,7 @@ layers:
   - {t: '*', s: '8'}
   - {t: '%', s: '5'}
   - {t: ^, s: '6'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
   - '`'
   - {t: '''', s: '"'}
@@ -67,7 +67,7 @@ layers:
   - +
   - {t: '=', s: +}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - '|'
   - \
@@ -87,7 +87,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:backspace-reverse-outline$$', h: '$$mdi:apple-keyboard-option$$'}
   nav:
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-esc$$
   - $$mdi:brightness-5$$
   - space up
   - tab prev
@@ -98,7 +98,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
   - $$mdi:volume-high$$
-  - {t: gam, h: '$$mdi:toggle-switch$$'}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:brightness-7$$
   - space down
@@ -110,7 +110,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - $$mdi:volume-low$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -122,7 +122,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - page down
   - $$mdi:volume-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: gam, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-command$$
   - {type: held}
   - $$mdi:keyboard-space$$
@@ -130,7 +130,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backspace-reverse-outline$$', h: '$$mdi:apple-keyboard-option$$'}
   num:
-  - adj
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -141,7 +141,7 @@ layers:
   - '8'
   - '9'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - adj
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -153,7 +153,7 @@ layers:
   - '5'
   - '6'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -165,7 +165,7 @@ layers:
   - '2'
   - '3'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - adj
   - $$mdi:apple-keyboard-command$$
   - {type: held}
   - $$mdi:keyboard-space$$
@@ -184,7 +184,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-high$$
-  - {t: def, h: '$$mdi:toggle-switch$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
   - G
   - A
@@ -208,7 +208,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: def, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
@@ -270,7 +270,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - F7
   - F8
   - F9
@@ -294,7 +294,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -345,7 +345,7 @@ layers:
   - Right Click
   - {t: '$$mdi:transfer$$', type: trans}
   adj:
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -356,7 +356,7 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:progress-download$$
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
@@ -380,7 +380,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -395,16 +395,16 @@ combos:
   k: {t: ), s: '0'}
   l: [def, sym]
 - p: [17, 16]
-  k: {t: '[', s: '{'}
+  k: {t: ',', s: ;}
   l: [def, sym]
 - p: [18, 19]
-  k: {t: ']', s: '}'}
+  k: {t: ., s: ':'}
   l: [def, sym]
 - p: [29, 28]
-  k: '{'
+  k: ;
   l: [def, sym]
 - p: [30, 31]
-  k: '}'
+  k: ':'
   l: [def, sym]
 - p: [28, 27]
   k: {t: '''', s: '"'}
