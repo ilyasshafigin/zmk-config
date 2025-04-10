@@ -262,6 +262,7 @@ parse_config:
     LA(K):
       tap: "=>"
       shifted: "->"
+    LA(LS(K)): "->"
     LA(L):
       tap: "«"
       shifted: "←"
@@ -297,9 +298,9 @@ parse_config:
     # LA(DOT):
     #   tap: "["
     #   shifted: "{"
-    LA(FSLH):
-      tap: "]"
-      shifted: "}"
+    # LA(FSLH):
+    #   tap: "]"
+    #   shifted: "}"
 
     # Numbers
     N1:
