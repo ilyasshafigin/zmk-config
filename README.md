@@ -4,8 +4,9 @@
 
 ## Особенности
 
-- Работает с универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
+- Работает с форком универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
 - За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
+- Адаптирована для macOS
 
 ## Keymap
 
@@ -32,6 +33,7 @@
 ### Через командную строку
 
 В корне проекта вызвать такие команды:
+
 - `make flash_nice_corne_central_dongle` - прошивка донгла на nice!
 - `make flash_nice_corne_central_left` - прошивка левой половины для работы с донглом
 - `make flash_nice_corne_left` - прошивка левой половины для работы с донглом
@@ -60,7 +62,8 @@ make build_corne
 
 [Здесь](https://4te.me/post/flags-tray-macos/) описано как убрать стандартную английскую раскладку.
 
-Для поддержки переключения языка через комбо нужно установить программу Karabiner-Elements. В настройках, в Complex Modifications добавить свое правило и вставить этот код:
+Для поддержки переключения языка через комбо (Cmd+F11/F12) нужно установить программу Karabiner-Elements.
+В настройках, в Complex Modifications добавить свое правило и вставить этот код:
 
 ```json
 {
