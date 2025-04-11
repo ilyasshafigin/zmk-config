@@ -10,7 +10,7 @@
 
 ## Keymap
 
-![Keymap Representation](./keymap-drawer/corne.svg?raw=true "Keymap Representation")
+![Keymap Representation](./draw/corne.svg?raw=true "Keymap Representation")
 
 Сгенерировано с помощью [`keymap-drawer`](https://github.com/caksoylar/keymap-drawer).
 
@@ -99,9 +99,9 @@ make build_corne
 
 1. Примеры конфигураций:
    1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-   2. [one-zmk-config](https://github.com/ergonautkb/one-zmk-config) от @ergonautkb
-   3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
-   4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
+   2. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
+   3. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
+   4. [zmk-config](https://github.com/urob/zmk-config) от @urob
 2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) - сайт, на котором можно редактировать лайауты в gui
 3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - отрисовка keymap
 4. [universal-layout](https://github.com/braindefender/universal-layout) - универсальная раскладка от @braindefender

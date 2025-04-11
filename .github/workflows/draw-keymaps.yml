@@ -20,6 +20,6 @@ jobs:
       install_branch: main
       keymap_patterns: "config/*.keymap"
       config_path: "config/keymap-drawer.yaml"
-      output_folder: "keymap-drawer"
+      output_folder: "draw"
       commit_message: "Update keymap"
       fail_on_error: true

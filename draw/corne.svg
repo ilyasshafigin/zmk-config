@@ -521,7 +521,7 @@ path.combo {
 </g>
 <g transform="translate(40, 150)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="translate(120, 150)" class="key keypos-13">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -627,13 +627,14 @@ path.combo {
 </g>
 <g transform="translate(408, 304) rotate(15.0)" class="key keypos-37">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<a href="#nav">
-<text x="0" y="0" class="key tap layer-activator">nav</text>
-</a></g>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+</g>
 <g transform="translate(502, 320) rotate(30.0)" class="key keypos-38">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-space"/>
-</g>
+<a href="#nav">
+<text x="0" y="54" class="key hold layer-activator">nav</text>
+</a></g>
 <g transform="translate(698, 320) rotate(-30.0)" class="key enter keypos-39">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key enter"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-11" y="-11" height="22" width="22.0" class="key enter tap glyph mdi:keyboard-return"/>
@@ -784,7 +785,7 @@ path.combo {
 </g>
 <g transform="translate(40, 150)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="translate(120, 150)" class="key keypos-13">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -891,13 +892,13 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
-<g transform="translate(408, 304) rotate(15.0)" class="key trans keypos-37">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+<g transform="translate(408, 304) rotate(15.0)" class="key keypos-37">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(502, 320) rotate(30.0)" class="key keypos-38">
-<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-space"/>
+<g transform="translate(502, 320) rotate(30.0)" class="key trans keypos-38">
+<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(698, 320) rotate(-30.0)" class="key enter keypos-39">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key enter"/>
@@ -997,29 +998,24 @@ path.combo {
 </g>
 <g transform="translate(200, 50)" class="key keypos-2">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">up</tspan>
-</text>
+<text x="0" y="0" class="key tap">7</text>
 </g>
 <g transform="translate(280, 40)" class="key keypos-3">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">tab</tspan><tspan x="0" dy="1.0em">prev</tspan>
-</text>
+<text x="0" y="0" class="key tap">8</text>
 </g>
 <g transform="translate(360, 50)" class="key keypos-4">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">tab</tspan><tspan x="0" dy="1.0em">next</tspan>
-</text>
+<text x="0" y="0" class="key tap">9</text>
 </g>
 <g transform="translate(440, 60)" class="key keypos-5">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-esc"/>
+<text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-34" class="key shifted">;</text>
 </g>
-<g transform="translate(760, 60)" class="key backspace keypos-6">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key backspace"/>
-<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-11" y="-11" height="22" width="22.0" class="key backspace tap glyph mdi:backspace"/>
+<g transform="translate(760, 60)" class="key none keypos-6">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(840, 50)" class="key keypos-7">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1045,7 +1041,7 @@ path.combo {
 </g>
 <g transform="translate(40, 150)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="translate(120, 150)" class="key keypos-13">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1053,29 +1049,24 @@ path.combo {
 </g>
 <g transform="translate(200, 130)" class="key keypos-14">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">down</tspan>
-</text>
+<text x="0" y="0" class="key tap">4</text>
 </g>
 <g transform="translate(280, 120)" class="key keypos-15">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">prev</tspan>
-</text>
+<text x="0" y="0" class="key tap">5</text>
 </g>
 <g transform="translate(360, 130)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">next</tspan>
-</text>
+<text x="0" y="0" class="key tap">6</text>
 </g>
 <g transform="translate(440, 140)" class="key keypos-17">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
+<text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-34" class="key shifted">:</text>
 </g>
-<g transform="translate(760, 140)" class="key keypos-18">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:backspace-reverse-outline"/>
+<g transform="translate(760, 140)" class="key none keypos-18">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(840, 130)" class="key keypos-19">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1105,25 +1096,21 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(200, 210)" class="key none keypos-26">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(200, 210)" class="key keypos-26">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">1</text>
 </g>
 <g transform="translate(280, 200)" class="key keypos-27">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 83%">window</tspan><tspan x="0" dy="1.0em" style="font-size: 83%">prev</tspan>
-</text>
+<text x="0" y="0" class="key tap">2</text>
 </g>
 <g transform="translate(360, 210)" class="key keypos-28">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 83%">window</tspan><tspan x="0" dy="1.0em" style="font-size: 83%">next</tspan>
-</text>
+<text x="0" y="0" class="key tap">3</text>
 </g>
 <g transform="translate(440, 220)" class="key keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">lang</text>
+<text x="0" y="0" class="key tap">0</text>
 </g>
 <g transform="translate(760, 220)" class="key keypos-30">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1157,12 +1144,12 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
-<g transform="translate(408, 304) rotate(15.0)" class="key held keypos-37">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held"/>
+<g transform="translate(408, 304) rotate(15.0)" class="key keypos-37">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(502, 320) rotate(30.0)" class="key keypos-38">
-<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-space"/>
+<g transform="translate(502, 320) rotate(30.0)" class="key held keypos-38">
+<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key held"/>
 </g>
 <g transform="translate(698, 320) rotate(-30.0)" class="key enter keypos-39">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key enter"/>
@@ -1178,8 +1165,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1290, 448)" class="layer-num">
-<text x="0" y="28" class="label" id="num">num</text>
+<g transform="translate(1290, 448)" class="layer-ext">
+<text x="0" y="28" class="label" id="ext">ext</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1189,38 +1176,43 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(200, 50)" class="key none keypos-2">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(200, 50)" class="key keypos-2">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">up</tspan>
+</text>
 </g>
-<g transform="translate(280, 40)" class="key none keypos-3">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(280, 40)" class="key keypos-3">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">tab</tspan><tspan x="0" dy="1.0em">prev</tspan>
+</text>
 </g>
-<g transform="translate(360, 50)" class="key none keypos-4">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(360, 50)" class="key keypos-4">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">tab</tspan><tspan x="0" dy="1.0em">next</tspan>
+</text>
 </g>
 <g transform="translate(440, 60)" class="key none keypos-5">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(760, 60)" class="key keypos-6">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">,</text>
-<text x="0" y="-34" class="key shifted">;</text>
+<g transform="translate(760, 60)" class="key none keypos-6">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(840, 50)" class="key keypos-7">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">7</text>
+<g transform="translate(840, 50)" class="key none keypos-7">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(920, 40)" class="key keypos-8">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">8</text>
+<g transform="translate(920, 40)" class="key none keypos-8">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(1000, 50)" class="key keypos-9">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">9</text>
+<g transform="translate(1000, 50)" class="key none keypos-9">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(1080, 70)" class="key none keypos-10">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1232,44 +1224,49 @@ path.combo {
 </g>
 <g transform="translate(40, 150)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="translate(120, 150)" class="key none keypos-13">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(200, 130)" class="key none keypos-14">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(200, 130)" class="key keypos-14">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">down</tspan>
+</text>
 </g>
-<g transform="translate(280, 120)" class="key none keypos-15">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(280, 120)" class="key keypos-15">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">prev</tspan>
+</text>
 </g>
-<g transform="translate(360, 130)" class="key none keypos-16">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(360, 130)" class="key keypos-16">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em">space</tspan><tspan x="0" dy="1.0em">next</tspan>
+</text>
 </g>
 <g transform="translate(440, 140)" class="key none keypos-17">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(760, 140)" class="key keypos-18">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">.</text>
-<text x="0" y="-34" class="key shifted">:</text>
+<g transform="translate(760, 140)" class="key none keypos-18">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(840, 130)" class="key keypos-19">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">4</text>
+<g transform="translate(840, 130)" class="key none keypos-19">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(920, 120)" class="key keypos-20">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">5</text>
+<g transform="translate(920, 120)" class="key none keypos-20">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(1000, 130)" class="key keypos-21">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">6</text>
+<g transform="translate(1000, 130)" class="key none keypos-21">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(1080, 150)" class="key none keypos-22">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1291,33 +1288,37 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(280, 200)" class="key none keypos-27">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(280, 200)" class="key keypos-27">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em" style="font-size: 83%">window</tspan><tspan x="0" dy="1.0em" style="font-size: 83%">prev</tspan>
+</text>
 </g>
-<g transform="translate(360, 210)" class="key none keypos-28">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(360, 210)" class="key keypos-28">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.5em" style="font-size: 83%">window</tspan><tspan x="0" dy="1.0em" style="font-size: 83%">next</tspan>
+</text>
 </g>
 <g transform="translate(440, 220)" class="key none keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(760, 220)" class="key keypos-30">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">0</text>
+<g transform="translate(760, 220)" class="key none keypos-30">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(840, 210)" class="key keypos-31">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">1</text>
+<g transform="translate(840, 210)" class="key none keypos-31">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(920, 200)" class="key keypos-32">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">2</text>
+<g transform="translate(920, 200)" class="key none keypos-32">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(1000, 210)" class="key keypos-33">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">3</text>
+<g transform="translate(1000, 210)" class="key none keypos-33">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(1080, 230)" class="key none keypos-34">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1332,12 +1333,12 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
-<g transform="translate(408, 304) rotate(15.0)" class="key held keypos-37">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held"/>
+<g transform="translate(408, 304) rotate(15.0)" class="key keypos-37">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(502, 320) rotate(30.0)" class="key keypos-38">
-<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-space"/>
+<g transform="translate(502, 320) rotate(30.0)" class="key held keypos-38">
+<rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key held"/>
 </g>
 <g transform="translate(698, 320) rotate(-30.0)" class="key enter keypos-39">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key enter"/>
@@ -1379,9 +1380,9 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">R</text>
 </g>
-<g transform="translate(760, 60)" class="key backspace keypos-6">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key backspace"/>
-<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-11" y="-11" height="22" width="22.0" class="key backspace tap glyph mdi:backspace"/>
+<g transform="translate(760, 60)" class="key none keypos-6">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(840, 50)" class="key none keypos-7">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1399,9 +1400,9 @@ path.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:volume-high"/>
 </g>
-<g transform="translate(1160, 70)" class="key none keypos-11">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(1160, 70)" class="key backspace keypos-11">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key backspace"/>
+<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-11" y="-11" height="22" width="22.0" class="key backspace tap glyph mdi:backspace"/>
 </g>
 <g transform="translate(40, 150)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
