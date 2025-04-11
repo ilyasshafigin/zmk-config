@@ -13,18 +13,18 @@ include:
 - board: seeeduino_xiao_ble
   shield: corne_central_dongle
   artifact-name: xiao_corne_central_dongle
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Xiao_Corne_Dongle" -DCONFIG_ZMK_SLEEP=n
+  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="XiaoCorneDongle" -DCONFIG_ZMK_SLEEP=n
   ## nice_nano_v2
   # dongle
 - board: nice_nano_v2
   shield: corne_central_dongle
   artifact-name: nice_corne_central_dongle
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Nice_Corne_Dongle" -DCONFIG_ZMK_SLEEP=n
+  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorneDongle" -DCONFIG_ZMK_SLEEP=n
   # central_left
 - board: nice_nano_v2
   shield: corne_central_left
   artifact-name: nice_corne_central_left
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Nice_Corne"
+  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorne"
   # peripheral_left
 - board: nice_nano_v2
   shield: corne_peripheral_left

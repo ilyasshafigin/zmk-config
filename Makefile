@@ -40,6 +40,11 @@ west_built_nice= \
 west_built_xiao= \
 		west build /zmk/app --pristine --board "${board_xiao}"
 
+### args
+args_nice_corne_central=#'-DCONFIG_ZMK_KEYBOARD_NAME="NiceCorne"'
+args_nice_corne_dongle=#'-DCONFIG_ZMK_KEYBOARD_NAME="NiceCorneDongle"' -DCONFIG_ZMK_SLEEP=n
+args_xiao_corne_dongle=#'-DCONFIG_ZMK_KEYBOARD_NAME="XiaoCorneDongle"' -DCONFIG_ZMK_SLEEP=n
+
 ### shields
 arg_shield_settings_reset=-DSHIELD="settings_reset"
 arg_shield_corne_central_dongle=-DSHIELD="corne_central_dongle"
@@ -74,13 +79,13 @@ build_nice_settings_reset:
 build_nice_corne_central_dongle:
 	docker run --rm ${docker_opts} \
 		${west_built_nice} -- ${arg_shield_corne_central_dongle} ${arg_zmk_config} ${arg_cmake_export_commands} \
-		${arg_zmk_extra_modules}
+		${args_nice_corne_dongle} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_central_dongle}
 	${uf2_chmod_nice_corne_central_dongle}
 build_nice_corne_central_left:
 	docker run --rm ${docker_opts} \
 		${west_built_nice} -- ${arg_shield_corne_central_left} ${arg_zmk_config} ${arg_cmake_export_commands} \
-		${arg_zmk_extra_modules}
+		${args_nice_corne_central} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_nice_corne_central_left}
 	${uf2_chmod_nice_corne_central_left}
 build_nice_corne_peripheral_left:
@@ -103,7 +108,7 @@ build_xiao_settings_reset:
 build_xiao_corne_central_dongle:
 	docker run --rm ${docker_opts} \
 		${west_built_xiao} -- ${arg_shield_corne_central_dongle} ${arg_zmk_config} ${arg_cmake_export_commands} \
-		${arg_zmk_extra_modules}
+		${args_xiao_corne_dongle} ${arg_zmk_extra_modules}
 	docker cp ${container}:${uf2_copy_xiao_corne_central_dongle}
 	${uf2_chmod_xiao_corne_central_dongle}
 

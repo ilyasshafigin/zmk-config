@@ -65,7 +65,6 @@ parse_config:
       hold: $$mdi:progress-download$$
 
     # Macros/Behaviors
-    "&macro_caps": lang
     "&swtn": tab next
     "&swwn": window next
 
@@ -387,12 +386,9 @@ parse_config:
     DEL: $$mdi:backspace-reverse-outline$$
 
     # Locks
-    # CAPSLOCK: $$mdi:apple-keyboard-caps$$
-    # CAPS: $$mdi:apple-keyboard-caps$$
-    # CLCK: $$mdi:apple-keyboard-caps$$
-    CAPSLOCK: lang
-    CAPS: lang
-    CLCK: lang
+    CAPSLOCK: $$mdi:apple-keyboard-caps$$
+    CAPS: $$mdi:apple-keyboard-caps$$
+    CLCK: $$mdi:apple-keyboard-caps$$
     SCROLLLOCK: scroll lock
     SLCK: scroll lock
     LOCKING_NUM: num lock

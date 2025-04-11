@@ -4,3 +4,5 @@
 *.dtsi text linguist-language=C++
 *.keymap linguist-detectable
 *.keymap text linguist-language=C++
+*.overlay linguist-detectable
+*.overlay text linguist-language=C++
