@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   def:
-  - {t: '$$mdi:keyboard-esc$$', h: mse}
+  - {t: '$$mdi:keyboard-esc$$', h: mouse}
   - Q
   - W
   - E
@@ -23,7 +23,7 @@ layers:
   - J
   - K
   - L
-  - {t: '~', s: ≈}
+  - '~'
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - Z
@@ -34,9 +34,9 @@ layers:
   - N
   - M
   - '&'
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
-  - {t: /, h: fn, s: '|'}
+  - '['
+  - ']'
+  - {t: /, h: fn}
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
@@ -45,41 +45,41 @@ layers:
   - $$mdi:apple-keyboard-option$$
   sym:
   - $$mdi:keyboard-esc$$
-  - {t: '@', s: '2'}
-  - {t: '#', s: '3'}
-  - {t: $, s: '4'}
-  - {t: (, s: '9'}
-  - {t: ), s: '0'}
-  - {t: '!', s: '1'}
-  - {t: '?', s: '7'}
-  - {t: '*', s: '8'}
-  - {t: '%', s: '5'}
-  - {t: ^, s: '6'}
+  - '@'
+  - '#'
+  - $
+  - (
+  - )
+  - '!'
+  - '?'
+  - '*'
+  - '%'
+  - ^
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - '`'
-  - {t: '''', s: '"'}
+  - ''''
   - '"'
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - '['
+  - ']'
   - ':'
-  - {t: ., s: ':'}
+  - .
   - +
-  - {t: '=', s: +}
+  - '='
   - ->
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
   - '|'
   - \
-  - {t: /, s: '|'}
+  - /
   - '{'
   - '}'
   - ;
-  - {t: ',', s: ;}
-  - {t: '-', s: _}
+  - ','
+  - '-'
   - _
-  - {t: '~', s: ≈}
-  - adj
+  - '~'
+  - adjust
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -92,7 +92,7 @@ layers:
   - '7'
   - '8'
   - '9'
-  - {t: ',', s: ;}
+  - ','
   - $$mdi:volume-high$$
   - home
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -104,7 +104,7 @@ layers:
   - '4'
   - '5'
   - '6'
-  - {t: ., s: ':'}
+  - .
   - $$mdi:volume-low$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
@@ -122,7 +122,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - page down
   - $$mdi:apple-keyboard-caps$$
-  - {t: gam, h: '$$mdi:toggle-switch$$'}
+  - {t: game, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {type: held}
@@ -172,7 +172,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
   - $$mdi:apple-keyboard-option$$
-  gam:
+  game:
   - $$mdi:keyboard-esc$$
   - T
   - Q
@@ -197,7 +197,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - gfn
+  - gamefn
   - B
   - Z
   - X
@@ -215,7 +215,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
-  gfn:
+  gamefn:
   - {t: '$$mdi:transfer$$', type: trans}
   - '5'
   - '1'
@@ -301,7 +301,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  mse:
+  mouse:
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -344,7 +344,7 @@ layers:
   - Left Click
   - Right Click
   - {t: '$$mdi:transfer$$', type: trans}
-  adj:
+  adjust:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -389,16 +389,16 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [5, 4]
-  k: {t: (, s: '9'}
+  k: (
   l: [def, sym]
 - p: [6, 7]
-  k: {t: ), s: '0'}
+  k: )
   l: [def, sym]
 - p: [17, 16]
-  k: {t: '[', s: '{'}
+  k: '['
   l: [def, sym]
 - p: [18, 19]
-  k: {t: ']', s: '}'}
+  k: ']'
   l: [def, sym]
 - p: [29, 28]
   k: '{'
@@ -407,7 +407,7 @@ combos:
   k: '}'
   l: [def, sym]
 - p: [28, 27]
-  k: {t: '''', s: '"'}
+  k: ''''
   l: [def, sym]
 - p: [31, 32]
   k: '"'
@@ -416,19 +416,19 @@ combos:
   k: '`'
   l: [def, sym]
 - p: [7, 8]
-  k: {t: '~', s: ≈}
+  k: '~'
   l: [def, sym]
 - p: [15, 14]
   k: \
   l: [def, sym]
 - p: [20, 21]
-  k: {t: /, s: '|'}
+  k: /
   l: [def, sym]
 - p: [21, 22]
   k: ->
   l: [def, sym]
 - p: [9, 10]
-  k: {t: =>, s: ->}
+  k: =>
   l: [def, sym]
 - p: [16, 15]
   k: ru

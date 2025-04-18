@@ -171,6 +171,6 @@ draw_corne:
 	keymap -c "$$draw_config" parse -z "$$keymap_input_file" > "$$keymap_yaml"; \
 	keymap -c "$$draw_config" draw "$$keymap_yaml" > "$$keymap_svg"; \
 	echo "$$keymap_svg"; \
-	inkscape --export-type=png --export-dpi=300 --export-background=white --export-filename="$$keymap_png" "$$keymap_svg"
+	inkscape --export-type=png --export-background=white --export-filename="$$keymap_png" "$$keymap_svg"
 
 # vim: set ft=make fdm=marker:

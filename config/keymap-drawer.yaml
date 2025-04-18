@@ -108,41 +108,30 @@ parse_config:
     LPAR: "9"
     RIGHT_PARENTHESIS: "0"
     RPAR: "0"
-    EQUAL:
-      tap: "="
-      shifted: "+"
+    EQUAL: "="
+    LS(EQUAL): "+"
     PLUS: "+"
-    MINUS:
-      tap: "-"
-      shifted: "_"
+    MINUS: "-"
+    LS(MINUS): "_"
     UNDERSCORE: "_"
     UNDER: "_"
-    SLASH:
-      tap: "]"
-      shifted: "}"
+    SLASH: "]"
     LS(SLASH): "}"
-    LA(SLASH):
-      tap: "]"
-      shifted: "}"
+    LA(SLASH): "]"
+    LS(LA(SLASH)): "}"
     LA(LS(SLASH)): "}"
-    FSLH:
-      tap: "]"
-      shifted: "}"
+    FSLH: "]"
     LS(FSLH): "}"
-    LA(FSLH):
-      tap: "]"
-      shifted: "}"
+    LA(FSLH): "]"
+    LS(LA(FSLH)): "}"
     LA(LS(FSLH)): "}"
     QUESTION: "}"
     QMARK: "}"
-    BACKSLASH:
-      tap: "/"
-      shifted: "|"
+    BACKSLASH: "/"
     LA(BACKSLASH): "\\"
+    LS(BACKSLASH): "|"
     LS(LA(BACKSLASH)): "¦"
-    BSLH:
-      tap: "/"
-      shifted: "|"
+    BSLH: "/"
     LA(BSLH): "\\"
     LS(LA(BSLH)): "¦"
     LS(BSLH): "|"
@@ -150,12 +139,10 @@ parse_config:
     #NON_US_BACKSLASH: "\\"
     #PIPE2: "|"
     #NON_US_BSLH: "|"
-    SEMICOLON:
-      tap: "~"
-      shifted: "≈"
-    SEMI:
-      tap: "~"
-      shifted: "≈"
+    SEMICOLON: "~"
+    LS(SEMICOLON): "≈"
+    SEMI: "~"
+    LS(SEMI): "≈"
     COLON: "≈"
     SINGLE_QUOTE: " "
     SQT: " "
@@ -163,42 +150,29 @@ parse_config:
     APOS: " "
     DOUBLE_QUOTES: " "
     DQT: " "
-    DOT:
-      tap: "["
-      shifted: "{"
+    DOT: "["
     LS(DOT): "{"
-    LA(DOT):
-      tap: "["
-      shifted: "{"
+    LA(DOT): "["
+    LS(LA(DOT)): "{"
     LA(LS(DOT)): "{"
     COMMA: "&"
     LESS_THAN: "&"
     LT: "&"
     GREATER_THAN: "{"
     GT: "{"
-    LEFT_BRACKET:
-      tap: ","
-      shifted: ";"
+    LEFT_BRACKET: ","
     LS(LEFT_BRACKET): ";"
-    LBKT:
-      tap: ","
-      shifted: ";"
+    LBKT: ","
     LS(LBKT): ";"
     LEFT_BRACE: ";"
     LBRC: ";"
-    RIGHT_BRACKET:
-      tap: "."
-      shifted: ":"
+    RIGHT_BRACKET: "."
     LS(RIGHT_BRACKET): ":"
-    RBKT:
-      tap: "."
-      shifted: ":"
+    RBKT: "."
     LS(RBKT): ":"
     RIGHT_BRACE: ":"
     RBRC: ":"
-    GRAVE:
-      tap: "'"
-      shifted: "\""
+    GRAVE: "'"
     LA(GRAVE): "`"
     LS(GRAVE): "\""
     TILDE: "\""
@@ -258,10 +232,8 @@ parse_config:
     LA(J):
       tap: "ø"
       shifted: "Ø"
-    LA(K):
-      tap: "=>"
-      shifted: "->"
-    LA(LS(K)): "->"
+    LA(K): "=>"
+    LS(LA(K)): "->"
     LA(L):
       tap: "«"
       shifted: "←"
@@ -294,44 +266,18 @@ parse_config:
     LA(COMMA):
       tap: "&"
       shifted: "…"
-    # LA(DOT):
-    #   tap: "["
-    #   shifted: "{"
-    # LA(FSLH):
-    #   tap: "]"
-    #   shifted: "}"
 
     # Numbers
-    N1:
-      shifted: "1"
-      tap: "!"
-    N2:
-      shifted: "2"
-      tap: "@"
-    N3:
-      shifted: "3"
-      tap: "#"
-    N4:
-      shifted: "4"
-      tap: "$"
-    N5:
-      shifted: "5"
-      tap: "%"
-    N6:
-      shifted: "6"
-      tap: "^"
-    N7:
-      shifted: "7"
-      tap: "?"
-    N8:
-      shifted: "8"
-      tap: "*"
-    N9:
-      shifted: "9"
-      tap: "("
-    N0:
-      shifted: "0"
-      tap: ")"
+    N1: "!"
+    N2: "@"
+    N3: "#"
+    N4: "$"
+    N5: "%"
+    N6: "^"
+    N7: "?"
+    N8: "*"
+    N9: "("
+    N0: ")"
     LS(N1): "1"
     LS(N2): "2"
     LS(N3): "3"
