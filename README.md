@@ -1,6 +1,6 @@
 # Corne ZMK Config
 
-Конфигурация и прошивка для клавиатур Corne, Nijuni, Dao и других Corne-подобных клавиатур.
+Конфигурация и прошивка для клавиатур Corne (Nijuni, Dao и других Corne-подобных клавиатур)
 
 ## Особенности
 
@@ -8,13 +8,13 @@
 - За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
 - Адаптирована для macOS
 
-## Keymap
+## Corne
+
+### Keymap
 
 ![Keymap Representation](./draw/corne.svg?raw=true "Keymap Representation")
 
-Сгенерировано с помощью [`keymap-drawer`](https://github.com/caksoylar/keymap-drawer).
-
-## Прошивка
+## Прошивки
 
 Актуальные прошивки лежат в папке firmware.
 
@@ -23,6 +23,15 @@
 - `nice_corne_central_left.uf2` - левая половина для работы без донгла
 - `nice_corne_peripheral_left.uf2` - левая половина для работы с донглом
 - `nice_corne_peripheral_right.uf2` - правая половина
+
+Команды для прошивки:
+
+- `make flash_nice_corne_central_dongle` - прошивка донгла на nice!
+- `make flash_nice_corne_central_left` - прошивка левой половины для работы с донглом
+- `make flash_nice_corne_peripheral_left` - прошивка левой половины для работы с донглом
+- `make flash_nice_corne_peripheral_right` - прошивка правой половины
+
+## Прошивка
 
 ### Вручную
 
@@ -34,10 +43,10 @@
 
 В корне проекта вызвать такие команды:
 
-- `make flash_nice_corne_central_dongle` - прошивка донгла на nice!
-- `make flash_nice_corne_central_left` - прошивка левой половины для работы с донглом
-- `make flash_nice_corne_left` - прошивка левой половины для работы с донглом
-- `make flash_nice_corne_right` - прошивка правой половины
+- `make flash_<board>_<keyboard>_central_dongle` - прошивка донгла
+- `make flash_<board>_<keyboard>_central_left` - прошивка левой половины для работы с донглом
+- `make flash_<board>_<keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
+- `make flash_<board>_<keyboard>_peripheral_right` - прошивка правой половины
 
 Затем подключить донгл/клавиатуры и зажать два раза кнопку Reset (или замкнуть контакты RST и GND).
 

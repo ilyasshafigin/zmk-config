@@ -136,12 +136,12 @@ flash_nice_corne_central_left:
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
 	cp -av firmware/nice_corne_central_left.uf2 ${mount_nice}
 
-flash_nice_corne_left:
+flash_nice_corne_peripheral_left:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
 	cp -av firmware/nice_corne_peripheral_left.uf2 ${mount_nice}
 
-flash_nice_corne_right:
+flash_nice_corne_peripheral_right:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
 	cp -av firmware/nice_corne_peripheral_right.uf2 ${mount_nice}
@@ -169,7 +169,8 @@ draw_corne:
 	keymap_yaml="${dir_keymap_drawer}/$$keymap.yaml"; \
 	draw_config="${dir_config}/keymap-drawer.yaml"; \
 	keymap -c "$$draw_config" parse -z "$$keymap_input_file" > "$$keymap_yaml"; \
-	keymap -c "$$draw_config" draw "$$keymap_yaml" > "$$keymap_svg"
-#	inkscape --export-type png --export-filename $$keymap_png --export-dpi 300 --export-background=white $$keymap_svg
+	keymap -c "$$draw_config" draw "$$keymap_yaml" > "$$keymap_svg"; \
+	echo "$$keymap_svg"; \
+	inkscape --export-type=png --export-dpi=300 --export-background=white --export-filename="$$keymap_png" "$$keymap_svg"
 
 # vim: set ft=make fdm=marker:
