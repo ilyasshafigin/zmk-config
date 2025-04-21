@@ -94,9 +94,9 @@ layers:
   - '9'
   - ','
   - $$mdi:volume-high$$
-  - home
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - page down
   - $$mdi:brightness-5$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
@@ -118,9 +118,9 @@ layers:
   - '3'
   - '0'
   - $$mdi:volume-off$$
-  - end
+  - home
   - $$mdi:arrow-down-bold$$
-  - page down
+  - end
   - $$mdi:apple-keyboard-caps$$
   - {t: game, h: '$$mdi:toggle-switch$$'}
   - $$mdi:apple-keyboard-command$$
@@ -132,7 +132,7 @@ layers:
   ext:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - space up
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - tab prev
   - tab next
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -147,7 +147,7 @@ layers:
   - space down
   - space prev
   - space next
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - space up
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -286,9 +286,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - F12
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F13
+  - F14
+  - F15
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
@@ -308,10 +308,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Forward Click
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Scroll ↑
   - Middle Click
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Scroll ↓
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -333,13 +333,13 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Back Click
-  - Scroll ↓
+  - Forward Click
   - Mouse ↓
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Left Click
   - Right Click

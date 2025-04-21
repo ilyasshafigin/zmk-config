@@ -35,6 +35,7 @@
 #define WIN_N     LG(TAB)       // Cmd+Tab      - Win next
 #define WIN_P     LG(LS(TAB))   // Cmd+Shft+Tab - Win prev
 
+#define _ &kp
 #define XXX &none
 #define ___ &trans
 

@@ -129,21 +129,25 @@ shell:
 flash_nice_corne_central_dongle:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	${uf2_chmod_nice_corne_central_dongle}
 	cp -av firmware/nice_corne_central_dongle.uf2 ${mount_nice}
 
 flash_nice_corne_central_left:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	${uf2_chmod_nice_corne_central_left}
 	cp -av firmware/nice_corne_central_left.uf2 ${mount_nice}
 
 flash_nice_corne_peripheral_left:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	${uf2_chmod_nice_corne_peripheral_left}
 	cp -av firmware/nice_corne_peripheral_left.uf2 ${mount_nice}
 
 flash_nice_corne_peripheral_right:
 	@ printf "Waiting for ${board_nice} bootloader to appear at ${mount_nice}.."
 	@ while [ ! -d ${mount_nice} ]; do sleep 1; printf "."; done; printf "\n"
+	${uf2_chmod_nice_corne_peripheral_right}
 	cp -av firmware/nice_corne_peripheral_right.uf2 ${mount_nice}
 
 # Clean
