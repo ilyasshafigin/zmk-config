@@ -21,6 +21,8 @@
 #define UL_PIPE     LS(BSLH)        // -> '|'
 #define UL_DPIPE    LS(LA(BSLH))    // -> '¦'
 
+#define UL_NBSP     LA(SPACE)       // No-break-space
+
 #define UL_N1       LS(N1)  // -> 1
 #define UL_N2       LS(N2)  // -> 2
 #define UL_N3       LS(N3)  // -> 3

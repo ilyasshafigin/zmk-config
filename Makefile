@@ -112,11 +112,19 @@ build_xiao_corne_central_dongle:
 	docker cp ${container}:${uf2_copy_xiao_corne_central_dongle}
 	${uf2_chmod_xiao_corne_central_dongle}
 
-build_settings_reset: build_nice_settings_reset build_xiao_settings_reset
-build_corne_central_dongle: build_nice_corne_central_dongle build_xiao_corne_central_dongle
-build_corne_left: build_nice_corne_central_left build_nice_corne_peripheral_left
-build_corne_right: build_nice_corne_peripheral_right
-build_corne: build_settings_reset \
+build_settings_reset: \
+	build_nice_settings_reset \
+	build_xiao_settings_reset
+build_corne_central_dongle: \
+	build_nice_corne_central_dongle \
+	build_xiao_corne_central_dongle
+build_corne_left: \
+	build_nice_corne_central_left \
+	build_nice_corne_peripheral_left
+build_corne_right: \
+	build_nice_corne_peripheral_right
+build_corne: \
+	build_settings_reset \
 	build_corne_central_dongle \
 	build_corne_left \
 	build_corne_right

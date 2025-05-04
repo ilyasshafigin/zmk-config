@@ -39,5 +39,10 @@
 #define XXX &none
 #define ___ &trans
 
+#define MEH(key) LS(LC(LA(key)))
+
 #include "zmk-helpers/helper.h"
 #include "universal_layout.h"
+
+#define ZMK_BEHAVIOR_CORE_smart_toggle    compatible = "zmk,behavior-smart-toggle";    #binding-cells = <0>
+#define ZMK_SMART_TOGGLE(name, ...) ZMK_BEHAVIOR(name, smart_toggle, __VA_ARGS__)

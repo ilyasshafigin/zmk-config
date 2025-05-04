@@ -24,12 +24,12 @@
 - `nice_corne_peripheral_left.uf2` - левая половина для работы с донглом
 - `nice_corne_peripheral_right.uf2` - правая половина
 
-Команды для прошивки:
+Команды для прошивки corne:
 
-- `make flash_nice_corne_central_dongle` - прошивка донгла на nice!
-- `make flash_nice_corne_central_left` - прошивка левой половины для работы с донглом
-- `make flash_nice_corne_peripheral_left` - прошивка левой половины для работы с донглом
-- `make flash_nice_corne_peripheral_right` - прошивка правой половины
+- `just flash nice_nano_v2 corne_central_dongle` - прошивка донгла на nice!
+- `just flash nice_nano_v2 corne_central_left` - прошивка левой половины для работы с донглом
+- `just flash nice_nano_v2 corne_peripheral_left` - прошивка левой половины для работы с донглом
+- `just flash nice_nano_v2 corne_peripheral_right` - прошивка правой половины
 
 ## Прошивка
 
@@ -43,10 +43,10 @@
 
 В корне проекта вызвать такие команды:
 
-- `make flash_<board>_<keyboard>_central_dongle` - прошивка донгла
-- `make flash_<board>_<keyboard>_central_left` - прошивка левой половины для работы с донглом
-- `make flash_<board>_<keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
-- `make flash_<board>_<keyboard>_peripheral_right` - прошивка правой половины
+- `just flash <board> <keyboard>_central_dongle` - прошивка донгла
+- `just flash <board> <keyboard>_central_left` - прошивка левой половины для работы с донглом
+- `just flash <board> <keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
+- `just flash <board> <keyboard>_peripheral_right` - прошивка правой половины
 
 Затем подключить донгл/клавиатуры и зажать два раза кнопку Reset (или замкнуть контакты RST и GND).
 
@@ -57,8 +57,8 @@
 Вызвать в командрой строке:
 
 ```shell
-make codebase
-make build_corne
+just init
+just build corne
 ```
 
 ## Дополнительные настройки ОС

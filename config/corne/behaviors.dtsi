@@ -4,7 +4,7 @@
     tapping-term-ms = <TAPPING_TERM_MS>;
     quick-tap-ms = <QUICK_TAP_MS>;
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
-};
+}; 
 
 &lt {
     flavor = "balanced";
@@ -18,29 +18,12 @@
     quick-release;
 };
 
-/ {
-    behaviors {
-        // mt_caps: mt_caps {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     #binding-cells = <2>;
-        //     flavor = "hold-preferred";
-        //     tapping-term-ms = <TAPPING_TERM_MS>;
-        //     bindings = <&kp>, <&macro_caps>;
-        //     display-name = "Mod-Tap-Caps";
-        // };
+ZMK_SMART_TOGGLE(swtn,
+    bindings = <&kp LCTRL>, <&kp TAB>;
+    ignored-key-positions = <LT1 LT2>;
+)
 
-        swtn: sw_tab_next {
-            compatible = "zmk,behavior-smart-toggle";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp TAB>;
-            ignored-key-positions = <LT1 LT2>;
-        };
-
-        swwn: sw_win_next {
-            compatible = "zmk,behavior-smart-toggle";
-            #binding-cells = <0>;
-            bindings = <&kp LGUI>, <&kp TAB>;
-            ignored-key-positions = <LB1 LB2>;
-        };
-    };
-};
+ZMK_SMART_TOGGLE(swwn,
+    bindings = <&kp LGUI>, <&kp TAB>;
+    ignored-key-positions = <LB1 LB2>;
+)
