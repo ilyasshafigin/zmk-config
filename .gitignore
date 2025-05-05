@@ -1,19 +1,17 @@
 # zmk
-zmk/
-
-# sketchybar
-sketchybar/dotfiles/
-sketchybar/dotfiles
-sketchybar/dotfiles/*
+/zmk
+/.build
+/.direnv
+/.west
+/modules
 
 # MacOS
 .DS_Store
 vim-tools_notiz.vim
 ./*/.DS_Store
+
+# VC Code
 .vscode
-# .vimspector.json
-/test
-test/
 
 # c, cpp
 *.x
@@ -33,26 +31,6 @@ cache/
 Thumbs.db
 Desktop.ini
 
-# Tags
-#TAGS
-#!TAGS/
-#tags
-doc/tags
-tags-cn
-!tags/
-.tags
-.tags1
-tags.lock
-tags.temp
-gtags.files
-GTAGS
-GRTAGS
-GPATH
-cscope.files
-cscope.out
-cscope.in.out
-cscope.po.out
-
 # Vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -65,20 +43,3 @@ Session.vim
 test.*
 tmp.*
 temp.*
-
-# Java
-*.class
-
-# JavaScript
-node_modules
-
-# Python
-*.pyc
-.idea/
-/.idea
-# build/
-__pycache__
-
-# Rust
-target/
-**/*.rs.bk

@@ -1,35 +1,20 @@
 ---
 include:
-### SETTINGS_RESET
 - board: nice_nano_v2
   shield: settings_reset
-  artifact-name: nice_settings_reset
 - board: seeeduino_xiao_ble
   shield: settings_reset
-  artifact-name: xiao_settings_reset
-  ### CORNE
-  ## xiao
-  # xiao dongle
+
 - board: seeeduino_xiao_ble
   shield: corne_central_dongle
-  artifact-name: xiao_corne_central_dongle
   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="XiaoCorneDongle" -DCONFIG_ZMK_SLEEP=n
-  ## nice_nano_v2
-  # dongle
 - board: nice_nano_v2
   shield: corne_central_dongle
-  artifact-name: nice_corne_central_dongle
   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorneDongle" -DCONFIG_ZMK_SLEEP=n
-  # central_left
 - board: nice_nano_v2
   shield: corne_central_left
-  artifact-name: nice_corne_central_left
   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorne"
-  # peripheral_left
 - board: nice_nano_v2
   shield: corne_peripheral_left
-  artifact-name: nice_corne_peripheral_left
-  # peripheral_right
 - board: nice_nano_v2
   shield: corne_peripheral_right
-  artifact-name: nice_corne_peripheral_right

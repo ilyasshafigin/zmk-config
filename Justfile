@@ -13,11 +13,11 @@ board_nice := "nice_nano_v2"
 board_xiao := "seeeduino_xiao_ble"
 
 image_zmk := "zmkfirmware/zmk-dev-arm:stable"
-container := "zmk-codebase"
+container_codebase := "zmk-codebase"
 
-_docker_opts $task:
-    echo "\
-        --interactive \
+[private]
+get-docker-opts $task:
+    @echo "\
         --tty \
         --name zmk-{{ task }} \
         --workdir /zmk \
@@ -27,35 +27,22 @@ _docker_opts $task:
         {{ image_zmk }}"
 
 # Parse build.yaml and filter targets by expression
-_parse_targets $expr:
+[private]
+parse-targets $expr:
     #!/usr/bin/env bash
+    set -euo pipefail
     attrs="[.board, .shield, .snippet]"
     filter="(($attrs | map(. // [.])), ((.include // {})[] | $attrs)) | join(\",\")"
     echo "$(yq -r "$filter" build.yaml | grep -v "^," | grep -i "${expr/#all/.*}")"
 
-# Fix firmware file permission
-_fix_firmware_permission $artifact:
-    #!/usr/bin/env bash
-    echo "Fix permissions for $artifact"
+[private]
+get-artifact $board $shield:
+    @echo "${shield// /+}-${board}"
+
+[private]
+fix-firmware-permission $artifact:
+    @echo "Fix permissions for $artifact"
     chmod go+wrx {{ dir_firmware }}/$artifact.uf2
-
-# Build firmware for single board & shield combination
-_build_single $board $shield $snippet *west_args:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    artifact="${shield:+${shield// /+}-}${board}"
-
-    echo "Building firmware for $artifact..."
-    docker run --rm $(just _docker_opts $artifact) \
-        west build /zmk/app --pristine -b "${board}" ${snippet:+-S "$snippet"} {{ west_args }} -- \
-            ${shield:+-DSHIELD="$shield"} \
-            -DZMK_CONFIG="/zmk-config" \
-            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-
-    echo "Copy $artifact to firmware dir"
-    docker cp {{ container }}:/zmk/build/zephyr/zmk.uf2 {{ dir_firmware }}/$artifact.uf2
-
-    just _fix_firmware_permission $artifact
 
 # Init west and docker container
 init:
@@ -64,47 +51,56 @@ init:
         git clone https://github.com/zmkfirmware/zmk
     fi
 
-    opts=$(just _docker_opts codebase)
+    opts=$(just get-docker-opts codebase)
     docker run $opts sh -c '\
         west init -l /zmk/app/ --mf /zmk-config/west.yml; \
         west update'
 
 # Update west
 update:
-    #!/usr/bin/env bash
-    opts=$(just _docker_opts update)
-    docker run --rm $opts \
+    docker run --rm $(just get-docker-opts update) \
         west update --fetch-opt=--filter=blob:none
 
 # Open a shell within the ZMK environment
 shell:
-    #!/usr/bin/env bash
-    opts=$(just _docker_opts codebase)
-    docker run --rm $opts /bin/bash
+    docker run --rm $(just get-docker-opts shell) /bin/bash
 
 # Build firmware for matching targets
 build expr *west_args:
     #!/usr/bin/env bash
     set -euo pipefail
-    targets=$(just _parse_targets {{ expr }})
+    targets=$(just parse-targets {{ expr }})
 
     [[ -z $targets ]] && echo "No matching targets found. Aborting..." >&2 && exit 1
     echo "$targets" | while IFS=, read -r board shield snippet; do
-        just _build_single "$board" "$shield" "$snippet" {{ west_args }}
+        echo "Building firmware for $board $shield..."
+        artifact=$(just get-artifact "$board" "$shield")
+        opts=$(just get-docker-opts $artifact)
+        docker run --rm $opts \
+            west build /zmk/app --pristine -b "$board" ${snippet:+-S "$snippet"} {{ west_args }} -- \
+                ${shield:+-DSHIELD="$shield"} \
+                -DZMK_CONFIG="/zmk-config" \
+                -DZMK_EXTRA_MODULES="/boards" \
+                -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+        echo "Copy ${artifact}.uf2 to firmware dir"
+        docker cp {{ container_codebase }}:/zmk/build/zephyr/zmk.uf2 {{ dir_firmware }}/${artifact}.uf2
+
+        just fix-firmware-permission "$artifact"
     done
 
 # Flash
 flash $board $shield:
     #!/usr/bin/env bash
     set -euo pipefail
-    artifact="${shield:+${shield// /+}-}${board}"
-    local mount=""
+    artifact=$(just get-artifact "$board" "$shield")
+    mount=""
     case "$board" in
-        "$board_nice")
-            mount=$mount_nice
+        "{{ board_nice }}")
+            mount="{{ mount_nice }}"
         ;;
-        "$board_xiao")
-            mount=$mount_xiao
+        "{{ board_xiao }}")
+            mount="{{ mount_xiao }}"
         ;;
         *)
             echo "Unknown board ${board}"
@@ -115,38 +111,42 @@ flash $board $shield:
     printf "Waiting for ${board} bootloader to appear at ${mount}.."
     while [ ! -d ${mount} ]; do sleep 1; printf "."; done; printf "\n"
 
-    just _fix_firmware_permission $artifact
+    just fix-firmware-permission "$artifact"
 
-    echo "Copy ${artifact} to ${mount}"
-    cp -av {{ dir_firmware }}/$artifact.uf2 ${mount}
+    echo "Copy ${artifact}.uf2 to ${mount}"
+    cp -av {{ dir_firmware }}/${artifact}.uf2 ${mount}
 
 # Clean firmware dir
-clean_firmware:
+clean-firmware:
+    @echo "Remove firmwares"
     find firmware/*.uf2 -type f -delete
 
 # Clean zmk dir
-clean_zmk:
-    if [ -d zmk ]; then rm -rfv zmk; fi
+clean-zmk:
+    @echo "Remove zmk dir"
+    @if [ -d zmk ]; then rm -rfv zmk; fi
 
 # Clean docker container and volumes
-clean_docker:
+clean-docker:
+    @echo "Remove docker container"
     docker ps -aq --filter name='^zmk' | xargs -r docker container rm
+    @echo "Remove docker volumes"
     docker volume list -q --filter name='zmk' | xargs -r docker volume rm
 
 # Clean zmk and docker container/volumes
-clean: clean_zmk clean_docker
+clean: clean-zmk clean-docker
 
 # Clean all
-clean_all: && clean clean_firmware
-    @echo "Cleaning all"
+clean-all: clean clean-firmware
 
 # List build targets
 list:
-    @just _parse_targets all | sed 's/,*$//' | sort
+    @just parse-targets all | sed 's/,*$//' | sort
 
 # Draw
 draw $keyboard:
     #!/usr/bin/env bash
+    set -euo pipefail
     echo "Draw '$keyboard'"
     keymap_input_file="{{ dir_config }}/$keyboard.keymap"
     keymap_svg="{{ dir_keymap_drawer }}/$keyboard.svg"

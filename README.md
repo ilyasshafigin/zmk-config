@@ -18,14 +18,9 @@
 
 Актуальные прошивки лежат в папке firmware.
 
-- `nice_corne_central_dongle.uf2` - донгл на nice!
-- `xiao_corne_central_dongle.uf2` - донгл на xiao
-- `nice_corne_central_left.uf2` - левая половина для работы без донгла
-- `nice_corne_peripheral_left.uf2` - левая половина для работы с донглом
-- `nice_corne_peripheral_right.uf2` - правая половина
-
 Команды для прошивки corne:
 
+- `just flash seeeduino_xiao_ble corne_central_dongle` - прошивка донгла на XIAO
 - `just flash nice_nano_v2 corne_central_dongle` - прошивка донгла на nice!
 - `just flash nice_nano_v2 corne_central_left` - прошивка левой половины для работы с донглом
 - `just flash nice_nano_v2 corne_peripheral_left` - прошивка левой половины для работы с донглом
