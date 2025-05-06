@@ -14,11 +14,11 @@
 
 ![Keymap Representation](./draw/corne.svg?raw=true "Keymap Representation")
 
-## Прошивки
+### Прошивки
 
 Актуальные прошивки лежат в папке firmware.
 
-Команды для прошивки corne:
+Команды для прошивки:
 
 - `just flash seeeduino_xiao_ble corne_central_dongle` - прошивка донгла на XIAO
 - `just flash nice_nano_v2 corne_central_dongle` - прошивка донгла на nice!
@@ -56,15 +56,30 @@ just init
 just build corne
 ```
 
+## Universal layout
+
+В проекте в папке `layout` лежат файлы раскладок. Это форк [universal-layout](https://github.com/braindefender/universal-layout).
+
+Отличия:
+
+- разделение на два языка: ru и en
+- поправлен слой GUI (Cmd), чтобы как надо работали сочетания клавишь
+- добавлены иконки флажков, чтобы в системе было видно какая сейчас раскладка
+- раскладка только для macOS
+
+### Установка
+
+#### macOS
+
+1. Файл `layouts/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
+2. Перезагрузиться или перезайти в систему.
+3. Выбрать желаемую раскладку в Настройки системы > Клавиатура > Источники ввода.
+4. Удалить стандартные раскладки русского и английского языка. [Здесь](https://4te.me/post/flags-tray-macos/) описано как их.
+5. Снова перезагрузиться или перезайти в систему.
+
 ## Дополнительные настройки ОС
 
 ### macOS
-
-В папке layout лежит кастомная раскладка на основе [universal-layout](https://github.com/braindefender/universal-layout). Ее нужно установить.
-
-В ней находятся две раскладки (русская и английская). У каждой есть иконка.
-
-[Здесь](https://4te.me/post/flags-tray-macos/) описано как убрать стандартную английскую раскладку.
 
 Для поддержки переключения языка через комбо (Cmd+F11/F12) нужно установить программу Karabiner-Elements.
 В настройках, в Complex Modifications добавить свое правило и вставить этот код:
