@@ -40,9 +40,9 @@ get-artifact $board $shield:
     @echo "${shield// /+}-${board}"
 
 [private]
-fix-firmware-permission $artifact:
-    @echo "Fix permissions for $artifact"
-    chmod go+wrx {{ dir_firmware }}/$artifact.uf2
+fix-firmware-permission artifact:
+    @echo "Fix permissions for {{ artifact }}.uf2"
+    chmod go+wrx "{{ dir_firmware }}/{{ artifact }}.uf2"
 
 # Init west and docker container
 init:
@@ -84,7 +84,7 @@ build expr *west_args:
                 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
         echo "Copy ${artifact}.uf2 to firmware dir"
-        docker cp {{ container_codebase }}:/zmk/build/zephyr/zmk.uf2 {{ dir_firmware }}/${artifact}.uf2
+        docker cp "{{ container_codebase }}:/zmk/build/zephyr/zmk.uf2" "{{ dir_firmware }}/${artifact}.uf2"
 
         just fix-firmware-permission "$artifact"
     done
@@ -114,12 +114,12 @@ flash $board $shield:
     just fix-firmware-permission "$artifact"
 
     echo "Copy ${artifact}.uf2 to ${mount}"
-    cp -av {{ dir_firmware }}/${artifact}.uf2 ${mount}
+    cp -av "{{ dir_firmware }}/${artifact}.uf2" "${mount}"
 
 # Clean firmware dir
 clean-firmware:
     @echo "Remove firmwares"
-    find firmware/*.uf2 -type f -delete
+    find "{{ dir_firmware }}/*.uf2" -type f -delete
 
 # Clean zmk dir
 clean-zmk:
