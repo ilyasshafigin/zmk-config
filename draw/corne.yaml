@@ -92,7 +92,7 @@ layers:
   - '7'
   - '8'
   - '9'
-  - ','
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -112,11 +112,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-control$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '0'
   - '1'
   - '2'
   - '3'
-  - '0'
+  - ','
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - home
   - $$mdi:arrow-down-bold$$
