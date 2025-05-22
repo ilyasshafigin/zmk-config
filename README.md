@@ -20,8 +20,8 @@
 
 Команды для прошивки:
 
-- `just flash seeeduino_xiao_ble corne_central_dongle` - прошивка донгла на XIAO
-- `just flash nice_nano_v2 corne_central_dongle` - прошивка донгла на nice!
+- `just flash seeeduino_xiao_ble corne_dongle` - прошивка донгла на XIAO
+- `just flash nice_nano_v2 corne_dongle` - прошивка донгла на nice!
 - `just flash nice_nano_v2 corne_central_left` - прошивка левой половины для работы с донглом
 - `just flash nice_nano_v2 corne_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash nice_nano_v2 corne_peripheral_right` - прошивка правой половины
@@ -38,7 +38,7 @@
 
 В корне проекта вызвать такие команды:
 
-- `just flash <board> <keyboard>_central_dongle` - прошивка донгла
+- `just flash <board> <keyboard>_dongle` - прошивка донгла
 - `just flash <board> <keyboard>_central_left` - прошивка левой половины для работы с донглом
 - `just flash <board> <keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash <board> <keyboard>_peripheral_right` - прошивка правой половины

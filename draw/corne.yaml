@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-esc$$
   - $$mdi:keyboard-tab$$
   - A
   - S
@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - '~'
-  - $$mdi:backspace-reverse-outline$$
+  - ''''
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -40,8 +40,8 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
-  - {t: '$$mdi:keyboard-return$$', h: ext}
-  - sym
+  - {t: '$$mdi:keyboard-return$$', h: sym}
+  - {t: '$$mdi:backspace$$', h: ext}
   - $$mdi:apple-keyboard-option$$
   sym:
   - $$mdi:keyboard-esc$$
@@ -55,7 +55,7 @@ layers:
   - '!'
   - '*'
   - '%'
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
   - '~'
   - '`'
@@ -67,7 +67,7 @@ layers:
   - ':'
   - +
   - '='
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - ->
   - '|'
@@ -79,12 +79,12 @@ layers:
   - ;
   - '-'
   - _
-  - adjust
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-option$$
   nav:
   - $$mdi:keyboard-esc$$
@@ -98,7 +98,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '4'
@@ -110,7 +110,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - '0'
   - '1'
@@ -127,7 +127,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-option$$
   ext:
   - $$mdi:keyboard-esc$$
@@ -141,7 +141,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:brightness-5$$
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - space down
@@ -153,7 +153,7 @@ layers:
   - $$mdi:play-pause$$
   - $$mdi:skip-next$$
   - $$mdi:brightness-7$$
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -165,12 +165,12 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - adjust
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-option$$
   game:
   - $$mdi:keyboard-esc$$
