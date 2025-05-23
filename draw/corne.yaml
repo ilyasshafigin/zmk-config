@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - $$mdi:keyboard-esc$$
+  - fn
   - $$mdi:keyboard-tab$$
   - A
   - S
@@ -36,7 +36,7 @@ layers:
   - '&'
   - '['
   - ']'
-  - {t: /, h: fn}
+  - /
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
@@ -197,7 +197,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - gamefn
+  - $$mdi:apple-keyboard-control$$
   - B
   - Z
   - X
@@ -209,7 +209,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: game, h: '$$mdi:toggle-switch$$'}
-  - $$mdi:apple-keyboard-control$$
+  - gamefn
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -240,7 +240,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - H
   - J
   - N
@@ -252,8 +252,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -265,6 +265,18 @@ layers:
   - F3
   - F4
   - F5
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - {type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - '1'
   - '2'
   - '3'
@@ -272,29 +284,17 @@ layers:
   - '5'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
+  - F11
+  - F12
+  - F13
+  - F14
+  - F15
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - F11
-  - F12
-  - F13
-  - F14
-  - F15
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
