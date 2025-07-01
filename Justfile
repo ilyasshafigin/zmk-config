@@ -19,7 +19,7 @@ container_codebase := "zmk-codebase"
 get-docker-opts $task:
     @echo "\
         --tty \
-        --name zmk-{{ task }} \
+        --name zmk-${task//+/-} \
         --workdir /zmk \
         --volume {{ dir_config }}:/zmk-config:Z \
         --volume {{ dir_zmk }}:/zmk:Z \
@@ -73,7 +73,7 @@ build expr *west_args:
 
     [[ -z $targets ]] && echo "No matching targets found. Aborting..." >&2 && exit 1
     echo "$targets" | while IFS=, read -r board shield snippet; do
-        echo "Building firmware for $board $shield..."
+        echo "Building firmware for '$board' '$shield' '$snippet'..."
         artifact=$(just get-artifact "$board" "$shield")
         opts=$(just get-docker-opts $artifact)
         docker run --rm $opts \
