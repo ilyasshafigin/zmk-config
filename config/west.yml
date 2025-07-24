@@ -8,6 +8,8 @@ manifest:
     url-base: https://github.com/caksoylar
   - name: carrefinho
     url-base: https://github.com/carrefinho
+  - name: ilyasshafigin
+    url-base: https://github.com/ilyasshafigin
   projects:
   - name: zmk
     remote: zmkfirmware
@@ -22,7 +24,8 @@ manifest:
     revision: main
     path: modules/zmk/smart-toggle
   - name: prospector-zmk-module
-    remote: carrefinho
+    # remote: carrefinho
+    remote: ilyasshafigin
     revision: main
   self:
     path: config
