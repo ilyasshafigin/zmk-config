@@ -18,3 +18,14 @@ include:
   shield: corne_peripheral_left
 - board: nice_nano_v2
   shield: corne_peripheral_right
+
+- board: seeeduino_xiao_ble
+  shield: totem_dongle prospector_adapter
+  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="TotemDongle" -DCONFIG_ZMK_SLEEP=n
+- board: seeeduino_xiao_ble
+  shield: totem_central_left
+  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Totem"
+- board: seeeduino_xiao_ble
+  shield: totem_peripheral_left
+- board: seeeduino_xiao_ble
+  shield: totem_peripheral_right

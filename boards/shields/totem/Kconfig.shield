@@ -1,0 +1,11 @@
+config SHIELD_TOTEM_DONGLE
+    def_bool $(shields_list_contains,totem_dongle)
+
+config SHIELD_TOTEM_CENTRAL_LEFT
+    def_bool $(shields_list_contains,totem_central_left)
+
+config SHIELD_TOTEM_PERIPHERAL_LEFT
+    def_bool $(shields_list_contains,totem_peripheral_left)
+
+config SHIELD_TOTEM_PERIPHERAL_RIGHT
+    def_bool $(shields_list_contains,totem_peripheral_right)

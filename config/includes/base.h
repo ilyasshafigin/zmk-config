@@ -16,8 +16,8 @@
 #define ADJ 8
 
 // Behaviors Constants
-#define TAPPING_TERM_MS 200
-#define QUICK_TAP_MS 175
+#define TAPPING_TERM_MS 170
+#define QUICK_TAP_MS 100
 #define REQUIRE_PRIOR_IDLE_MS 150
 #define RELEASE_AFTER_KEY_MS 2000
 

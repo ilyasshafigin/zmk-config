@@ -1,8 +1,7 @@
-layout: {zmk_keyboard: corne}
+layout: {zmk_keyboard: totem}
 layers:
   base:
-  - {t: '$$mdi:keyboard-esc$$', h: mouse}
-  - Q
+  - {t: Q, h: mouse}
   - W
   - E
   - R
@@ -11,9 +10,7 @@ layers:
   - U
   - I
   - O
-  - P
-  - fn
-  - $$mdi:keyboard-tab$$
+  - {t: P, h: fn}
   - A
   - S
   - D
@@ -24,7 +21,6 @@ layers:
   - K
   - L
   - '~'
-  - ''''
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -44,7 +40,6 @@ layers:
   - {t: '$$mdi:backspace$$', h: ext}
   - $$mdi:apple-keyboard-option$$
   symbol:
-  - $$mdi:keyboard-esc$$
   - ^
   - '@'
   - '#'
@@ -55,8 +50,6 @@ layers:
   - '!'
   - '*'
   - '%'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-tab$$
   - '~'
   - '`'
   - ''''
@@ -67,7 +60,6 @@ layers:
   - ':'
   - +
   - '='
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - ->
   - '|'
@@ -87,7 +79,6 @@ layers:
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-option$$
   nav:
-  - $$mdi:keyboard-esc$$
   - ','
   - '7'
   - '8'
@@ -98,8 +89,6 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-tab$$
   - .
   - '4'
   - '5'
@@ -109,7 +98,6 @@ layers:
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - '0'
@@ -130,7 +118,6 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-option$$
   ext:
-  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - tab prev
@@ -142,8 +129,6 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:brightness-5$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - space down
   - space prev
   - space next
@@ -153,7 +138,6 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:brightness-7$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -174,7 +158,6 @@ layers:
   - $$mdi:apple-keyboard-option$$
   game:
   - $$mdi:keyboard-esc$$
-  - T
   - Q
   - W
   - E
@@ -184,9 +167,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - G
   - A
   - S
   - D
@@ -198,7 +179,6 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-control$$
-  - B
   - Z
   - X
   - C
@@ -216,14 +196,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
   gamefn:
-  - {t: '$$mdi:transfer$$', type: trans}
   - '5'
   - '1'
   - '2'
   - '3'
   - '4'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -240,12 +217,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - H
+  - G
   - J
-  - N
-  - M
   - I
+  - M
+  - T
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -259,19 +235,16 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F1
   - F2
   - F3
   - F4
   - F5
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
   - {type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F6
   - F7
   - F8
@@ -282,7 +255,6 @@ layers:
   - '3'
   - '4'
   - '5'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - F12
@@ -302,8 +274,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   mouse:
-  - {type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -318,14 +289,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Scroll ←
   - Mouse ←
   - Mouse ↑
   - Mouse →
   - Scroll →
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -345,7 +313,6 @@ layers:
   - Right Click
   - {t: '$$mdi:transfer$$', type: trans}
   adjust:
-  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -356,8 +323,6 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:progress-download$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
@@ -368,7 +333,6 @@ layers:
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -388,51 +352,57 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [4, 5]
+- p: [3, 4]
   k: (
   l: [base, symbol]
-- p: [6, 7]
+- p: [5, 6]
   k: )
   l: [base, symbol]
-- p: [16, 17]
+- p: [13, 14]
   k: '['
   l: [base, symbol]
-- p: [18, 19]
+- p: [15, 16]
   k: ']'
   l: [base, symbol]
-- p: [28, 29]
+- p: [24, 25]
   k: '{'
   l: [base, symbol]
-- p: [30, 31]
+- p: [26, 27]
   k: '}'
   l: [base, symbol]
-- p: [27, 28]
+- p: [23, 24]
   k: ''''
   l: [base, symbol]
-- p: [31, 32]
+- p: [27, 28]
   k: '"'
   l: [base, symbol]
-- p: [3, 4]
+- p: [2, 3]
   k: '`'
   l: [base, symbol]
-- p: [7, 8]
+- p: [6, 7]
   k: '~'
   l: [base, symbol]
-- p: [14, 15]
+- p: [11, 12]
   k: \
   l: [base, symbol]
-- p: [20, 21]
+- p: [17, 18]
   k: /
   l: [base, symbol]
-- p: [2, 3]
+- p: [1, 2]
   k: ->
   l: [base, symbol]
-- p: [8, 9]
+- p: [7, 8]
   k: =>
   l: [base, symbol]
-- p: [15, 16]
+- p: [12, 13]
   k: ru
   l: [base, symbol]
-- p: [19, 20]
+- p: [16, 17]
   k: en
+  l: [base, symbol]
+- p: [1, 0]
+  k: $$mdi:keyboard-esc$$
+  l: [base, symbol]
+- p: [11, 10]
+  k: $$mdi:keyboard-tab$$
   l: [base, symbol]
