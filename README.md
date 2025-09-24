@@ -18,13 +18,40 @@
 
 Актуальные прошивки лежат в папке firmware.
 
+Сборка:
+
+`just build corne`
+
 Команды для прошивки:
 
 - `just flash seeeduino_xiao_ble corne_dongle` - прошивка донгла на XIAO
+- `just flash seeeduino_xiao_ble corne_dongle+prospector_adapter` - прошивка донгла Prospector
 - `just flash nice_nano_v2 corne_dongle` - прошивка донгла на nice!
-- `just flash nice_nano_v2 corne_central_left` - прошивка левой половины для работы с донглом
+- `just flash nice_nano_v2 corne_central_left` - прошивка левой половины как основной
 - `just flash nice_nano_v2 corne_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash nice_nano_v2 corne_peripheral_right` - прошивка правой половины
+
+## Totem
+
+### Keymap
+
+![Keymap Representation](./draw/totem.svg?raw=true "Keymap Representation")
+
+### Прошивки
+
+Актуальные прошивки лежат в папке firmware.
+
+Сборка:
+
+`just build totem`
+
+Команды для прошивки:
+
+- `just flash seeeduino_xiao_ble totem_dongle` - прошивка донгла на XIAO
+- `just flash seeeduino_xiao_ble totem_dongle+prospector_adapter` - прошивка донгла Prospector
+- `just flash seeeduino_xiao_ble totem_central_left` - прошивка левой половины как основной
+- `just flash seeeduino_xiao_ble totem_peripheral_left` - прошивка левой половины для работы с донглом
+- `just flash seeeduino_xiao_ble totem_peripheral_right` - прошивка правой половины
 
 ## Прошивка
 
@@ -39,7 +66,7 @@
 В корне проекта вызвать такие команды:
 
 - `just flash <board> <keyboard>_dongle` - прошивка донгла
-- `just flash <board> <keyboard>_central_left` - прошивка левой половины для работы с донглом
+- `just flash <board> <keyboard>_central_left` - прошивка левой половины как основной
 - `just flash <board> <keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash <board> <keyboard>_peripheral_right` - прошивка правой половины
 
