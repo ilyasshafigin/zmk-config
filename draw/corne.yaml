@@ -116,7 +116,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - home
   - $$mdi:arrow-down-bold$$
