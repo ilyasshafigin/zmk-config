@@ -24,8 +24,8 @@ manifest:
     revision: main
     path: modules/zmk/smart-toggle
   - name: prospector-zmk-module
-    # remote: carrefinho
-    remote: ilyasshafigin
+    remote: carrefinho
+    # remote: ilyasshafigin
     revision: main
   self:
     path: config
