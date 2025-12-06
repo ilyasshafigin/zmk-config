@@ -916,9 +916,11 @@ rect.combo {
 <g transform="translate(1305, 498)" class="layer-ext">
 <text x="0" y="28" class="label" id="ext">ext</text>
 <g transform="translate(0, 56)">
-<g transform="translate(111, 162) rotate(-10.0)" class="key none keypos-0">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(111, 162) rotate(-10.0)" class="key keypos-0">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.0em" style="font-size: 62%">dongle</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">brightn…</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">inc</tspan>
+</text>
 </g>
 <g transform="translate(206, 88) rotate(-4.0)" class="key none keypos-1">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
@@ -960,9 +962,11 @@ rect.combo {
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:brightness-5" xlink:href="#mdi:brightness-5" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:brightness-5"/>
 </g>
-<g transform="translate(125, 240) rotate(-10.0)" class="key none keypos-10">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.0em" style="font-size: 62%">dongle</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">brightn…</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">dec</tspan>
+</text>
 </g>
 <g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -1012,9 +1016,11 @@ rect.combo {
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-control"/>
 </g>
-<g transform="translate(139, 319) rotate(-10.0)" class="key none keypos-21">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(139, 319) rotate(-10.0)" class="key keypos-21">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.0em" style="font-size: 62%">dongle</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">brightn…</tspan><tspan x="0" dy="1.0em" style="font-size: 62%">tog</tspan>
+</text>
 </g>
 <g transform="translate(217, 248) rotate(-4.0)" class="key none keypos-22">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>

@@ -409,8 +409,14 @@ parse_config:
     PSCRN: print scrn
     PAUSE_BREAK: pause break
 
+    # Lang
     LG(F11): "ru"
     LG(F12): "en"
+
+    # Dongle
+    F22: dongle brightness tog
+    F23: dongle brightness dec
+    F24: dongle brightness inc
 
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well

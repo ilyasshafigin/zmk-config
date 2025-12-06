@@ -6,10 +6,8 @@ manifest:
     url-base: https://github.com/urob
   - name: caksoylar
     url-base: https://github.com/caksoylar
-  - name: carrefinho
-    url-base: https://github.com/carrefinho
-  - name: ilyasshafigin
-    url-base: https://github.com/ilyasshafigin
+  - name: janpfischer
+    url-base: https://github.com/janpfischer
   projects:
   - name: zmk
     remote: zmkfirmware
@@ -23,9 +21,8 @@ manifest:
     remote: caksoylar
     revision: main
     path: modules/zmk/smart-toggle
-  - name: prospector-zmk-module
-    remote: carrefinho
-    # remote: ilyasshafigin
+  - name: zmk-dongle-screen
+    remote: janpfischer
     revision: main
   self:
     path: config

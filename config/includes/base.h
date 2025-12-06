@@ -46,3 +46,11 @@
 
 #define ZMK_BEHAVIOR_CORE_smart_toggle    compatible = "zmk,behavior-smart-toggle";    #binding-cells = <0>
 #define ZMK_SMART_TOGGLE(name, ...) ZMK_BEHAVIOR(name, smart_toggle, __VA_ARGS__)
+
+// Dongle Screen
+// Keycode that toggles the screen off and on
+#define DNGL_BR_TOG F22
+// Keycode for increasing screen brightness
+#define DNGL_BR_INC F24
+// Keycode for decreasing screen brightness
+#define DNGL_BR_DEC F23

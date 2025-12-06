@@ -5,9 +5,6 @@ include:
 - board: seeeduino_xiao_ble
   shield: settings_reset
 
-- board: seeeduino_xiao_ble
-  shield: corne_dongle prospector_adapter
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="XiaoCorneDongle" -DCONFIG_ZMK_SLEEP=n
 - board: nice_nano_v2
   shield: corne_dongle
   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorneDongle" -DCONFIG_ZMK_SLEEP=n
@@ -20,7 +17,7 @@ include:
   shield: corne_peripheral_right
 
 - board: seeeduino_xiao_ble
-  shield: totem_dongle prospector_adapter
+  shield: totem_dongle dongle_screen
   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="TotemDongle" -DCONFIG_ZMK_SLEEP=n
 - board: seeeduino_xiao_ble
   shield: totem_central_left

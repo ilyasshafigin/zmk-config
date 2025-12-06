@@ -1,12 +1,16 @@
-# Corne ZMK Config
+# ZMK Config
 
-Конфигурация и прошивка для клавиатур Corne (Nijuni, Dao и других Corne-подобных клавиатур)
+Конфигурация и прошивка для клавиатур:
+
+1. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
+2. [TOTEM](https://github.com/GEIGEIGEIST/TOTEM)
 
 ## Особенности
 
 - Работает с форком универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
 - За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
 - Адаптирована для macOS
+- Прошивки собираются локально (через Docker)
 
 ## Corne
 
@@ -25,7 +29,6 @@
 Команды для прошивки:
 
 - `just flash seeeduino_xiao_ble corne_dongle` - прошивка донгла на XIAO
-- `just flash seeeduino_xiao_ble corne_dongle+prospector_adapter` - прошивка донгла Prospector
 - `just flash nice_nano_v2 corne_dongle` - прошивка донгла на nice!
 - `just flash nice_nano_v2 corne_central_left` - прошивка левой половины как основной
 - `just flash nice_nano_v2 corne_peripheral_left` - прошивка левой половины для работы с донглом
@@ -48,7 +51,7 @@
 Команды для прошивки:
 
 - `just flash seeeduino_xiao_ble totem_dongle` - прошивка донгла на XIAO
-- `just flash seeeduino_xiao_ble totem_dongle+prospector_adapter` - прошивка донгла Prospector
+- `just flash seeeduino_xiao_ble totem_dongle+dongle_screen` - прошивка донгла Prospector (Dongle Screen YADS)
 - `just flash seeeduino_xiao_ble totem_central_left` - прошивка левой половины как основной
 - `just flash seeeduino_xiao_ble totem_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash seeeduino_xiao_ble totem_peripheral_right` - прошивка правой половины
