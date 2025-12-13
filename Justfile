@@ -9,8 +9,8 @@ dir_keymap_drawer := `pwd` / "draw"
 
 mount_nice := "/Volumes/NICENANO"
 mount_xiao := "/Volumes/XIAO-SENSE"
-board_nice := "nice_nano_v2"
-board_xiao := "seeeduino_xiao_ble"
+board_nice := "nice_nano"
+board_xiao := "xiao_ble"
 
 image_zmk := "zmkfirmware/zmk-dev-arm:stable"
 container_codebase := "zmk-codebase"
@@ -58,8 +58,10 @@ init:
 
 # Update west
 update:
-    docker run --rm $(just get-docker-opts update) \
-        west update --fetch-opt=--filter=blob:none
+    #!/usr/bin/env bash
+    opts=$(just get-docker-opts update)
+    docker run --rm $opts sh -c '\
+        west update --fetch-opt=--filter=blob:none'
 
 # Open a shell within the ZMK environment
 shell:
@@ -94,6 +96,7 @@ flash $board $shield:
     #!/usr/bin/env bash
     set -euo pipefail
     artifact=$(just get-artifact "$board" "$shield")
+    echo "Flash firmware for '$board' '$shield'"
     mount=""
     case "$board" in
         "{{ board_nice }}")

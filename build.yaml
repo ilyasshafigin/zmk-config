@@ -1,28 +1,29 @@
 ---
 include:
-- board: nice_nano_v2
+- board: nice_nano
   shield: settings_reset
-- board: seeeduino_xiao_ble
+- board: xiao_ble
   shield: settings_reset
 
-- board: nice_nano_v2
+- board: nice_nano
   shield: corne_dongle
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorneDongle" -DCONFIG_ZMK_SLEEP=n
-- board: nice_nano_v2
+  cmake-args: -DCONFIG_ZMK_SLEEP=n
+- board: nice_nano
   shield: corne_central_left
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="NiceCorne"
-- board: nice_nano_v2
+- board: nice_nano
   shield: corne_peripheral_left
-- board: nice_nano_v2
+- board: nice_nano
   shield: corne_peripheral_right
 
-- board: seeeduino_xiao_ble
-  shield: totem_dongle dongle_screen
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="TotemDongle" -DCONFIG_ZMK_SLEEP=n
-- board: seeeduino_xiao_ble
+# - board: xiao_ble
+  # shield: totem_dongle dongle_screen
+  # cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="TotemDongle" -DCONFIG_ZMK_SLEEP=n
+- board: xiao_ble
+  shield: totem_dongle prospector_adapter
+  cmake-args: -DCONFIG_ZMK_SLEEP=n
+- board: xiao_ble
   shield: totem_central_left
-  cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Totem"
-- board: seeeduino_xiao_ble
+- board: xiao_ble
   shield: totem_peripheral_left
-- board: seeeduino_xiao_ble
+- board: xiao_ble
   shield: totem_peripheral_right
