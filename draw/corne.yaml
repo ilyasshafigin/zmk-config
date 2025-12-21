@@ -163,7 +163,7 @@ layers:
   - $$mdi:volume-off$$
   - Back Click
   - Forward Click
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - studio unlock
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - adjust
   - $$mdi:apple-keyboard-command$$
@@ -372,12 +372,12 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - studio unlock
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:bluetooth-off$$
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - studio unlock
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}

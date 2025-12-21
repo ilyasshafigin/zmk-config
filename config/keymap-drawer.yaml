@@ -71,6 +71,7 @@ parse_config:
     # Macros/Behaviors
     "&swtn": tab next
     "&swwn": window next
+    "&studio_unlock": studio unlock
 
     # Others
     "&mmv MOVE_UP": Mouse ↑
