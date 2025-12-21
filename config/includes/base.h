@@ -8,10 +8,10 @@
 #define DEF 0
 #define SYM 1
 #define NAV 2
-#define EXT 3
-#define GAM 4
-#define GFN 5
-#define FN  6
+#define NUM 3
+#define EXT 4
+#define GAM 5
+#define GFN 6
 #define MSE 7
 #define ADJ 8
 
