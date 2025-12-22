@@ -1,46 +1,49 @@
 // На основе раскладки Universal Layout Ortho
 
-// O|Щ -> tap O|З
-// P|З -> tap P|Х
+// Смещения и замены стандартной раскладки:
+// O|Щ -> O|З
+// P|З -> P|Х
 
-#define UL_COMMA    LBKT            // -> tap: ',', shifted: ';'
-#define UL_DOT      RBKT            // -> tap: '.', shifted: ':'
-#define UL_TILDE    SEMI            // -> tap: ~|ж, shifted: ≈|Ж
-#define UL_AMPS     COMMA           // -> tap: &|б, shifted: &|Б
-#define UL_LBKT     DOT             // -> tap: [|ю, shifted: {|Ю, alted: [, shifted+alted: {
-#define UL_RBKT     FSLH            // -> tap: ]|э, shifted: }|Э, alted: ], shifted+alted: }
-#define UL_LBRC     LS(DOT)         // -> {|Ю, alted: {
-#define UL_RBRC     LS(FSLH)        // -> }|Э, alted: }
+#define UL_COMMA    LBKT            // -> ','   shift: ';'   alt: ','   shift+alt: ';'
+#define UL_DOT      RBKT            // -> '.'   shift: ':'   alt: '.'   shift+alt: ':'
+#define UL_TILDE    SEMI            // -> ~|ж   shift: ≈|Ж   alt: '»'   shift+alt: '→'
+#define UL_AMPS     COMMA           // -> &|б   shift: &|Б   alt: '&'   shift+alt: '…'
+#define UL_LBKT     DOT             // -> [|ю   shift: {|Ю   alt: '['   shift+alt: '{'
+#define UL_RBKT     FSLH            // -> ]|э   shift: }|Э   alt: ']'   shift+alt: '}'
+#define UL_LBRC     LS(DOT)         // -> {|Ю                alt: '{'
+#define UL_RBRC     LS(FSLH)        // -> }|Э                alt: '}'
 
-#define UL_SQT      GRAVE           // -> '''
-#define UL_DQT      LS(GRAVE)       // -> '"'
-#define UL_GRAVE    LA(GRAVE)       // -> '`'
+#define UL_SQT      GRAVE           // -> '''   shift: '"'   alt: '`'   shift+alt: '•'
+#define UL_DQT      LS(GRAVE)       // -> '"'                alt: '•'
+#define UL_GRAVE    LA(GRAVE)       // -> '`'   shift: '•'
 
-#define UL_BSLH     LA(BSLH)        // -> '\'
-#define UL_FSLH     BSLH            // -> '/'
-#define UL_PIPE     LS(BSLH)        // -> '|'
+#define UL_FSLH     BSLH            // -> '/'   shift: '|'   alt: '\'   shift+alt: '¦'
+#define UL_BSLH     LA(BSLH)        // -> '\'   shift: '¦'
+#define UL_PIPE     LS(BSLH)        // -> '|'                alt: '¦'
 #define UL_DPIPE    LS(LA(BSLH))    // -> '¦'
 
+#define UL_N1       LS(N1)          // -> '1'                alt: '¡'
+#define UL_N2       LS(N2)          // -> '2'                alt: '½'
+#define UL_N3       LS(N3)          // -> '3'                alt: '⅓'
+#define UL_N4       LS(N4)          // -> '4'                alt: '¼'
+#define UL_N5       LS(N5)          // -> '5'                alt: '‰'
+#define UL_N6       LS(N6)          // -> '6'                alt: 'ˆ'
+#define UL_N7       LS(N7)          // -> '7'                alt: '⁈'
+#define UL_N8       LS(N8)          // -> '8'                alt: '∞'
+#define UL_N9       LS(N9)          // -> '9'                alt: '“'
+#define UL_N0       LS(N0)          // -> '0'                alt: '”'
+
+#define UL_EXCL     N1              // -> '!'   shift: '1'   alt: '¹'   shift+alt: '¡'
+#define UL_AT       N2              // -> '@'   shift: '2'   alt: '²'   shift+alt: '½'
+#define UL_HASH     N3              // -> '#'   shift: '3'   alt: '³'   shift+alt: '⅓'
+#define UL_DLLR     N4              // -> '$'   shift: '4'   alt: '⁴'   shift+alt: '¼'
+#define UL_PRCNT    N5              // -> '%'   shift: '5'   alt: '‰'   shift+alt: '‰'
+#define UL_CARET    N6              // -> '^'   shift: '6'   alt: 'ˆ'   shift+alt: 'ˆ'
+#define UL_QSTM     N7              // -> '?'   shift: '7'   alt: '¿'   shift+alt: '⁈'
+#define UL_ASTRK    N8              // -> '*'   shift: '8'   alt: '∞'   shift+alt: '∞'
+#define UL_LPAR     N9              // -> '('   shift: '9'   alt: '‘'   shift+alt: '“'
+#define UL_RPAR     N0              // -> ')'   shift: '0'   alt: '’'   shift+alt: '”'
+
+//                  K                  -> k|л   shift: K|Л   alt: '=>'  shift+alt: '->'
+
 #define UL_NBSP     LA(SPACE)       // No-break-space
-
-#define UL_N1       LS(N1)  // -> 1
-#define UL_N2       LS(N2)  // -> 2
-#define UL_N3       LS(N3)  // -> 3
-#define UL_N4       LS(N4)  // -> 4
-#define UL_N5       LS(N5)  // -> 5
-#define UL_N6       LS(N6)  // -> 6
-#define UL_N7       LS(N7)  // -> 7
-#define UL_N8       LS(N8)  // -> 8
-#define UL_N9       LS(N9)  // -> 9
-#define UL_N0       LS(N0)  // -> 0
-
-#define UL_EXCL     N1      // -> !, shifted: 1
-#define UL_AT       N2      // -> @, shifted: 2
-#define UL_HASH     N3      // -> #, shifted: 3
-#define UL_DLLR     N4      // -> $, shifted: 4
-#define UL_PRCNT    N5      // -> %, shifted: 5
-#define UL_CARET    N6      // -> ^, shifted: 6
-#define UL_QSTM     N7      // -> ?, shifted: 7
-#define UL_ASTRK    N8      // -> *, shifted: 8
-#define UL_LPAR     N9      // -> (, shifted: 9
-#define UL_RPAR     N0      // -> ), shifted: 0

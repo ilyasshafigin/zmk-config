@@ -3,11 +3,12 @@
 Конфигурация и прошивка для клавиатур:
 
 1. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
-2. [TOTEM](https://github.com/GEIGEIGEIST/TOTEM)
+2. **[TOTEM](https://github.com/GEIGEIGEIST/TOTEM)** – сейчас основная
 3. [Charybdis 3-6](https://github.com/bastardkb/charybdis/) скоро
 
 ## Особенности
 
+- Home-Row Mods (на основе работы [urob](https://github.com/urob/zmk-config#timeless-homerow-mods))
 - Работает с форком универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
 - За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
 - Адаптирована для macOS
@@ -162,11 +163,12 @@ just build corne
 
 1. Примеры конфигураций:
    1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-   2. [charybdis-4-6-dongle-prospector-studio](https://github.com/devpew/charybdis-4-6-dongle-prospector-studio) от @devpew
-   3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive
-   4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17
-   5. [zmk-config](https://github.com/urob/zmk-config) от @urob
-2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) - сайт, на котором можно редактировать лайауты в gui
-3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - отрисовка keymap
-4. [universal-layout](https://github.com/braindefender/universal-layout) - универсальная раскладка от @braindefender
-   1. [wellum](https://github.com/braindefender/wellum) - универсальная раскладка для split-клавиатур от @braindefender
+   2. [charybdis-4-6-dongle-prospector-studio](https://github.com/devpew/charybdis-4-6-dongle-prospector-studio) от @devpew – charybdis + zmk studio
+   3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
+   4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
+   5. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
+   6. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
+2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) – сайт, на котором можно редактировать лайауты в gui
+3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
+4. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
+   - [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender

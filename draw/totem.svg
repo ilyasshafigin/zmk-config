@@ -322,18 +322,22 @@ rect.combo {
 <g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">A</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">S</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(303, 120)" class="key keypos-12">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">D</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(387, 160)" class="key keypos-13">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">F</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(472, 172)" class="key keypos-14">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -346,18 +350,22 @@ rect.combo {
 <g transform="translate(828, 160)" class="key keypos-16">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">J</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(913, 120)" class="key keypos-17">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">K</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(1004, 168) rotate(4.0)" class="key keypos-18">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">L</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(1091, 240) rotate(10.0)" class="key keypos-19">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">~</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(49, 298) rotate(-10.0)" class="key keypos-20">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -564,18 +572,22 @@ rect.combo {
 <g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">~</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">`</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(303, 120)" class="key keypos-12">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">&#x27;</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(387, 160)" class="key keypos-13">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">&quot;</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(472, 172)" class="key keypos-14">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -588,18 +600,22 @@ rect.combo {
 <g transform="translate(828, 160)" class="key keypos-16">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">.</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(913, 120)" class="key keypos-17">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">:</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(1004, 168) rotate(4.0)" class="key keypos-18">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">+</text>
+<text x="0" y="0" class="key tap">-</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(1091, 240) rotate(10.0)" class="key keypos-19">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">=</text>
+<text x="0" y="0" class="key tap">+</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(49, 298) rotate(-10.0)" class="key keypos-20">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -607,19 +623,19 @@ rect.combo {
 </g>
 <g transform="translate(139, 319) rotate(-10.0)" class="key keypos-21">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">-&gt;</text>
+<text x="0" y="0" class="key tap">|</text>
 </g>
 <g transform="translate(217, 248) rotate(-4.0)" class="key keypos-22">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">|</text>
+<text x="0" y="0" class="key tap">\</text>
 </g>
 <g transform="translate(303, 200)" class="key keypos-23">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">\</text>
+<text x="0" y="0" class="key tap">-&gt;</text>
 </g>
 <g transform="translate(387, 240)" class="key keypos-24">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">/</text>
+<text x="0" y="0" class="key tap">_</text>
 </g>
 <g transform="translate(472, 252)" class="key keypos-25">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -639,23 +655,23 @@ rect.combo {
 </g>
 <g transform="translate(998, 248) rotate(4.0)" class="key keypos-29">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">-</text>
+<text x="0" y="0" class="key tap">/</text>
 </g>
 <g transform="translate(1077, 319) rotate(10.0)" class="key keypos-30">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">_</text>
+<text x="0" y="0" class="key tap">=</text>
 </g>
 <g transform="translate(1167, 298) rotate(10.0)" class="key none keypos-31">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(364, 337)" class="key keypos-32">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
+<g transform="translate(364, 337)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(457, 350) rotate(15.0)" class="key keypos-33">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(544, 386) rotate(30.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -668,9 +684,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:backspace-reverse-outline"/>
 </g>
-<g transform="translate(852, 337)" class="key keypos-37">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-option"/>
+<g transform="translate(852, 337)" class="key trans keypos-37">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g class="combo combopos-0">
 <rect rx="4" ry="4" x="415" y="71" width="30" height="30" class="combo"/>
@@ -800,19 +816,23 @@ rect.combo {
 </g>
 <g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">.</text>
+<text x="0" y="0" class="key tap">0</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">4</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(303, 120)" class="key keypos-12">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">5</text>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(387, 160)" class="key keypos-13">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <text x="0" y="0" class="key tap">6</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(472, 172)" class="key keypos-14">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -825,18 +845,22 @@ rect.combo {
 <g transform="translate(828, 160)" class="key keypos-16">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:arrow-left-bold" xlink:href="#mdi:arrow-left-bold" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:arrow-left-bold"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(913, 120)" class="key keypos-17">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:arrow-up-bold" xlink:href="#mdi:arrow-up-bold" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:arrow-up-bold"/>
+<use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(1004, 168) rotate(4.0)" class="key keypos-18">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:arrow-right-bold" xlink:href="#mdi:arrow-right-bold" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:arrow-right-bold"/>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
-<g transform="translate(1091, 240) rotate(10.0)" class="key none keypos-19">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(1091, 240) rotate(10.0)" class="key keypos-19">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:minus-circle-outline"/>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(49, 298) rotate(-10.0)" class="key keypos-20">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -844,7 +868,7 @@ rect.combo {
 </g>
 <g transform="translate(139, 319) rotate(-10.0)" class="key keypos-21">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="0" class="key tap">0</text>
+<text x="0" y="0" class="key tap">.</text>
 </g>
 <g transform="translate(217, 248) rotate(-4.0)" class="key keypos-22">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -888,13 +912,13 @@ rect.combo {
 <text x="0" y="0" class="key tap layer-activator">game</text>
 </a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:toggle-switch"/>
 </g>
-<g transform="translate(364, 337)" class="key keypos-32">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
+<g transform="translate(364, 337)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(457, 350) rotate(15.0)" class="key keypos-33">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(544, 386) rotate(30.0)" class="key held keypos-34">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
@@ -907,9 +931,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key backspace"/>
 <use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-11" y="-11" height="22" width="22.0" class="key backspace tap glyph mdi:backspace"/>
 </g>
-<g transform="translate(852, 337)" class="key keypos-37">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-option"/>
+<g transform="translate(852, 337)" class="key trans keypos-37">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 </g>
 </g>
@@ -1073,13 +1097,13 @@ rect.combo {
 <a href="#adjust">
 <text x="0" y="0" class="key tap layer-activator"><tspan style="font-size: 83%">adjust</tspan></text>
 </a></g>
-<g transform="translate(364, 337)" class="key keypos-32">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
+<g transform="translate(364, 337)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(457, 350) rotate(15.0)" class="key keypos-33">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(544, 386) rotate(30.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -1092,9 +1116,9 @@ rect.combo {
 <g transform="translate(758, 350) rotate(-15.0)" class="key held keypos-36">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
 </g>
-<g transform="translate(852, 337)" class="key keypos-37">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-option"/>
+<g transform="translate(852, 337)" class="key trans keypos-37">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 </g>
 </g>
@@ -1724,13 +1748,13 @@ rect.combo {
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(364, 337)" class="key keypos-32">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
+<g transform="translate(364, 337)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(457, 350) rotate(15.0)" class="key keypos-33">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(544, 386) rotate(30.0)" class="key none keypos-34">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>

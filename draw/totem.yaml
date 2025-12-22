@@ -11,16 +11,16 @@ layers:
   - I
   - O
   - P
-  - A
-  - S
-  - D
-  - F
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - H
-  - J
-  - K
-  - L
-  - '~'
+  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: K, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '~', h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:apple-keyboard-control$$
   - Z
   - X
@@ -50,34 +50,34 @@ layers:
   - '!'
   - '*'
   - '%'
-  - '~'
-  - '`'
-  - ''''
-  - '"'
+  - {t: '~', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '`', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '''', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '"', h: '$$mdi:apple-keyboard-shift$$'}
   - '['
   - ']'
-  - .
-  - ':'
-  - +
-  - '='
+  - {t: ., h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: ':', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '-', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:apple-keyboard-control$$
-  - ->
   - '|'
   - \
-  - /
+  - ->
+  - _
   - '{'
   - '}'
   - ','
   - ;
-  - '-'
-  - _
+  - /
+  - '='
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {type: held}
   - $$mdi:backspace-reverse-outline$$
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:transfer$$', type: trans}
   nav:
   - ','
   - '7'
@@ -89,18 +89,18 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - .
-  - '4'
-  - '5'
-  - '6'
+  - {t: '0', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:apple-keyboard-control$$
-  - '0'
+  - .
   - '1'
   - '2'
   - '3'
@@ -111,12 +111,12 @@ layers:
   - end
   - $$mdi:apple-keyboard-caps$$
   - {t: game, h: '$$mdi:toggle-switch$$'}
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:transfer$$', type: trans}
   ext:
   - dongle brightness inc
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -150,12 +150,12 @@ layers:
   - studio unlock
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - adjust
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:transfer$$', type: trans}
   game:
   - $$mdi:keyboard-esc$$
   - Q
@@ -306,8 +306,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Left Click
   - Right Click

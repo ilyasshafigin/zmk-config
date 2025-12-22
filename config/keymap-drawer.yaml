@@ -69,8 +69,8 @@ parse_config:
       hold: $$mdi:progress-download$$
 
     # Macros/Behaviors
-    "&swtn": tab next
-    "&swwn": window next
+    "&tabber": tab next
+    "&swapper": window next
     "&studio_unlock": studio unlock
 
     # Others
