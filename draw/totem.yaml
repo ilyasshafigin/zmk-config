@@ -58,19 +58,19 @@ layers:
   - ']'
   - {t: ., h: '$$mdi:apple-keyboard-shift$$'}
   - {t: ':', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '-', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: +, h: '$$mdi:apple-keyboard-command$$'}
-  - $$mdi:apple-keyboard-control$$
+  - {t: +, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - ->
   - '|'
   - \
-  - ->
-  - _
+  - /
   - '{'
   - '}'
   - ','
   - ;
-  - /
-  - '='
+  - '-'
+  - _
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -88,9 +88,9 @@ layers:
   - page up
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: game, h: '$$mdi:toggle-switch$$'}
   - {t: '0', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: ., h: '$$mdi:apple-keyboard-option$$'}
   - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:keyboard-tab$$
@@ -99,9 +99,9 @@ layers:
   - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - .
-  - '1'
+  - '0'
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -110,7 +110,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - end
   - $$mdi:apple-keyboard-caps$$
-  - {t: game, h: '$$mdi:toggle-switch$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
@@ -118,7 +118,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:transfer$$', type: trans}
   ext:
-  - dongle brightness inc
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - tab prev
   - tab next
@@ -128,7 +128,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:brightness-5$$
-  - dongle brightness dec
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - space down
   - space prev
   - space next
@@ -138,8 +138,8 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:brightness-7$$
-  - $$mdi:apple-keyboard-control$$
-  - dongle brightness tog
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - window prev
   - window next
@@ -166,7 +166,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: game, h: '$$mdi:toggle-switch$$'}
   - $$mdi:keyboard-tab$$
   - A
   - S
@@ -188,7 +188,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: game, h: '$$mdi:toggle-switch$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - gamefn
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
@@ -284,10 +284,10 @@ layers:
   - Middle Click
   - Scroll ↓
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Scroll ←
   - Mouse ←

@@ -10,8 +10,6 @@ manifest:
     url-base: https://github.com/janpfischer
   - name: carrefinho
     url-base: https://github.com/carrefinho
-  - name: ilyasshafigin
-    url-base: https://github.com/ilyasshafigin
   projects:
   - name: zmk
     remote: zmkfirmware
@@ -30,10 +28,9 @@ manifest:
     #revision: main
     revision: core/zephyr-4-1
     path: modules/zmk/prospector
-  - name: zmk-dongle-screen
-    #remote: janpfischer
-    remote: ilyasshafigin
-    revision: main
-    path: modules/zmk/dongle-screen
+  # - name: zmk-dongle-screen
+    # remote: janpfischer
+    # revision: main
+    # path: modules/zmk/dongle-screen
   self:
     path: config
