@@ -6,6 +6,7 @@ dir_zmk := `pwd` / "zmk"
 dir_config := `pwd` / "config"
 dir_firmware := `pwd` / "firmware"
 dir_keymap_drawer := `pwd` / "draw"
+dir_boards := `pwd` / "boards"
 
 mount_nice := "/Volumes/NICENANO"
 mount_xiao := "/Volumes/XIAO-SENSE"
@@ -67,6 +68,22 @@ update:
 shell:
     docker run --rm $(just get-docker-opts shell) /bin/bash
 
+# Prepare for shields
+prepare-charybdis:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "Prepare build for 'charybdis'"
+    cp "{{ dir_config }}/charybdis_pointer.dtsi" "{{ dir_boards }}/shields/charybdis/charybdis_pointer.dtsi"
+    cp -R "{{ dir_config }}/includes" "{{ dir_boards }}/shields/charybdis/"
+
+# Cleanup for shields
+cleanup-charybdis:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "Cleanup build for 'charybdis'"
+    rm -rf "{{ dir_boards }}/shields/charybdis/charybdis_pointer.dtsi"
+    rm -r "{{ dir_boards }}/shields/charybdis/includes"
+
 # Build firmware for matching targets
 build expr *west_args:
     #!/usr/bin/env bash
@@ -78,6 +95,9 @@ build expr *west_args:
         echo "Building firmware for '$board' '$shield' '$snippet'..."
         artifact=$(just get-artifact "$board" "$shield")
         opts=$(just get-docker-opts $artifact)
+        if [[ $shield == *"charybdis"* ]]; then
+            just prepare-charybdis
+        fi
         docker run --rm $opts \
             west build /zmk/app --pristine -b "$board" ${snippet:+-S "$snippet"} {{ west_args }} -- \
                 ${shield:+-DSHIELD="$shield"} \
@@ -89,6 +109,10 @@ build expr *west_args:
         docker cp "{{ container_codebase }}:/zmk/build/zephyr/zmk.uf2" "{{ dir_firmware }}/${artifact}.uf2"
 
         just fix-firmware-permission "$artifact"
+
+        if [[ $shield == *"charybdis"* ]]; then
+            just cleanup-charybdis
+        fi
     done
 
 # Flash
@@ -147,7 +171,7 @@ list:
     @just parse-targets all | sed 's/,*$//' | sort
 
 # Draw
-draw $keyboard:
+draw $keyboard *args='':
     #!/usr/bin/env bash
     set -euo pipefail
     echo "Draw '$keyboard'"
@@ -157,5 +181,5 @@ draw $keyboard:
     keymap_yaml="{{ dir_keymap_drawer }}/$keyboard.yaml"
     draw_config="{{ dir_config }}/keymap-drawer.yaml"
     keymap -c "$draw_config" parse -z "$keymap_input_file" > "$keymap_yaml"
-    keymap -c "$draw_config" draw "$keymap_yaml" > "$keymap_svg"
+    keymap -c "$draw_config" draw {{ args }} "$keymap_yaml" > "$keymap_svg"
     inkscape --export-type=png --export-background=white --export-filename="$keymap_png" "$keymap_svg"

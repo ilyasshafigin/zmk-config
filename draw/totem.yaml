@@ -32,7 +32,7 @@ layers:
   - '&'
   - '['
   - ']'
-  - {t: /, h: fn}
+  - /
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
@@ -89,8 +89,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
   - {t: game, h: '$$mdi:toggle-switch$$'}
-  - {t: '0', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: ., h: '$$mdi:apple-keyboard-option$$'}
+  - {t: ., h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:keyboard-tab$$
@@ -100,8 +100,8 @@ layers:
   - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - .
   - '0'
+  - '1'
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -235,44 +235,44 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - F11
-  - F12
-  - F13
-  - F14
-  - F15
-  - '6'
   - '7'
   - '8'
   - '9'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F10
+  - F7
+  - F8
+  - F9
+  - F13
+  - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F11
+  - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: F14, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '0'
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F12
+  - F1
+  - F2
+  - {t: F3, type: held}
+  - {t: F15, type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   mouse:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -400,12 +400,12 @@ combos:
 - p: [16, 17]
   k: en
   l: [base, symbol]
-- p: [1, 0]
-  k: $$mdi:keyboard-esc$$
-  l: [base, symbol]
-- p: [11, 10]
-  k: $$mdi:keyboard-tab$$
-  l: [base, symbol]
 - p: [21, 22]
   k: mouse
   l: [base, symbol]
+- p: [8, 9]
+  k: {t: game, h: '$$mdi:toggle-switch$$'}
+  l: [base]
+- p: [29, 30]
+  k: {t: fn, h: '$$mdi:gesture-tap-hold$$'}
+  l: [base]

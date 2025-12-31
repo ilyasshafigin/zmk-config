@@ -1,11 +1,22 @@
-#include "totem.dtsi"
+#include "charybdis.dtsi"
+#include "charybdis_pmw3610.dtsi"
+#include "charybdis_pointer.dtsi"
+
+&trackball_split {
+  status = "okay";
+};
+
+&trackball_listener {
+  status = "okay";
+};
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,input-device = &trackball_split;
     };
 
-    mock_kscan: mock_kscan_0 {
+    mock_kscan: kscan_1 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
@@ -19,11 +30,11 @@
 
     left_peripheral: bt_left {
         compatible = "zmk,ble-peripheral";
-        local-name = "totem_peripheral_left";
+        local-name = "charybdis_peripheral_left";
     };
 
     right_peripheral: bt_right {
         compatible = "zmk,ble-peripheral";
-        local-name = "totem_peripheral_right";
+        local-name = "charybdis_peripheral_right";
     };
 };

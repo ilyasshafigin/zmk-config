@@ -1,0 +1,34 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include "includes/base.h"
+#include "zmk-helpers/key-labels/36.h"
+
+&trackball_listener {
+    snipe {
+      layers = <SNPR>;
+      input-processors = <&zip_xy_scaler 1 3>;
+    };
+
+    scroll {
+      layers = <SCRL>;
+      input-processors = <
+            &zip_xy_scaler 1 3                               // Scales the scroll speed
+            &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
+            &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+        >;
+    };
+
+    move {
+      layers = <DEF MSE>;
+      input-processors = <&auto_mouse_layer MSE 1000>;
+    };
+};
+
+/ {
+    auto_mouse_layer: auto_mouse_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <500>;
+        #excluded-positions = <LH2 LH1 LH0 RM1 RM2 RM3 LM4 LM3 LM2 LM1 LB2 LB1>;
+    };
+};

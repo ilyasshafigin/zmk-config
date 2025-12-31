@@ -2,14 +2,16 @@ manifest:
   remotes:
   - name: zmkfirmware
     url-base: https://github.com/zmkfirmware
-  - name: urob
-    url-base: https://github.com/urob
+  - name: badjeff
+    url-base: https://github.com/badjeff
   - name: caksoylar
     url-base: https://github.com/caksoylar
-  - name: janpfischer
-    url-base: https://github.com/janpfischer
   - name: carrefinho
     url-base: https://github.com/carrefinho
+  - name: janpfischer
+    url-base: https://github.com/janpfischer
+  - name: urob
+    url-base: https://github.com/urob
   projects:
   - name: zmk
     remote: zmkfirmware
@@ -32,5 +34,9 @@ manifest:
     # remote: janpfischer
     # revision: main
     # path: modules/zmk/dongle-screen
+  - name: zmk-pmw3610-driver
+    remote: badjeff
+    revision: zmk-0.4
+    path: modules/zmk/pmw3610-driver
   self:
     path: config

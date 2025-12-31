@@ -7,5 +7,7 @@ requires: [xiao_ble]
 features:
   - keys
 siblings:
-  - totem_left
-  - totem_right
+  - totem_dongle
+  - totem_central_left
+  - totem_peripheral_left
+  - totem_peripheral_right

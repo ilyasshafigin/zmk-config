@@ -4,7 +4,7 @@
 
 1. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
 2. **[TOTEM](https://github.com/GEIGEIGEIST/TOTEM)** – сейчас основная
-3. [Charybdis 3-6](https://github.com/bastardkb/charybdis/) скоро
+3. [Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)
 
 ## Особенности
 
@@ -97,6 +97,30 @@ just build corne
 - `just flash xiao_ble totem_peripheral_left` - прошивка левой половины для работы с донглом
 - `just flash xiao_ble totem_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
+## Charybdis Nano
+
+### Keymap
+
+![Keymap Representation](./draw/charybdis.svg?raw=true "Keymap Representation")
+
+### Прошивки
+
+Актуальные прошивки лежат в папке firmware.
+
+Сборка:
+
+`just build charybdis`
+
+Команды для прошивки:
+
+- `just flash xiao_ble charybdis_dongle` - прошивка донгла на XIAO
+- `just flash xiao_ble charybdis_dongle+prospector_adapter` - прошивка донгла Prospector
+- `just flash xiao_ble charybdis_central_left` - прошивка левой половины как основной
+- `just flash xiao_ble charybdis_peripheral_left` - прошивка левой половины для работы с донглом
+- `just flash xiao_ble charybdis_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+
+Особенность в том, что во вреся сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `boards/shields/charybdis`, так как не все общие конфигурации удалось вынести. После сборки скопированные файлы удаляются.
+
 ## Universal layout
 
 В проекте в папке `layout` лежат файлы раскладок. Это форк [universal-layout](https://github.com/braindefender/universal-layout).
@@ -163,11 +187,12 @@ just build corne
 
 1. Примеры конфигураций:
    1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-   2. [charybdis-4-6-dongle-prospector-studio](https://github.com/devpew/charybdis-4-6-dongle-prospector-studio) от @devpew – charybdis + zmk studio
+   2. [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio) от @devpew – charybdis + zmk studio
    3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
    4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
    5. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
    6. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
+   7. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
 2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) – сайт, на котором можно редактировать лайауты в gui
 3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
 4. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender

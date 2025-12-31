@@ -14,9 +14,12 @@
 #define FN  6
 #define MSE 7
 #define ADJ 8
+#define SNPR 9  // for trackball
+#define SCRL 10 // for trackball
 
 // Behaviors Constants
 #define TAPPING_TERM_MS 200
+#define TAPPING_TERM_HRM_MS 280
 #define QUICK_TAP_MS 175
 #define REQUIRE_PRIOR_IDLE_MS 150
 #define RELEASE_AFTER_MS 900
@@ -45,12 +48,13 @@
 #include "universal_layout.h"
 
 #define ZMK_BEHAVIOR_CORE_smart_toggle    compatible = "zmk,behavior-smart-toggle";    #binding-cells = <0>
+
 #define ZMK_SMART_TOGGLE(name, ...) ZMK_BEHAVIOR(name, smart_toggle, __VA_ARGS__)
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) ZMK_HOLD_TAP(NAME, \
     flavor = "balanced"; \
-    tapping-term-ms = <280>; \
-    require-prior-idle-ms = <160>; \
+    tapping-term-ms = <TAPPING_TERM_HRM_MS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
     quick-tap-ms = <QUICK_TAP_MS>; \
     hold-trigger-on-release; \
     bindings = <HOLD>, <TAP>; \
