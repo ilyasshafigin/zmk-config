@@ -2,7 +2,7 @@
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
 
-&default_transform {
+&charybdis_5col_transform {
     col-offset = <5>;
 };
 

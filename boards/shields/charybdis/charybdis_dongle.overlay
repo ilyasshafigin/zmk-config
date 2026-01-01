@@ -3,11 +3,11 @@
 #include "charybdis_pointer.dtsi"
 
 &trackball_split {
-  status = "okay";
+    status = "okay";
 };
 
 &trackball_listener {
-  status = "okay";
+    status = "okay";
 };
 
 / {
@@ -16,7 +16,7 @@
         zmk,input-device = &trackball_split;
     };
 
-    mock_kscan: kscan_1 {
+    mock_kscan: kscan1 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
