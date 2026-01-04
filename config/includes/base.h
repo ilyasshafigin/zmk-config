@@ -16,6 +16,7 @@
 #define ADJ 8
 #define SNPR 9  // for trackball
 #define SCRL 10 // for trackball
+#define CARE  11 // for trackball
 
 // Behaviors Constants
 #define TAPPING_TERM_MS 200

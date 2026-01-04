@@ -99,7 +99,16 @@ just build corne
 
 ## Charybdis Nano
 
+Заказывал kit у китайцев на AliExpress, она how-swap, потому в прошивке есть отличия от оригинальной:
+
+- для каждого свитча отдельная платка, все они соединяются проводками
+- изменены пины колонок и строк
+- изменено направление диодов: я припаял диоды так как было показано на плате, в итоге оказалось для совместимости с оригинальной прошивкой надо было наоборот
+- изменен maxtrix transform
+
 ### Keymap
+
+Для отрисовки нужно вызвать команду `just draw charybdis -d boards/shields/charybdis/charybdis_layout.dtsi`
 
 ![Keymap Representation](./draw/charybdis.svg?raw=true "Keymap Representation")
 
