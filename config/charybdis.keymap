@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/pointing.h>
-#include "includes/base.h"
+#include "includes/behaviors.h"
+#include "includes/keys.h"
+#include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
 
 &mt {
@@ -48,14 +50,27 @@ ZMK_SMART_TOGGLE(swapper,
     ignored-key-positions = <LB1 LB2>;
 )
 
+// hold - mo layer, tap - to layer
+ZMK_HOLD_TAP(ht_two,
+    bindings = <&mo>, <&to>; // hold, tap
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+)
+
+// hold - SCRL, tap - to DEF, double tap - to SLOW
+ZMK_TAP_DANCE(td_slow_scrl,
+    bindings = <&ht_two SCRL DEF>, <&to SLOW>;
+    tapping-term-ms = <TAPPING_TERM_MS>;
+)
+
 ZMK_COMBO(para_left,      &kp UL_LPAR,    LT1 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(para_right,     &kp UL_RPAR,    RT0 RT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(brak_left,      &kp UL_LBKT,    LM1 LM0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(brak_right,     &kp UL_RBKT,    RM0 RM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(brace_left,     &kp UL_LBRC,    LB1 LB0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(brace_right,    &kp UL_RBRC,    RB0 RB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(single_quote,   &kp UL_SQT,     LB2 LB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(double_quote,   &kp UL_DQT,     RB1 RB2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(single_quote,   &kp UL_SQT,     LB2 LB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(double_quote,   &kp UL_DQT,     RB1 RB2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(grave,          &kp UL_GRAVE,   LT2 LT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(tilde,          &kp UL_TILDE,   RT1 RT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(backslash,      &kp UL_BSLH,    LM3 LM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
@@ -69,6 +84,9 @@ ZMK_COMBO(layer_fn,       &sl FN,         RB3 RB4,    DEF,      COMBO_TERM, COMB
 //ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(studio_unlock,  &studio_unlock, LT4 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(left_click,     &mkp LCLK,      LB2 LB1,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(middle_click,   &mkp MCLK,      LB3 LB2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(right_click,    &mkp RCLK,      LB4 LB3,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 
 /**
  * Default Layer - QWERTY
@@ -169,7 +187,7 @@ ZMK_LAYER(gamefn,
 )
 
 /**
- * Fn Layer
+ * FN Layer
  */
 ZMK_LAYER(fn,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
@@ -190,11 +208,11 @@ ZMK_LAYER(mouse,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
     XXX             XXX             XXX             XXX             XXX                 XXX             XXX             XXX             XXX             XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp RCLK       &mkp MCLK       XXX
+    _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp MCLK       &mkp RCLK       XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             &mo CARE        &mo SNPR        &mo SCRL        XXX                 XXX             XXX             XXX             XXX             XXX
+    XXX             XXX             &mo SCRL        &mo SLOW        &mkp MCLK           XXX             &mo SLOW        &mo SCRL        XXX             XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    &mkp LCLK       &mkp RCLK       &mkp MCLK           XXX             XXX
+                                    &td_slow_scrl   &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -209,22 +227,22 @@ ZMK_LAYER(adjust,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX             XXX             &studio_unlock  XXX             &bt BT_CLR          &bt BT_CLR      XXX             &studio_unlock  XXX             XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    XXX             &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
 /**
- * SNRP Layer
+ * SLOW Layer
  */
-ZMK_LAYER(sniper,
+ZMK_LAYER(slow,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             XXX             XXX             XXX                 XXX             XXX             XXX             XXX             XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp MCLK       &mkp RCLK       XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             XXX             ___             &mkp MCLK           XXX             ___             XXX             XXX             XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &td_slow_scrl   &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -233,13 +251,13 @@ ZMK_LAYER(sniper,
  */
 ZMK_LAYER(scroll,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             XXX             XXX             XXX                 XXX             XXX             XXX             XXX             XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp MCLK       &mkp RCLK       XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             ___             XXX             &mkp MCLK           XXX             XXX             ___             XXX             XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &td_slow_scrl   &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -248,12 +266,12 @@ ZMK_LAYER(scroll,
  */
 ZMK_LAYER(caret,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             XXX             XXX             XXX                 XXX             XXX             XXX             XXX             XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp MCLK       &mkp RCLK       XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    ___             ___             ___             ___             ___                 ___             ___             ___             ___             ___
+    XXX             XXX             XXX             XXX             &mkp MCLK           XXX             XXX             XXX             XXX             XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    XXX             &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )

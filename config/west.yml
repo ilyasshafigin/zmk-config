@@ -38,5 +38,8 @@ manifest:
     remote: badjeff
     revision: zmk-0.4
     path: modules/zmk/pmw3610-driver
+  # - name: trackball-to-arrows
+  #   path: modules/zmk/trackball-to-arrows
+  #   url: file://modules/zmk/trackball-to-arrows
   self:
     path: config

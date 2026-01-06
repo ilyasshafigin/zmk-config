@@ -1,11 +1,12 @@
 #include <input/processors.dtsi>
+//#include <input/processors/trackball_to_arrows.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include "includes/base.h"
+#include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
 
 &trackball_listener {
-    snipe {
-        layers = <NAV SNPR>;
+    slow {
+        layers = <NAV SLOW>;
         input-processors = <&zip_xy_scaler 1 3>;
     };
 
@@ -18,6 +19,11 @@
         >;
     };
 
+    // caret {
+    //     layers = <CARE>;
+    //     input-processors = <&trackball_to_arrows>;
+    // };
+
     move {
         layers = <DEF MSE>;
         input-processors = <&auto_mouse_layer MSE 1000>;
@@ -29,6 +35,12 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         require-prior-idle-ms = <500>;
-        #excluded-positions = <LH2 LH1 LH0   RM1 RM2 RM3   LM4 LM3 LM2 LM1   LB2 LB1   LB2 LB1>;
+        #excluded-positions = <
+            LH2 LH1 LH0     // Thumbs
+            RM1 RM2 RM3 LB0 // Mouse buttons
+            LM4 LM3 LM2 LM1 // Home-row mod
+            LB3 LB2 LB1     // Mouse layers
+            RB1 RB2 RB3     // Mouse layers
+        >;
     };
 };

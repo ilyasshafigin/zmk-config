@@ -72,6 +72,7 @@ parse_config:
     "&tabber": tab next
     "&swapper": window next
     "&studio_unlock": studio unlock
+    "&td_slow_scrl": def slow scroll
 
     # Others
     "&mmv MOVE_UP": Mouse ↑
@@ -84,9 +85,9 @@ parse_config:
     "&msc SCRL_LEFT": Scroll ←
     "&msc SCRL_RIGHT": Scroll →
 
-    "&mkp LCLK": Left Click
-    "&mkp RCLK": Right Click
-    "&mkp MCLK": Middle Click
+    "&mkp LCLK": $$mdi:mouse-left-click$$
+    "&mkp RCLK": $$mdi:mouse-right-click$$
+    "&mkp MCLK": $$mdi:mouse-scroll-wheel$$
     "&mkp MB4": Back Click
     "&mkp MB5": Forward Click
 
