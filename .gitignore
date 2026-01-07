@@ -3,6 +3,7 @@
 /.build
 /.direnv
 /.west
+/modules
 
 # MacOS
 .DS_Store

@@ -18,14 +18,7 @@
 
 ### Сборка
 
-Установить и включить Docker Desktop.
-
-Вызвать в командрой строке:
-
-```shell
-just init
-just build corne
-```
+Подробнее о локальной сборке в [local-build](local-build/README.md).
 
 ### Загрузка прошивки
 
@@ -202,6 +195,7 @@ just build corne
    5. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
    6. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
    7. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
+   8. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
 2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) – сайт, на котором можно редактировать лайауты в gui
 3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
 4. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
