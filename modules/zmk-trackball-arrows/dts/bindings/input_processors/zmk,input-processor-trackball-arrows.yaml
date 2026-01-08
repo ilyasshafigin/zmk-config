@@ -2,16 +2,12 @@ description: |
   Trackball to Arrow Keys Input Processor
 
   This input processor transforms trackball movements (relative X/Y input events)
-  into arrow key presses. It supports two modes of operation:
-
-  - Discrete: Each movement beyond threshold generates a single key press
-  - Continuous: Keys are held while movement continues
+  into arrow key presses.
 
   Example usage in keymap:
   ```
   &trackball_arrows {
       threshold = <5>;
-      mode = "discrete";
       deadzone-x = <2>;
       deadzone-y = <2>;
   };
@@ -23,6 +19,8 @@ description: |
 
 compatible: "zmk,input-processor-trackball-arrows"
 
+include: ip_zero_param.yaml
+
 properties:
   threshold:
     type: int
@@ -31,16 +29,6 @@ properties:
       Minimum movement distance in pixels to trigger arrow key press.
       Smaller values = more sensitive, larger values = less sensitive.
       Recommended range: 3-10 pixels.
-
-  mode:
-    type: string
-    enum:
-      - "discrete"
-      - "continuous"
-    default: "discrete"
-    description: |
-      discrete: Each movement generates a single key press/release
-      continuous: Keys are held while movement continues
 
   deadzone-x:
     type: int
@@ -56,8 +44,6 @@ properties:
       Vertical deadzone threshold to filter noise from sensor.
       Movements smaller than this are ignored (in pixels).
 
-  track-remainders:
-    type: boolean
-    description: |
-      Track and accumulate fractional pixel remainders between events.
-      Improves accuracy for slow movements by not losing sub-pixel motion.
+  bindings:
+    type: phandle-array
+    required: true

@@ -3,8 +3,8 @@
 Конфигурация и прошивка для клавиатур:
 
 1. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
-2. **[TOTEM](https://github.com/GEIGEIGEIST/TOTEM)** – сейчас основная
-3. [Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)
+2. [TOTEM](https://github.com/GEIGEIGEIST/TOTEM)
+3. **[Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)** – основная
 
 ## Особенности
 
@@ -57,7 +57,7 @@
 
 Сборка:
 
-`just build corne`
+`just build -s "corne"`
 
 Команды для прошивки:
 
@@ -79,7 +79,7 @@
 
 Сборка:
 
-`just build totem`
+`just build -s "totem"`
 
 Команды для прошивки:
 
@@ -99,6 +99,10 @@
 - изменено направление диодов: я припаял диоды так как было показано на плате, в итоге оказалось для совместимости с оригинальной прошивкой надо было наоборот
 - изменен maxtrix transform
 
+Особенности:
+
+- сделал модуль zmk-trackball-arrows, который позволяет трекболом двигать каретку в полях ввода
+
 ### Keymap
 
 Для отрисовки нужно вызвать команду `just draw charybdis -d boards/shields/charybdis/charybdis_layout.dtsi`
@@ -111,7 +115,7 @@
 
 Сборка:
 
-`just build charybdis`
+`just build -s "charybdis"`
 
 Команды для прошивки:
 

@@ -1,15 +1,15 @@
 #include <dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     trackball_arrows: trackball_arrows {
         compatible = "zmk,input-processor-trackball-arrows";
         #input-processor-cells = <0>;
         
-        // Параметры по умолчанию (могут быть переопределены)
-        threshold = <5>;
-        mode = "discrete";  // или "continuous"
-        deadzone-x = <2>;
-        deadzone-y = <2>;
-        track-remainders;
+        threshold = <20>;
+        deadzone-x = <1>;
+        deadzone-y = <1>;
+
+        bindings = <&kp LEFT &kp RIGHT &kp UP &kp DOWN>;
     };
 };

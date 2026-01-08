@@ -1,53 +1,5 @@
-menuconfig ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS
-    bool "Trackball to Arrow Keys Input Processor"
-    help
-      Enable input processor that transforms trackball movements
-      (relative X/Y input events) into arrow key presses.
-      Supports both discrete and continuous modes of operation.
+DT_COMPAT_ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS := zmk,input-processor-trackball-arrows
 
-if ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS
-
-choice ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_MODE
-    prompt "Default processing mode"
-    default ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_MODE_DISCRETE
-
-config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_MODE_DISCRETE
-    bool "Discrete mode"
-    help
-      Each movement beyond threshold generates a single key press.
-      Better for menu navigation and precise control.
-
-config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_MODE_CONTINUOUS
-    bool "Continuous mode"
-    help
-      Keys are held while movement continues.
-      Better for fast scrolling and document navigation.
-
-endchoice
-
-config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_THRESHOLD
-    int "Movement threshold (pixels)"
-    default 5
-    range 1 20
-    help
-      Minimum movement distance to trigger arrow key press.
-      Smaller values = more sensitive, larger values = less sensitive.
-      Recommended range: 3-10 pixels.
-
-config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_DEADZONE_X
-    int "Horizontal deadzone (pixels)"
-    default 2
-    range 0 10
-    help
-      Horizontal deadzone threshold to filter sensor noise.
-      Movements smaller than this are ignored.
-
-config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS_DEADZONE_Y
-    int "Vertical deadzone (pixels)"
-    default 2
-    range 0 10
-    help
-      Vertical deadzone threshold to filter sensor noise.
-      Movements smaller than this are ignored.
-
-endif # ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS
+config ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_INPUT_PROCESSOR_TRACKBALL_ARROWS))
