@@ -310,7 +310,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Scroll ↑
-  - Middle Click
+  - $$mdi:mouse-scroll-wheel$$
   - Scroll ↓
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -341,8 +341,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Left Click
-  - Right Click
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
   - {t: '$$mdi:transfer$$', type: trans}
   adjust:
   - {t: '$$mdi:transfer$$', type: trans}

@@ -3,7 +3,7 @@ parse_config:
   # for ci
   - "modules/zmk/helpers/include"
   # for local
-  - "zmk/modules/zmk/helpers/include"
+  - "local-build/workspace/modules/zmk/helpers/include"
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   toggle_label: $$mdi:toggle-switch$$

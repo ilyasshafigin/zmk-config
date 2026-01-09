@@ -39,7 +39,7 @@ manifest:
     revision: zmk-0.4
     path: modules/zmk/pmw3610-driver
   - name: zmk-trackball-arrows
-    path: modules/zmk-trackball-arrows
-    url: file://modules/zmk-trackball-arrows
+    path: modules/local/zmk-trackball-arrows
+    url: file:///workspace/modules/local/zmk-trackball-arrows
   self:
     path: config

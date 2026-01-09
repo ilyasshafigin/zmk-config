@@ -75,6 +75,21 @@ cat <<EOF
 EOF
 }
 
+print_help() {
+cat <<EOF
+Usage: $0 [OPTIONS]
+
+Options:
+    -n, --number N          Flash N-th build (1-based)
+    -s, --shield S          Filter by shield name (substring)
+    -b, --board B           Filter by board name (exact)
+    -l, --list              List available firmwares
+    --clean|--clean-deps    Clean workspace and dependencies
+    --update                Force west update
+    -h, --help              Show this help
+EOF
+}
+
 list_builds() {
     echo
     echo "=== Available Build Configurations ==="
@@ -147,15 +162,14 @@ clean_deps() {
 # ==========================
 run_build() {
     local idx="$1"
+    local force_update="$2"
 
     local board="${BOARDS[$idx]}"
     local shield="${SHIELDS[$idx]}"
     local snippet="${SNIPPETS[$idx]}"
     local cmake_args="${CMAKE_ARGS[$idx]}"
 
-    local shield_dir
-    shield_dir="$(echo "$shield" | tr ' _' '--')"
-
+    local shield_dir="$(echo "$shield" | tr ' _' '--')"
     local build_dir="/out/$shield_dir"
 
     mkdir -p "$WEST_WS" "$ARTIFACTS" "$OUTPUT_DIR"
@@ -185,15 +199,27 @@ run_build() {
       mkdir -p zmk-config/zephyr
       [ -d /repo/boards ] && cp -R /repo/boards zmk-config/
       [ -d /repo/dts ] && cp -R /repo/dts zmk-config/
-      [ -d /repo/modules ] && cp -a /repo/modules/. modules/
       [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
+
+      if [ -d /repo/modules ]; then
+        cp -aR /repo/modules/. modules/local
+        for mod_path in modules/local/*/ ; do
+          if [ -d \"\$mod_path\" ]; then
+            mod_name=\$(basename \"\$mod_path\")
+            if [ ! -d \"\$mod_path.git\" ]; then
+              echo \"Initializing git for \$mod_name...\"
+              cd \"\$mod_path\" && git init && cd -
+            fi
+          fi
+        done
+      fi
 
       mkdir zmk-config/boards/shields/charybdis/includes
       cp /repo/config/includes/layers.h zmk-config/boards/shields/charybdis/includes/
       cp /repo/config/charybdis_pointer.dtsi zmk-config/boards/shields/charybdis/
 
       [ -d .west ] || west init -l config
-      [ -d zmk ] || west update
+      [ \"$force_update\" != \"true\" -a -d zmk ] || west update 2>/dev/null || true
       west zephyr-export
 
       west build -s zmk/app -d \"$build_dir\" -b \"$board\" ${snippet:+-S \"$snippet\"} --pristine \
@@ -225,6 +251,8 @@ SHIELD=""
 BOARD=""
 LIST=false
 CLEAN=false
+UPDATE=false
+HELP=false
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -232,7 +260,9 @@ while [[ $# -gt 0 ]]; do
         -s|--shield) SHIELD="$2"; shift 2 ;;
         -b|--board)  BOARD="$2"; shift 2 ;;
         -l|--list)   LIST=true; shift ;;
+        -h|--help)   HELP=true; shift ;;
         --clean|--clean-deps) CLEAN=true; shift ;;
+        --update)    UPDATE=true; shift ;;
         *) die "Unknown argument: $1" ;;
     esac
 done
@@ -243,6 +273,8 @@ done
 print_header
 load_builds
 
+$HELP && { print_help; exit 0; }
+
 $LIST && { list_builds; exit 0; }
 
 $CLEAN && clean_deps
@@ -250,7 +282,7 @@ $CLEAN && clean_deps
 if [[ -n "$NUMBER" ]]; then
     (( NUMBER>=1 && NUMBER<=BUILD_COUNT )) || die "Invalid build number"
     SELECTED=$((NUMBER-1))
-
+    run_build "$SELECTED" "$UPDATE"
 elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
     find_by_criteria "$SHIELD" "$BOARD"
 
@@ -265,15 +297,12 @@ elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
     done
     echo
 
-    # Собрать все найденные прошивки
     for i in "${MATCHES[@]}"; do
-        run_build "$i"
+        run_build "$i" "$UPDATE"
     done
 
     exit 0
 else
     interactive_select
-    run_build "$SELECTED"
+    run_build "$SELECTED" "$UPDATE"
 fi
-
-run_build "$SELECTED"
