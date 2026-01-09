@@ -35,7 +35,7 @@
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         require-prior-idle-ms = <500>;
-        #excluded-positions = <
+        excluded-positions = <
             LH2 LH1 LH0     // Thumbs
             RM1 RM2 RM3 LB0 // Mouse buttons
             LM4 LM3 LM2 LM1 // Home-row mod
