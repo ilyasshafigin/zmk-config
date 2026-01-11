@@ -16,6 +16,29 @@
 
 ## Прошивка
 
+### Зависимости
+
+#### [zmk-helpers](https://github.com/urob/zmk-helpers)
+
+Полезные макросы.
+
+#### [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle)
+
+Модуль для "smart toggle". В проекте используется для `swapper` и `tabber`.
+
+#### [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module)
+
+Модуль для донгла prospector.
+
+#### [zmk-pmw3610-driver](https://github.com/badjeff/zmk-pmw3610-driver)
+
+Модуль драйвера для сенсора PMW3610. Нужен для трекбола в клавиатуре Charybdis.
+
+#### [zmk-trackball-arrows](modules/zmk-trackball-arrows/README.md)
+
+Пока что локальный модуль. ZMK модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода.
+Нужен для трекбола в клавиатуре Charybdis.
+
 ### Сборка
 
 Подробнее о локальной сборке в [local-build](local-build/README.md).
