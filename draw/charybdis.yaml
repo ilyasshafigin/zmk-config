@@ -129,8 +129,8 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:brightness-7$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - double ctrl
+  - double shift
   - window prev
   - window next
   - {t: '$$mdi:minus-circle-outline$$', type: none}

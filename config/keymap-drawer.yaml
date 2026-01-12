@@ -73,6 +73,8 @@ parse_config:
     "&swapper": window next
     "&studio_unlock": studio unlock
     "&td_slow_scrl": def slow scroll
+    "&double_shft": double shift
+    "&double_ctrl": double ctrl
 
     # Others
     "&mmv MOVE_UP": Mouse ↑

@@ -43,16 +43,13 @@ EOF
 print_help() {
 cat <<EOF
 
-Usage: $0 <keyboard> [keymap draw args...]
+Usage: $0 <keyboard>
 
 Arguments:
     <keyboard>     Name of keyboard (e.g. 'corne', 'charybdis')
-    [args...]      Extra args for \`keymap draw\` (e.g. -k layout_name)
 
 Examples:
     $0 corne
-    $0 charybdis -k charybdis_zero
-    $0 sofle --columns 12
 
 Outputs:
     draw/<keyboard>.svg
@@ -65,27 +62,39 @@ EOF
 # ==========================
 # Args
 # ==========================
-if [[ $# -eq 0 ]]; then
-    echo "Error: Keyboard name required" >&2
-    exit 1
-fi
+case "${1:-}" in
+    -h|--help)
+        print_header
+        print_help
+        exit 0
+        ;;
+    "")
+        die "Keyboard name required. Use -h for help."
+        ;;
+esac
 
 KEYBOARD="$1"
-shift
+[[ $# -eq 1 ]] || die "Only one keyboard allowed. Use -h for help."
 
-if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    print_header
-    print_help
-    exit 0
-fi
+DRAW_ARGS=""
+case "$KEYBOARD" in
+    charybdis)
+        DRAW_ARGS="-d boards/shields/charybdis/charybdis_layout.dtsi"
+        ;;
+    corne|totem)
+        DRAW_ARGS=""
+        ;;
+    *)
+        echo "Warning: Unknown keyboard '$KEYBOARD', using default args"
+        ;;
+esac
 
-DRAW_ARGS=("${@:2}")
+echo "Draw args: $DRAW_ARGS"
 
 # ==========================
 # Main
 # ==========================
 print_header
-
 
 [[ -f "$DRAW_CONFIG" ]] || die "keymap-drawer.yaml not found: $DRAW_CONFIG"
 
@@ -106,7 +115,7 @@ echo "Parse keymap -> $KEYMAP_YAML"
 keymap -c "$DRAW_CONFIG" parse -z "$KEYMAP_INPUT_FILE" > "$KEYMAP_YAML"
 
 echo "Draw SVG -> $KEYMAP_SVG"
-keymap -c "$DRAW_CONFIG" draw "${DRAW_ARGS[@]:+${DRAW_ARGS[@]}}" "$KEYMAP_YAML" > "$KEYMAP_SVG"
+keymap -c "$DRAW_CONFIG" draw $DRAW_ARGS "$KEYMAP_YAML" > "$KEYMAP_SVG"
 
 echo "Export PNG -> $KEYMAP_PNG"
 inkscape --export-type=png \

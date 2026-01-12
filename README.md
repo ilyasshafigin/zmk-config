@@ -34,14 +34,16 @@
 
 Модуль драйвера для сенсора PMW3610. Нужен для трекбола в клавиатуре Charybdis.
 
-#### [zmk-trackball-arrows](modules/zmk-trackball-arrows/README.md)
+#### [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind)
 
-Пока что локальный модуль. ZMK модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода.
+ZMK модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода.
 Нужен для трекбола в клавиатуре Charybdis.
 
 ### Сборка
 
 Подробнее о локальной сборке в [local-build](local-build/README.md).
+
+Сборка через Github Actions на данные момент не проверялась.
 
 ### Загрузка прошивки
 
@@ -51,26 +53,28 @@
 
 После прошивки включаем донгл (если есть), затем обе половины. Все должно заработать через несклько секунд.
 
-#### Вручную
-
-1. Зажать два раза кнопку Reset (или замкнуть контакты RST и GND).
-2. В проводнике появться подключенная флешка. Перекинуть на нее нужную прошивку.
-
-#### Через командную строку
-
-В корне проекта вызвать такие команды:
-
-- `just flash <board> <keyboard>_dongle` - прошивка донгла
-- `just flash <board> <keyboard>_central_left` - прошивка левой половины как основной
-- `just flash <board> <keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
-- `just flash <board> <keyboard>_peripheral_right` - прошивка правой половины
-- `just flash <board> settings_reset` - загрузка прошивки сброса
-
-Затем подключить донгл/клавиатуры и зажать два раза кнопку Reset (или замкнуть контакты RST и GND).
+1. Выключить прошиваемую клавиатуру (перевести переключатель в положение ВЫКЛ|OFF).
+2. Подключить ее по USB к компьютеру.
+3. Нажать два раза кнопку RESET (или замкнуть контакты RST и GND). В проводнике появится подключенная флешка.
+4. Вручную или через командную строку:
+   - Вручную:
+      1. Перекинуть нужный файл прошивки .uf2 в корень подключенной флешки
+      2. После успешной прошивки устройство в провнике пропадет, клавиатура/донгл перезагрузится
+   - Через командную строку:
+      1. В корне проекта вызвать одну из команд:
+         - `just flash` - отобразится список прошивок, выбрать нужную
+         - `just flash <board> <keyboard>_dongle` - прошивка донгла
+         - `just flash <board> <keyboard>_central_left` - прошивка левой половины как основной
+         - `just flash <board> <keyboard>_peripheral_left` - прошивка левой половины для работы с донглом
+         - `just flash <board> <keyboard>_peripheral_right` - прошивка правой половины
+         - `just flash <board> settings_reset` - загрузка прошивки сброса
+      2. После успешной прошивки устройство в провнике пропадет, клавиатура/донгл перезагрузится
 
 ## Corne
 
 ### Keymap
+
+Для отрисовки нужно вызвать команду `just draw corne`.
 
 ![Keymap Representation](./draw/corne.svg?raw=true "Keymap Representation")
 
@@ -93,6 +97,8 @@
 ## Totem
 
 ### Keymap
+
+Для отрисовки нужно вызвать команду `just draw totem`.
 
 ![Keymap Representation](./draw/totem.svg?raw=true "Keymap Representation")
 
@@ -128,7 +134,7 @@
 
 ### Keymap
 
-Для отрисовки нужно вызвать команду `just draw charybdis -d boards/shields/charybdis/charybdis_layout.dtsi`
+Для отрисовки нужно вызвать команду `just draw charybdis`.
 
 ![Keymap Representation](./draw/charybdis.svg?raw=true "Keymap Representation")
 
@@ -221,9 +227,9 @@
    4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
    5. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
    6. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
-   7. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
-   8. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
-2. [keymap-editor](https://nickcoutsos.github.io/keymap-editor) – сайт, на котором можно редактировать лайауты в gui
-3. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
-4. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
+   7. [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – charybdis
+   8. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
+   9. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
+2. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
+3. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
    - [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender

@@ -63,6 +63,20 @@ ZMK_TAP_DANCE(td_slow_scrl,
     tapping-term-ms = <TAPPING_TERM_MS>;
 )
 
+ZMK_MACRO(double_shft,
+    bindings = <&macro_tap>,
+               <&kp LSHFT>,
+               <&macro_tap>,
+               <&kp LSHFT>;
+)
+
+ZMK_MACRO(double_ctrl,
+    bindings = <&macro_tap>,
+               <&kp LCTRL>,
+               <&macro_tap>,
+               <&kp LCTRL>;
+)
+
 ZMK_COMBO(para_left,      &kp UL_LPAR,    LT1 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(para_right,     &kp UL_RPAR,    RT0 RT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(brak_left,      &kp UL_LBKT,    LM1 LM0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
@@ -150,7 +164,7 @@ ZMK_LAYER(ext,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX             _ SPACE_D       _ SPACE_P       _ SPACE_N       _ SPACE_U           _ C_VOL_DN      _ C_PP          _ C_PREV        _ C_NEXT        _ C_BRI_DN
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             _ WIN_P         &swapper        XXX                 _ C_MUTE        &mkp MB4        &mkp MB5        &studio_unlock  &mo ADJ
+    &double_ctrl    &double_shft    _ WIN_P         &swapper        XXX                 _ C_MUTE        &mkp MB4        &mkp MB5        &studio_unlock  &mo ADJ
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                     ___             ___             _ SPACE             _ ENTER         ___
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
@@ -240,7 +254,7 @@ ZMK_LAYER(slow,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             &mkp LCLK       &mkp MCLK       &mkp RCLK       XXX
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             XXX             ___             &mkp MCLK           XXX             ___             XXX             XXX             XXX
+    XXX             &mo CARE        &mo SCRL        ___             &mkp MCLK           XXX             ___             &mo SCRL        &mo CARE        XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                     &td_slow_scrl   &mkp RCLK       &mkp LCLK           XXX             XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
