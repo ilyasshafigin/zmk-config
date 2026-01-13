@@ -179,8 +179,30 @@ flash_one() {
     printf "\n"
 
     echo "Copy $artifact to ${mount}"
-    cp -av "$uf2" "$mount"
+    retry_cp "$uf2" "$mount" || die "Failed to copy firmware after retries"
     echo "✓ Done!"
+}
+
+retry_cp() {
+    local src="$1"
+    local dst="$2"
+    local max_retries=5
+    local attempt=1
+
+    while [ $attempt -le $max_retries ]; do
+        if cp -X "$src" "$dst/"; then
+            if [ -f "$dst/$(basename "$src")" ] 2>/dev/null; then
+                echo "✓ Copy successful on attempt $attempt"
+                return 0
+            fi
+        fi
+
+        echo "Attempt $attempt/$max_retries failed (permission denied?), retrying in 2s..." >&2
+        sleep 2
+        ((attempt++))
+    done
+
+    return 1
 }
 
 # ==========================

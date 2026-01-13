@@ -181,31 +181,31 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
   gamefn:
-  - '5'
-  - '1'
-  - '2'
-  - '3'
+  - I
+  - '7'
+  - '8'
+  - '9'
+  - T
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - J
   - '4'
+  - '5'
+  - '6'
+  - G
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '0'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - G
-  - J
-  - I
+  - '1'
+  - '2'
+  - '3'
   - M
-  - T
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -226,7 +226,7 @@ layers:
   - F7
   - F8
   - F9
-  - F13
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
@@ -236,7 +236,7 @@ layers:
   - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: F14, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - '0'
   - '1'
   - '2'
@@ -245,8 +245,8 @@ layers:
   - F12
   - F1
   - F2
-  - {t: F3, type: held}
-  - {t: F15, type: held}
+  - F3
+  - {t: fn, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -346,14 +346,14 @@ layers:
   - $$mdi:mouse-right-click$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - caret
+  - scroll
   - {type: held}
   - $$mdi:mouse-scroll-wheel$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held alternate}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - scroll
+  - caret
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - def slow scroll
   - $$mdi:mouse-right-click$$
@@ -384,10 +384,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
   - $$mdi:mouse-scroll-wheel$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
   - {type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -420,10 +420,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
   - $$mdi:mouse-scroll-wheel$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -479,7 +479,7 @@ combos:
   k: {t: game, h: '$$mdi:toggle-switch$$'}
   l: [base]
 - p: [28, 29]
-  k: {t: fn, h: '$$mdi:gesture-tap-hold$$'}
+  k: {t: fn, h: '$$mdi:toggle-switch$$'}
   l: [base]
 - p: [22, 23]
   k: $$mdi:mouse-left-click$$

@@ -217,11 +217,23 @@ layers:
   - $$mdi:apple-keyboard-option$$
   gamefn:
   - {t: '$$mdi:transfer$$', type: trans}
-  - '5'
-  - '1'
-  - '2'
-  - '3'
+  - I
+  - '7'
+  - '8'
+  - '9'
+  - T
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - J
   - '4'
+  - '5'
+  - '6'
+  - G
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -230,22 +242,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '0'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - G
-  - J
-  - I
+  - '1'
+  - '2'
+  - '3'
   - M
-  - T
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -269,7 +269,7 @@ layers:
   - F7
   - F8
   - F9
-  - F13
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
@@ -281,7 +281,7 @@ layers:
   - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: F14, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '0'
@@ -292,8 +292,8 @@ layers:
   - F12
   - F1
   - F2
-  - {t: F3, type: held}
-  - {t: F15, type: held}
+  - F3
+  - {t: fn, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -302,7 +302,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   mouse:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -345,7 +345,7 @@ layers:
   - $$mdi:mouse-right-click$$
   - {t: '$$mdi:transfer$$', type: trans}
   adjust:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -443,5 +443,5 @@ combos:
   k: {t: game, h: '$$mdi:toggle-switch$$'}
   l: [base]
 - p: [33, 34]
-  k: {t: fn, h: '$$mdi:gesture-tap-hold$$'}
+  k: {t: fn, h: '$$mdi:toggle-switch$$'}
   l: [base]
