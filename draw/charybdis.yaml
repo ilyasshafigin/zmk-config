@@ -22,14 +22,14 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '~', h: '$$mdi:apple-keyboard-command$$'}
   - Z
-  - X
-  - C
-  - V
+  - {t: X, h: caret}
+  - {t: C, h: scroll}
+  - {t: V, h: slow}
   - B
   - N
-  - M
-  - '&'
-  - '['
+  - {t: M, h: slow}
+  - {t: '&', h: scroll}
+  - {t: '[', h: caret}
   - ']'
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
