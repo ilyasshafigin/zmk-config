@@ -185,23 +185,34 @@ flash_one() {
 
 retry_cp() {
     local src="$1"
-    local dst="$2"
+    local dst_dir="$2"
     local max_retries=5
     local attempt=1
 
     while [ $attempt -le $max_retries ]; do
-        if cp -X "$src" "$dst/"; then
-            if [ -f "$dst/$(basename "$src")" ] 2>/dev/null; then
-                echo "✓ Copy successful on attempt $attempt"
-                return 0
-            fi
+        if [ ! -d "$dst_dir" ]; then
+            echo "✓ Volume $dst_dir auto-unmounted (flash success!)"
+            return 0
         fi
 
-        echo "Attempt $attempt/$max_retries failed (permission denied?), retrying in 2s..." >&2
-        sleep 2
+        echo "Attempt $attempt/$max_retries: Copy $(basename "$src") → $dst_dir"
+
+        if cp -nX "$src" "$dst_dir/" 2>/dev/null; then
+            echo "✓ Copy successful"
+            return 0
+        fi
+
+        echo "Attempt $attempt failed, retrying in 1s..." >&2
+        sleep 1
         ((attempt++))
     done
 
+    if [ ! -d "$dst_dir" ]; then
+        echo "✓ Volume unmounted after retries (flash success!)"
+        return 0
+    fi
+
+    echo "✗ Failed after $max_retries attempts" >&2
     return 1
 }
 

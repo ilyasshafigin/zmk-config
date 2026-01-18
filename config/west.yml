@@ -29,8 +29,7 @@ manifest:
     path: modules/zmk/smart-toggle
   - name: prospector-zmk-module
     remote: carrefinho
-    #revision: main
-    revision: core/zephyr-4-1
+    revision: feat/new-status-screens #main
     path: modules/zmk/prospector
   # - name: zmk-dongle-screen
     # remote: janpfischer

@@ -34,8 +34,13 @@
 
     // хак, чтобы на остальных слоях трекбол не работал
     disable {
-        layers = <SYM NAV EXT GAM GFN FN>;
+        layers = <SYM NAV EXT FN>;
         input-processors = <&zip_xy_scaler 0 1>;
+    };
+
+    move-game {
+        layers = <GAM GFN>;
+        input-processors = <&zip_xy_scaler 1 1>;
     };
 
     move {
