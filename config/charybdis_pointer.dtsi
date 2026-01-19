@@ -38,12 +38,12 @@
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    move-game {
+    mouse-game {
         layers = <GAM GFN>;
         input-processors = <&zip_xy_scaler 1 1>;
     };
 
-    move {
+    mouse {
         layers = <MSE DEF>;
         input-processors = <&auto_mouse_layer MSE 1000>;
     };
