@@ -87,23 +87,23 @@ ZMK_COMBO(brace_right,    &kp UL_RBRC,    RB0 RB1,    DEF SYM,  COMBO_TERM, COMB
 //ZMK_COMBO(double_quote,   &kp UL_DQT,     RB1 RB2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(grave,          &kp UL_GRAVE,   LT2 LT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(tilde,          &kp UL_TILDE,   RT1 RT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(backslash,      &kp UL_BSLH,    LM3 LM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(slash,          &kp UL_FSLH,    RM2 RM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(backslash,      &kp UL_BSLH,    LM3 LM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(slash,          &kp UL_FSLH,    RM2 RM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(arrow,          &kp LS(LA(K)),  LT3 LT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(double_arrow,   &kp LA(K),      RT2 RT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_ru,        &kp LG(F11),    LM2 LM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_en,        &kp LG(F12),    RM1 RM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(layer_fn,       &tog FN,        RB3 RB4,    DEF,      COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(esc,            &kp ESC,        LT4 LT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(tab,            &kp TAB,        LM4 LM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(studio_unlock,  &studio_unlock, LT4 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(left_click_l,   &mkp LCLK,      LB2 LB1,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(left_click_r,   &mkp LCLK,      RB2 RB1,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(middle_click_l, &mkp MCLK,      LB3 LB2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(middle_click_r, &mkp MCLK,      RB3 RB2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(right_click_l,  &mkp RCLK,      LB4 LB3,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(right_click_r,  &mkp RCLK,      RB4 RB3,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(right_click_l,  &mkp RCLK,      LB3 LB2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(right_click_r,  &mkp RCLK,      RB3 RB2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(middle_click_l, &mkp MCLK,      LM3 LM2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(middle_click_r, &mkp MCLK,      RM3 RM2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 
 /**
  * Default Layer - QWERTY
@@ -117,7 +117,7 @@ ZMK_LAYER(base,
     &hml LGUI A        &hml LALT S        &hml LCTRL D       &hml LSHFT F       _ G                 _ H             &hmr RSHFT J       &hmr RCTRL K       &hmr RALT L        &hmr RGUI UL_TILDE
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
 // │              Z Я │              X Ч │              C С │              V М │           B И │   │           N Т │              M Ь │              & Б │              [ Ю │              ] Э │
-    _ Z                &lt CARE X         &lt SCRL C         &lt SLOW V         _ B                 _ N             &lt SLOW M         &lt SCRL UL_AMPS   &lt CARE UL_LBKT   _ UL_RBKT
+    &lt MSE Z          &lt CARE X         &lt SCRL C         &lt SLOW V         _ B                 _ N             &lt SLOW M         &lt SCRL UL_AMPS   &lt CARE UL_LBKT   _ UL_RBKT
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┴──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │
                                           _ LGUI             _ LSHFT            &lt NAV SPACE       &lt SYM ENTER   &lt EXT BSPC
@@ -227,9 +227,9 @@ ZMK_LAYER(mouse,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             _ RSHFT         _ RCTRL         _ RALT          _ RGUI
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             XXX             XXX             XXX                 XXX             XXX             XXX             XXX             XXX
+    ___             &mo CARE        &mo SCRL        &mo SLOW        XXX                 XXX             &tog SLOW       &tog SCRL       &tog CARE       XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &mkp RCLK       &mkp MCLK       &mkp LCLK           &mkp LCLK       &mkp RCLK
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -257,9 +257,9 @@ ZMK_LAYER(slow,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             _ RSHFT         _ RCTRL         _ RALT          _ RGUI
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             XXX             ___             XXX                 XXX             ___             XXX             XXX             XXX
+    &to DEF         XXX             XXX             ___             XXX                 XXX             &tog SLOW       &tog SCRL       &tog CARE       XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &mkp RCLK       &mkp MCLK       &mkp LCLK           &mkp LCLK       &mkp RCLK
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -272,9 +272,9 @@ ZMK_LAYER(scroll,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             _ RSHFT         _ RCTRL         _ RALT          _ RGUI
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             ___             XXX             XXX                 XXX             XXX             ___             XXX             XXX
+    &to DEF         XXX             ___             XXX             XXX                 XXX             &tog SLOW       &tog SCRL       &tog CARE       XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &mkp RCLK       &mkp MCLK       &mkp LCLK           &mkp LCLK       &mkp RCLK
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )
 
@@ -287,8 +287,8 @@ ZMK_LAYER(caret,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ LGUI          _ LALT          _ LCTRL         _ LSHFT         XXX                 XXX             _ RSHFT         _ RCTRL         _ RALT          _ RGUI
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             ___             XXX             XXX             XXX                 XXX             XXX             XXX             ___             XXX
+    &to DEF         ___             XXX             XXX             XXX                 XXX             &tog SLOW       &tog SCRL       &tog CARE       XXX
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___
+                                    &mkp RCLK       &mkp MCLK       &mkp LCLK           &mkp LCLK       &mkp RCLK
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯
 )

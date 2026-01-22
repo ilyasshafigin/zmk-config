@@ -221,15 +221,20 @@ ZMK модуль, который преобразует движения тре�
 ## Ссылки
 
 1. Примеры конфигураций:
-   1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-   2. [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio) от @devpew – charybdis + zmk studio
-   3. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
-   4. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
-   5. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
-   6. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
-   7. [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – charybdis
-   8. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
-   9. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
+   1. Corne
+      1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
+      2. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
+      3. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
+   2. Totem
+   3. Charybdis
+      1. [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio) от @devpew – charybdis + zmk studio
+      2. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
+      3. [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – charybdis
+      4. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
+      5. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
+      6. [charybdis-zmk](https://github.com/vloth/charybdis-zmk) от @vloth – charybdis
+   4. Другие
+      1. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
 2. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
 3. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
    - [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender

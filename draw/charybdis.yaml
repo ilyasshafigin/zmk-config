@@ -21,7 +21,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '~', h: '$$mdi:apple-keyboard-command$$'}
-  - Z
+  - {t: Z, h: mouse}
   - {t: X, h: caret}
   - {t: C, h: scroll}
   - {t: V, h: slow}
@@ -273,21 +273,21 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
+  - {type: held}
+  - caret
+  - scroll
+  - slow
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: slow, h: '$$mdi:toggle-switch$$'}
+  - {t: scroll, h: '$$mdi:toggle-switch$$'}
+  - {t: caret, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
   adjust:
   - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -345,21 +345,21 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: base, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held alternate}
+  - {t: slow, h: '$$mdi:toggle-switch$$', type: held alternate}
+  - {t: scroll, h: '$$mdi:toggle-switch$$'}
+  - {t: caret, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
   scroll:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -381,21 +381,21 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: base, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: slow, h: '$$mdi:toggle-switch$$'}
+  - {t: scroll, h: '$$mdi:toggle-switch$$', type: held alternate}
+  - {t: caret, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held alternate}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
   caret:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -417,21 +417,21 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: base, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: slow, h: '$$mdi:toggle-switch$$'}
+  - {t: scroll, h: '$$mdi:toggle-switch$$'}
+  - {t: caret, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held alternate}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
 combos:
 - p: [3, 4]
   k: (
@@ -456,12 +456,6 @@ combos:
   l: [base, symbol]
 - p: [6, 7]
   k: '~'
-  l: [base, symbol]
-- p: [11, 12]
-  k: \
-  l: [base, symbol]
-- p: [17, 18]
-  k: /
   l: [base, symbol]
 - p: [1, 2]
   k: ->
@@ -488,14 +482,14 @@ combos:
   k: $$mdi:mouse-left-click$$
   l: [base, symbol, nav, mouse, slow, scroll, caret]
 - p: [21, 22]
-  k: $$mdi:mouse-scroll-wheel$$
+  k: $$mdi:mouse-right-click$$
   l: [base, symbol, nav, mouse, slow, scroll, caret]
 - p: [28, 27]
+  k: $$mdi:mouse-right-click$$
+  l: [base, symbol, nav, mouse, slow, scroll, caret]
+- p: [11, 12]
   k: $$mdi:mouse-scroll-wheel$$
   l: [base, symbol, nav, mouse, slow, scroll, caret]
-- p: [20, 21]
-  k: $$mdi:mouse-right-click$$
-  l: [base, symbol, nav, mouse, slow, scroll, caret]
-- p: [29, 28]
-  k: $$mdi:mouse-right-click$$
+- p: [18, 17]
+  k: $$mdi:mouse-scroll-wheel$$
   l: [base, symbol, nav, mouse, slow, scroll, caret]
