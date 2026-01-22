@@ -31,7 +31,7 @@ layers:
   - {t: '&', h: scroll}
   - {t: '[', h: caret}
   - ']'
-  - $$mdi:apple-keyboard-command$$
+  - $$mdi:keyboard-esc$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
   - {t: '$$mdi:keyboard-return$$', h: symbol}

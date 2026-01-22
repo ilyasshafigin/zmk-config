@@ -89,8 +89,6 @@ case "$KEYBOARD" in
         ;;
 esac
 
-echo "Draw args: $DRAW_ARGS"
-
 # ==========================
 # Main
 # ==========================
@@ -108,6 +106,7 @@ KEYMAP_PNG="$DIR_KEYMAP_DRAWER/$KEYBOARD.png"
 echo "Draw '$KEYBOARD'"
 echo "Input:  $KEYMAP_INPUT_FILE"
 echo "Config: $DRAW_CONFIG"
+echo "Draw args: $DRAW_ARGS"
 
 mkdir -p "$DIR_KEYMAP_DRAWER"
 

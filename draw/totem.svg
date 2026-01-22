@@ -426,7 +426,7 @@ rect.combo {
 </g>
 <g transform="translate(364, 337)" class="key keypos-32">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
+<use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-esc"/>
 </g>
 <g transform="translate(457, 350) rotate(15.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
@@ -452,7 +452,7 @@ rect.combo {
 </a></g>
 <g transform="translate(852, 337)" class="key keypos-37">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-option"/>
+<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:backspace-reverse-outline"/>
 </g>
 <g class="combo combopos-0">
 <rect rx="4" ry="4" x="415" y="71" width="30" height="30" class="combo"/>
@@ -691,9 +691,9 @@ rect.combo {
 <g transform="translate(671, 386) rotate(-30.0)" class="key held keypos-35">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
 </g>
-<g transform="translate(758, 350) rotate(-15.0)" class="key keypos-36">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:backspace-reverse-outline"/>
+<g transform="translate(758, 350) rotate(-15.0)" class="key backspace keypos-36">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key backspace"/>
+<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="-11" y="-11" height="22" width="22.0" class="key backspace tap glyph mdi:backspace"/>
 </g>
 <g transform="translate(852, 337)" class="key trans keypos-37">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>

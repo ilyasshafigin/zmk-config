@@ -105,6 +105,12 @@ ZMK_COMBO(right_click_r,  &mkp RCLK,      RB3 RB2,    DEF SYM NAV MSE SLOW SCRL 
 ZMK_COMBO(middle_click_l, &mkp MCLK,      LM3 LM2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(middle_click_r, &mkp MCLK,      RM3 RM2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 
+/ {
+    chosen {
+        zmk,prospector-theme = &prospector_green_theme;
+    };
+};
+
 /**
  * Default Layer - QWERTY
  */
@@ -120,7 +126,7 @@ ZMK_LAYER(base,
     &lt MSE Z          &lt CARE X         &lt SCRL C         &lt SLOW V         _ B                 _ N             &lt SLOW M         &lt SCRL UL_AMPS   &lt CARE UL_LBKT   _ UL_RBKT
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┴──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │
-                                          _ LGUI             _ LSHFT            &lt NAV SPACE       &lt SYM ENTER   &lt EXT BSPC
+                                          _ ESC              _ LSHFT            &lt NAV SPACE       &lt SYM ENTER   &lt EXT BSPC
 //                                       ╰──────────────────┴──────────────────┴───────────────╯   ╰───────────────┴──────────────────╯
 )
 

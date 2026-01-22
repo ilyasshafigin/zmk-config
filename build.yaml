@@ -16,8 +16,6 @@ include:
 
 - board: xiao_ble
   shield: totem_dongle prospector_adapter
-  #snippet: studio-rpc-usb-uart
-  #cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: xiao_ble
   shield: totem_dongle
 - board: xiao_ble
@@ -29,8 +27,6 @@ include:
 
 - board: xiao_ble
   shield: charybdis_dongle prospector_adapter
-  #snippet: studio-rpc-usb-uart
-  #cmake-args: -DCONFIG_ZMK_STUDIO=y
 - board: nice_nano
   shield: charybdis_central_left
 - board: nice_nano
