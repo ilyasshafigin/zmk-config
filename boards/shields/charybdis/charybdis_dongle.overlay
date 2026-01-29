@@ -2,14 +2,6 @@
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
 
-&trackball_split {
-    status = "okay";
-};
-
-&trackball_listener {
-    status = "okay";
-};
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
@@ -37,4 +29,12 @@
         compatible = "zmk,ble-peripheral";
         local-name = "charybdis_peripheral_right";
     };
+};
+
+&trackball_split {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
 };

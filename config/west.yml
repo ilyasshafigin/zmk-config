@@ -10,23 +10,46 @@ manifest:
     url-base: https://github.com/carrefinho
   - name: janpfischer
     url-base: https://github.com/janpfischer
+  - name: oleksandrmaslov
+    url-base: https://github.com/oleksandrmaslov
   - name: urob
     url-base: https://github.com/urob
   - name: zettaface
     url-base: https://github.com/zettaface
   projects:
+  # ZMK
   - name: zmk
     remote: zmkfirmware
     revision: main
     import: app/west.yml
+
+  # Helper
   - name: zmk-helpers
     remote: urob
     revision: main
     path: modules/zmk/helpers
+
+  # Driver
+  - name: zmk-pmw3610-driver
+    remote: badjeff
+    revision: zmk-0.4
+    path: modules/zmk/pmw3610-driver
+
+  # Behavior & Input processor
   - name: zmk-smart-toggle
     remote: caksoylar
     revision: main
     path: modules/zmk/smart-toggle
+  - name: zmk-input-processor-keybind
+    remote: zettaface
+    revision: main
+    path: modules/zmk/input-processor-keybind
+  - name: zmk-pointing-acceleration
+    remote: oleksandrmaslov
+    revision: main
+    path: modules/zmk/pointing-acceleration
+
+  # Dongle
   - name: prospector-zmk-module
     remote: carrefinho
     revision: feat/new-status-screens #main
@@ -35,13 +58,5 @@ manifest:
     # remote: janpfischer
     # revision: main
     # path: modules/zmk/dongle-screen
-  - name: zmk-pmw3610-driver
-    remote: badjeff
-    revision: zmk-0.4
-    path: modules/zmk/pmw3610-driver
-  - name: zmk-input-processor-keybind
-    remote: zettaface
-    revision: main
-    path: modules/zmk/input-processor-keybind
   self:
     path: config
