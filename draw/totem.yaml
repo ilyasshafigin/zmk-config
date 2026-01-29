@@ -33,7 +33,7 @@ layers:
   - '['
   - ']'
   - /
-  - $$mdi:keyboard-esc$$
+  - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
   - {t: '$$mdi:keyboard-return$$', h: symbol}
@@ -105,11 +105,11 @@ layers:
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
   - home
   - $$mdi:arrow-down-bold$$
   - end
-  - $$mdi:apple-keyboard-caps$$
+  - {t: fn, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -147,7 +147,7 @@ layers:
   - $$mdi:volume-off$$
   - Back Click
   - Forward Click
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - adjust
   - {t: '$$mdi:transfer$$', type: trans}
@@ -236,9 +236,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '7'
-  - '8'
-  - '9'
+  - KP 7
+  - KP 8
+  - KP 9
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
   - F7
@@ -246,9 +246,9 @@ layers:
   - F9
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: KP 4, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: KP 5, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: KP 6, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
@@ -256,10 +256,10 @@ layers:
   - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '0'
-  - '1'
-  - '2'
-  - '3'
+  - KP 0
+  - KP 1
+  - KP 2
+  - KP 3
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F12
   - F1
@@ -336,12 +336,12 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:bluetooth-off$$
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}

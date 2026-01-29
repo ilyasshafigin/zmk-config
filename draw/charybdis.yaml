@@ -31,7 +31,7 @@ layers:
   - {t: '&', h: scroll}
   - {t: '[', h: caret}
   - ']'
-  - $$mdi:keyboard-esc$$
+  - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: nav}
   - {t: '$$mdi:keyboard-return$$', h: symbol}
@@ -98,11 +98,11 @@ layers:
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
   - home
   - $$mdi:arrow-down-bold$$
   - end
-  - $$mdi:apple-keyboard-caps$$
+  - {t: fn, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
@@ -130,14 +130,14 @@ layers:
   - $$mdi:skip-next$$
   - $$mdi:brightness-7$$
   - double ctrl
-  - double shift
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - window prev
   - window next
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-off$$
   - Back Click
   - Forward Click
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - adjust
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -218,9 +218,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '7'
-  - '8'
-  - '9'
+  - KP 7
+  - KP 8
+  - KP 9
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
   - F7
@@ -228,19 +228,19 @@ layers:
   - F9
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: KP 4, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: KP 5, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: KP 6, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
-  - '0'
-  - '1'
-  - '2'
-  - '3'
+  - KP 0
+  - KP 1
+  - KP 2
+  - KP 3
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F12
   - F1
@@ -268,7 +268,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Forward Click
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -278,7 +278,7 @@ layers:
   - scroll
   - slow
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Back Click
   - {t: slow, h: '$$mdi:toggle-switch$$'}
   - {t: scroll, h: '$$mdi:toggle-switch$$'}
   - {t: caret, h: '$$mdi:toggle-switch$$'}
@@ -311,12 +311,12 @@ layers:
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:bluetooth-off$$
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - studio unlock
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -340,7 +340,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Forward Click
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -350,7 +350,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Back Click
   - {t: slow, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: scroll, h: '$$mdi:toggle-switch$$'}
   - {t: caret, h: '$$mdi:toggle-switch$$'}
@@ -376,7 +376,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Forward Click
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -386,7 +386,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Back Click
   - {t: slow, h: '$$mdi:toggle-switch$$'}
   - {t: scroll, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: caret, h: '$$mdi:toggle-switch$$'}
@@ -412,7 +412,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Forward Click
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -422,7 +422,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Back Click
   - {t: slow, h: '$$mdi:toggle-switch$$'}
   - {t: scroll, h: '$$mdi:toggle-switch$$'}
   - {t: caret, h: '$$mdi:toggle-switch$$', type: held alternate}
