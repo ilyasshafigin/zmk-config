@@ -2,6 +2,14 @@
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
 
+&charybdis_5col_transform {
+    col-offset = <5>;
+};
+
+&charybdis_6col_transform {
+    col-offset = <6>;
+};
+
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
     wakeup-source;
@@ -23,7 +31,12 @@
         ;
 };
 
+&trackball {
+    status = "okay";
+};
+
 &trackball_split {
+    device = <&trackball>;
     status = "okay";
 };
 
@@ -34,11 +47,11 @@
 / {
     central: bt_central {
         compatible = "zmk,ble-central";
-        peripherals = <&right_peripheral>;
+        peripherals = <&left_peripheral>;
     };
 
-    right_peripheral: bt_right {
+    left_peripheral: bt_left {
         compatible = "zmk,ble-peripheral";
-        local-name = "charybdis_peripheral_right";
+        local-name = "charybdis_peripheral_left";
     };
 };

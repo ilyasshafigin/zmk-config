@@ -6,9 +6,13 @@
     col-offset = <5>;
 };
 
+&charybdis_6col_transform {
+    col-offset = <6>;
+};
+
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
-    
+
     col-gpios
         = <&pro_micro 19 GPIO_ACTIVE_HIGH>
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>

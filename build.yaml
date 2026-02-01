@@ -28,7 +28,7 @@ include:
 - board: xiao_ble
   shield: charybdis_dongle prospector_adapter
 - board: nice_nano
-  shield: charybdis_central_left
+  shield: charybdis_central_right
 - board: nice_nano
   shield: charybdis_peripheral_left
 - board: nice_nano

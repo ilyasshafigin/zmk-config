@@ -129,6 +129,7 @@
 
 - Используется модуль [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), который позволяет трекболом двигать каретку в полях ввода
 - Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускоренния трекбола
+- В режим без донгла основной половиной будет правая (central_right)
 
 ### Keymap
 
@@ -148,11 +149,11 @@
 
 - `just flash -s "charybdis_dongle"` - прошивка донгла на XIAO
 - `just flash -s "charybdis_dongle+prospector_adapter"` - прошивка донгла Prospector
-- `just flash -s "charybdis_central_left"` - прошивка левой половины как основной
+- `just flash -s "charybdis_central_right"` - прошивка правой половины как основной
 - `just flash -s "charybdis_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "charybdis_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
-Особенность в том, что во вреся сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `boards/shields/charybdis`, так как не все общие конфигурации удалось вынести. После сборки скопированные файлы удаляются.
+Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
 
 ## Universal layout
 
