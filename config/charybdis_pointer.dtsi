@@ -2,7 +2,6 @@
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <scroll-snap.dtsi>
 #include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
 

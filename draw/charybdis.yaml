@@ -74,9 +74,9 @@ layers:
   - $$mdi:backspace-reverse-outline$$
   nav:
   - ','
-  - '7'
-  - '8'
   - '9'
+  - '8'
+  - '7'
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
@@ -84,19 +84,19 @@ layers:
   - page down
   - {t: game, h: '$$mdi:toggle-switch$$'}
   - {t: ., h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '6', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '5', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '6', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '4', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - '0'
-  - '1'
-  - '2'
   - '3'
+  - '2'
+  - '1'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:apple-keyboard-caps$$
   - home
@@ -182,9 +182,9 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   gamefn:
   - M
-  - '7'
-  - '8'
   - '9'
+  - '8'
+  - '7'
   - T
   - Y
   - U
@@ -192,9 +192,9 @@ layers:
   - O
   - P
   - I
-  - '4'
-  - '5'
   - '6'
+  - '5'
+  - '4'
   - G
   - H
   - J
@@ -202,9 +202,9 @@ layers:
   - L
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '0'
-  - '1'
-  - '2'
   - '3'
+  - '2'
+  - '1'
   - B
   - N
   - M
@@ -218,9 +218,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   fn:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - KP 7
-  - KP 8
   - KP 9
+  - KP 8
+  - KP 7
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
   - F7
@@ -228,9 +228,9 @@ layers:
   - F9
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: KP 4, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: KP 6, h: '$$mdi:apple-keyboard-option$$'}
   - {t: KP 5, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: KP 6, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: KP 4, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
@@ -238,9 +238,9 @@ layers:
   - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
   - KP 0
-  - KP 1
-  - KP 2
   - KP 3
+  - KP 2
+  - KP 1
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F12
   - F1
@@ -351,9 +351,9 @@ layers:
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Back Click
-  - {t: slow, h: '$$mdi:toggle-switch$$', type: held alternate}
-  - {t: scroll, h: '$$mdi:toggle-switch$$'}
-  - {t: caret, h: '$$mdi:toggle-switch$$'}
+  - {type: held alternate}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
@@ -387,9 +387,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Back Click
-  - {t: slow, h: '$$mdi:toggle-switch$$'}
-  - {t: scroll, h: '$$mdi:toggle-switch$$', type: held alternate}
-  - {t: caret, h: '$$mdi:toggle-switch$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {type: held alternate}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
@@ -423,9 +423,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Back Click
-  - {t: slow, h: '$$mdi:toggle-switch$$'}
-  - {t: scroll, h: '$$mdi:toggle-switch$$'}
-  - {t: caret, h: '$$mdi:toggle-switch$$', type: held alternate}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$

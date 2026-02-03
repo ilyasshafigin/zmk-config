@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
 
 DIR_CONFIG="$WORKSPACE/config"
-DIR_KEYMAP_DRAWER="$WORKSPACE/draw"
+DIR_DRAW="$WORKSPACE/draw"
 DRAW_CONFIG="$DIR_CONFIG/keymap-drawer.yaml"
 
 # ==========================
@@ -42,88 +42,147 @@ EOF
 
 print_help() {
 cat <<EOF
+Usage: $0 [OPTIONS] [KEYMAP]
 
-Usage: $0 <keyboard>
+Options:
+    -l, --list        List available keymaps
+    -a, --all         Draw all keymaps
+    -h, --help        Show this help
 
-Arguments:
-    <keyboard>     Name of keyboard (e.g. 'corne', 'charybdis')
+Without arguments:
+    Interactive keymap selection
 
 Examples:
     $0 corne
-
-Outputs:
-    draw/<keyboard>.svg
-    draw/<keyboard>.png
-    draw/<keyboard>.yaml
-
+    $0 --list
+    $0 --all
 EOF
+}
+
+# ==========================
+# Load keymaps
+# ==========================
+load_keymaps() {
+    [[ -d "$DIR_CONFIG" ]] || die "Config dir not found: $DIR_CONFIG"
+
+    KEYMAPS=()
+    while IFS= read -r f; do
+        KEYMAPS+=( "$(basename "$f" .keymap)" )
+    done < <(find "$DIR_CONFIG" -maxdepth 1 -name "*.keymap" | sort)
+
+    (( ${#KEYMAPS[@]} > 0 )) || die "No keymaps found in $DIR_CONFIG"
+}
+
+list_keymaps() {
+    echo
+    echo "=== Available keymaps ==="
+    echo
+    for ((i=0;i<${#KEYMAPS[@]};i++)); do
+        echo "$((i+1)). ${KEYMAPS[$i]}"
+    done
+    echo
+}
+
+interactive_select() {
+    list_keymaps
+    while true; do
+        read -rp "Select keymap (1-${#KEYMAPS[@]}) or q: " ans
+        [[ "$ans" == "q" ]] && exit 0
+        [[ "$ans" =~ ^[0-9]+$ ]] || continue
+        (( ans>=1 && ans<=${#KEYMAPS[@]} )) && {
+            SELECTED="${KEYMAPS[$((ans-1))]}"
+            return
+        }
+    done
+}
+
+# ==========================
+# Keyboard-specific args
+# ==========================
+get_draw_args() {
+    case "$1" in
+        charybdis)
+            echo "-d boards/shields/charybdis/charybdis_layout.dtsi"
+            ;;
+        *)
+            echo ""
+            ;;
+    esac
+}
+
+# ==========================
+# Draw one keymap
+# ==========================
+draw_one() {
+    local kb="$1"
+
+    local input="$DIR_CONFIG/$kb.keymap"
+    local yaml="$DIR_DRAW/$kb.yaml"
+    local svg="$DIR_DRAW/$kb.svg"
+    local png="$DIR_DRAW/$kb.png"
+    local args="$(get_draw_args "$kb")"
+
+    [[ -f "$input" ]] || die "Keymap not found: $input"
+
+    echo
+    echo "▶ Draw '$kb'"
+    echo "  Input: $input"
+    echo "  Args:  $args"
+
+    mkdir -p "$DIR_DRAW"
+
+    keymap -c "$DRAW_CONFIG" parse -z "$input" > "$yaml"
+    keymap -c "$DRAW_CONFIG" draw $args "$yaml" > "$svg"
+
+    inkscape --export-type=png \
+             --export-background=white \
+             --export-filename="$png" \
+             "$svg"
+
+    echo "  ✓ $png"
 }
 
 # ==========================
 # Args
 # ==========================
-case "${1:-}" in
-    -h|--help)
-        print_header
-        print_help
-        exit 0
-        ;;
-    "")
-        die "Keyboard name required. Use -h for help."
-        ;;
-esac
+LIST=false
+ALL=false
+KEYBOARD=""
 
-KEYBOARD="$1"
-[[ $# -eq 1 ]] || die "Only one keyboard allowed. Use -h for help."
-
-DRAW_ARGS=""
-case "$KEYBOARD" in
-    charybdis)
-        DRAW_ARGS="-d boards/shields/charybdis/charybdis_layout.dtsi"
-        ;;
-    corne|totem)
-        DRAW_ARGS=""
-        ;;
-    *)
-        echo "Warning: Unknown keyboard '$KEYBOARD', using default args"
-        ;;
-esac
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -l|--list) LIST=true; shift ;;
+        -a|--all)  ALL=true; shift ;;
+        -h|--help)
+            print_header
+            print_help
+            exit 0
+            ;;
+        *)
+            KEYBOARD="$1"
+            shift
+            ;;
+    esac
+done
 
 # ==========================
 # Main
 # ==========================
 print_header
+load_keymaps
 
-[[ -f "$DRAW_CONFIG" ]] || die "keymap-drawer.yaml not found: $DRAW_CONFIG"
+$LIST && { list_keymaps; exit 0; }
 
-KEYMAP_INPUT_FILE="$DIR_CONFIG/$KEYBOARD.keymap"
-KEYMAP_YAML="$DIR_KEYMAP_DRAWER/$KEYBOARD.yaml"
-KEYMAP_SVG="$DIR_KEYMAP_DRAWER/$KEYBOARD.svg"
-KEYMAP_PNG="$DIR_KEYMAP_DRAWER/$KEYBOARD.png"
+if $ALL; then
+    for kb in "${KEYMAPS[@]}"; do
+        draw_one "$kb"
+    done
+    exit 0
+fi
 
-[[ -f "$KEYMAP_INPUT_FILE" ]] || die "Keymap not found: $KEYMAP_INPUT_FILE"
-
-echo "Draw '$KEYBOARD'"
-echo "Input:  $KEYMAP_INPUT_FILE"
-echo "Config: $DRAW_CONFIG"
-echo "Draw args: $DRAW_ARGS"
-
-mkdir -p "$DIR_KEYMAP_DRAWER"
-
-echo "Parse keymap -> $KEYMAP_YAML"
-keymap -c "$DRAW_CONFIG" parse -z "$KEYMAP_INPUT_FILE" > "$KEYMAP_YAML"
-
-echo "Draw SVG -> $KEYMAP_SVG"
-keymap -c "$DRAW_CONFIG" draw $DRAW_ARGS "$KEYMAP_YAML" > "$KEYMAP_SVG"
-
-echo "Export PNG -> $KEYMAP_PNG"
-inkscape --export-type=png \
-         --export-background=white \
-         --export-filename="$KEYMAP_PNG" \
-         "$KEYMAP_SVG"
-
-echo
-echo "✓ Generated:"
-echo "  $KEYMAP_YAML"
-echo "  $KEYMAP_SVG"
-echo "  $KEYMAP_PNG"
+if [[ -n "$KEYBOARD" ]]; then
+    draw_one "$KEYBOARD"
+else
+    interactive_select
+    draw_one "$SELECTED"
+fi

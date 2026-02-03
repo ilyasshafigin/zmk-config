@@ -30,5 +30,5 @@ clean:
 clean-all: clean clean-firmware
 
 # Draw
-draw *args='':
+draw *args:
     bash scripts/draw.sh {{ args }}
