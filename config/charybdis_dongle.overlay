@@ -1,0 +1,5 @@
+/ {
+    chosen {
+        zmk,prospector-theme = &prospector_green_theme;
+    };
+};

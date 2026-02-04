@@ -1,0 +1,18 @@
+if SHIELD_CHARYBDIS_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "CharybdisDongle"
+
+endif
+
+if SHIELD_CHARYBDIS_CENTRAL_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Charybdis"
+
+endif
+
+
+if SHIELD_CHARYBDIS_PERIPHERAL_LEFT || SHIELD_CHARYBDIS_PERIPHERAL_RIGHT
+
+endif

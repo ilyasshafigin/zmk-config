@@ -1,0 +1,28 @@
+#include <behaviors.dtsi>
+
+// Behaviors Constants
+#define TAPPING_TERM_MS 200
+#define TAPPING_TERM_HRM_MS 280
+#define QUICK_TAP_MS 175
+#define REQUIRE_PRIOR_IDLE_MS 150
+#define RELEASE_AFTER_MS 900
+
+// Combos Constants
+#define COMBO_TERM 20
+#define COMBO_IDLE 100
+
+#include "zmk-helpers/helper.h"
+
+#define ZMK_BEHAVIOR_CORE_smart_toggle    compatible = "zmk,behavior-smart-toggle";    #binding-cells = <0>
+
+#define ZMK_SMART_TOGGLE(name, ...) ZMK_BEHAVIOR(name, smart_toggle, __VA_ARGS__)
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) ZMK_HOLD_TAP(NAME, \
+    flavor = "balanced"; \
+    tapping-term-ms = <TAPPING_TERM_HRM_MS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
+    quick-tap-ms = <QUICK_TAP_MS>; \
+    hold-trigger-on-release; \
+    bindings = <HOLD>, <TAP>; \
+    hold-trigger-key-positions = <TRIGGER_POS>; \
+)

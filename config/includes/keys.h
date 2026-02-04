@@ -1,29 +1,7 @@
-// ZMK Core Includes
-#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-
-// Layers
-#define DEF 0
-#define SYM 1
-#define NAV 2
-#define NUM 3
-#define EXT 4
-#define GAM 5
-#define GFN 6
-#define MSE 7
-#define ADJ 8
-
-// Behaviors Constants
-#define TAPPING_TERM_MS 170
-#define QUICK_TAP_MS 100
-#define REQUIRE_PRIOR_IDLE_MS 150
-#define RELEASE_AFTER_KEY_MS 2000
-
-// Combos Constants
-#define COMBO_TERM 20
-#define COMBO_IDLE 100
+#include "universal_layout.h"
 
 // Keys
 #define SPACE_N   LC(RIGHT)     // Ctrl+->      - Space next
@@ -40,12 +18,6 @@
 #define ___ &trans
 
 #define MEH(key) LS(LC(LA(key)))
-
-#include "zmk-helpers/helper.h"
-#include "universal_layout.h"
-
-#define ZMK_BEHAVIOR_CORE_smart_toggle    compatible = "zmk,behavior-smart-toggle";    #binding-cells = <0>
-#define ZMK_SMART_TOGGLE(name, ...) ZMK_BEHAVIOR(name, smart_toggle, __VA_ARGS__)
 
 // Dongle Screen
 // Keycode that toggles the screen off and on

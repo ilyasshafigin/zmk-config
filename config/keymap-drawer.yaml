@@ -3,7 +3,7 @@ parse_config:
   # for ci
   - "modules/zmk/helpers/include"
   # for local
-  - "zmk/modules/zmk/helpers/include"
+  - "local-build/workspace/modules/zmk/helpers/include"
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   toggle_label: $$mdi:toggle-switch$$
@@ -69,9 +69,12 @@ parse_config:
       hold: $$mdi:progress-download$$
 
     # Macros/Behaviors
-    "&swtn": tab next
-    "&swwn": window next
+    "&tabber": tab next
+    "&swapper": window next
     "&studio_unlock": studio unlock
+    "&td_slow_scrl": def slow scroll
+    "&double_shft": double shift
+    "&double_ctrl": double ctrl
 
     # Others
     "&mmv MOVE_UP": Mouse ↑
@@ -84,9 +87,9 @@ parse_config:
     "&msc SCRL_LEFT": Scroll ←
     "&msc SCRL_RIGHT": Scroll →
 
-    "&mkp LCLK": Left Click
-    "&mkp RCLK": Right Click
-    "&mkp MCLK": Middle Click
+    "&mkp LCLK": $$mdi:mouse-left-click$$
+    "&mkp RCLK": $$mdi:mouse-right-click$$
+    "&mkp MCLK": $$mdi:mouse-scroll-wheel$$
     "&mkp MB4": Back Click
     "&mkp MB5": Forward Click
 
@@ -375,21 +378,21 @@ parse_config:
     K_CANCEL: $$mdi:close-box$$
 
     # Key pad
-    KP_N1: "1"
-    KP_N2: "2"
-    KP_N3: "3"
-    KP_N4: "4"
-    KP_N5: "5"
-    KP_N6: "6"
-    KP_N7: "7"
-    KP_N8: "8"
-    KP_N9: "9"
-    KP_N0: "0"
-    KP_MINUS: "-"
-    KP_PLUS: "+"
-    KP_DOT: "."
-    KP_MULTIPLY: "*"
-    KP_SLASH: "/"
+    KP_N1: "KP 1"
+    KP_N2: "KP 2"
+    KP_N3: "KP 3"
+    KP_N4: "KP 4"
+    KP_N5: "KP 5"
+    KP_N6: "KP 6"
+    KP_N7: "KP 7"
+    KP_N8: "KP 8"
+    KP_N9: "KP 9"
+    KP_N0: "KP 0"
+    KP_MINUS: "KP -"
+    KP_PLUS: "KP +"
+    KP_DOT: "KP ."
+    KP_MULTIPLY: "KP *"
+    KP_SLASH: "KP /"
 
     # Navigation
     PG_UP: page up

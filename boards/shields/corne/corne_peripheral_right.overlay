@@ -1,6 +1,6 @@
 #include "corne.dtsi"
 
-&default_transform {
+&corne_6col_transform {
     col-offset = <6>;
 };
 

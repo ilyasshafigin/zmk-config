@@ -2,38 +2,61 @@ manifest:
   remotes:
   - name: zmkfirmware
     url-base: https://github.com/zmkfirmware
-  - name: urob
-    url-base: https://github.com/urob
+  - name: badjeff
+    url-base: https://github.com/badjeff
   - name: caksoylar
     url-base: https://github.com/caksoylar
-  - name: janpfischer
-    url-base: https://github.com/janpfischer
   - name: carrefinho
     url-base: https://github.com/carrefinho
-  - name: ilyasshafigin
-    url-base: https://github.com/ilyasshafigin
+  - name: janpfischer
+    url-base: https://github.com/janpfischer
+  - name: oleksandrmaslov
+    url-base: https://github.com/oleksandrmaslov
+  - name: urob
+    url-base: https://github.com/urob
+  - name: zettaface
+    url-base: https://github.com/zettaface
   projects:
+  # ZMK
   - name: zmk
     remote: zmkfirmware
     revision: main
     import: app/west.yml
+
+  # Helper
   - name: zmk-helpers
     remote: urob
     revision: main
     path: modules/zmk/helpers
+
+  # Driver
+  - name: zmk-pmw3610-driver
+    remote: badjeff
+    revision: zmk-0.4
+    path: modules/zmk/pmw3610-driver
+
+  # Behavior & Input processor
   - name: zmk-smart-toggle
     remote: caksoylar
     revision: main
     path: modules/zmk/smart-toggle
+  - name: zmk-input-processor-keybind
+    remote: zettaface
+    revision: main
+    path: modules/zmk/input-processor-keybind
+  - name: zmk-pointing-acceleration
+    remote: oleksandrmaslov
+    revision: main
+    path: modules/zmk/pointing-acceleration
+
+  # Dongle
   - name: prospector-zmk-module
     remote: carrefinho
-    #revision: main
-    revision: core/zephyr-4-1
+    revision: feat/new-status-screens #main
     path: modules/zmk/prospector
-  - name: zmk-dongle-screen
-    #remote: janpfischer
-    remote: ilyasshafigin
-    revision: main
-    path: modules/zmk/dongle-screen
+  # - name: zmk-dongle-screen
+    # remote: janpfischer
+    # revision: main
+    # path: modules/zmk/dongle-screen
   self:
     path: config

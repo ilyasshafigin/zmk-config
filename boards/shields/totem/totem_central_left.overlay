@@ -19,3 +19,16 @@
         , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
+
+/ {
+    left_central: bt_central {
+        compatible = "zmk,ble-central";
+        local-name = "totem_central_left";
+        peripherals = <&right_peripheral>;
+    };
+
+    right_peripheral: bt_right {
+        compatible = "zmk,ble-peripheral";
+        local-name = "totem_peripheral_right";
+    };
+};
