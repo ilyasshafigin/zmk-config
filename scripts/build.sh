@@ -84,6 +84,7 @@ Options:
     -s, --shield S          Filter by shield name (substring)
     -b, --board B           Filter by board name (exact)
     -l, --list              List available firmwares
+    -a, --all               Build all firmwares
     --clean|--clean-deps    Clean workspace and dependencies
     --update                Force west update
     -h, --help              Show this help
@@ -250,6 +251,7 @@ NUMBER=""
 SHIELD=""
 BOARD=""
 LIST=false
+ALL=false
 CLEAN=false
 UPDATE=false
 HELP=false
@@ -260,6 +262,7 @@ while [[ $# -gt 0 ]]; do
         -s|--shield) SHIELD="$2"; shift 2 ;;
         -b|--board)  BOARD="$2"; shift 2 ;;
         -l|--list)   LIST=true; shift ;;
+        -a|--all)    ALL=true; shift;;
         -h|--help)   HELP=true; shift ;;
         --clean|--clean-deps) CLEAN=true; shift ;;
         --update)    UPDATE=true; shift ;;
@@ -273,11 +276,32 @@ done
 print_header
 load_builds
 
-$HELP && { print_help; exit 0; }
+if $HELP; then
+    print_help
+    exit 0
+fi
 
-$LIST && { list_builds; exit 0; }
+if $LIST; then
+    list_builds
+    exit 0
+fi
 
-$CLEAN && clean_deps
+if $ALL; then
+    echo "Will build the following configurations:"
+    for ((i=0;i<BUILD_COUNT;i++)); do
+        echo "  $((i+1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
+    done
+    echo
+
+    for ((i=0;i<BUILD_COUNT;i++)); do
+        run_build "$i" "$UPDATE"
+    done
+    exit 0
+fi
+
+if $CLEAN; then
+    clean_deps
+fi
 
 if [[ -n "$NUMBER" ]]; then
     (( NUMBER>=1 && NUMBER<=BUILD_COUNT )) || die "Invalid build number"

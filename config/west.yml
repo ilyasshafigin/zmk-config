@@ -54,6 +54,10 @@ manifest:
     remote: kot149
     revision: v1
     path: modules/zmk/scroll-snap
+  - name: zmk-behavior-battery-percentage-printer
+    remote: badjeff
+    revision: main
+    path: modules/zmk/behavior-battery-percentage-printer
 
   # Dongle
   - name: prospector-zmk-module

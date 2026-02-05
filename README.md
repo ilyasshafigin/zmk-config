@@ -16,6 +16,53 @@
 
 ## Прошивка
 
+### Режимы работы
+
+#### Standalone mode
+
+В этом режиме одна из половин клавиатур является основной.
+
+- Левая половина: основная, соединяется с компьютером по Bluetooth или USB
+- Правая половина: периферийная, соединяется по Bluetooth с основной половиной
+- Соединение: Правая -> Левая -> Компьютер
+
+Для Charybdis все наоборот, там основная правая, где трекбол.
+
+#### Dongle mode
+
+В режиме донгла сам донг является основным, клавиатуры - периферией.
+
+- Левая/Правая половины: периферии, соединяются с донглом по Bluetooth
+- Донгл: основной, соединяется с компьютером по USB (но можно и по Bluetooth, если запитать донгл)
+- Соединение: Правая -> Донгл <- Левая, Донгл -> Компьютер
+
+Варианты донглов:
+
+##### nice!nano (v2)
+
+Просто плата, покдлюченная по usb к компьютеру.
+
+##### XIAO BLE
+
+Просто плата, покдлюченная по usb к компьютеру.
+
+##### Prospector Dongle
+
+Донгл с экраном на базе XIAO BLE.
+
+- Название текущего слоя
+- Состояние батарей периферии
+- Состояние соединения с периферией
+- Индикаторы модификаторов и Caps Word
+- Несколько стилей экранов
+- Можно подцепить датчик освещенности для регулировки яркости экрана
+
+##### YADS Prospector Dongle
+
+Донгл на базе Prospector, но с измененной прошивкой.
+
+- Можно регулировать яркость экрана донгла
+
 ### Зависимости
 
 #### Helpers
@@ -31,6 +78,7 @@
 - [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle) - модуль для "smart toggle". В проекте используется для `swapper` и `tabber`.
 - [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind) - модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода. Нужен для трекбола в клавиатуре Charybdis.
 - [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) - добавляет ускорение трекбола.
+- [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) - добавляет привязку прокрутки трекбола к осям X или Y.
 
 #### Dongle
 
@@ -129,6 +177,7 @@
 
 - Используется модуль [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), который позволяет трекболом двигать каретку в полях ввода
 - Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускоренния трекбола
+- Используется модуль [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) для привязки движения каретки к осям X и Y.
 - В режим без донгла основной половиной будет правая (central_right)
 
 ### Keymap
@@ -230,7 +279,7 @@
       2. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
       3. [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – charybdis
       4. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
-      5. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка
+      5. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка, tester pro micro
       6. [charybdis-zmk](https://github.com/vloth/charybdis-zmk) от @vloth – charybdis
    4. Другие
       1. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
