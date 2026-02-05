@@ -2,6 +2,7 @@
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <scroll-snap.dtsi>
 #include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
 
@@ -31,7 +32,10 @@
 
     caret {
         layers = <CARE>;
-        input-processors = <&zip_keybind_keys>;
+        input-processors = <
+            &zip_keybind_keys
+            &zip_scroll_snap
+        >;
         process-next;
     };
 
@@ -69,6 +73,18 @@
     speed-threshold = <1500>;
     speed-max = <5000>;
     acceleration-exponent = <1>;
+};
+
+&zip_scroll_snap {
+    x-threshold = <1 1>;
+    y-threshold = <1 1>;
+    xy-threshold = <1 1>;
+
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
+    lock-duration-ms = <200>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <200>;
 };
 
 / {
