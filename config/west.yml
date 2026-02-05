@@ -10,6 +10,8 @@ manifest:
     url-base: https://github.com/carrefinho
   - name: janpfischer
     url-base: https://github.com/janpfischer
+  - name: jfaxio
+    url-base: https://github.com/jfaixo
   - name: oleksandrmaslov
     url-base: https://github.com/oleksandrmaslov
   - name: urob
@@ -48,6 +50,10 @@ manifest:
     remote: oleksandrmaslov
     revision: main
     path: modules/zmk/pointing-acceleration
+  - name: zmk-sticky-modifiers-behavior
+    remote: jfaxio
+    revision: main
+    path: modules/zmk/sticky-modifiers-behavior
 
   # Dongle
   - name: prospector-zmk-module
