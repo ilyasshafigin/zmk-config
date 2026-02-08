@@ -19,10 +19,6 @@
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
 };
 
-&sl {
-  ignore-modifiers;
-};
-
 /*
   ╭─────────────────────────┬─────────────────────────╮
   │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │

@@ -8,6 +8,8 @@ manifest:
     url-base: https://github.com/caksoylar
   - name: carrefinho
     url-base: https://github.com/carrefinho
+  - name: englmaxi
+    url-base: https://github.com/englmaxi
   - name: janpfischer
     url-base: https://github.com/janpfischer
   - name: kot149
@@ -64,6 +66,10 @@ manifest:
     remote: carrefinho
     revision: feat/new-status-screens #main
     path: modules/zmk/prospector
+  - name: zmk-dongle-display
+    remote: englmaxi
+    revision: main
+    path: modules/zmk/dongle-display
   # - name: zmk-dongle-screen
     # remote: janpfischer
     # revision: main

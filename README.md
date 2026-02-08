@@ -40,11 +40,11 @@
 
 ##### nice!nano (v2)
 
-Просто плата, покдлюченная по usb к компьютеру.
+Просто плата nice!nano v2 (и ее клоны), покдлюченная по usb к компьютеру.
 
 ##### XIAO BLE
 
-Просто плата, покдлюченная по usb к компьютеру.
+Просто плата XIAO BLE, покдлюченная по usb к компьютеру.
 
 ##### Prospector Dongle
 
@@ -63,7 +63,11 @@
 
 - Можно регулировать яркость экрана донгла
 
-### Зависимости
+##### Dongle Display
+
+Донгл с мини oled экраном (128x64 или 128x32). В проекте собирается на базе nice!nano, но можно и на xiao.
+
+### Модули
 
 #### Helpers
 
@@ -83,6 +87,7 @@
 #### Dongle
 
 - [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module) - модуль для донгла prospector.
+- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - модуль для донгла с oled экраном.
 
 ### Сборка
 
@@ -122,6 +127,7 @@
 Для отрисовки нужно вызвать команду `just draw corne`.
 
 ![Corne keymap](./draw/corne.svg?raw=true "Corne keymap")
+_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
 ### Прошивки
 
@@ -134,7 +140,7 @@
 Команды для прошивки:
 
 - `just flash -s "corne_dongle" -b "xiao_ble"` - прошивка донгла на XIAO
-- `just flash -s "corne_dongle"` - прошивка донгла на nice!
+- `just flash -s "corne_dongle" -b "nice_nano"` - прошивка донгла на nice!
 - `just flash -s "corne_central_left"` - прошивка левой половины как основной
 - `just flash -s "corne_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "corne_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
@@ -146,6 +152,7 @@
 Для отрисовки нужно вызвать команду `just draw totem`.
 
 ![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
+_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
 ### Прошивки
 
@@ -157,9 +164,11 @@
 
 Команды для прошивки:
 
-- `just flash -s "totem_dongle"` - прошивка донгла на XIAO
-- `just flash -s "totem_dongle+dongle_screen"` - прошивка донгла Prospector (Dongle Screen YADS)
-- `just flash -s "totem_dongle+prospector_adapter"` - прошивка донгла Prospector
+- `just flash -s "totem_dongle" -s "xiao_ble"` - прошивка донгла на XIAO
+- `just flash -s "totem_dongle" -s "nice_nano"` - прошивка донгла на nice!
+- `just flash -s "totem_dongle_prospector"` - прошивка донгла Prospector
+- `just flash -s "totem_dongle_oled_32"` - прошивка донгла Dongle Display для экрана 128x32
+- `just flash -s "totem_dongle_oled_64"` - прошивка донгла Dongle Display для экрана 128x64
 - `just flash -s "totem_central_left"` - прошивка левой половины как основной
 - `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
@@ -185,6 +194,7 @@
 Для отрисовки нужно вызвать команду `just draw charybdis`.
 
 ![Charybdis keymap](./draw/charybdis.svg?raw=true "Charybdis keymap")
+_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
 ### Прошивки
 
@@ -196,8 +206,9 @@
 
 Команды для прошивки:
 
-- `just flash -s "charybdis_dongle"` - прошивка донгла на XIAO
-- `just flash -s "charybdis_dongle+prospector_adapter"` - прошивка донгла Prospector
+- `just flash -s "charybdis_dongle" -b "xiao_ble"` - прошивка донгла на XIAO
+- `just flash -s "charybdis_dongle" -b "nice_nano"` - прошивка донгла на nice!
+- `just flash -s "charybdis_dongle_prospector"` - прошивка донгла Prospector
 - `just flash -s "charybdis_central_right"` - прошивка правой половины как основной
 - `just flash -s "charybdis_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "charybdis_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)

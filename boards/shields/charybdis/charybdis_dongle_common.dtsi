@@ -1,0 +1,40 @@
+#include "charybdis.dtsi"
+#include "charybdis_pmw3610.dtsi"
+#include "charybdis_pointer.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,input-device = &trackball_split;
+    };
+
+    mock_kscan: kscan1 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    central: bt_central {
+        compatible = "zmk,ble-central";
+        peripherals = <&left_peripheral &right_peripheral>;
+    };
+
+    left_peripheral: bt_left {
+        compatible = "zmk,ble-peripheral";
+        local-name = "charybdis_peripheral_left";
+    };
+
+    right_peripheral: bt_right {
+        compatible = "zmk,ble-peripheral";
+        local-name = "charybdis_peripheral_right";
+    };
+};
+
+&trackball_split {
+    status = "okay";
+};
+
+&trackball_listener {
+    status = "okay";
+};

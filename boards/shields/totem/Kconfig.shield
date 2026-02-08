@@ -1,6 +1,15 @@
 config SHIELD_TOTEM_DONGLE
     def_bool $(shields_list_contains,totem_dongle)
 
+config SHIELD_TOTEM_DONGLE_OLED_32
+    def_bool $(shields_list_contains,totem_dongle_oled_32)
+
+config SHIELD_TOTEM_DONGLE_OLED_64
+    def_bool $(shields_list_contains,totem_dongle_oled_64)
+
+config SHIELD_TOTEM_DONGLE_PROSPECTOR
+    def_bool $(shields_list_contains,totem_dongle_prospector)
+
 config SHIELD_TOTEM_CENTRAL_LEFT
     def_bool $(shields_list_contains,totem_central_left)
 

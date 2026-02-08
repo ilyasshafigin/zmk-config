@@ -8,6 +8,9 @@ features:
   - keys
 siblings:
   - totem_dongle
+  - totem_dongle_prospector
+  - totem_dongle_oled_32
+  - totem_dongle_oled_64
   - totem_central_left
   - totem_peripheral_left
   - totem_peripheral_right
