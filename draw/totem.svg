@@ -1609,7 +1609,176 @@ rect.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1305, 1494)" class="layer-mouse">
+<g transform="translate(1305, 1494)" class="layer-adjust">
+<text x="0" y="28" class="label" id="adjust">adjust</text>
+<g transform="translate(0, 56)">
+<g transform="translate(111, 162) rotate(-10.0)" class="key keypos-0">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
+</g>
+<g transform="translate(206, 88) rotate(-4.0)" class="key none keypos-1">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(303, 40)" class="key bootloader keypos-2">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key bootloader"/>
+<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
+</g>
+<g transform="translate(387, 80)" class="key none keypos-3">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(472, 92)" class="key keypos-4">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:toggle-switch"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:bluetooth"/>
+<use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:usb"/>
+</g>
+<g transform="translate(743, 92)" class="key keypos-5">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:toggle-switch"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:bluetooth"/>
+<use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:usb"/>
+</g>
+<g transform="translate(828, 80)" class="key none keypos-6">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(913, 40)" class="key bootloader keypos-7">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key bootloader"/>
+<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
+</g>
+<g transform="translate(1009, 88) rotate(4.0)" class="key none keypos-8">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(1105, 162) rotate(10.0)" class="key keypos-9">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
+</g>
+<g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">1</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">2</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(303, 120)" class="key keypos-12">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">3</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(387, 160)" class="key keypos-13">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">4</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(472, 172)" class="key keypos-14">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">5</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(743, 173)" class="key keypos-15">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">5</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(828, 160)" class="key keypos-16">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">4</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(913, 120)" class="key keypos-17">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">3</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(1004, 168) rotate(4.0)" class="key keypos-18">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">2</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(1091, 240) rotate(10.0)" class="key keypos-19">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<text x="0" y="34" class="key hold">1</text>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
+</g>
+<g transform="translate(49, 298) rotate(-10.0)" class="key none keypos-20">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(139, 319) rotate(-10.0)" class="key none keypos-21">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(217, 248) rotate(-4.0)" class="key none keypos-22">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(303, 200)" class="key none keypos-23">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(387, 240)" class="key none keypos-24">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(472, 252)" class="key keypos-25">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
+</g>
+<g transform="translate(743, 253)" class="key keypos-26">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
+<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
+</g>
+<g transform="translate(828, 240)" class="key none keypos-27">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(913, 200)" class="key none keypos-28">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(998, 248) rotate(4.0)" class="key none keypos-29">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(1077, 319) rotate(10.0)" class="key none keypos-30">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(1167, 298) rotate(10.0)" class="key none keypos-31">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+</g>
+<g transform="translate(364, 337)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+</g>
+<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+</g>
+<g transform="translate(544, 386) rotate(30.0)" class="key held keypos-34">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
+</g>
+<g transform="translate(671, 386) rotate(-30.0)" class="key trans keypos-35">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+</g>
+<g transform="translate(758, 350) rotate(-15.0)" class="key held keypos-36">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
+</g>
+<g transform="translate(852, 337)" class="key trans keypos-37">
+<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+</g>
+</g>
+</g>
+<g transform="translate(30, 1993)" class="layer-mouse">
 <text x="0" y="28" class="label" id="mouse">mouse</text>
 <g transform="translate(0, 56)">
 <g transform="translate(111, 162) rotate(-10.0)" class="key none keypos-0">
@@ -1779,175 +1948,6 @@ rect.combo {
 <g transform="translate(758, 350) rotate(-15.0)" class="key keypos-36">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
 <use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-right-click"/>
-</g>
-<g transform="translate(852, 337)" class="key trans keypos-37">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
-</g>
-</g>
-</g>
-<g transform="translate(30, 1993)" class="layer-adjust">
-<text x="0" y="28" class="label" id="adjust">adjust</text>
-<g transform="translate(0, 56)">
-<g transform="translate(111, 162) rotate(-10.0)" class="key keypos-0">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
-</g>
-<g transform="translate(206, 88) rotate(-4.0)" class="key none keypos-1">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(303, 40)" class="key bootloader keypos-2">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key bootloader"/>
-<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
-</g>
-<g transform="translate(387, 80)" class="key none keypos-3">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(472, 92)" class="key keypos-4">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:toggle-switch"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:bluetooth"/>
-<use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:usb"/>
-</g>
-<g transform="translate(743, 92)" class="key keypos-5">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:toggle-switch"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:bluetooth"/>
-<use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:usb"/>
-</g>
-<g transform="translate(828, 80)" class="key none keypos-6">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(913, 40)" class="key bootloader keypos-7">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key bootloader"/>
-<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
-</g>
-<g transform="translate(1009, 88) rotate(4.0)" class="key none keypos-8">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(1105, 162) rotate(10.0)" class="key keypos-9">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
-</g>
-<g transform="translate(125, 240) rotate(-10.0)" class="key keypos-10">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">1</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(211, 168) rotate(-4.0)" class="key keypos-11">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">2</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(303, 120)" class="key keypos-12">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">3</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(387, 160)" class="key keypos-13">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">4</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(472, 172)" class="key keypos-14">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">5</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(743, 173)" class="key keypos-15">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">5</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(828, 160)" class="key keypos-16">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">4</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(913, 120)" class="key keypos-17">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">3</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(1004, 168) rotate(4.0)" class="key keypos-18">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">2</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(1091, 240) rotate(10.0)" class="key keypos-19">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<text x="0" y="34" class="key hold">1</text>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth-connect"/>
-</g>
-<g transform="translate(49, 298) rotate(-10.0)" class="key none keypos-20">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(139, 319) rotate(-10.0)" class="key none keypos-21">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(217, 248) rotate(-4.0)" class="key none keypos-22">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(303, 200)" class="key none keypos-23">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(387, 240)" class="key none keypos-24">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(472, 252)" class="key keypos-25">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
-</g>
-<g transform="translate(743, 253)" class="key keypos-26">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key"/>
-<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
-</g>
-<g transform="translate(828, 240)" class="key none keypos-27">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(913, 200)" class="key none keypos-28">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(998, 248) rotate(4.0)" class="key none keypos-29">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(1077, 319) rotate(10.0)" class="key none keypos-30">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(1167, 298) rotate(10.0)" class="key none keypos-31">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
-</g>
-<g transform="translate(364, 337)" class="key trans keypos-32">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
-</g>
-<g transform="translate(457, 350) rotate(15.0)" class="key trans keypos-33">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
-</g>
-<g transform="translate(544, 386) rotate(30.0)" class="key held keypos-34">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
-</g>
-<g transform="translate(671, 386) rotate(-30.0)" class="key trans keypos-35">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
-</g>
-<g transform="translate(758, 350) rotate(-15.0)" class="key held keypos-36">
-<rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key held"/>
 </g>
 <g transform="translate(852, 337)" class="key trans keypos-37">
 <rect rx="4" ry="4" x="-41" y="-38" width="82" height="77" class="key trans"/>
