@@ -1,3 +1,4 @@
+#include <dt-bindings/zmk/behaviors.h>
 #include <behaviors.dtsi>
 
 // Behaviors Constants
@@ -26,3 +27,17 @@
     bindings = <HOLD>, <TAP>; \
     hold-trigger-key-positions = <TRIGGER_POS>; \
 )
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+};
