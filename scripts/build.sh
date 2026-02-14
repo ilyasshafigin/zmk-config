@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # ZMK Local Build Script using Docker
-# Reads build.yaml and builds selected configuration using Docker
 #
 # Original script https://github.com/choovick/zmk-config-charybdis/blob/main/local-build/build.py commit 2d27ec9
 
@@ -200,6 +199,7 @@ run_build() {
       mkdir -p zmk-config/zephyr
       [ -d /repo/boards ] && cp -R /repo/boards zmk-config/
       [ -d /repo/dts ] && cp -R /repo/dts zmk-config/
+      [ -d /repo/app ] && cp -R /repo/app zmk-config/
       [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
 
       if [ -d /repo/modules ]; then
@@ -295,6 +295,9 @@ if $ALL; then
 
     for ((i=0;i<BUILD_COUNT;i++)); do
         run_build "$i" "$UPDATE"
+        if $UPDATE; then
+          UPDATE=false
+        fi
     done
     exit 0
 fi
@@ -323,6 +326,9 @@ elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
 
     for i in "${MATCHES[@]}"; do
         run_build "$i" "$UPDATE"
+        if $UPDATE; then
+          UPDATE=false
+        fi
     done
 
     exit 0

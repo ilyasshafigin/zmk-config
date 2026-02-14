@@ -215,7 +215,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
 
-## Universal layout
+## Раскладка
 
 В проекте в папке `layout` лежат файлы раскладок. Это форк [universal-layout](https://github.com/braindefender/universal-layout).
 
@@ -244,7 +244,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 ### macOS
 
-Для поддержки переключения языка через комбо (Cmd+F11/F12) нужно установить программу Karabiner-Elements.
+Для поддержки переключения языка через комбо (Cmd+F11/F12) нужно установить программу [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements).
 В настройках, в Complex Modifications добавить свое правило и вставить этот код:
 
 ```json

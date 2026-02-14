@@ -388,11 +388,16 @@ parse_config:
     KP_N8: "KP 8"
     KP_N9: "KP 9"
     KP_N0: "KP 0"
-    KP_MINUS: "KP -"
     KP_PLUS: "KP +"
-    KP_DOT: "KP ."
+    KP_MINUS: "KP -"
+    KP_SUBTRACT: "KP -"
     KP_MULTIPLY: "KP *"
+    KP_ASTERISK: "KP *"
+    KP_DIVIDE: "KP /"
     KP_SLASH: "KP /"
+    KP_EQUAL: "KP ="
+    KP_DOT: "KP ."
+    KP_COMMA: "KP ,"
 
     # Navigation
     PG_UP: page up
