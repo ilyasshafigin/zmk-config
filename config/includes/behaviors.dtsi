@@ -3,6 +3,7 @@
 
 // Behaviors Constants
 #define TAPPING_TERM_MS 200
+#define TAPPING_TERM_FAST_MS 100
 #define TAPPING_TERM_HRM_MS 280
 #define QUICK_TAP_MS 175
 #define REQUIRE_PRIOR_IDLE_MS 150
