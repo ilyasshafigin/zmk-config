@@ -141,7 +141,7 @@ find_by_criteria() {
 get_artifact_name() {
     local shield="$1"
     local board="$2"
-    echo "${shield// /+}-${board}"
+    echo "${shield// /+}-${board//\/\//_}"
 }
 
 # ==========================

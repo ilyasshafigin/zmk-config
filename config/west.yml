@@ -24,9 +24,7 @@ manifest:
   # ZMK
   - name: zmk
     remote: zmkfirmware
-    #revision: main
-    # for fix error in prospector module: implicit declaration of function 'zmk_endpoints_selected'
-    revision: ac7f75b8591d39aaf3b66b9d26f26c9ed921a009
+    revision: main
     import: app/west.yml
 
   # Helper
@@ -66,9 +64,7 @@ manifest:
     path: modules/zmk/prospector
   - name: zmk-dongle-display
     remote: englmaxi
-    #revision: main
-    # for fix error in prospector module: implicit declaration of function 'zmk_endpoints_selected'
-    revision: 9f0f0bf3107ff976e696a01c169fdd076c2874aa
+    revision: main
     path: modules/zmk/dongle-display
   # - name: zmk-dongle-screen
     # remote: janpfischer

@@ -10,7 +10,7 @@ WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
 MOUNT_NICE="/Volumes/NICENANO"
 MOUNT_XIAO="/Volumes/XIAO-SENSE"
 BOARD_NICE="nice_nano"
-BOARD_XIAO="xiao_ble"
+BOARD_XIAO="xiao_ble//zmk"
 FIRMWARE_DIR="$WORKSPACE/firmware"
 BUILD_YAML="$WORKSPACE/build.yaml"
 
@@ -93,7 +93,7 @@ list_builds() {
     echo
     for ((i=0;i<BUILD_COUNT;i++)); do
         n=$((i+1))
-        artifact="${SHIELDS[$i]// /+}-${BOARDS[$i]}.uf2"
+        artifact="$(get_artifact_name "${SHIELDS[$i]}" "${BOARDS[$i]}").uf2"
         file="$FIRMWARE_DIR/$artifact"
         status="❌ MISSING"
         [[ -f "$file" ]] && status="✅ READY"
@@ -140,7 +140,7 @@ find_by_criteria() {
 get_artifact_name() {
     local shield="$1"
     local board="$2"
-    echo "${shield// /+}-${board}.uf2"
+    echo "${shield// /+}-${board//\/\//_}"
 }
 
 # ==========================
@@ -151,7 +151,7 @@ flash_one() {
 
     local board="${BOARDS[$idx]}"
     local shield="${SHIELDS[$idx]}"
-    local artifact=$(get_artifact_name "$shield" "$board")
+    local artifact="$(get_artifact_name "$shield" "$board").uf2"
     local uf2="$FIRMWARE_DIR/$artifact"
 
     [[ -f "$uf2" ]] || die "Firmware not found: $uf2"
