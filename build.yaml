@@ -1,24 +1,24 @@
 ---
 include:
-- board: nice_nano
+- board: nice_nano//zmk
   shield: settings_reset
 - board: xiao_ble//zmk
   shield: settings_reset
 
-- board: nice_nano
+- board: nice_nano//zmk
   shield: corne_dongle
-- board: nice_nano
+- board: nice_nano//zmk
   shield: corne_central_left
-- board: nice_nano
+- board: nice_nano//zmk
   shield: corne_peripheral_left
-- board: nice_nano
+- board: nice_nano//zmk
   shield: corne_peripheral_right
 
-- board: nice_nano
+- board: nice_nano//zmk
   shield: totem_dongle
-- board: nice_nano
+- board: nice_nano//zmk
   shield: totem_dongle_oled_32 dongle_display
-- board: nice_nano
+- board: nice_nano//zmk
   shield: totem_dongle_oled_64 dongle_display
 - board: xiao_ble//zmk
   shield: totem_dongle
@@ -33,9 +33,9 @@ include:
 
 - board: xiao_ble//zmk
   shield: charybdis_dongle_prospector prospector_adapter
-- board: nice_nano
+- board: nice_nano//zmk
   shield: charybdis_central_right
-- board: nice_nano
+- board: nice_nano//zmk
   shield: charybdis_peripheral_left
-- board: nice_nano
+- board: nice_nano//zmk
   shield: charybdis_peripheral_right

@@ -9,7 +9,7 @@ WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
 
 MOUNT_NICE="/Volumes/NICENANO"
 MOUNT_XIAO="/Volumes/XIAO-SENSE"
-BOARD_NICE="nice_nano"
+BOARD_NICE="nice_nano//zmk"
 BOARD_XIAO="xiao_ble//zmk"
 FIRMWARE_DIR="$WORKSPACE/firmware"
 BUILD_YAML="$WORKSPACE/build.yaml"
@@ -83,7 +83,6 @@ Options:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Flash first
-    $0 -s charybdis -b nice  # Flash charybdis nice_nano
 EOF
 }
 

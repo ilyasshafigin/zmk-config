@@ -140,7 +140,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Команды для прошивки:
 
 - `just flash -s "corne_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "corne_dongle" -b "nice_nano"` - прошивка донгла на nice!
+- `just flash -s "corne_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
 - `just flash -s "corne_central_left"` - прошивка левой половины как основной
 - `just flash -s "corne_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "corne_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
@@ -165,7 +165,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Команды для прошивки:
 
 - `just flash -s "totem_dongle" -s "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "totem_dongle" -s "nice_nano"` - прошивка донгла на nice!
+- `just flash -s "totem_dongle" -s "nice_nano//zmk"` - прошивка донгла на nice!
 - `just flash -s "totem_dongle_prospector"` - прошивка донгла Prospector
 - `just flash -s "totem_dongle_oled_32"` - прошивка донгла Dongle Display для экрана 128x32
 - `just flash -s "totem_dongle_oled_64"` - прошивка донгла Dongle Display для экрана 128x64
@@ -207,7 +207,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Команды для прошивки:
 
 - `just flash -s "charybdis_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "charybdis_dongle" -b "nice_nano"` - прошивка донгла на nice!
+- `just flash -s "charybdis_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
 - `just flash -s "charybdis_dongle_prospector"` - прошивка донгла Prospector
 - `just flash -s "charybdis_central_right"` - прошивка правой половины как основной
 - `just flash -s "charybdis_peripheral_left"` - прошивка левой половины для работы с донглом
