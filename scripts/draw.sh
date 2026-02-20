@@ -9,7 +9,7 @@ WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
 
 DIR_CONFIG="$WORKSPACE/config"
 DIR_DRAW="$WORKSPACE/draw"
-DRAW_CONFIG="$DIR_CONFIG/keymap-drawer.yaml"
+DRAW_CONFIG="$DIR_DRAW/config.yaml"
 
 # ==========================
 # Helpers

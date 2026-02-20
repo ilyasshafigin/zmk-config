@@ -3,6 +3,33 @@ if SHIELD_TOTEM_DONGLE || SHIELD_TOTEM_DONGLE_PROSPECTOR || SHIELD_TOTEM_DONGLE_
 config ZMK_KEYBOARD_NAME
     default "TotemDongle"
 
+config ZMK_USB
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
+config ZMK_SLEEP
+    default n
+
 endif
 
 
@@ -11,9 +38,27 @@ if SHIELD_TOTEM_CENTRAL_LEFT
 config ZMK_KEYBOARD_NAME
     default "Totem"
 
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SLEEP
+    default y
+
 endif
 
 
 if SHIELD_TOTEM_PERIPHERAL_LEFT || SHIELD_TOTEM_PERIPHERAL_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+config ZMK_SLEEP
+    default y
 
 endif

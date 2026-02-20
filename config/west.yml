@@ -56,14 +56,6 @@ manifest:
     remote: kot149
     revision: v1
     path: modules/zmk/scroll-snap
-  - name: zmk-output-behavior-listener
-    remote: badjeff
-    revision: main
-    path: modules/zmk/output-behavior-listener
-  - name: zmk-split-peripheral-output-relay
-    remote: badjeff
-    revision: main
-    path: modules/zmk/split-peripheral-output-relay
 
   # Dongle
   - name: prospector-zmk-module
