@@ -53,7 +53,7 @@ Without arguments:
     Interactive keymap selection
 
 Examples:
-    $0 corne
+    $0 totem
     $0 --list
     $0 --all
 EOF

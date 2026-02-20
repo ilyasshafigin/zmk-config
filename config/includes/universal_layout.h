@@ -1,3 +1,5 @@
+#include <dt-bindings/zmk/keys.h>
+
 // На основе раскладки Universal Layout Ortho
 // Здесь в комментариях 'A|B' значит что символ 'A' в английской раскладке, 'B' в русской.
 

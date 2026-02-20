@@ -1,10 +1,9 @@
 # ZMK Config
 
-Конфигурация и прошивка для клавиатур:
+Конфигурация и прошивка для моих клавиатур:
 
-1. **[Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)** – основная
-2. [TOTEM](https://github.com/GEIGEIGEIST/TOTEM)
-3. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
+1. **[Charybdis Nano](#charybdis-nano)** – основная
+2. [TOTEM](#totem)
 
 ## Особенности
 
@@ -12,7 +11,7 @@
 - Работает с форком универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
 - За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
 - Адаптирована для macOS
-- Прошивки собираются локально (через Docker)
+- Прошивки собираются локально (через Docker), в репозитории всегда лежат актуальные прошивки.
 
 ## Прошивка
 
@@ -120,32 +119,7 @@
          - `just flash -s "settings_reset" -b <board>` - загрузка прошивки сброса
       2. После успешной прошивки устройство в провнике пропадет, клавиатура/донгл перезагрузится
 
-## Corne
-
-### Corne keymap
-
-Для отрисовки нужно вызвать команду `just draw corne`.
-
-![Corne keymap](./draw/corne.svg?raw=true "Corne keymap")
-_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
-
-### Прошивка Corne
-
-Актуальные прошивки лежат в папке firmware.
-
-Сборка:
-
-`just build -s "corne"`
-
-Команды для прошивки:
-
-- `just flash -s "corne_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "corne_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
-- `just flash -s "corne_central_left"` - прошивка левой половины как основной
-- `just flash -s "corne_peripheral_left"` - прошивка левой половины для работы с донглом
-- `just flash -s "corne_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
-
-## Totem
+## [Totem](https://github.com/GEIGEIGEIST/TOTEM)
 
 ### Totem keymap
 
@@ -173,7 +147,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
-## Charybdis Nano
+## [Charybdis Nano](https://github.com/bastardkb/charybdis/)
 
 Заказывал kit у китайцев на AliExpress, она how-swap, потому в прошивке есть отличия от оригинальной:
 
@@ -248,9 +222,9 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - добавлены иконки флажков, чтобы в системе было видно какая сейчас раскладка
 - раскладка только для macOS
 
-### Установка
+### Установка Universal Layout
 
-#### macOS
+На macOS:
 
 1. Файл `layouts/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
 2. Перезагрузиться или перезайти в систему.
@@ -258,7 +232,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 4. Удалить стандартные раскладки русского и английского языка. [Здесь](https://4te.me/post/flags-tray-macos/) описано как их удалить.
 5. Снова перезагрузиться или перезайти в систему.
 
-### Проблемы
+### Проблемы с раскладкой
 
 1. В IntelliJ IDEA и VC Code (в них есть поиск комбинаций клавиш по нажатым клавишам) не верно работают комбинации клавиш `Cmd+[`/`Cmd+]` (и другие, где клавиши поменяны местами) на русской раскладке. Работает как будто слой Cmd не был изменен, но он изменен. В Ukelele в русской раскладке для слоя Cmd все символы точно такие же расположены как и для английской раскладки.
 
@@ -302,20 +276,18 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 ## Ссылки
 
 1. Примеры конфигураций:
-   1. Corne
-      1. [corne-keyboard-layout](https://github.com/devpew/corne-keyboard-layout) от @devpew
-      2. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
-      3. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
-   2. Totem
-   3. Charybdis
+   1. Totem
+   2. Charybdis
       1. [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio) от @devpew – charybdis + zmk studio
       2. [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – charybdis, home-row mods, скрипты для локальной сборки
       3. [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – charybdis
       4. [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – charybdis
       5. [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – charybdis, локальная сборка, tester pro micro
       6. [charybdis-zmk](https://github.com/vloth/charybdis-zmk) от @vloth – charybdis
-   4. Другие
+   3. Другие
       1. [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
+      2. [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
+      3. [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
 2. [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
 3. [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
    - [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender
