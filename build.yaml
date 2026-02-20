@@ -39,3 +39,7 @@ include:
   shield: charybdis_peripheral_left
 - board: nice_nano//zmk
   shield: charybdis_peripheral_right
+
+- board: nice_nano//zmk
+  shield: tester_pro_micro
+  format: bt

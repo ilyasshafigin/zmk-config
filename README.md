@@ -2,9 +2,9 @@
 
 Конфигурация и прошивка для клавиатур:
 
-1. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
+1. **[Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)** – основная
 2. [TOTEM](https://github.com/GEIGEIGEIST/TOTEM)
-3. **[Charybdis Nano 3x5](https://github.com/bastardkb/charybdis/)** – основная
+3. [Corne](https://github.com/foostan/crkbd) (Nijuni, Dao и других Corne-подобных клавиатур)
 
 ## Особенности
 
@@ -122,14 +122,14 @@
 
 ## Corne
 
-### Keymap
+### Corne keymap
 
 Для отрисовки нужно вызвать команду `just draw corne`.
 
 ![Corne keymap](./draw/corne.svg?raw=true "Corne keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-### Прошивки
+### Прошивка Corne
 
 Актуальные прошивки лежат в папке firmware.
 
@@ -147,14 +147,14 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 ## Totem
 
-### Keymap
+### Totem keymap
 
 Для отрисовки нужно вызвать команду `just draw totem`.
 
 ![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-### Прошивки
+### Прошивка Totem
 
 Актуальные прошивки лежат в папке firmware.
 
@@ -189,14 +189,14 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - Используется модуль [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) для привязки движения каретки к осям X и Y.
 - В режим без донгла основной половиной будет правая (central_right)
 
-### Keymap
+### Charybdis Nano keymap
 
 Для отрисовки нужно вызвать команду `just draw charybdis`.
 
 ![Charybdis keymap](./draw/charybdis.svg?raw=true "Charybdis keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-### Прошивки
+### Прошивка Charybdis Nano
 
 Актуальные прошивки лежат в папке firmware.
 
@@ -214,6 +214,28 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `just flash -s "charybdis_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
+
+## Tester Pro Micro
+
+Прошивка для проверки пинов на плате ProMicro nRF52840 (aka nice!nano и других клонов). Копия из [репозитория](https://github.com/choovick/zmk-config-charybdis) @choovick.
+В прошивке отключен Bluetooth, работает только по USB.
+
+Сборка:
+
+`just build -s "tester_pro_micro"`
+
+Прошивка:
+
+`just flash -s "tester_pro_micro"`
+
+Порядок действий:
+
+1. Прошить tester_pro_micro-nice_nano_zmk.uf2
+2. Подключить контроллер по USB к компьютеру
+3. Открыть любой текстовый редактор
+4. Замкнуть GPIO пин с GND, тот который проверяем
+5. В текстовом редакторе должно напечататься "pin X", где X - номер пина
+6. Проверить все пины
 
 ## Раскладка
 
@@ -242,7 +264,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 ## Дополнительные настройки ОС
 
-### macOS
+### Karabiner-Elements
 
 Для поддержки переключения языка через комбо (Cmd+F11/F12) нужно установить программу [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements).
 В настройках, в Complex Modifications добавить свое правило и вставить этот код:

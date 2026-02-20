@@ -202,19 +202,6 @@ run_build() {
       [ -d /repo/app ] && cp -R /repo/app zmk-config/
       [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
 
-      if [ -d /repo/modules ]; then
-        cp -aR /repo/modules/. modules/local
-        for mod_path in modules/local/*/ ; do
-          if [ -d \"\$mod_path\" ]; then
-            mod_name=\$(basename \"\$mod_path\")
-            if [ ! -d \"\$mod_path.git\" ]; then
-              echo \"Initializing git for \$mod_name...\"
-              cd \"\$mod_path\" && git init && cd -
-            fi
-          fi
-        done
-      fi
-
       mkdir zmk-config/boards/shields/charybdis/includes
       cp /repo/config/includes/layers.h zmk-config/boards/shields/charybdis/includes/
       cp /repo/config/charybdis_pointer.dtsi zmk-config/boards/shields/charybdis/
