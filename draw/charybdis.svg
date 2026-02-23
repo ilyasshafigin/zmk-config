@@ -1975,11 +1975,9 @@ rect.combo {
 <tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 130)" class="key keypos-15">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
-</text>
+<g transform="translate(680, 130)" class="key none keypos-15">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 130)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2011,6 +2009,9 @@ rect.combo {
 </g>
 <g transform="translate(280, 210)" class="key held keypos-23">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held"/>
+<a href="#slow">
+<text x="0" y="0" class="key held tap layer-activator">slow</text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(360, 210)" class="key keypos-24">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2018,14 +2019,15 @@ rect.combo {
 <tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 210)" class="key keypos-25">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
-</text>
+<g transform="translate(680, 210)" class="key none keypos-25">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 210)" class="key held alternate keypos-26">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held alternate"/>
+<a href="#slow">
+<text x="0" y="0" class="key held alternate tap layer-activator">slow</text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held alternate hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(840, 200)" class="key none keypos-27">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2150,11 +2152,9 @@ rect.combo {
 <tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 130)" class="key keypos-15">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
-</text>
+<g transform="translate(680, 130)" class="key none keypos-15">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 130)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2182,6 +2182,9 @@ rect.combo {
 </g>
 <g transform="translate(200, 200)" class="key held keypos-22">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held"/>
+<a href="#scroll">
+<text x="0" y="0" class="key held tap layer-activator"><tspan style="font-size: 83%">scroll</tspan></text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(280, 210)" class="key none keypos-23">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2193,11 +2196,9 @@ rect.combo {
 <tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 210)" class="key keypos-25">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
-</text>
+<g transform="translate(680, 210)" class="key none keypos-25">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 210)" class="key none keypos-26">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2205,6 +2206,9 @@ rect.combo {
 </g>
 <g transform="translate(840, 200)" class="key held alternate keypos-27">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held alternate"/>
+<a href="#scroll">
+<text x="0" y="0" class="key held alternate tap layer-activator"><tspan style="font-size: 83%">scroll</tspan></text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held alternate hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(920, 210)" class="key none keypos-28">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2325,11 +2329,9 @@ rect.combo {
 <tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 130)" class="key keypos-15">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 71%">Forward</tspan><tspan x="0" dy="1.0em" style="font-size: 71%">Click</tspan>
-</text>
+<g transform="translate(680, 130)" class="key none keypos-15">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 130)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2353,6 +2355,9 @@ rect.combo {
 </g>
 <g transform="translate(120, 210)" class="key held keypos-21">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held"/>
+<a href="#caret">
+<text x="0" y="0" class="key held tap layer-activator">caret</text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(200, 200)" class="key none keypos-22">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2368,11 +2373,9 @@ rect.combo {
 <tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
 </text>
 </g>
-<g transform="translate(680, 210)" class="key keypos-25">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em">Back</tspan><tspan x="0" dy="1.0em">Click</tspan>
-</text>
+<g transform="translate(680, 210)" class="key none keypos-25">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 210)" class="key none keypos-26">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -2384,6 +2387,9 @@ rect.combo {
 </g>
 <g transform="translate(920, 210)" class="key held alternate keypos-28">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key held alternate"/>
+<a href="#caret">
+<text x="0" y="0" class="key held alternate tap layer-activator">caret</text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="18" height="16" width="16.0" class="key held alternate hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(1000, 246)" class="key none keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
