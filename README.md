@@ -5,88 +5,55 @@
 1. **[Charybdis Nano](#charybdis-nano)** – основная
 2. [TOTEM](#totem)
 
-## Особенности
+## Основные возможности
 
-- Home-Row Mods (на основе работы [urob](https://github.com/urob/zmk-config#timeless-homerow-mods))
-- Работает с форком универсальной раскладкой ([universal-layout](https://github.com/braindefender/universal-layout))
-- За основу взята раскладка [wellum](https://github.com/braindefender/wellum)
-- Адаптирована для macOS
-- Прошивки собираются локально (через Docker), в репозитории всегда лежат актуальные прошивки.
+- **Локальная сборка** через Docker, актуальные прошивки в папке `firmware/`
+- **Home-Row Mods** на базе идеи [urob](https://github.com/urob/zmk-config#timeless-homerow-mods)
+- **Универсальная раскладка** [universal-layout](https://github.com/braindefender/universal-layout) и [wellum](https://github.com/braindefender/wellum) (без OSSM)
+- **Гибкая схема работы**: с донглом или без (одна половинка — главная)
+- **Адаптирована для macOS**
+- **Скрипты** для сборки, прошивки, отрисовки keymap
 
-## Прошивка
+## Режимы работы
 
-### Режимы работы
+**Standalone (без донгла):**
 
-#### Standalone mode
+Одна половинка — главная (по Bluetooth к ПК). Вторая подключается по Bluetooth к ней.
+Для Charybdis главная — правая половина (там трекбол).
 
-В этом режиме одна из половин клавиатур является основной.
+**Dongle mode (с донглом):**
 
-- Левая половина: основная, соединяется с компьютером по Bluetooth или USB
-- Правая половина: периферийная, соединяется по Bluetooth с основной половиной
-- Соединение: Правая -> Левая -> Компьютер
+Донгл — главный (USB/Bluetooth к ПК). Обе половинки — периферия (Bluetooth к донглу).
 
-Для Charybdis все наоборот, там основная правая, где трекбол.
+**Варианты донглов:**
 
-#### Dongle mode
+- Nice!Nano v2 / Seeeduino XIAO BLE — просто плата с USB
+- Prospector Dongle — экран: слой, батарея, статус, модификаторы; на базе XIAO BLE
+- Dongle Display — мини-OLED (128x32 / 128x64); на базе Nice!Nano
 
-В режиме донгла сам донг является основным, клавиатуры - периферией.
+## Модули
 
-- Левая/Правая половины: периферии, соединяются с донглом по Bluetooth
-- Донгл: основной, соединяется с компьютером по USB (но можно и по Bluetooth, если запитать донгл)
-- Соединение: Правая -> Донгл <- Левая, Донгл -> Компьютер
-
-Варианты донглов:
-
-##### Nice!Nano v2 (nRF52840)
-
-Просто плата Nice!Nano v2 (и ее клоны), покдлюченная по usb к компьютеру.
-
-##### Seeeduino XIAO BLE (nRF52840)
-
-Просто плата XIAO BLE, покдлюченная по usb к компьютеру.
-
-##### Prospector Dongle
-
-Донгл с экраном на базе XIAO BLE.
-
-- Название текущего слоя
-- Состояние батарей периферии
-- Состояние соединения с периферией
-- Индикаторы модификаторов и Caps Word
-- Несколько стилей экранов
-- Можно подцепить датчик освещенности для регулировки яркости экрана
-
-##### YADS Prospector Dongle
-
-Донгл на базе Prospector, но с измененной прошивкой.
-
-- Можно регулировать яркость экрана донгла
-
-##### Dongle Display
-
-Донгл с мини oled экраном (128x64 или 128x32). В проекте собирается на базе nice!nano, но можно и на xiao.
-
-### Модули
-
-#### Helpers
+### Helpers
 
 - [zmk-helpers](https://github.com/urob/zmk-helpers) - полезные макросы.
 
-#### Drivers
+### Drivers
 
 - [zmk-pmw3610-driver](https://github.com/badjeff/zmk-pmw3610-driver) - модуль драйвера для сенсора PMW3610. Нужен для трекбола в клавиатуре Charybdis.
 
-#### Behaviors & Input processors
+### Behaviors & Input processors
 
 - [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle) - модуль для "smart toggle". В проекте используется для `swapper` и `tabber`.
 - [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind) - модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода. Нужен для трекбола в клавиатуре Charybdis.
 - [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) - добавляет ускорение трекбола.
 - [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) - добавляет привязку прокрутки трекбола к осям X или Y.
 
-#### Dongle
+### Dongle
 
 - [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module) - модуль для донгла prospector.
 - [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - модуль для донгла с oled экраном.
+
+## Прошивка
 
 ### Сборка
 
@@ -96,28 +63,23 @@
 
 ### Загрузка прошивки
 
-Подключить по usb правую половину, потом левую, в последнюю очередь донгл (если есть). Во время прошивки донгла или одной из половин, все остальные должны быть отключены.
+Чтобы перевести половинку или донгл в режим прошивки, нужно нажать кнопку Reset дважды или, если ее нет, замкнуть пины RST и GND дважды.
 
-Если необходимо перейти на другой донгл или клавиатуры (и донгл) просто не видят друг друга, нужно перед загрузкой основной прошивки прошить settings_reset. Здесь все также как и с основной.
+Стабильный способ обнаружения донглом двух половинок. Когда половины еще не привязаны к донглу, либо есть проблемы:
 
-После прошивки включаем донгл (если есть), затем левую, потом правую половины. Все должно заработать через несклько секунд.
+1. Подключить донгл и прошить в него файл `settings_reset.uf2`
+2. Отключить донгл от провода и отложить в сторону
+3. Подключить левую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_left.uf2`
+4. Подключить правую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_right.uf2`
+5. Подключить донгл и прошить в него `dongle.uf2`
+6. Включить донгл -> левую половину -> правую половину, именно в таком порядке
 
-1. Выключить прошиваемую клавиатуру (перевести переключатель в положение ВЫКЛ|OFF).
-2. Подключить ее по USB к компьютеру.
-3. Нажать два раза кнопку RESET (или замкнуть контакты RST и GND). В проводнике появится подключенная флешка.
-4. Скопировать файл прошивки в корень флешки:
-   - Вручную:
-      1. Перекинуть нужный файл прошивки .uf2 в корень подключенной флешки
-      2. После успешной прошивки устройство в провнике пропадет, клавиатура/донгл перезагрузится
-   - Через командную строку:
-      1. В корне проекта вызвать одну из команд:
-         - `just flash` - отобразится список прошивок, выбрать нужную
-         - `just flash -s "<keyboard>_dongle" -b <board>` - прошивка донгла
-         - `just flash -s "<keyboard>_central_left" -b <board>` - прошивка левой половины как основной
-         - `just flash -s "<keyboard>_peripheral_left" -b <board>` - прошивка левой половины для работы с донглом
-         - `just flash -s "<keyboard>_peripheral_right" -b <board>` - прошивка правой половины
-         - `just flash -s "settings_reset" -b <board>` - загрузка прошивки сброса
-      2. После успешной прошивки устройство в провнике пропадет, клавиатура/донгл перезагрузится
+Когда нет донгла, левая половина является основной (если правая, то наоборот):
+
+1. Подключить правую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_right.uf2`
+2. Подключить левую половинку и прошить в неё сначала `settings_reset.uf2`, затем `central_left.uf2`
+
+Если половины уже привязаны к донглу и была изменена только dongle.uf2, то достаточно прошить только ее.
 
 ### Проблемы
 
@@ -126,24 +88,14 @@
 Нужно заново привязать клавиатуры с донглом, для этого перепрошить половины и донгл прошивкой сброса как описано выше.
 Включить донгл, включить левую (!) половино, только потом правую.
 
-## [Totem](https://github.com/GEIGEIGEIST/TOTEM)
+## Клавиатуры
 
-### Totem keymap
-
-Для отрисовки нужно вызвать команду `just draw totem`.
+### [Totem](https://github.com/GEIGEIGEIST/TOTEM)
 
 ![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-### Прошивка Totem
-
-Актуальные прошивки лежат в папке firmware.
-
-Сборка:
-
-`just build -s "totem"`
-
-Команды для прошивки:
+**Прошивка:**
 
 - `just flash -s "totem_dongle" -s "xiao_ble//zmk"` - прошивка донгла на XIAO
 - `just flash -s "totem_dongle" -s "nice_nano//zmk"` - прошивка донгла на nice!
@@ -154,7 +106,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
-## [Charybdis Nano](https://github.com/bastardkb/charybdis/)
+### [Charybdis Nano](https://github.com/bastardkb/charybdis/)
 
 Заказывал kit у китайцев на AliExpress, она how-swap, потому в прошивке есть отличия от оригинальной:
 
@@ -163,29 +115,17 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - Изменено направление диодов: я припаял диоды так как было показано на плате, в итоге оказалось для совместимости с оригинальной прошивкой надо было наоборот
 - Изменен maxtrix transform
 
-Особенности:
+**Особенности:**
 
 - Используется модуль [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), который позволяет трекболом двигать каретку в полях ввода
 - Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускоренния трекбола
 - Используется модуль [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) для привязки движения каретки к осям X и Y.
 - В режим без донгла основной половиной будет правая (central_right)
 
-### Charybdis Nano keymap
-
-Для отрисовки нужно вызвать команду `just draw charybdis`.
-
 ![Charybdis keymap](./draw/charybdis.svg?raw=true "Charybdis keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-### Прошивка Charybdis Nano
-
-Актуальные прошивки лежат в папке firmware.
-
-Сборка:
-
-`just build -s "charybdis"`
-
-Команды для прошивки:
+**Прошивка:**
 
 - `just flash -s "charybdis_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
 - `just flash -s "charybdis_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
@@ -201,15 +141,11 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Прошивка для проверки пинов на плате ProMicro nRF52840 (aka nice!nano и других клонов). Копия из [репозитория](https://github.com/choovick/zmk-config-charybdis) @choovick.
 В прошивке отключен Bluetooth, работает только по USB.
 
-Сборка:
-
-`just build -s "tester_pro_micro"`
-
-Прошивка:
+**Прошивка:**
 
 `just flash -s "tester_pro_micro"`
 
-Порядок действий:
+**Порядок действий:**
 
 1. Прошить tester_pro_micro-nice_nano_zmk.uf2
 2. Подключить контроллер по USB к компьютеру
@@ -218,9 +154,28 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 5. В текстовом редакторе должно напечататься "pin X", где X - номер пина
 6. Проверить все пины
 
+## Скрипты
+
+Все в папке `scripts`. Для упрощения используется [Just](https://github.com/casey/just).
+
+### `build.sh`
+
+Локальная сборка прошивок, подробнее в [local-build](local-build/README.md).
+Справка: `just build --help`
+
+### `flash.sh`
+
+Прошивка клавиатур.
+Справка: `just flash --help`
+
+### `draw.sh`
+
+Отрисовка keymap.
+Справка: `just draw --help`
+
 ## Раскладка
 
-В проекте в папке `layout` лежат файлы раскладок. Это форк [universal-layout](https://github.com/braindefender/universal-layout).
+В папке `layout` - форк [universal-layout](https://github.com/braindefender/universal-layout).
 
 Отличия:
 
