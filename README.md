@@ -196,7 +196,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 ### Проблемы с раскладкой
 
-1. В IntelliJ IDEA и VC Code (в них есть поиск комбинаций клавиш по нажатым клавишам) не верно работают комбинации клавиш `Cmd+[`/`Cmd+]` (и другие, где клавиши поменяны местами) на русской раскладке. Работает как будто слой Cmd не был изменен, но он изменен. В Ukelele в русской раскладке для слоя Cmd все символы точно такие же расположены как и для английской раскладки.
+1. ~~В IntelliJ IDEA и VC Code (в них есть поиск комбинаций клавиш по нажатым клавишам) не верно работают комбинации клавиш `Cmd+[`/`Cmd+]` (и другие, где клавиши поменяны местами) на ru раскладке. Работает как будто слой Cmd не был изменен, но он изменен. В Ukelele в русской раскладке для слоя Cmd все символы точно такие же расположены как и для английской раскладки.~~ Частично решено через модификацию в Karabiner-Elements, правило описано ниже.
 
 ## Дополнительные настройки ОС
 
@@ -207,7 +207,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 ```json
 {
-    "description": "Set language on GUI+F11/F12",
+    "description": "Set language on Cmd+F11/F12",
     "manipulators": [
         {
             "from": {
@@ -229,6 +229,96 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
                 }
             },
             "to": [{ "select_input_source": { "language": "en" } }],
+            "type": "basic"
+        }
+    ]
+}
+```
+
+Для того чтобы работали одинаково на раскладках ru и en в IntelliJ IDEA и VC Code сочетания `Cmd+[`, `Cmd+]` и другие, нужно добавить правило Complex Modifications:
+
+```json
+{
+    "description": "Universal Layout fixes for GUI layer",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "period",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "open_bracket",
+                    "modifiers": ["command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "slash",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "close_bracket",
+                    "modifiers": ["command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "open_bracket",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "comma",
+                    "modifiers": ["command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "close_bracket",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "period",
+                    "modifiers": ["command"]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "backslash",
+                "modifiers": {
+                    "mandatory": ["command"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "slash",
+                    "modifiers": ["command"]
+                }
+            ],
             "type": "basic"
         }
     ]
