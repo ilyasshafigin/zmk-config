@@ -1,0 +1,27 @@
+#include "totem_dongle_oled.dtsi"
+
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
+&pro_micro_i2c {
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        // vertical mirror
+        com-invdir;
+        // horizontal mirror
+        segment-remap;
+        //com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};

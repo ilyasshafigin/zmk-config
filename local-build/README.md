@@ -42,7 +42,7 @@ just build -n 1
 just build -s "totem_dongle"
 
 # Сборка по board и shield (точное совпадение)
-just build -b nice_nano -s "charybdis_dongle prospector_adapter"
+just build -b "nice_nano//zmk" -s "charybdis_dongle prospector_adapter"
 
 # Отобрахить список всех конфигураций
 just build -l

@@ -1,0 +1,532 @@
+parse_config:
+  zmk_additional_includes:
+  # for ci
+  - "modules/zmk/helpers/include"
+  # for local
+  - "local-build/workspace/modules/zmk/helpers/include"
+  mark_alternate_layer_activators: true
+  sticky_label: $$mdi:gesture-tap-hold$$
+  toggle_label: $$mdi:toggle-switch$$
+  trans_legend:
+    tap: $$mdi:transfer$$
+    type: trans
+
+  raw_binding_map:
+    # Empty
+    "&none":
+      tap: $$mdi:minus-circle-outline$$
+      type: none
+
+    # Whitespace
+    "&bkspc_del":
+      type: backspace
+      tap: $$mdi:backspace$$
+      shifted: $$mdi:backspace-reverse-outline$$
+
+    # Capword
+    "&caps_word":
+      tap: $$mdi:apple-keyboard-caps$$
+
+    # Bluetooth
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 1
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 2
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 3
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 4
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 5
+    "&out OUT_TOG":
+      shifted: $$mdi:usb$$
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+    "&out OUT_USB":
+      tap: $$mdi:usb$$
+    "&out OUT_BLE":
+      tap: $$mdi:bluetooth$$
+
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+    "&bootloader":
+      tap: $$mdi:progress-download$$
+    "&rst_boot 0 0":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+      hold: $$mdi:progress-download$$
+
+    # Macros/Behaviors
+    "&tabber": tab next
+    "&swapper": window next
+    "&studio_unlock": studio unlock
+    "&td_slow_scrl": def slow scroll
+    "&double_ctrl": double ctrl
+    "&double_shft": double shift
+    "&double_gui": double gui
+    "&td_mse": def mse
+
+    # Others
+    "&mmv MOVE_UP": Mouse ↑
+    "&mmv MOVE_DOWN": Mouse ↓
+    "&mmv MOVE_LEFT": Mouse ←
+    "&mmv MOVE_RIGHT": Mouse →
+
+    "&msc SCRL_UP": Scroll ↑
+    "&msc SCRL_DOWN": Scroll ↓
+    "&msc SCRL_LEFT": Scroll ←
+    "&msc SCRL_RIGHT": Scroll →
+
+    "&mkp LCLK": $$mdi:mouse-left-click$$
+    "&mkp RCLK": $$mdi:mouse-right-click$$
+    "&mkp MCLK": $$mdi:mouse-scroll-wheel$$
+    "&mkp MB4": Back Click
+    "&mkp MB5": Forward Click
+
+  # ZMK
+  zmk_keycode_map:
+    # Symbols
+    EXCLAMATION: "1"
+    EXCL: "1"
+    AT_SIGN: "2"
+    AT: "2"
+    HASH: "3"
+    POUND: "3"
+    DOLLAR: "4"
+    DLLR: "4"
+    PERCENT: "5"
+    PRCNT: "5"
+    CARET: "6"
+    AMPERSAND: "7"
+    AMPS: "7"
+    ASTERISK: "8"
+    ASTRK: "8"
+    STAR: "8"
+    LEFT_PARENTHESIS: "9"
+    LPAR: "9"
+    RIGHT_PARENTHESIS: "0"
+    RPAR: "0"
+    EQUAL: "="
+    LS(EQUAL): "+"
+    PLUS: "+"
+    MINUS: "-"
+    LS(MINUS): "_"
+    UNDERSCORE: "_"
+    UNDER: "_"
+    SLASH: "]"
+    LS(SLASH): "}"
+    LA(SLASH): "]"
+    LS(LA(SLASH)): "}"
+    LA(LS(SLASH)): "}"
+    FSLH: "]"
+    LS(FSLH): "}"
+    LA(FSLH): "]"
+    LS(LA(FSLH)): "}"
+    LA(LS(FSLH)): "}"
+    QUESTION: "}"
+    QMARK: "}"
+    BACKSLASH: "/"
+    LA(BACKSLASH): "\\"
+    LS(BACKSLASH): "|"
+    LS(LA(BACKSLASH)): "¦"
+    BSLH: "/"
+    LA(BSLH): "\\"
+    LS(LA(BSLH)): "¦"
+    LS(BSLH): "|"
+    PIPE: "|"
+    #NON_US_BACKSLASH: "\\"
+    #PIPE2: "|"
+    #NON_US_BSLH: "|"
+    SEMICOLON: "~"
+    LS(SEMICOLON): "≈"
+    SEMI: "~"
+    LS(SEMI): "≈"
+    COLON: "≈"
+    SINGLE_QUOTE: " "
+    SQT: " "
+    APOSTROPHE: " "
+    APOS: " "
+    DOUBLE_QUOTES: " "
+    DQT: " "
+    DOT: "["
+    LS(DOT): "{"
+    LA(DOT): "["
+    LS(LA(DOT)): "{"
+    LA(LS(DOT)): "{"
+    COMMA: "&"
+    LESS_THAN: "&"
+    LT: "&"
+    GREATER_THAN: "{"
+    GT: "{"
+    LEFT_BRACKET: ","
+    LS(LEFT_BRACKET): ";"
+    LBKT: ","
+    LS(LBKT): ";"
+    LEFT_BRACE: ";"
+    LBRC: ";"
+    RIGHT_BRACKET: "."
+    LS(RIGHT_BRACKET): ":"
+    RBKT: "."
+    LS(RBKT): ":"
+    RIGHT_BRACE: ":"
+    RBRC: ":"
+    GRAVE: "'"
+    LA(GRAVE): "`"
+    LS(GRAVE): "\""
+    TILDE: "\""
+    #NON_US_HASH: "#"
+    #NUHS: "#"
+    #TILDE2: "\""
+
+    LA(Q):
+      tap: "ψ"
+      shifted: "Ψ"
+    LA(W):
+      tap: "ω"
+      shifted: "Ω"
+    LA(E):
+      tap: "€"
+    LA(R):
+      tap: "®"
+    LA(T):
+      tap: "ё"
+      shifted: "Ë"
+    LA(Y):
+      tap: "¥"
+    LA(U):
+      tap: "λ"
+      shifted: "Λ"
+    LA(I):
+      tap: "щ"
+      shifted: "Щ"
+    LA(O):
+      tap: "<"
+      shifted: "≤"
+    LA(P):
+      tap: ">"
+      shifted: "≥"
+    LA(LBKT):
+      tap: ","
+      shifted: ";"
+    LA(RBKT):
+      tap: "."
+      shifted: ":"
+    LA(A):
+      tap: "α"
+      shifted: "Α"
+    LA(S):
+      tap: "§"
+      shifted: "Σ"
+    LA(D):
+      tap: "°"
+      shifted: "Δ"
+    LA(F):
+      tap: "£"
+    LA(G):
+      tap: "γ"
+      shifted: "Γ"
+    LA(H):
+      tap: "₽"
+    LA(J):
+      tap: "ø"
+      shifted: "Ø"
+    LA(K): "=>"
+    LS(LA(K)): "->"
+    LA(L):
+      tap: "«"
+      shifted: "←"
+    LA(SEMI):
+      tap: "»"
+      shifted: "→"
+    LA(SQT):
+      tap: " "
+      shifted: " "
+    LA(Z):
+      tap: "μ"
+      shifted: "Μ"
+    LA(X):
+      tap: "×"
+    LA(C):
+      tap: "©"
+      shifted: "¢"
+    LA(V):
+      tap: "√"
+      shifted: "V"
+    LA(B):
+      tap: "β"
+      shifted: "Β"
+    LA(N):
+      tap: "η"
+      shifted: "Η"
+    LA(M):
+      tap: "ъ"
+      shifted: "Ъ"
+    LA(COMMA):
+      tap: "&"
+      shifted: "…"
+
+    # Numbers
+    N1: "!"
+    N2: "@"
+    N3: "#"
+    N4: "$"
+    N5: "%"
+    N6: "^"
+    N7: "?"
+    N8: "*"
+    N9: "("
+    N0: ")"
+    LS(N1): "1"
+    LS(N2): "2"
+    LS(N3): "3"
+    LS(N4): "4"
+    LS(N5): "5"
+    LS(N6): "6"
+    LS(N7): "7"
+    LS(N8): "8"
+    LS(N9): "9"
+    LS(N0): "0"
+
+    # Modifiers
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    LCMD: $$mdi:apple-keyboard-command$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RSHIFT: $$mdi:apple-keyboard-shift$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    RCMD: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apple-keyboard-command$$
+
+    # Arrows
+    UP: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
+    LEFT: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
+    # PG_UP: $$mdi:transfer-up$$
+    # PG_DN: $$mdi:transfer-down$$
+
+    # Whitespace
+    ENTER:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    RET:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    ESC: $$mdi:keyboard-esc$$
+    TAB: $$mdi:keyboard-tab$$
+    LS(TAB): $$mdi:keyboard-tab-reverse$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE:
+      type: backspace
+      tap: $$mdi:backspace$$
+    BSPC:
+      type: backspace
+      tap: $$mdi:backspace$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # Locks
+    CAPSLOCK: $$mdi:apple-keyboard-caps$$
+    CAPS: $$mdi:apple-keyboard-caps$$
+    CLCK: $$mdi:apple-keyboard-caps$$
+    SCROLLLOCK: scroll lock
+    SLCK: scroll lock
+    LOCKING_NUM: num lock
+    LNLCK: num lock
+
+    # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOLUME_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+    C_VOLUME_DOWN: $$mdi:volume-low$$
+
+    # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+
+    # Bluetooth
+    BT_CLR: $$mdi:bluetooth-off$$
+    BT_SEL: $$mdi:bluetooth-connect$$
+
+    # Settings
+    C_BRIGHTNESS_INC: $$mdi:brightness-5$$
+    C_BRI_INC: $$mdi:brightness-5$$
+    C_BRI_UP: $$mdi:brightness-5$$
+    C_BRIGHTNESS_DEC: $$mdi:brightness-7$$
+    C_BRI_DEC: $$mdi:brightness-7$$
+    C_BRI_DN: $$mdi:brightness-7$$
+
+    # System
+    C_POWER: $$mdi:power-standby$$
+    C_AL_LOCK: $$mdi:lock$$
+    K_CANCEL: $$mdi:close-box$$
+
+    # Key pad
+    KP_N1: "KP 1"
+    KP_N2: "KP 2"
+    KP_N3: "KP 3"
+    KP_N4: "KP 4"
+    KP_N5: "KP 5"
+    KP_N6: "KP 6"
+    KP_N7: "KP 7"
+    KP_N8: "KP 8"
+    KP_N9: "KP 9"
+    KP_N0: "KP 0"
+    KP_PLUS: "KP +"
+    KP_MINUS: "KP -"
+    KP_SUBTRACT: "KP -"
+    KP_MULTIPLY: "KP *"
+    KP_ASTERISK: "KP *"
+    KP_DIVIDE: "KP /"
+    KP_SLASH: "KP /"
+    KP_EQUAL: "KP ="
+    KP_DOT: "KP ."
+    KP_COMMA: "KP ,"
+
+    # Navigation
+    PG_UP: page up
+    PG_DN: page down
+    HOME: home
+    END: end
+    LC(RIGHT): space next
+    LC(LEFT): space prev
+    LC(UP): space up
+    LC(DOWN): space down
+    LC(TAB): tab next
+    LC(LS(TAB)): tab prev
+    LG(TAB): window next
+    LG(LS(TAB)): window prev
+
+    # Others
+    INS: insert
+    PSCRN: print scrn
+    PAUSE_BREAK: pause break
+
+    # Lang
+    LG(F11): "ru"
+    LG(F12): "en"
+
+    # Dongle
+    F22: dongle brightness tog
+    F23: dongle brightness dec
+    F24: dongle brightness inc
+
+draw_config:
+  # key dimensions, non-ortho layouts use key_h for width as well
+  key_h: 80
+
+  # keys border radius
+  key_rx: 4
+  key_ry: 4
+
+  # key labels line spacing for multi-line labels
+  line_spacing: 1
+
+  # combo box dimensions
+  combo_w: 30
+  combo_h: 30
+
+  # padding from the edge of cap to top and bottom legends
+  small_pad: 4
+
+  # Padding between keys
+  inner_pad_w: 1.5
+  inner_pad_h: 1.5
+
+  # padding between layers
+  # outer_pad_w: 0
+  # outer_pad_h: 0
+
+  # gap between two halves for ortho layout generator
+  # split_gap: 20
+
+  # as it reads on the tin can, this comment is here for consistency
+  append_colon_to_layer_header: false
+
+  # Draw "key sides" on key representations, which can be made to look like keycap profiles
+  # draw_key_sides: true
+
+  # shrink font size for legends wider than this many chars, set to 0 to disable
+  # ideal value depends on the font size defined in svg_style and width of the boxes
+  shrink_wide_legends: 5
+
+  # Glyphs dimensions
+  glyph_tap_size: 22
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
+
+  n_columns: 2
+
+  # Custom CSS
+  svg_extra_style: |
+    svg.keymap {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    text {
+      text-anchor: middle;
+      dominant-baseline: middle;
+      line-height: 1;
+    }
+
+    /* Layer labels */
+    text.label {
+      font-size: 36px;
+      text-anchor: start;
+      paint-order: stroke;
+    }
+
+    text.layer-activator {
+      text-decoration: underline;
+    }
+
+    /* Keys */
+    .shifted,
+    .hold {
+      font-size: 16px;
+      text-anchor: middle;
+    }
+
+    /*
+     * Combos
+     */
+    rect.combo {
+      opacity: 0.8;
+    }
+    .combo.tap {
+      font-size: 16px;
+    }
+    .combo.shifted {
+      font-size: 10px;
+    }
+    .combo.hold {
+      font-size: 16px;
+    }
+
+    /*
+     * Transparent, None, and Ghost Keys
+     */
+    .trans,
+    .none,
+    .ghost {
+      opacity: 0.6;
+    }

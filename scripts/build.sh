@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # ZMK Local Build Script using Docker
-# Reads build.yaml and builds selected configuration using Docker
 #
 # Original script https://github.com/choovick/zmk-config-charybdis/blob/main/local-build/build.py commit 2d27ec9
 
@@ -23,12 +22,12 @@ OUTPUT_DIR="$WORKSPACE/firmware"
 # Helpers
 # ==========================
 die() {
-    echo "Error: $*" >&2
-    exit 1
+  echo "Error: $*" >&2
+  exit 1
 }
 
 need() {
-    command -v "$1" >/dev/null || die "Missing dependency: $1"
+  command -v "$1" >/dev/null || die "Missing dependency: $1"
 }
 
 # ==========================
@@ -38,37 +37,101 @@ need docker
 need yq
 
 # ==========================
+# Progress UI
+# ==========================
+
+CURRENT_BUILD=0
+TOTAL_BUILDS=0
+NINJA_CURRENT=0
+NINJA_TOTAL=0
+NINJA_PERCENT=0
+
+setup_progress() {
+  TOTAL_BUILDS="$FIRMWARE_COUNT"
+  CURRENT_BUILD=0
+}
+
+parse_ninja_progress() {
+  local line="$1"
+
+  if [[ "$line" =~ ^\[([0-9]+)/([0-9]+)\] ]]; then
+    NINJA_CURRENT="${BASH_REMATCH[1]}"
+    NINJA_TOTAL="${BASH_REMATCH[2]}"
+
+    if ((NINJA_TOTAL > 0)); then
+      NINJA_PERCENT=$((NINJA_CURRENT * 100 / NINJA_TOTAL))
+    fi
+
+    return 0
+  fi
+
+  return 1
+}
+
+draw_progress() {
+  local shield="$1"
+  local board="$2"
+
+  local percent="$NINJA_PERCENT"
+
+  local width=30
+  local filled=$((percent * width / 100))
+
+  local bar=""
+
+  for ((i = 0; i < filled; i++)); do bar+="█"; done
+  for ((i = filled; i < width; i++)); do bar+="░"; done
+
+  printf "\r\033[K"
+  printf "\r[%d/%d] %s (%s)  %s %3d%% (%d/%d)" \
+    "$CURRENT_BUILD" \
+    "$TOTAL_BUILDS" \
+    "$shield" \
+    "$board" \
+    "$bar" \
+    "$percent" \
+    "$NINJA_CURRENT" \
+    "$NINJA_TOTAL"
+}
+
+start_progress() {
+  CURRENT_BUILD=$((CURRENT_BUILD + 1))
+}
+
+# ==========================
 # Load builds
 # ==========================
+BUILD_COUNT=0
+FIRMWARE_COUNT=0
+BOARDS=()
+SHIELDS=()
+SNIPPETS=()
+CMAKE_ARGS=()
+
 load_builds() {
-    [[ -f "$BUILD_YAML" ]] || die "build.yaml not found"
+  [[ -f "$BUILD_YAML" ]] || die "build.yaml not found"
 
-    BOARDS=()
-    SHIELDS=()
-    SNIPPETS=()
-    CMAKE_ARGS=()
+  while IFS= read -r line; do BOARDS+=("$line"); done \
+    < <(yq '.include[].board' "$BUILD_YAML")
 
-    while IFS= read -r line; do BOARDS+=("$line"); done \
-        < <(yq '.include[].board' "$BUILD_YAML")
+  while IFS= read -r line; do SHIELDS+=("$line"); done \
+    < <(yq '.include[].shield' "$BUILD_YAML")
 
-    while IFS= read -r line; do SHIELDS+=("$line"); done \
-        < <(yq '.include[].shield' "$BUILD_YAML")
+  while IFS= read -r line; do SNIPPETS+=("$line"); done \
+    < <(yq '.include[].snippet // ""' "$BUILD_YAML")
 
-    while IFS= read -r line; do SNIPPETS+=("$line"); done \
-        < <(yq '.include[].snippet // ""' "$BUILD_YAML")
+  while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
+    < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
 
-    while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
-        < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
-
-    BUILD_COUNT="${#BOARDS[@]}"
-    (( BUILD_COUNT > 0 )) || die "No builds found in build.yaml"
+  BUILD_COUNT="${#BOARDS[@]}"
+  ((BUILD_COUNT > 0)) || die "No builds found in build.yaml"
 }
 
 # ==========================
 # UI
 # ==========================
 print_header() {
-cat <<EOF
+  cat <<EOF
 ╔════════════════════════════════════════════╗
 ║   ZMK Local Build Script (Docker)          ║
 ╚════════════════════════════════════════════╝
@@ -76,7 +139,7 @@ EOF
 }
 
 print_help() {
-cat <<EOF
+  cat <<EOF
 Usage: $0 [OPTIONS]
 
 Options:
@@ -84,103 +147,115 @@ Options:
     -s, --shield S          Filter by shield name (substring)
     -b, --board B           Filter by board name (exact)
     -l, --list              List available firmwares
+    -a, --all               Build all firmwares
     --clean|--clean-deps    Clean workspace and dependencies
     --update                Force west update
     -h, --help              Show this help
+
+Without arguments:
+    Interactive build selection
+
+Examples:
+    $0 -l                    # List
+    $0 -n 1                  # Build first
+    $0 --all --update        # Update west and build all firmwares
 EOF
 }
 
 list_builds() {
+  echo
+  echo "=== Available Build Configurations ==="
+  echo
+  for ((i = 0; i < BUILD_COUNT; i++)); do
+    n=$((i + 1))
+    echo "$n. ${SHIELDS[$i]} (${BOARDS[$i]})"
+    [[ -n "${SNIPPETS[$i]}" ]] && echo "   └─ Snippet: ${SNIPPETS[$i]}"
+    [[ -n "${CMAKE_ARGS[$i]}" ]] && echo "   └─ CMake args: ${CMAKE_ARGS[$i]}"
     echo
-    echo "=== Available Build Configurations ==="
-    echo
-    for ((i=0;i<BUILD_COUNT;i++)); do
-        n=$((i+1))
-        echo "$n. ${SHIELDS[$i]} (${BOARDS[$i]})"
-        [[ -n "${SNIPPETS[$i]}" ]] && echo "   └─ Snippet: ${SNIPPETS[$i]}"
-        [[ -n "${CMAKE_ARGS[$i]}" ]] && echo "   └─ CMake args: ${CMAKE_ARGS[$i]}"
-        echo
-    done
+  done
 }
 
 interactive_select() {
-    list_builds
-    while true; do
-        read -rp "Select build (1-$BUILD_COUNT) or q: " ans
-        [[ "$ans" == "q" ]] && exit 0
-        [[ "$ans" =~ ^[0-9]+$ ]] || continue
-        (( ans>=1 && ans<=BUILD_COUNT )) && {
-            SELECTED=$((ans-1))
-            return
-        }
-    done
+  list_builds
+  while true; do
+    read -rp "Select build (1-$BUILD_COUNT) or q: " ans
+    [[ "$ans" == "q" ]] && exit 0
+    [[ "$ans" =~ ^[0-9]+$ ]] || continue
+    ((ans >= 1 && ans <= BUILD_COUNT)) && {
+      SELECTED=$((ans - 1))
+      FIRMWARE_COUNT=1
+      return
+    }
+  done
 }
 
 # ==========================
 # Build selection
 # ==========================
 find_by_criteria() {
-    local shield="$1"
-    local board="$2"
+  local shield="$1"
+  local board="$2"
 
-    local shield_lc=$(printf '%s' "$shield" | tr 'A-Z' 'a-z')
-    local board_lc=$(printf '%s' "$board" | tr 'A-Z' 'a-z')
+  local shield_lc=$(printf '%s' "$shield" | tr 'A-Z' 'a-z')
+  local board_lc=$(printf '%s' "$board" | tr 'A-Z' 'a-z')
 
-    MATCHES=()
-    for ((i=0;i<BUILD_COUNT;i++)); do
-        s=$(printf '%s' "${SHIELDS[$i]}" | tr 'A-Z' 'a-z')
-        b=$(printf '%s' "${BOARDS[$i]}" | tr 'A-Z' 'a-z')
+  MATCHES=()
+  for ((i = 0; i < BUILD_COUNT; i++)); do
+    s=$(printf '%s' "${SHIELDS[$i]}" | tr 'A-Z' 'a-z')
+    b=$(printf '%s' "${BOARDS[$i]}" | tr 'A-Z' 'a-z')
 
-        [[ -n "$shield_lc" && "$s" != *"$shield_lc"* ]] && continue
-        [[ -n "$board_lc" && "$b" != "$board_lc" ]] && continue
+    [[ -n "$shield_lc" && "$s" != *"$shield_lc"* ]] && continue
+    [[ -n "$board_lc" && "$b" != "$board_lc" ]] && continue
 
-        MATCHES+=("$i")
-    done
+    MATCHES+=("$i")
+  done
+  FIRMWARE_COUNT="${#MATCHES[@]}"
 }
 
 get_artifact_name() {
-    local shield="$1"
-    local board="$2"
-    echo "${shield// /+}-${board}"
+  local shield="$1"
+  local board="$2"
+  echo "${shield// /+}-${board//\/\//_}"
 }
 
 # ==========================
 # Cleanup
 # ==========================
 clean_deps() {
-    echo "Cleaning west workspace..."
-    rm -rf "$WEST_WS"
-    mkdir -p "$WEST_WS"
+  echo "Cleaning west workspace..."
+  rm -rf "$WEST_WS"
+  mkdir -p "$WEST_WS"
 
-    echo "Cleaning artifacts..."
-    rm -rf "$ARTIFACTS"
-    mkdir -p "$ARTIFACTS"
+  echo "Cleaning artifacts..."
+  rm -rf "$ARTIFACTS"
+  mkdir -p "$ARTIFACTS"
 }
 
 # ==========================
 # Docker build
 # ==========================
 run_build() {
-    local idx="$1"
-    local force_update="$2"
+  local idx="$1"
+  local force_update="$2"
 
-    local board="${BOARDS[$idx]}"
-    local shield="${SHIELDS[$idx]}"
-    local snippet="${SNIPPETS[$idx]}"
-    local cmake_args="${CMAKE_ARGS[$idx]}"
+  local board="${BOARDS[$idx]}"
+  local shield="${SHIELDS[$idx]}"
+  local snippet="${SNIPPETS[$idx]}"
+  local cmake_args="${CMAKE_ARGS[$idx]}"
 
-    local shield_dir="$(echo "$shield" | tr ' _' '--')"
-    local build_dir="/out/$shield_dir"
+  local shield_dir="$(echo "$shield" | tr ' _' '--')"
+  local build_dir="/out/$shield_dir"
 
-    mkdir -p "$WEST_WS" "$ARTIFACTS" "$OUTPUT_DIR"
+  NINJA_CURRENT=0
+  NINJA_TOTAL=0
+  NINJA_PERCENT=0
 
-    echo
-    echo "============================================================"
-    echo "Building: $shield ($board)"
-    echo "============================================================"
-    echo
+  start_progress
+  draw_progress "$shield" "$board"
 
-    docker run --rm \
+  mkdir -p "$WEST_WS" "$ARTIFACTS" "$OUTPUT_DIR"
+
+  docker run --rm \
     -v "$WORKSPACE:/repo" \
     -v "$WEST_WS:/workspace" \
     -v "$ARTIFACTS:/out" \
@@ -199,20 +274,8 @@ run_build() {
       mkdir -p zmk-config/zephyr
       [ -d /repo/boards ] && cp -R /repo/boards zmk-config/
       [ -d /repo/dts ] && cp -R /repo/dts zmk-config/
+      [ -d /repo/app ] && cp -R /repo/app zmk-config/
       [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
-
-      if [ -d /repo/modules ]; then
-        cp -aR /repo/modules/. modules/local
-        for mod_path in modules/local/*/ ; do
-          if [ -d \"\$mod_path\" ]; then
-            mod_name=\$(basename \"\$mod_path\")
-            if [ ! -d \"\$mod_path.git\" ]; then
-              echo \"Initializing git for \$mod_name...\"
-              cd \"\$mod_path\" && git init && cd -
-            fi
-          fi
-        done
-      fi
 
       mkdir zmk-config/boards/shields/charybdis/includes
       cp /repo/config/includes/layers.h zmk-config/boards/shields/charybdis/includes/
@@ -229,18 +292,84 @@ run_build() {
         -DSHIELD=\"$shield\" \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
         $cmake_args
-    "
-
-    local uf2="$ARTIFACTS/$shield_dir/zephyr/zmk.uf2"
-    if [[ -f "$uf2" ]]; then
-        local out_name="$(get_artifact_name "$shield" "$board")".uf2
-        cp "$uf2" "$OUTPUT_DIR/$out_name"
-        chmod go+wrx "$OUTPUT_DIR/$out_name"
-        echo
-        echo "✓ Firmware: $OUTPUT_DIR/$out_name"
+    " 2>&1 | while IFS= read -r line; do
+    if parse_ninja_progress "$line"; then
+      draw_progress "$shield" "$board"
     else
-        echo "⚠️  UF2 not found"
+      printf "\r\033[K%s\n" "$line"
+      draw_progress "$shield" "$board"
     fi
+  done
+
+  local uf2="$ARTIFACTS/$shield_dir/zephyr/zmk.uf2"
+  if [[ -f "$uf2" ]]; then
+    local out_name="$(get_artifact_name "$shield" "$board")".uf2
+    cp "$uf2" "$OUTPUT_DIR/$out_name"
+    chmod go+wrx "$OUTPUT_DIR/$out_name"
+    printf "\r\033[K"
+    printf "\r\033[K%s\n" "✓ Firmware: $OUTPUT_DIR/$out_name"
+  else
+    printf "\r\033[K%s\n" "⚠️  UF2 not found"
+  fi
+
+  printf "\r\033[K"
+}
+
+build_all() {
+  FIRMWARE_COUNT="$BUILD_COUNT"
+  MATCHES=()
+
+  echo "Will build the following configurations:"
+  for ((i = 0; i < BUILD_COUNT; i++)); do
+    echo "  $((i + 1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
+    MATCHES+=("$i")
+  done
+  echo
+
+  setup_progress
+  for i in "${MATCHES[@]}"; do
+    run_build "$i" "$UPDATE"
+    if $UPDATE; then UPDATE=false; fi
+  done
+}
+
+build_by_number() {
+  local number="$1"
+  ((number >= 1 && number <= BUILD_COUNT)) || die "Invalid build number"
+  SELECTED=$((number - 1))
+  FIRMWARE_COUNT=1
+  setup_progress
+  run_build "$SELECTED" "$UPDATE"
+}
+
+build_by_criteria() {
+  local shield="$1"
+  local board="$2"
+
+  find_by_criteria "$shield" "$board"
+
+  if ((${#MATCHES[@]} == 0)); then
+    echo "No matches for shield=\"$shield\" board=\"$board\""
+    exit 1
+  fi
+
+  echo "Will build the following configurations:"
+  for i in "${MATCHES[@]}"; do
+    echo "  $((i + 1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
+  done
+  echo
+
+  setup_progress
+  for i in "${MATCHES[@]}"; do
+    run_build "$i" "$UPDATE"
+    if $UPDATE; then UPDATE=false; fi
+  done
+}
+
+build_by_select() {
+  interactive_select
+  setup_progress
+  run_build "$SELECTED" "$UPDATE"
 }
 
 # ==========================
@@ -250,21 +379,47 @@ NUMBER=""
 SHIELD=""
 BOARD=""
 LIST=false
+ALL=false
 CLEAN=false
 UPDATE=false
 HELP=false
 
 while [[ $# -gt 0 ]]; do
-    case "$1" in
-        -n|--number) NUMBER="$2"; shift 2 ;;
-        -s|--shield) SHIELD="$2"; shift 2 ;;
-        -b|--board)  BOARD="$2"; shift 2 ;;
-        -l|--list)   LIST=true; shift ;;
-        -h|--help)   HELP=true; shift ;;
-        --clean|--clean-deps) CLEAN=true; shift ;;
-        --update)    UPDATE=true; shift ;;
-        *) die "Unknown argument: $1" ;;
-    esac
+  case "$1" in
+  -n | --number)
+    NUMBER="$2"
+    shift 2
+    ;;
+  -s | --shield)
+    SHIELD="$2"
+    shift 2
+    ;;
+  -b | --board)
+    BOARD="$2"
+    shift 2
+    ;;
+  -l | --list)
+    LIST=true
+    shift
+    ;;
+  -a | --all)
+    ALL=true
+    shift
+    ;;
+  -h | --help)
+    HELP=true
+    shift
+    ;;
+  --clean | --clean-deps)
+    CLEAN=true
+    shift
+    ;;
+  --update)
+    UPDATE=true
+    shift
+    ;;
+  *) die "Unknown argument: $1" ;;
+  esac
 done
 
 # ==========================
@@ -273,36 +428,29 @@ done
 print_header
 load_builds
 
-$HELP && { print_help; exit 0; }
+if $HELP; then
+  print_help
+  exit 0
+fi
 
-$LIST && { list_builds; exit 0; }
+if $LIST; then
+  list_builds
+  exit 0
+fi
 
-$CLEAN && clean_deps
+if $CLEAN; then
+  clean_deps
+fi
+
+if $ALL; then
+  build_all
+  exit 0
+fi
 
 if [[ -n "$NUMBER" ]]; then
-    (( NUMBER>=1 && NUMBER<=BUILD_COUNT )) || die "Invalid build number"
-    SELECTED=$((NUMBER-1))
-    run_build "$SELECTED" "$UPDATE"
+  build_by_number "$NUMBER"
 elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
-    find_by_criteria "$SHIELD" "$BOARD"
-
-    if (( ${#MATCHES[@]} == 0 )); then
-        echo "No matches for shield=\"$SHIELD\" board=\"$BOARD\""
-        exit 1
-    fi
-
-    echo "Will build the following configurations:"
-    for i in "${MATCHES[@]}"; do
-        echo "  $((i+1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
-    done
-    echo
-
-    for i in "${MATCHES[@]}"; do
-        run_build "$i" "$UPDATE"
-    done
-
-    exit 0
+  build_by_criteria "$SHIELD" "$BOARD"
 else
-    interactive_select
-    run_build "$SELECTED" "$UPDATE"
+  build_by_select
 fi

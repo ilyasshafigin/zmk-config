@@ -8,10 +8,14 @@ manifest:
     url-base: https://github.com/caksoylar
   - name: carrefinho
     url-base: https://github.com/carrefinho
+  - name: englmaxi
+    url-base: https://github.com/englmaxi
   - name: janpfischer
     url-base: https://github.com/janpfischer
   - name: jfaxio
     url-base: https://github.com/jfaixo
+  - name: kot149
+    url-base: https://github.com/kot149
   - name: oleksandrmaslov
     url-base: https://github.com/oleksandrmaslov
   - name: urob
@@ -54,12 +58,20 @@ manifest:
     remote: jfaxio
     revision: main
     path: modules/zmk/sticky-modifiers-behavior
+  - name: zmk-scroll-snap
+    remote: kot149
+    revision: v1
+    path: modules/zmk/scroll-snap
 
   # Dongle
   - name: prospector-zmk-module
     remote: carrefinho
     revision: feat/new-status-screens #main
     path: modules/zmk/prospector
+  - name: zmk-dongle-display
+    remote: englmaxi
+    revision: main
+    path: modules/zmk/dongle-display
   # - name: zmk-dongle-screen
     # remote: janpfischer
     # revision: main
