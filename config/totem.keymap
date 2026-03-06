@@ -87,7 +87,7 @@ ZMK_COMBO(lang_en,        &kp LG(F12),    RM1 RM2,    DEF SYM,  COMBO_TERM, COMB
 //ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 
-ZMK_CONDITIONAL_LAYER(fn_layer, NAV SYM, FN)
+ZMK_CONDITIONAL_LAYER(num_layer, NAV SYM, NUM)
 ZMK_CONDITIONAL_LAYER(adj_layer, NAV EXT, ADJ)
 
 /**
@@ -98,14 +98,14 @@ ZMK_LAYER(base,
 //                 │           Q Й │           W Ц │           E У │           R К │           T Е │   │           Y Н │           U Г │           I Ш │           O З │           P Х │
                     _ Q             _ W             _ E             _ R             _ T                 _ Y             _ U             _ I             _ O             _ P
 //                 ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-//                 │ GUI       A Ф │ ALT       S Ы │ CTRL      D В │ SHIFT     F А │           G П │   │           H Р │ SHIFT     J О │ CTRL      K Л │ ALT       L Д │ GUI       ~ Ж │
+//                 │           A Ф │           S Ы │           D В │           F А │           G П │   │           H Р │           J О │           K Л │           L Д │           ~ Ж │
                     _ A             _ S             _ D             _ F             _ G                 _ H             _ J             _ K             _ L             _ UL_TILDE
 // ╭───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╮
 // │               │           Z Я │           X Ч │           C С │           V М │           B И │   │           N Т │           M Ь │           & Б │           [ Ю │           ] Э │             / │
     _ LCTRL         _ Z             _ X             _ C             _ V             _ B                 _ N             _ M             _ UL_AMPS       _ UL_LBKT       _ UL_RBKT       _ UL_FSLH
 // ╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
 //                                                 │               │               │               │   │               │               │               │
-                                                    _ LALT          _ SPACE         &mo NAV             &mo SYM         _ LSFT          _ LALT
+                                                    _ LGUI          _ SPACE         &mo NAV             &mo SYM         _ LSFT          _ LALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 )
 
