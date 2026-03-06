@@ -82,7 +82,7 @@ ZMK_COMBO(arrow,          &kp LS(LA(K)),  LT3 LT2,    DEF SYM,  COMBO_TERM, COMB
 ZMK_COMBO(double_arrow,   &kp LA(K),      RT2 RT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_ru,        &kp LG(F11),    LM2 LM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_en,        &kp LG(F12),    RM1 RM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(esc,            &kp ESC,        LT4 LT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM4 LM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(left_click_l,   &mkp LCLK,      LB2 LB1,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)

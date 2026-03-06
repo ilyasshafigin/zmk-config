@@ -235,7 +235,14 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 }
 ```
 
-Для того чтобы работали одинаково на раскладках ru и en в IntelliJ IDEA и VC Code сочетания `Cmd+[`, `Cmd+]` и другие, нужно добавить правило Complex Modifications:
+Для того чтобы работали одинаково на раскладках ru и en в IntelliJ IDEA и VC Code сочетания `Cmd+[`, `Cmd+]` и другие, нужно добавить правило Complex Modifications.
+В нем происходят преобразования:
+
+- `.` -> `[`
+- `/` -> `]`
+- `[` -> `,`
+- `]` -> `.`
+- `\` -> `/`
 
 ```json
 {

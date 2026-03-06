@@ -47,7 +47,7 @@ ZMK_COMBO(arrow,          &kp LS(LA(K)),  LT3 LT2,    DEF SYM,  COMBO_TERM, COMB
 ZMK_COMBO(double_arrow,   &kp LA(K),      RT2 RT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_ru,        &kp LG(F11),    LM2 LM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_en,        &kp LG(F12),    RM1 RM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 
@@ -116,7 +116,7 @@ ZMK_LAYER(ext,
 //           ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
               XXX             _ SPACE_D       _ SPACE_P       _ SPACE_N       _ SPACE_U           _ C_VOL_DN      _ C_PP          _ C_PREV        _ C_NEXT        _ C_BRI_DN
 // ╭─────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼─────────╮
-    ___       XXX             XXX             XXX             XXX             XXX                 _ C_MUTE        XXX             XXX             XXX             XXX             XXX
+    ___       &double_ctrl    &double_shft    &double_gui     XXX             XXX                 _ C_MUTE        XXX             XXX             XXX             XXX             XXX
 // ╰─────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────┴─────────╯
                                               ___             ___             ___                 ___             ___             ___
 //                                           ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯

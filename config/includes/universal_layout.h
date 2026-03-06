@@ -7,23 +7,23 @@
 // O|Щ -> O|З
 // P|З -> P|Х
 
-#define UL_COMMA    LBKT            // [ -> ','   shift: ';'   alt: ','   shift+alt: ';'
-#define UL_DOT      RBKT            // ] -> '.'   shift: ':'   alt: '.'   shift+alt: ':'
-#define UL_TILDE    SEMI            // ; -> ~|ж   shift: ≈|Ж   alt: '»'   shift+alt: '→'
-#define UL_AMPS     COMMA           // , -> &|б   shift: &|Б   alt: '&'   shift+alt: '…'
-#define UL_LBKT     DOT             // . -> [|ю   shift: {|Ю   alt: '['   shift+alt: '{'
-#define UL_LBRC     LS(DOT)         //   -> {|Ю                alt: '{'
-#define UL_RBKT     FSLH            // / -> ]|э   shift: }|Э   alt: ']'   shift+alt: '}'
-#define UL_RBRC     LS(FSLH)        //   -> }|Э                alt: '}'
+#define UL_COMMA    LBKT            // '[' -> ','   shift: ';'   alt: ','   shift+alt: ';'
+#define UL_DOT      RBKT            // ']' -> '.'   shift: ':'   alt: '.'   shift+alt: ':'
+#define UL_TILDE    SEMI            // ';' -> ~|ж   shift: ≈|Ж   alt: '»'   shift+alt: '→'
+#define UL_AMPS     COMMA           // ',' -> &|б   shift: &|Б   alt: '&'   shift+alt: '…'
+#define UL_LBKT     DOT             // '.' -> [|ю   shift: {|Ю   alt: '['   shift+alt: '{'
+#define UL_LBRC     LS(DOT)         // '>' -> {|Ю                alt: '{'
+#define UL_RBKT     FSLH            // '/' -> ]|э   shift: }|Э   alt: ']'   shift+alt: '}'
+#define UL_RBRC     LS(FSLH)        // '?' -> }|Э                alt: '}'
 
-#define UL_SQT      GRAVE           // ' -> '''   shift: '"'   alt: '`'   shift+alt: '•'
-#define UL_DQT      LS(GRAVE)       //   -> '"'                alt: '•'
-#define UL_GRAVE    LA(GRAVE)       //   -> '`'   shift: '•'
+#define UL_SQT      GRAVE           // '`' -> '''   shift: '"'   alt: '`'   shift+alt: '•'
+#define UL_DQT      LS(GRAVE)       // '~' -> '"'                alt: '•'
+#define UL_GRAVE    LA(GRAVE)       //     -> '`'   shift: '•'
 
-#define UL_FSLH     BSLH            // \ -> '/'   shift: '|'   alt: '\'   shift+alt: '¦'
-#define UL_BSLH     LA(BSLH)        //   -> '\'   shift: '¦'
-#define UL_PIPE     LS(BSLH)        //   -> '|'                alt: '¦'
-#define UL_DPIPE    LS(LA(BSLH))    //   -> '¦'
+#define UL_FSLH     BSLH            // '\' -> '/'   shift: '|'   alt: '\'   shift+alt: '¦'
+#define UL_BSLH     LA(BSLH)        //     -> '\'   shift: '¦'
+#define UL_PIPE     LS(BSLH)        // '|' -> '|'                alt: '¦'
+#define UL_DPIPE    LS(LA(BSLH))    //     -> '¦'
 
 #define UL_N1       LS(N1)          // -> '1'                alt: '¡'
 #define UL_N2       LS(N2)          // -> '2'                alt: '½'
