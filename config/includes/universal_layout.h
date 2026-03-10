@@ -6,6 +6,7 @@
 // Смещения и замены стандартной раскладки:
 // O|Щ -> O|З
 // P|З -> P|Х
+// ''' (SQT|APOS) -> не используется
 
 #define UL_COMMA    LBKT            // '[' -> ','   shift: ';'   alt: ','   shift+alt: ';'
 #define UL_DOT      RBKT            // ']' -> '.'   shift: ':'   alt: '.'   shift+alt: ':'

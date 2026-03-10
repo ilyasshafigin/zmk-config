@@ -5,7 +5,7 @@
 #define EXT 3
 #define GAM 4
 #define GFN 5
-#define FN  6
+#define NUM 6
 #define ADJ 7
 #define MSE 8
 #define SLOW 9  // for trackball

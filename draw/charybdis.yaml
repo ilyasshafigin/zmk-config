@@ -80,8 +80,8 @@ layers:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page up
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - page down
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: game, h: '$$mdi:toggle-switch$$'}
   - {t: ., h: '$$mdi:apple-keyboard-command$$'}
   - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
@@ -92,17 +92,17 @@ layers:
   - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '$$mdi:minus-circle-outline$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: KC_QUOT, h: '$$mdi:apple-keyboard-command$$'}
   - '0'
   - '1'
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:apple-keyboard-caps$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - home
   - $$mdi:arrow-down-bold$$
   - end
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}

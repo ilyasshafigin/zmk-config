@@ -48,10 +48,10 @@ manifest:
     remote: zettaface
     revision: main
     path: modules/zmk/input-processor-keybind
-  - name: zmk-pointing-acceleration
-    remote: oleksandrmaslov
-    revision: main
-    path: modules/zmk/pointing-acceleration
+#  - name: zmk-pointing-acceleration
+#    remote: oleksandrmaslov
+#    revision: main
+#    path: modules/zmk/pointing-acceleration
   - name: zmk-scroll-snap
     remote: kot149
     revision: v1
@@ -66,9 +66,9 @@ manifest:
     remote: englmaxi
     revision: main
     path: modules/zmk/dongle-display
-  # - name: zmk-dongle-screen
-    # remote: janpfischer
-    # revision: main
-    # path: modules/zmk/dongle-screen
+#  - name: zmk-dongle-screen
+#    remote: janpfischer
+#    revision: main
+#    path: modules/zmk/dongle-screen
   self:
     path: config
