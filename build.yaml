@@ -7,10 +7,10 @@ include:
 
 - board: nice_nano//zmk
   shield: totem_dongle
-- board: nice_nano//zmk
-  shield: totem_dongle_oled_32 dongle_display
-- board: nice_nano//zmk
-  shield: totem_dongle_oled_64 dongle_display
+#- board: nice_nano//zmk
+#  shield: totem_dongle_oled_32 dongle_display
+#- board: nice_nano//zmk
+#  shield: totem_dongle_oled_64 dongle_display
 - board: xiao_ble//zmk
   shield: totem_dongle
 - board: xiao_ble//zmk

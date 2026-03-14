@@ -12,23 +12,14 @@ set -euo pipefail
 IMAGE="zmkfirmware/zmk-build-arm:stable"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
+LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 BUILD_YAML="$WORKSPACE/build.yaml"
 
 WEST_WS="$WORKSPACE/local-build/workspace"
 ARTIFACTS="$WORKSPACE/local-build/artifact"
 OUTPUT_DIR="$WORKSPACE/firmware"
 
-# ==========================
-# Helpers
-# ==========================
-die() {
-  echo "Error: $*" >&2
-  exit 1
-}
-
-need() {
-  command -v "$1" >/dev/null || die "Missing dependency: $1"
-}
+source "$LIB_COMMON"
 
 # ==========================
 # Dependencies check
@@ -109,7 +100,12 @@ SNIPPETS=()
 CMAKE_ARGS=()
 
 load_builds() {
-  [[ -f "$BUILD_YAML" ]] || die "build.yaml not found"
+  ensure_file "$BUILD_YAML"
+
+  BOARDS=()
+  SHIELDS=()
+  SNIPPETS=()
+  CMAKE_ARGS=()
 
   while IFS= read -r line; do BOARDS+=("$line"); done \
     < <(yq '.include[].board' "$BUILD_YAML")
@@ -125,6 +121,9 @@ load_builds() {
 
   BUILD_COUNT="${#BOARDS[@]}"
   ((BUILD_COUNT > 0)) || die "No builds found in build.yaml"
+  ((${#SHIELDS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/shields count mismatch"
+  ((${#SNIPPETS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/snippets count mismatch"
+  ((${#CMAKE_ARGS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/cmake-args count mismatch"
 }
 
 # ==========================
@@ -143,11 +142,11 @@ print_help() {
 Usage: $0 [OPTIONS]
 
 Options:
-    -n, --number N          Flash N-th build (1-based)
+    -n, --number N          Build N-th target (1-based)
     -s, --shield S          Filter by shield name (substring)
     -b, --board B           Filter by board name (exact)
-    -l, --list              List available firmwares
-    -a, --all               Build all firmwares
+    -l, --list              List available build targets
+    -a, --all               Build all targets
     --clean|--clean-deps    Clean workspace and dependencies
     --update                Force west update
     -h, --help              Show this help
@@ -158,7 +157,13 @@ Without arguments:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Build first
+    $0 -s "totem_dongle" -b "xiao_ble//zmk"
     $0 --all --update        # Update west and build all firmwares
+
+Exit codes:
+    0 success
+    1 runtime error
+    2 invalid arguments
 EOF
 }
 
@@ -171,8 +176,8 @@ list_builds() {
     echo "$n. ${SHIELDS[$i]} (${BOARDS[$i]})"
     [[ -n "${SNIPPETS[$i]}" ]] && echo "   └─ Snippet: ${SNIPPETS[$i]}"
     [[ -n "${CMAKE_ARGS[$i]}" ]] && echo "   └─ CMake args: ${CMAKE_ARGS[$i]}"
-    echo
   done
+  echo
 }
 
 interactive_select() {
@@ -187,29 +192,6 @@ interactive_select() {
       return
     }
   done
-}
-
-# ==========================
-# Build selection
-# ==========================
-find_by_criteria() {
-  local shield="$1"
-  local board="$2"
-
-  local shield_lc=$(printf '%s' "$shield" | tr 'A-Z' 'a-z')
-  local board_lc=$(printf '%s' "$board" | tr 'A-Z' 'a-z')
-
-  MATCHES=()
-  for ((i = 0; i < BUILD_COUNT; i++)); do
-    s=$(printf '%s' "${SHIELDS[$i]}" | tr 'A-Z' 'a-z')
-    b=$(printf '%s' "${BOARDS[$i]}" | tr 'A-Z' 'a-z')
-
-    [[ -n "$shield_lc" && "$s" != *"$shield_lc"* ]] && continue
-    [[ -n "$board_lc" && "$b" != "$board_lc" ]] && continue
-
-    MATCHES+=("$i")
-  done
-  FIRMWARE_COUNT="${#MATCHES[@]}"
 }
 
 get_artifact_name() {
@@ -345,20 +327,30 @@ build_by_number() {
 build_by_criteria() {
   local shield="$1"
   local board="$2"
+  local first
 
-  find_by_criteria "$shield" "$board"
+  find_by_criteria "$shield" "$board" "$BUILD_COUNT" SHIELDS BOARDS MATCHES
 
   if ((${#MATCHES[@]} == 0)); then
-    echo "No matches for shield=\"$shield\" board=\"$board\""
+    echo "No build targets for shield=\"$shield\" board=\"$board\"." >&2
+    echo "Hint: run '$0 -l' to inspect available targets." >&2
+    exit 1
+  fi
+
+  if ((${#MATCHES[@]} > 1)); then
+    first="${MATCHES[0]}"
+    echo "Multiple matches (${#MATCHES[@]})." >&2
+    print_matches MATCHES SHIELDS BOARDS
+    echo "Hint: use '$0 -n $((first + 1))' for exact target." >&2
+    echo "Hint: or narrow filters, e.g. '$0 -s \"${SHIELDS[$first]}\" -b \"${BOARDS[$first]}\"'." >&2
     exit 1
   fi
 
   echo "Will build the following configurations:"
-  for i in "${MATCHES[@]}"; do
-    echo "  $((i + 1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
-  done
+  print_matches MATCHES SHIELDS BOARDS
   echo
 
+  FIRMWARE_COUNT="${#MATCHES[@]}"
   setup_progress
   for i in "${MATCHES[@]}"; do
     run_build "$i" "$UPDATE"
@@ -387,14 +379,18 @@ HELP=false
 while [[ $# -gt 0 ]]; do
   case "$1" in
   -n | --number)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
+    validate_number_arg "$2" "$1"
     NUMBER="$2"
     shift 2
     ;;
   -s | --shield)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     SHIELD="$2"
     shift 2
     ;;
   -b | --board)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     BOARD="$2"
     shift 2
     ;;
@@ -418,7 +414,7 @@ while [[ $# -gt 0 ]]; do
     UPDATE=true
     shift
     ;;
-  *) die "Unknown argument: $1" ;;
+  *) usage_error "Unknown argument: $1. Use -h for help." ;;
   esac
 done
 
@@ -447,7 +443,12 @@ if $ALL; then
   exit 0
 fi
 
+if [[ -n "$NUMBER" && (-n "$SHIELD" || -n "$BOARD") ]]; then
+  usage_error "Use either -n or (-s/-b), not both."
+fi
+
 if [[ -n "$NUMBER" ]]; then
+  validate_number_arg "$NUMBER" "--number"
   build_by_number "$NUMBER"
 elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
   build_by_criteria "$SHIELD" "$BOARD"

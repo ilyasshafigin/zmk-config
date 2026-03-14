@@ -9,6 +9,14 @@ dir_keymap_drawer := `pwd` / "draw"
 list:
     bash scripts/build.sh --list
 
+# List flash targets and firmware status
+list-flash:
+    bash scripts/flash.sh --list
+
+# List keymaps for drawer
+list-draw:
+    bash scripts/draw.sh --list
+
 # Build firmware
 build *args:
     bash scripts/build.sh {{ args }}
@@ -20,7 +28,7 @@ flash *args:
 # Clean firmware dir
 clean-firmware:
     @echo "Remove firmwares"
-    find "{{ dir_firmware }}/*.uf2" -type f -delete
+    find "{{ dir_firmware }}" -type f -name "*.uf2" -delete
 
 # Clean zmk and docker container/volumes
 clean:

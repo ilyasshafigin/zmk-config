@@ -6,28 +6,20 @@ set -euo pipefail
 # ==========================
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
+LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 
 DIR_CONFIG="$WORKSPACE/config"
 DIR_DRAW="$WORKSPACE/draw"
 DRAW_CONFIG="$DIR_DRAW/config.yaml"
 
-# ==========================
-# Helpers
-# ==========================
-die() {
-  echo "Error: $*" >&2
-  exit 1
-}
-
-need() {
-  command -v "$1" >/dev/null || die "Missing dependency: $1"
-}
+source "$LIB_COMMON"
 
 # ==========================
 # Dependencies check
 # ==========================
 need keymap
 need inkscape
+ensure_file "$DRAW_CONFIG"
 
 # ==========================
 # UI
@@ -56,6 +48,11 @@ Examples:
     $0 totem
     $0 --list
     $0 --all
+
+Exit codes:
+    0 success
+    1 runtime error
+    2 invalid arguments
 EOF
 }
 
@@ -122,7 +119,11 @@ draw_one() {
   local png="$DIR_DRAW/$kb.png"
   local args="$(get_draw_args "$kb")"
 
-  [[ -f "$input" ]] || die "Keymap not found: $input"
+  if [[ ! -f "$input" ]]; then
+    echo "Error: keymap not found: $input" >&2
+    echo "Hint: run '$0 --list' to view available keymaps." >&2
+    exit 1
+  fi
 
   echo
   echo "▶ Draw '$kb'"
@@ -165,6 +166,9 @@ while [[ $# -gt 0 ]]; do
     exit 0
     ;;
   *)
+    if [[ -n "$KEYBOARD" ]]; then
+      usage_error "Unexpected extra argument: $1. Use -h for help."
+    fi
     KEYBOARD="$1"
     shift
     ;;

@@ -8,7 +8,7 @@ on:
   #   - "config/*.dtsi"
   #   - "config/*/*.dtsi"
   #   - "boards/*/*/*.dtsi"
-  #   - "keymap-drawer/config.yaml"
+  #   - "draw/config.yaml"
   #   - ".github/workflows/draw-keymaps.yml"
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
     with:
       install_branch: main
       keymap_patterns: "config/*.keymap"
-      config_path: "config/keymap-drawer.yaml"
+      config_path: "draw/config.yaml"
       output_folder: "draw"
       commit_message: "Update keymap"
       fail_on_error: true
