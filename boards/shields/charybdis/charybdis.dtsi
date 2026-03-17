@@ -1,17 +1,18 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "charybdis_layout.dtsi"
+#include "charybdis_layouts.dtsi"
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &charybdis_5col_layout;
+        zmk,physical-layout = &charybdis_3x5_layout;
     };
 
     kscan0: kscan {
         diode-direction = "col2row";
+        wakeup-source;
     };
 
-    charybdis_5col_transform: charybdis_5col_transform {
+    charybdis_3x5_transform: charybdis_3x5_transform {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
@@ -24,7 +25,7 @@
         >;
     };
 
-    charybdis_6col_transform: charybdis_6col_transform {
+    charybdis_3x6_transform: charybdis_3x6_transform {
         compatible = "zmk,matrix-transform";
         columns = <12>;
         rows = <4>;
@@ -36,29 +37,12 @@
                             RC(3,3) RC(3,4) RC(3,1)  RC(3,7)  RC(3,9)
         >;
     };
+};
 
-    charybdis_position_map {
-        compatible = "zmk,physical-layout-position-map";
-        complete;
+&charybdis_3x5_layout {
+    transform = <&charybdis_3x5_transform>;
+};
 
-        ten {
-            physical-layout = <&charybdis_5col_layout>;
-            positions
-                = <35  0  1  2  3  4   5  6  7  8  9 36>
-                , <37 10 11 12 13 14  15 16 17 18 19 38>
-                , <39 20 21 22 23 24  25 26 27 28 29 40>
-                , <       30 31 32  33 34          >
-                ;
-        };
-
-        twelve {
-            physical-layout = <&charybdis_6col_layout>;
-            positions
-                = <  0  1  2  3  4  5   6  7  8  9 10 11 >
-                , < 12 13 14 15 16 17  18 19 20 21 22 23 >
-                , < 24 25 26 27 28 29  30 31 32 33 34 35 >
-                , <          36 37 38  39 40             >
-                ;
-        };
-    };
+&charybdis_3x6_layout {
+    transform = <&charybdis_3x6_transform>;
 };

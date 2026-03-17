@@ -3,7 +3,8 @@
 Конфигурация и прошивка для моих клавиатур:
 
 1. **[Charybdis Nano](#charybdis-nano)** – основная
-2. [TOTEM](#totem)
+2. [Lapka](#lapka)
+3. [TOTEM](#totem)
 
 ## Основные возможности
 
@@ -74,7 +75,7 @@
 5. Подключить донгл и прошить в него `dongle.uf2`
 6. Включить донгл -> левую половину -> правую половину, именно в таком порядке
 
-Когда нет донгла, левая половина является основной (если правая, то наоборот):
+Когда нет донгла, левая половина является основной (если правая, то меняем местами):
 
 1. Подключить правую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_right.uf2`
 2. Подключить левую половинку и прошить в неё сначала `settings_reset.uf2`, затем `central_left.uf2`
@@ -89,22 +90,6 @@
 Включить донгл, включить левую (!) половино, только потом правую.
 
 ## Клавиатуры
-
-### [Totem](https://github.com/GEIGEIGEIST/TOTEM)
-
-![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
-_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
-
-**Прошивка:**
-
-- `just flash -s "totem_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "totem_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
-- `just flash -s "totem_dongle_prospector"` - прошивка донгла Prospector
-- `just flash -s "totem_dongle_oled_32"` - прошивка донгла Dongle Display для экрана 128x32
-- `just flash -s "totem_dongle_oled_64"` - прошивка донгла Dongle Display для экрана 128x64
-- `just flash -s "totem_central_left"` - прошивка левой половины как основной
-- `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
-- `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 ### [Charybdis Nano](https://github.com/bastardkb/charybdis/)
 
@@ -133,6 +118,36 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `just flash -s "charybdis_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
+
+### [Lapka](https://github.com/braindefender/lapka)
+
+![Lapka keymap](./draw/lapka.svg?raw=true "Lapka keymap")
+_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
+
+**Прошивка:**
+
+- `just flash -s "lapka_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
+- `just flash -s "lapka_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
+- `just flash -s "lapka_dongle_prospector"` - прошивка донгла Prospector
+- `just flash -s "lapka_central_left"` - прошивка левой половины как основной
+- `just flash -s "lapka_peripheral_left"` - прошивка левой половины для работы с донглом
+- `just flash -s "lapka_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+
+### [Totem](https://github.com/GEIGEIGEIST/TOTEM)
+
+![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
+_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
+
+**Прошивка:**
+
+- `just flash -s "totem_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
+- `just flash -s "totem_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!
+- `just flash -s "totem_dongle_prospector"` - прошивка донгла Prospector
+- `just flash -s "totem_dongle_oled_32"` - прошивка донгла Dongle Display для экрана 128x32
+- `just flash -s "totem_dongle_oled_64"` - прошивка донгла Dongle Display для экрана 128x64
+- `just flash -s "totem_central_left"` - прошивка левой половины как основной
+- `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
+- `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 ## Tester Pro Micro
 

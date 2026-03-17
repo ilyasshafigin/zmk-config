@@ -1,13 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "tester_pro_micro-layouts.dtsi"
-
-&physical_layout0 {
-    transform = <&transform0>;
-};
-
-&physical_layout1 {
-    transform = <&transform0>;
-};
+#include "tester_pro_micro_layouts.dtsi"
 
 / {
     chosen {
@@ -67,4 +59,12 @@
             RC(0,17)
         >;
     };
+};
+
+&physical_layout0 {
+    transform = <&transform0>;
+};
+
+&physical_layout1 {
+    transform = <&transform0>;
 };

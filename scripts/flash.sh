@@ -154,7 +154,7 @@ flash_one() {
   esac
 
   local waited=0
-  printf "Waiting for %s bootloader to appear at %s (timeout: %ss)..." "$board" "$mount" "$BOOT_WAIT_SEC"
+  printf "Waiting for %s bootloader to appear at %s..." "$board" "$mount"
   while [ ! -d "$mount" ]; do
     sleep 1
     waited=$((waited + 1))

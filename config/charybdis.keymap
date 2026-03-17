@@ -20,12 +20,12 @@ MAKE_HRM(hmr_h, &kp, &none, KEYS_L THUMBS)
 
 ZMK_SMART_TOGGLE(tabber,
     bindings = <&kp LCTRL>, <&kp TAB>;
-    ignored-key-positions = <LM0>;
+    ignored-key-positions = <LM0 LH1>;
 )
 
 ZMK_SMART_TOGGLE(swapper,
     bindings = <&kp LGUI>, <&kp TAB>;
-    ignored-key-positions = <LB0>;
+    ignored-key-positions = <LB0 LH1>;
 )
 
 // hold - mo layer, tap - to layer

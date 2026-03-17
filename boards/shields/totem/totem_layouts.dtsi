@@ -1,11 +1,10 @@
 #include <physical_layouts.dtsi>
-/* https://zmk-physical-layout-converter.streamlit.app/ */
+/* https://zmk-physical-layout-converter.streamlit.app */
 
 / {
     totem_layout: totem_layout {
         compatible = "zmk,physical-layout";
         display-name = "TOTEM";
-        transform = <&totem_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 106 100   78  152 (-1000)   130   202>

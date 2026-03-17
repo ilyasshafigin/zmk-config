@@ -337,15 +337,6 @@ build_by_criteria() {
     exit 1
   fi
 
-  if ((${#MATCHES[@]} > 1)); then
-    first="${MATCHES[0]}"
-    echo "Multiple matches (${#MATCHES[@]})." >&2
-    print_matches MATCHES SHIELDS BOARDS
-    echo "Hint: use '$0 -n $((first + 1))' for exact target." >&2
-    echo "Hint: or narrow filters, e.g. '$0 -s \"${SHIELDS[$first]}\" -b \"${BOARDS[$first]}\"'." >&2
-    exit 1
-  fi
-
   echo "Will build the following configurations:"
   print_matches MATCHES SHIELDS BOARDS
   echo

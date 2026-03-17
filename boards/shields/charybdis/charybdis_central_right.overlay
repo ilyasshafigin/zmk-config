@@ -2,17 +2,16 @@
 #include "charybdis_pmw3610.dtsi"
 #include "charybdis_pointer.dtsi"
 
-&charybdis_5col_transform {
+&charybdis_3x5_transform {
     col-offset = <5>;
 };
 
-&charybdis_6col_transform {
+&charybdis_3x6_transform {
     col-offset = <6>;
 };
 
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
-    wakeup-source;
 
     col-gpios
         = <&pro_micro 19 GPIO_ACTIVE_HIGH>

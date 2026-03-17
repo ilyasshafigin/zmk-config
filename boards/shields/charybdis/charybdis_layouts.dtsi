@@ -2,10 +2,9 @@
 /* https://zmk-physical-layout-converter.streamlit.app/ */
 
 / {
-    charybdis_5col_layout: charybdis_5col_layout {
+    charybdis_3x5_layout: charybdis_3x5_layout {
         compatible = "zmk,physical-layout";
         display-name = "Charybdis 3x5";
-        transform = <&charybdis_5col_transform>;
 
         keys
             // Left Half - Main Keys
@@ -25,7 +24,7 @@
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             , <&key_physical_attrs 100 100  300  112       0     0     0>
             , <&key_physical_attrs 100 100  400  112       0     0     0>
-            
+
             // Right Half - Main Keys
             //                       w   h    x    y     rot    rx    ry
             , <&key_physical_attrs 100 100  800  112       0     0     0>
@@ -54,10 +53,9 @@
             ;
     };
 
-    charybdis_6col_layout: charybdis_6col_layout {
+    charybdis_3x6_layout: charybdis_3x6_layout {
         compatible = "zmk,physical-layout";
         display-name = "Charybdis 3x6";
-        transform = <&charybdis_6col_transform>;
 
         keys
             // Left Half - Main Keys
@@ -111,5 +109,4 @@
             , <&key_physical_attrs 100 100 1052  312 (-1500)  1102   789>
             ;
     };
-
 };

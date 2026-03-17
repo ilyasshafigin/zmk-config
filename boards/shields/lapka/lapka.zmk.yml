@@ -1,0 +1,14 @@
+file_format: "1"
+id: lapka
+name: Lapka
+type: shield
+url: https://github.com/braindefender/lapka
+requires: [nice_nano//zmk]
+features:
+  - keys
+siblings:
+  - lapka_dongle
+  - lapka_dongle_prospector
+  - lapka_central_left
+  - lapka_peripheral_left
+  - lapka_peripheral_right
