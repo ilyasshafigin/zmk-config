@@ -1574,7 +1574,7 @@ rect.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(40, 86)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
+<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
 </g>
 <g transform="translate(120, 50)" class="key keypos-1">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1593,13 +1593,13 @@ rect.combo {
 </g>
 <g transform="translate(360, 50)" class="key keypos-4">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:bluetooth-off"/>
+</g>
+<g transform="translate(680, 50)" class="key keypos-5">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:toggle-switch"/>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:bluetooth"/>
 <use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:usb"/>
-</g>
-<g transform="translate(680, 50)" class="key none keypos-5">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(760, 50)" class="key keypos-6">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1613,13 +1613,13 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:volume-off" xlink:href="#mdi:volume-off" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:volume-off"/>
 </g>
-<g transform="translate(1000, 86)" class="key bootloader keypos-9">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
-<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
-</g>
-<g transform="translate(40, 166)" class="key keypos-10">
+<g transform="translate(1000, 86)" class="key keypos-9">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
+</g>
+<g transform="translate(40, 166)" class="key bootloader keypos-10">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
+<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
 </g>
 <g transform="translate(120, 130)" class="key none keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1661,9 +1661,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:play-pause" xlink:href="#mdi:play-pause" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:play-pause"/>
 </g>
-<g transform="translate(1000, 166)" class="key keypos-19">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:progress-download"/>
+<g transform="translate(1000, 166)" class="key bootloader keypos-19">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
+<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-11" y="-11" height="22" width="22.0" class="key bootloader tap glyph mdi:backup-restore"/>
 </g>
 <g transform="translate(40, 246)" class="key keypos-20">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1779,9 +1779,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(40, 166)" class="key none keypos-10">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(40, 166)" class="key keypos-10">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(120, 130)" class="key keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1961,9 +1961,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(40, 166)" class="key none keypos-10">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(40, 166)" class="key keypos-10">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(120, 130)" class="key keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2138,9 +2138,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(40, 166)" class="key none keypos-10">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(40, 166)" class="key keypos-10">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(120, 130)" class="key keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -2315,9 +2315,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(40, 166)" class="key none keypos-10">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(40, 166)" class="key keypos-10">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(120, 130)" class="key keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>

@@ -274,17 +274,17 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   cmd:
-  - $$mdi:bluetooth-off$$
+  - $$mdi:progress-download$$
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
   - $$mdi:volume-off$$
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - $$mdi:progress-download$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - space prev
   - space next
@@ -293,7 +293,7 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:play-pause$$
-  - $$mdi:progress-download$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:transfer$$', type: trans}
   - double ctrl
   - double shift
