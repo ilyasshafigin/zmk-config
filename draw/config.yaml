@@ -57,7 +57,7 @@ parse_config:
     "&out OUT_BLE":
       tap: $$mdi:bluetooth$$
 
-    # Reset
+    # Power
     "&sys_reset":
       type: bootloader
       tap: $$mdi:backup-restore$$
@@ -67,6 +67,7 @@ parse_config:
       type: bootloader
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
+    "&soft_off": $$mdi:power$$
 
     # Macros/Behaviors
     "&tabber": tab next
