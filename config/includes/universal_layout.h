@@ -9,11 +9,17 @@
 // ''' (SQT|APOS) -> не используется
 
 #define UL_COMMA    LBKT            // '[' -> ','   shift: ';'   alt: ','   shift+alt: ';'
+#define UL_COLON    LS(LBKT)        // '{' -> ';'                alt: ';'
+
 #define UL_DOT      RBKT            // ']' -> '.'   shift: ':'   alt: '.'   shift+alt: ':'
+#define UL_SEMI     LS(RBKT)        // '}' -> ':'                alt: ':'
+
 #define UL_TILDE    SEMI            // ';' -> ~|ж   shift: ≈|Ж   alt: '»'   shift+alt: '→'
 #define UL_AMPS     COMMA           // ',' -> &|б   shift: &|Б   alt: '&'   shift+alt: '…'
+
 #define UL_LBKT     DOT             // '.' -> [|ю   shift: {|Ю   alt: '['   shift+alt: '{'
 #define UL_LBRC     LS(DOT)         // '>' -> {|Ю                alt: '{'
+
 #define UL_RBKT     FSLH            // '/' -> ]|э   shift: }|Э   alt: ']'   shift+alt: '}'
 #define UL_RBRC     LS(FSLH)        // '?' -> }|Э                alt: '}'
 
@@ -25,6 +31,11 @@
 #define UL_BSLH     LA(BSLH)        //     -> '\'   shift: '¦'
 #define UL_PIPE     LS(BSLH)        // '|' -> '|'                alt: '¦'
 #define UL_DPIPE    LS(LA(BSLH))    //     -> '¦'
+
+#define UL_EQUAL    EQUAL           // -> '='       shift: '+'   alt: '≠'   shift+alt: '±'
+#define UL_PLUS     PLUS            // -> '+'                    alt: '±'
+#define UL_MINUS    MINUS           // -> '-'       shift: '_'   alt: '–'   shift+alt: '—'
+#define UL_UNDER    UNDER           // -> '_'                    alt: '—'
 
 #define UL_N1       LS(N1)          // -> '1'                alt: '¡'
 #define UL_N2       LS(N2)          // -> '2'                alt: '½'
@@ -49,5 +60,7 @@
 #define UL_RPAR     N0              // -> ')'   shift: '0'   alt: '’'   shift+alt: '”'
 
 //                  K                  -> k|л   shift: K|Л   alt: '=>'  shift+alt: '->'
+#define UL_ARROW    LS(LA(K))       // -> '->'
+#define UL_DARROW   LA(K)           // -> '=>'  shift: '->'
 
 #define UL_NBSP     LA(SPACE)       // No-break-space

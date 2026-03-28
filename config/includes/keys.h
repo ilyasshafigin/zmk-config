@@ -19,6 +19,10 @@
 
 #define MEH(key) LS(LC(LA(key)))
 
+// Lang
+#define LANG_RU  LG(F11)
+#define LANG_EN  LG(F12)
+
 // Dongle Screen
 // Keycode that toggles the screen off and on
 #define DNGL_BR_TOG F22
