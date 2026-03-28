@@ -157,7 +157,7 @@ Without arguments:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Build first
-    $0 -s "totem_dongle" -b "xiao_ble//zmk"
+    $0 -s "lapka_dongle" -b "xiao_ble//zmk"
     $0 --all --update        # Update west and build all firmwares
 
 Exit codes:

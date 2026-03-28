@@ -39,7 +39,7 @@ just build
 just build -n 1
 
 # Сборка но названию shield (можно по частичному совпадению)
-just build -s "totem_dongle"
+just build -s "lapka_dongle"
 
 # Сборка по board и shield (точное совпадение)
 just build -b "nice_nano//zmk" -s "charybdis_dongle prospector_adapter"

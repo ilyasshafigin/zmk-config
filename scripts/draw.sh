@@ -45,7 +45,7 @@ Without arguments:
     Interactive keymap selection
 
 Examples:
-    $0 totem
+    $0 lapka
     $0 --list
     $0 --all
 

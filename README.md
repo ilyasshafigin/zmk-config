@@ -4,7 +4,6 @@
 
 1. **[Charybdis Nano](#charybdis-nano)** – основная
 2. [Lapka](#lapka)
-3. [TOTEM](#totem)
 
 ## Оглавление
 
@@ -159,22 +158,6 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `just flash -s "lapka_central_left"` - прошивка левой половины как основной
 - `just flash -s "lapka_peripheral_left"` - прошивка левой половины для работы с донглом
 - `just flash -s "lapka_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
-
-### [Totem](https://github.com/GEIGEIGEIST/TOTEM)
-
-![Totem keymap](./draw/totem.svg?raw=true "Totem keymap")
-_(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
-
-**Прошивка:**
-
-- `just flash -s "totem_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "totem_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!nano
-- `just flash -s "totem_dongle_prospector"` - прошивка донгла Prospector
-- `just flash -s "totem_dongle_oled_32"` - прошивка донгла Dongle Display для экрана 128x32
-- `just flash -s "totem_dongle_oled_64"` - прошивка донгла Dongle Display для экрана 128x64
-- `just flash -s "totem_central_left"` - прошивка левой половины как основной
-- `just flash -s "totem_peripheral_left"` - прошивка левой половины для работы с донглом
-- `just flash -s "totem_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 ## Tester Pro Micro
 
@@ -381,10 +364,6 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – Charybdis
 - [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – Charybdis, локальная сборка, tester pro micro
 - [charybdis-zmk](https://github.com/vloth/charybdis-zmk) от @vloth – Charybdis
-
-### Totem
-
-- [zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-config-totem) – официальный репозиторий прошивки для TOTEM
 
 ### Lapka
 

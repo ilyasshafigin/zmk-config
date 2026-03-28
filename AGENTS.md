@@ -23,17 +23,17 @@ Guidance for coding agents working in this repository.
 - List build targets: `just list` or `just build --list`
 - Build interactively: `just build`
 - Build one target by index: `just build -n 1`
-- Build targets by shield filter: `just build -s "totem_dongle"`
+- Build targets by shield filter: `just build -s "lapka_dongle"`
 - Build by shield+board: `just build -s "lapka_dongle" -b "xiao_ble//zmk"`
 - Build all configured targets: `just build --all`
 - Build all and force `west update`: `just build --all --update`
 - Clean local west workspace/artifacts: `just clean` (delegates to `scripts/build.sh --clean`)
 - Flash interactively: `just flash`
 - Flash one target by index: `just flash -n 1`
-- Flash by shield+board: `just flash -s "totem_dongle" -b "nice_nano//zmk"`
+- Flash by shield+board: `just flash -s "lapka_dongle" -b "nice_nano//zmk"`
 - List flashable targets and UF2 status: `just list-flash`
 - Draw keymap interactively: `just draw`
-- Draw one keymap: `just draw totem`
+- Draw one keymap: `just draw lapka`
 - Draw all keymaps: `just draw --all`
 
 ## Build, lint, and test policy

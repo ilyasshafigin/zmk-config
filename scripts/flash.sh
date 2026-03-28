@@ -81,7 +81,7 @@ Without arguments:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Flash first
-    $0 -s "totem_dongle" -b "xiao_ble//zmk"
+    $0 -s "lapka_dongle" -b "xiao_ble//zmk"
 
 Exit codes:
     0 success
