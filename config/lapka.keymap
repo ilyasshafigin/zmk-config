@@ -13,9 +13,7 @@
 */
 
 MAKE_HRM(hml,   &kp, &kp,   KEYS_R THUMBS)
-MAKE_HRM(hml_h, &kp, &none, KEYS_R THUMBS)
 MAKE_HRM(hmr,   &kp, &kp,   KEYS_L THUMBS)
-MAKE_HRM(hmr_h, &kp, &none, KEYS_L THUMBS)
 
 ZMK_SMART_TOGGLE(tabber,
     bindings = <&kp LCTRL>, <&kp TAB>;
@@ -68,7 +66,7 @@ ZMK_COMBO(lang_en,        &kp LANG_EN,    RM1 RM2,    DEF SYM,  COMBO_TERM, COMB
 //ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 
-ZMK_CONDITIONAL_LAYER(fn_layer, NAV SYM, NUM)
+ZMK_CONDITIONAL_LAYER(num_layer, NAV SYM, NUM)
 
 /**
  * Default Layer - QWERTY
@@ -179,7 +177,7 @@ ZMK_LAYER(alt,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ RA(Z)         _ RA(X)         _ RA(C)         _ RA(V)         _ RA(B)             _ RA(N)         _ RA(M)         _ RA(UL_AMPS)   _ RA(UL_LBKT)   _ RA(UL_RBKT)
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___             _ UL_NBSP       _ LSHFT             ___             ___             ___
+                                    ___             &mt LSHFT UL_NBSP ___               ___             ___             ___
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 )
 
@@ -194,6 +192,6 @@ ZMK_LAYER(cmd,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &double_ctrl    &double_shft    &double_gui     XXX             &swapper            _ SPACE_D       _ C_BRI_DN      _ C_BRI_UP      XXX             &soft_off
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___             ___             ___                 ___             ___             ___
+                                    ___             _ LSHFT         ___                 ___             ___             ___
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 )

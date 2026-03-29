@@ -284,7 +284,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:power$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}

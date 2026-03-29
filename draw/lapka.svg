@@ -1491,10 +1491,11 @@ rect.combo {
 <g transform="translate(280, 280)" class="key keypos-31">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-space"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-8" y="18" height="16" width="16.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(360, 280)" class="key keypos-32">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<g transform="translate(360, 280)" class="key trans keypos-32">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
+<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
 <g transform="translate(520, 280)" class="key trans keypos-33">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
@@ -1659,9 +1660,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
 <use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
 </g>
-<g transform="translate(280, 280)" class="key trans keypos-31">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-11" y="-11" height="22" width="22.0" class="key trans tap glyph mdi:transfer"/>
+<g transform="translate(280, 280)" class="key keypos-31">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(360, 280)" class="key trans keypos-32">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key trans"/>
