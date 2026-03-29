@@ -9,10 +9,10 @@
 // ''' (SQT|APOS) -> не используется
 
 #define UL_COMMA    LBKT            // '[' -> ','   shift: ';'   alt: ','   shift+alt: ';'
-#define UL_COLON    LS(LBKT)        // '{' -> ';'                alt: ';'
+#define UL_SEMI     LS(LBKT)        // '{' -> ';'                alt: ';'
 
 #define UL_DOT      RBKT            // ']' -> '.'   shift: ':'   alt: '.'   shift+alt: ':'
-#define UL_SEMI     LS(RBKT)        // '}' -> ':'                alt: ':'
+#define UL_COLON    LS(RBKT)        // '}' -> ':'                alt: ':'
 
 #define UL_TILDE    SEMI            // ';' -> ~|ж   shift: ≈|Ж   alt: '»'   shift+alt: '→'
 #define UL_AMPS     COMMA           // ',' -> &|б   shift: &|Б   alt: '&'   shift+alt: '…'

@@ -55,7 +55,7 @@ layers:
   - '['
   - ']'
   - {t: ., h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: ;, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: ':', h: '$$mdi:apple-keyboard-control$$'}
   - {t: +, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
   - ->
@@ -65,7 +65,7 @@ layers:
   - '{'
   - '}'
   - ','
-  - ':'
+  - ;
   - '-'
   - _
   - {t: '$$mdi:transfer$$', type: trans}
@@ -332,4 +332,10 @@ combos:
   l: [base, symbol]
 - p: [16, 17]
   k: en
+  l: [base, symbol]
+- p: [20, 21]
+  k: '&bapp'
+  l: [base, symbol]
+- p: [28, 29]
+  k: '&bapp'
   l: [base, symbol]

@@ -1,0 +1,13 @@
+/ {
+    behaviors {
+        /omit-if-no-ref/ bapp: battery_percentage_printer {
+            compatible = "zmk,behavior-battery-percentage-printer";
+            label = "BATTERY_PERCENTAGE_PRINTER";
+            #binding-cells = <0>;
+            digit-keycodes = <N0 N1 N2 N3 N4 N5 N6 N7 N8 N9>;
+            space-keycode = <SPACE>;
+            dot-keycode = <DOT>;
+            percent-keycode = <PERCENT>;
+        };
+    };
+};

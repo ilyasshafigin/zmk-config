@@ -54,7 +54,7 @@ layers:
   - '['
   - ']'
   - {t: ., h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: ;, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: ':', h: '$$mdi:apple-keyboard-control$$'}
   - {t: +, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
   - ->
@@ -64,7 +64,7 @@ layers:
   - '{'
   - '}'
   - ','
-  - ':'
+  - ;
   - '-'
   - _
   - {t: '$$mdi:transfer$$', type: trans}

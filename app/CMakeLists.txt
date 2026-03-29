@@ -1,0 +1,5 @@
+if (((NOT CONFIG_ZMK_SPLIT) OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL) AND CONFIG_ZMK_BEHAVIOR_BATT_PCT_PRINTER)
+  zephyr_library()
+  zephyr_library_sources(src/behavior_battery_percentage_printer.c)
+  zephyr_include_directories(${APPLICATION_SOURCE_DIR}/include)
+endif()
