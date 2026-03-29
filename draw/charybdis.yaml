@@ -54,7 +54,7 @@ layers:
   - '['
   - ']'
   - {t: ., h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: ':', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: ;, h: '$$mdi:apple-keyboard-control$$'}
   - {t: +, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
   - ->
@@ -64,7 +64,7 @@ layers:
   - '{'
   - '}'
   - ','
-  - ;
+  - ':'
   - '-'
   - _
   - {t: '$$mdi:transfer$$', type: trans}
@@ -113,7 +113,7 @@ layers:
   - KP 7
   - KP 8
   - KP 9
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - KP NLCK
   - F10
   - F9
   - F8
@@ -133,7 +133,7 @@ layers:
   - KP 1
   - KP 2
   - KP 3
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - KP ENTER
   - F12
   - F3
   - F2
