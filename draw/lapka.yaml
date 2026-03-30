@@ -68,12 +68,12 @@ layers:
   - ;
   - '-'
   - _
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-command$$
   - {t: 'Alt+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - num
   - {type: held}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   nav:
   - ','
   - '7'
@@ -105,12 +105,12 @@ layers:
   - $$mdi:arrow-down-bold$$
   - end
   - $$mdi:apple-keyboard-caps$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - num
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   num:
   - KP ,
   - KP 7
@@ -142,12 +142,86 @@ layers:
   - F2
   - F1
   - F15
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {type: held}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  alt:
+  - {t: ψ, s: Ψ}
+  - {t: ω, s: Ω}
+  - €
+  - ®
+  - {t: ё, s: Ë}
+  - ¥
+  - {t: λ, s: Λ}
+  - {t: щ, s: Щ}
+  - {t: <, s: ≤}
+  - {t: '>', s: ≥}
+  - {t: α, s: Α}
+  - {t: §, s: Σ}
+  - {t: °, s: Δ}
+  - £
+  - {t: γ, s: Γ}
+  - ₽
+  - {t: ø, s: Ø}
+  - =>
+  - {t: «, s: ←}
+  - {t: », s: →}
+  - {t: μ, s: Μ}
+  - ×
+  - {t: ©, s: ¢}
+  - {t: √, s: V}
+  - {t: β, s: Β}
+  - {t: η, s: Η}
+  - {t: ъ, s: Ъ}
+  - {t: '&', s: …}
+  - '['
+  - ']'
+  - $$mdi:apple-keyboard-command$$
+  - {t: 'Alt+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {type: held}
+  cmd:
+  - $$mdi:progress-download$$
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-off$$
+  - $$mdi:progress-download$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - space prev
+  - space next
+  - tab next
+  - space up
+  - $$mdi:skip-previous$$
+  - $$mdi:skip-next$$
+  - $$mdi:play-pause$$
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - window next
+  - space down
+  - $$mdi:brightness-7$$
+  - $$mdi:brightness-5$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:power$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   game:
   - $$mdi:keyboard-esc$$
   - Q
@@ -221,80 +295,6 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  alt:
-  - {t: ψ, s: Ψ}
-  - {t: ω, s: Ω}
-  - €
-  - ®
-  - {t: ё, s: Ë}
-  - ¥
-  - {t: λ, s: Λ}
-  - {t: щ, s: Щ}
-  - {t: <, s: ≤}
-  - {t: '>', s: ≥}
-  - {t: α, s: Α}
-  - {t: §, s: Σ}
-  - {t: °, s: Δ}
-  - £
-  - {t: γ, s: Γ}
-  - ₽
-  - {t: ø, s: Ø}
-  - =>
-  - {t: «, s: ←}
-  - {t: », s: →}
-  - {t: μ, s: Μ}
-  - ×
-  - {t: ©, s: ¢}
-  - {t: √, s: V}
-  - {t: β, s: Β}
-  - {t: η, s: Η}
-  - {t: ъ, s: Ъ}
-  - {t: '&', s: …}
-  - '['
-  - ']'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: 'Alt+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
-  cmd:
-  - $$mdi:progress-download$$
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
-  - $$mdi:bluetooth-off$$
-  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
-  - $$mdi:volume-low$$
-  - $$mdi:volume-high$$
-  - $$mdi:volume-off$$
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - space prev
-  - space next
-  - tab next
-  - space up
-  - $$mdi:skip-previous$$
-  - $$mdi:skip-next$$
-  - $$mdi:play-pause$$
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - double ctrl
-  - double shift
-  - double gui
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - window next
-  - space down
-  - $$mdi:brightness-7$$
-  - $$mdi:brightness-5$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:power$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [3, 4]
