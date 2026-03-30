@@ -8,10 +8,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
 LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 
-MOUNT_NICE="/Volumes/NICENANO"
-MOUNT_XIAO="/Volumes/XIAO-SENSE"
-BOARD_NICE="nice_nano//zmk"
-BOARD_XIAO="xiao_ble//zmk"
+BOARD_MOUNT_MAP=(
+  "nice_nano//zmk|/Volumes/NICENANO"
+  "xiao_ble//zmk|/Volumes/XIAO-SENSE"
+)
 FIRMWARE_DIR="$WORKSPACE/firmware"
 BUILD_YAML="$WORKSPACE/build.yaml"
 BOOT_WAIT_SEC="${BOOT_WAIT_SEC:-120}"
@@ -124,6 +124,37 @@ get_artifact_name() {
   echo "${shield// /+}-${board//\/\//_}"
 }
 
+resolve_mount_for_board() {
+  local board="$1"
+  local entry map_board map_mount
+
+  for entry in "${BOARD_MOUNT_MAP[@]}"; do
+    IFS='|' read -r map_board map_mount <<<"$entry"
+    if [[ "$map_board" == "$board" ]]; then
+      echo "$map_mount"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+check_for_mismatched_bootloader() {
+  local expected_board="$1"
+  local expected_mount="$2"
+  local entry map_board map_mount
+
+  for entry in "${BOARD_MOUNT_MAP[@]}"; do
+    IFS='|' read -r map_board map_mount <<<"$entry"
+    [[ "$map_mount" == "$expected_mount" ]] && continue
+
+    if [[ -d "$map_mount" ]]; then
+      echo
+      die "Detected bootloader for '$map_board' at '$map_mount', but selected firmware is for '$expected_board'. Choose matching firmware/controller and retry."
+    fi
+  done
+}
+
 # ==========================
 # Flash
 # ==========================
@@ -141,21 +172,20 @@ flash_one() {
   echo "Flash firmware for '$board' '$shield'"
 
   local mount=""
-  case "$board" in
-  "$BOARD_NICE")
-    mount="$MOUNT_NICE"
-    ;;
-  "$BOARD_XIAO")
-    mount="$MOUNT_XIAO"
-    ;;
-  *)
-    die "Unknown board ${board}"
-    ;;
-  esac
+  mount="$(resolve_mount_for_board "$board")" || {
+    die "Unknown board '$board'. Add board/mount mapping in BOARD_MOUNT_MAP."
+  }
 
   local waited=0
   printf "Waiting for %s bootloader to appear at %s..." "$board" "$mount"
+
+  if [[ ! -d "$mount" ]]; then
+    check_for_mismatched_bootloader "$board" "$mount"
+  fi
+
   while [ ! -d "$mount" ]; do
+    check_for_mismatched_bootloader "$board" "$mount"
+
     sleep 1
     waited=$((waited + 1))
     if ((waited >= BOOT_WAIT_SEC)); then
