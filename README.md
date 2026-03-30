@@ -58,7 +58,7 @@
 ### Behaviors & Input processors
 
 - [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle) - модуль для "smart toggle". В проекте используется для `swapper` и `tabber`.
-- `zmk-behavior-battery-percentage-printer` - локальный модуль в этом репозитории (папки `app/` и `dts/`), форк [badjeff/zmk-behavior-battery-percentage-printer](https://github.com/badjeff/zmk-behavior-battery-percentage-printer). Печатает процент заряда батареи (`&bapp`) и поддерживает настройку keycode для цифр/точки/пробела/знака процента под кастомные раскладки (например Universal Layout).
+- [zmk-behavior-battery-percentage-printer](https://github.com/ilyasshafigin/zmk-behavior-battery-percentage-printer) - форк [badjeff/zmk-behavior-battery-percentage-printer](https://github.com/badjeff/zmk-behavior-battery-percentage-printer). Печатает процент заряда батареи (`&bapp`) и поддерживает настройку keycode для цифр/точки/пробела/знака процента под кастомные раскладки (например Universal Layout).
 - [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind) - модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода. Нужен для трекбола в клавиатуре Charybdis.
 - ~~[zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) - добавляет ускорение трекбола.~~
 - [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) - добавляет привязку прокрутки трекбола к осям X или Y.

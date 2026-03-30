@@ -14,6 +14,8 @@ manifest:
     url-base: https://github.com/janpfischer
   - name: kot149
     url-base: https://github.com/kot149
+  - name: ilyasshafigin
+    url-base: https://github.com/ilyasshafigin
   - name: oleksandrmaslov
     url-base: https://github.com/oleksandrmaslov
   - name: urob
@@ -56,6 +58,10 @@ manifest:
     remote: kot149
     revision: v1
     path: modules/zmk/scroll-snap
+  - name: zmk-behavior-battery-percentage-printer
+    remote: ilyasshafigin
+    revision: main
+    path: modules/zmk/behavior-battery-percentage-printer
 
   # Dongle
   - name: prospector-zmk-module

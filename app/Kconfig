@@ -1,5 +1,0 @@
-DT_COMPAT_ZMK_BEHAVIOR_BATT_PCT_PRINTER := zmk,behavior-battery-percentage-printer
-
-config ZMK_BEHAVIOR_BATT_PCT_PRINTER
-    bool
-    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_BATT_PCT_PRINTER))
