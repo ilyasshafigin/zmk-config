@@ -245,9 +245,13 @@ parse_config:
     RA(J):
       tap: "ø"
       shifted: "Ø"
-    RA(K): "=>"
+    RA(K):
+      tap: "=>"
+      shifted: "->"
     LS(RA(K)): "->"
-    LA(K): "=>"
+    LA(K):
+      tap: "=>"
+      shifted: "->"
     LS(LA(K)): "->"
     RA(L):
       tap: "«"
