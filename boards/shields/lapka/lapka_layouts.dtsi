@@ -6,49 +6,49 @@
         display-name = "Lapka 36";
 
         keys //                      w   h    x    y      r   rx   ry
-            = <&key_physical_attrs 100 100    0   60 (-1000)   50  110> // Q
-            , <&key_physical_attrs 100 100  112   20  (-600)  162   70> // W
-            , <&key_physical_attrs 100 100  224    0  (-200)  274   50> // E
-            , <&key_physical_attrs 100 100  336   15    400   386   65> // R
-            , <&key_physical_attrs 100 100  448   35   1000   498   85> // T
+            = <&key_physical_attrs 100 100   12   36 (-1700)   62   86> // Q
+            , <&key_physical_attrs 100 100  126    8 (-1000)  176   58> // W
+            , <&key_physical_attrs 100 100  234    0  (-150)  284   50> // E
+            , <&key_physical_attrs 100 100  346   22    700   396   72> // R
+            , <&key_physical_attrs 100 100  454   68   1700   504  118> // T
 
-            , <&key_physical_attrs 100 100  852   35 (-1000)  902   85> // Y
-            , <&key_physical_attrs 100 100  964   15  (-400) 1014   65> // U
-            , <&key_physical_attrs 100 100 1076    0    200  1126   50> // I
-            , <&key_physical_attrs 100 100 1188   20    600  1238   70> // O
-            , <&key_physical_attrs 100 100 1300   60   1000  1350  110> // P
+            , <&key_physical_attrs 100 100  846   68 (-1700)  896  118> // Y
+            , <&key_physical_attrs 100 100  954   22  (-700) 1004   72> // U
+            , <&key_physical_attrs 100 100 1066    0    150  1116   50> // I
+            , <&key_physical_attrs 100 100 1174    8   1000  1224   58> // O
+            , <&key_physical_attrs 100 100 1288   36   1700  1338   86> // P
 
-            , <&key_physical_attrs 100 100    8  170 (-1000)   58  220> // A
-            , <&key_physical_attrs 100 100  114 130  (-600)  164  180> // S
-            , <&key_physical_attrs 100 100  220 110  (-200)  270  160> // D
-            , <&key_physical_attrs 100 100  326 125    400   376  175> // F
-            , <&key_physical_attrs 100 100  432 145   1000   482  195> // G
+            , <&key_physical_attrs 100 100   -2  168 (-1750)   48  218> // A
+            , <&key_physical_attrs 100 100  108  120 (-1050)  158  170> // S
+            , <&key_physical_attrs 100 100  222  108  (-200)  272  158> // D
+            , <&key_physical_attrs 100 100  336  130    750   386  180> // F
+            , <&key_physical_attrs 100 100  448  176   1750   498  226> // G
 
-            , <&key_physical_attrs 100 100  868 145 (-1000)  918  195> // H
-            , <&key_physical_attrs 100 100  974 125  (-400) 1024  175> // J
-            , <&key_physical_attrs 100 100 1080 110    200  1130  160> // K
-            , <&key_physical_attrs 100 100 1186 130    600  1236  180> // L
-            , <&key_physical_attrs 100 100 1292 170   1000  1342  220> // ~
+            , <&key_physical_attrs 100 100  852  176 (-1750)  902  226> // H
+            , <&key_physical_attrs 100 100  964  130  (-750) 1014  180> // J
+            , <&key_physical_attrs 100 100 1078  108    200  1128  158> // K
+            , <&key_physical_attrs 100 100 1192  120   1050  1242  170> // L
+            , <&key_physical_attrs 100 100 1302  168   1750  1352  218> // ~
 
-            , <&key_physical_attrs 100 100   16  280 (-1000)   66  330> // Z
-            , <&key_physical_attrs 100 100  116 240  (-600)  166  290> // X
-            , <&key_physical_attrs 100 100  216 220  (-200)  266  270> // C
-            , <&key_physical_attrs 100 100  316 235    400   366  285> // V
-            , <&key_physical_attrs 100 100  416 255   1000   466  305> // B
+            , <&key_physical_attrs 100 100  -16  300 (-1800)   34  350> // Z
+            , <&key_physical_attrs 100 100   96  244 (-1100)  146  294> // X
+            , <&key_physical_attrs 100 100  212  216  (-300)  262  266> // C
+            , <&key_physical_attrs 100 100  328  246    800   378  296> // V
+            , <&key_physical_attrs 100 100  442  292   1800   492  342> // B
 
-            , <&key_physical_attrs 100 100  884 255 (-1000)  934  305> // N
-            , <&key_physical_attrs 100 100  984 235  (-400) 1034  285> // M
-            , <&key_physical_attrs 100 100 1084 220    200  1134  270> // &
-            , <&key_physical_attrs 100 100 1184 240    600  1234  290> // [
-            , <&key_physical_attrs 100 100 1284 280   1000  1334  330> // ]
+            , <&key_physical_attrs 100 100  858  292 (-1800)  908  342> // N
+            , <&key_physical_attrs 100 100  972  246  (-800) 1022  296> // M
+            , <&key_physical_attrs 100 100 1088  216    300  1138  266> // &
+            , <&key_physical_attrs 100 100 1204  244   1100  1254  294> // [
+            , <&key_physical_attrs 100 100 1316  300   1800  1366  350> // ]
 
-            , <&key_physical_attrs 100 100  330  390       0     0    0>
-            , <&key_physical_attrs 100 100  440  395     600   440   445>
-            , <&key_physical_attrs 100 100  550  415    1200   550   465>
+            , <&key_physical_attrs 100 100  276  444    -500   276  494>
+            , <&key_physical_attrs 100 100  398  402     850   398  452>
+            , <&key_physical_attrs 100 100  522  434    1600   522  484>
 
-            , <&key_physical_attrs 100 100  760  415 (-1200)  910   465>
-            , <&key_physical_attrs 100 100  870  395  (-600) 1020   445>
-            , <&key_physical_attrs 100 100  980  390       0     0    0>
+            , <&key_physical_attrs 100 100  788  434 (-1600)   938  484>
+            , <&key_physical_attrs 100 100  912  402  (-850)  1062  452>
+            , <&key_physical_attrs 100 100 1034  444     500   1184  494>
             ;
     };
 };
