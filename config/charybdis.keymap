@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/pointing.h>
+#include <behaviors/brightness.dtsi>
 #include "includes/behaviors.dtsi"
 #include "includes/keys.h"
 #include "includes/layers.h"
@@ -157,7 +158,7 @@ ZMK_LAYER(cmd,
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &sys_reset      XXX             _ SPACE_P       _ SPACE_N       &tabber             _ SPACE_U       _ C_PREV        _ C_NEXT        _ C_PP          &sys_reset
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    XXX             XXX             XXX             XXX             &swapper            _ SPACE_D       _ C_BRI_DN      _ C_BRI_UP      XXX             &soft_off
+    XXX             &dec_bri        &inc_bri        XXX             &swapper            _ SPACE_D       _ C_BRI_DN      _ C_BRI_UP      XXX             &soft_off
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┴───────────────┴───────────────╯
                                     _ LGUI          _ LSHFT         _ LCTRL             XXX             ___
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────╯

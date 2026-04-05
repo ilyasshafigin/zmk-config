@@ -65,8 +65,8 @@ manifest:
 
   # Dongle
   - name: prospector-zmk-module
-    remote: carrefinho
-    revision: feat/new-status-screens #main
+    remote: ilyasshafigin #carrefinho
+    revision: main # feat/new-status-screens
     path: modules/zmk/prospector
   - name: zmk-dongle-display
     remote: englmaxi

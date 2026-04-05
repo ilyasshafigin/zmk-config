@@ -22,11 +22,3 @@
 // Lang
 #define LANG_RU  LG(F11)
 #define LANG_EN  LG(F12)
-
-// Dongle Screen
-// Keycode that toggles the screen off and on
-#define DNGL_BR_TOG F22
-// Keycode for increasing screen brightness
-#define DNGL_BR_INC F24
-// Keycode for decreasing screen brightness
-#define DNGL_BR_DEC F23

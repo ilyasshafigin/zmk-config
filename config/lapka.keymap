@@ -1,3 +1,4 @@
+#include <behaviors/brightness.dtsi>
 #include "includes/behaviors.dtsi"
 #include "includes/keys.h"
 #include "includes/layers.h"
