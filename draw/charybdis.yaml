@@ -202,8 +202,8 @@ layers:
   - $$mdi:play-pause$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&dec_bri'
+  - '&inc_bri'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - window next
   - space down
