@@ -81,9 +81,9 @@ layers:
   - '9'
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - page up
+  - home
+  - end
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - page down
   - {t: game, h: '$$mdi:toggle-switch$$'}
   - {t: ., h: '$$mdi:apple-keyboard-command$$'}
   - {t: '4', h: '$$mdi:apple-keyboard-option$$'}
@@ -92,18 +92,18 @@ layers:
   - $$mdi:keyboard-tab$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: KC_QUOT, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:arrow-down-bold$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:apple-keyboard-command$$'}
   - '0'
   - '1'
   - '2'
   - '3'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - home
-  - $$mdi:arrow-down-bold$$
-  - end
+  - page up
+  - page down
+  - KC_QUOT
   - $$mdi:apple-keyboard-caps$$
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
