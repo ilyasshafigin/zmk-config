@@ -333,9 +333,3 @@ combos:
 - p: [16, 17]
   k: en
   l: [base, symbol]
-- p: [20, 21]
-  k: '&bapp'
-  l: [base, symbol]
-- p: [28, 29]
-  k: '&bapp'
-  l: [base, symbol]

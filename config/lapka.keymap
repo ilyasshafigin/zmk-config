@@ -3,7 +3,6 @@
 #include "includes/keys.h"
 #include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
-#include <behaviors/battery_percentage_printer.dtsi>
 
 /*
   ╭─────────────────────┬─────────────────────╮
@@ -14,8 +13,8 @@
           ╰─────────────┴─────────────╯
 */
 
-MAKE_HRM(hml,   &kp, &kp,   KEYS_R THUMBS)
-MAKE_HRM(hmr,   &kp, &kp,   KEYS_L THUMBS)
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
 ZMK_SMART_TOGGLE(tabber,
     bindings = <&kp LCTRL>, <&kp TAB>;
@@ -46,15 +45,6 @@ ZMK_COMBO(lang_en,        &kp LANG_EN,    RM1 RM2,    DEF SYM,  COMBO_TERM, COMB
 //ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(esc,            &kp ESC,        LT3 LT4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(tab,            &kp TAB,        LM3 LM4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(bapp_left,      &bapp,          LB4 LB3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(bapp_right,     &bapp,          RB3 RB4,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-
-&bapp {
-    digit-keycodes = <UL_N0 UL_N1 UL_N2 UL_N3 UL_N4 UL_N5 UL_N6 UL_N7 UL_N8 UL_N9>;
-    space-keycode = <SPACE>;
-    dot-keycode = <UL_DOT>;
-    percent-keycode = <UL_PRCNT>;
-};
 
 /**
  * Default Layer - QWERTY

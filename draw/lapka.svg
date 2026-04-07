@@ -489,14 +489,6 @@ rect.combo {
 <rect rx="4" ry="4" x="625" y="105" width="30" height="30" class="combo"/>
 <text x="640" y="120" class="combo tap">en</text>
 </g>
-<g class="combo combopos-12">
-<rect rx="4" ry="4" x="65" y="185" width="30" height="30" class="combo"/>
-<text x="80" y="200" class="combo tap">&amp;bapp</text>
-</g>
-<g class="combo combopos-13">
-<rect rx="4" ry="4" x="785" y="185" width="30" height="30" class="combo"/>
-<text x="800" y="200" class="combo tap">&amp;bapp</text>
-</g>
 </g>
 </g>
 <g transform="translate(970, 0)" class="layer-symbol">
@@ -703,14 +695,6 @@ rect.combo {
 <g class="combo combopos-11">
 <rect rx="4" ry="4" x="625" y="105" width="30" height="30" class="combo"/>
 <text x="640" y="120" class="combo tap">en</text>
-</g>
-<g class="combo combopos-12">
-<rect rx="4" ry="4" x="65" y="185" width="30" height="30" class="combo"/>
-<text x="80" y="200" class="combo tap">&amp;bapp</text>
-</g>
-<g class="combo combopos-13">
-<rect rx="4" ry="4" x="785" y="185" width="30" height="30" class="combo"/>
-<text x="800" y="200" class="combo tap">&amp;bapp</text>
 </g>
 </g>
 </g>
