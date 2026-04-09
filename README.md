@@ -21,10 +21,11 @@
 
 ## Основные возможности
 
+- **Home-Row Mods**
 - **Локальная сборка** через Docker, актуальные прошивки в папке `firmware/`
-- **Home-Row Mods** на базе идеи [urob](https://github.com/urob/zmk-config#timeless-homerow-mods)
 - **Универсальная раскладка** [universal-layout](https://github.com/braindefender/universal-layout) и [wellum](https://github.com/braindefender/wellum) (без OSSM)
 - **Гибкая схема работы**: с донглом или без (одна половинка — главная)
+- **Общий keymap** вынесен в отдельный файл, взял идею [miryoku](https://github.com/manna-harbour/miryoku_zmk)
 - **Адаптирована для macOS**
 - **Скрипты** для сборки, прошивки, отрисовки keymap
 
@@ -66,7 +67,7 @@
 ### Dongle
 
 - [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module) - модуль для донгла Prospector.
-- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - модуль для донгла с OLED-экраном.
+- ~~[zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - модуль для донгла с OLED-экраном.~~
 
 ## Прошивка
 
@@ -130,7 +131,7 @@
 **Особенности:**
 
 - Используется модуль [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), который позволяет трекболом двигать каретку в полях ввода
-- Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускорения трекбола
+- ~~Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускорения трекбола~~
 - Используется модуль [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) для привязки движения каретки к осям X и Y.
 - В режиме без донгла основной половиной будет правая (central_right)
 
@@ -139,10 +140,12 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 **Прошивка:**
 
-- `just flash -s "charybdis_dongle_prospector"` - прошивка донгла Prospector (XIAO + prospector_adapter)
-- `just flash -s "charybdis_central_right"` - прошивка правой половины как основной
-- `just flash -s "charybdis_peripheral_left"` - прошивка левой половины для работы с донглом
-- `just flash -s "charybdis_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+Вызвать `just flash` и выбрать нужную прошивку:
+
+- `charybdis_dongle_prospector` - прошивка донгла Prospector (XIAO + prospector_adapter)
+- `charybdis_central_right` - прошивка правой половины как основной
+- `charybdis_peripheral_left` - прошивка левой половины для работы с донглом
+- `charybdis_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
 
@@ -153,12 +156,14 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 **Прошивка:**
 
-- `just flash -s "lapka_dongle" -b "xiao_ble//zmk"` - прошивка донгла на XIAO
-- `just flash -s "lapka_dongle" -b "nice_nano//zmk"` - прошивка донгла на nice!nano
-- `just flash -s "lapka_dongle_prospector"` - прошивка донгла Prospector
-- `just flash -s "lapka_central_left"` - прошивка левой половины как основной
-- `just flash -s "lapka_peripheral_left"` - прошивка левой половины для работы с донглом
-- `just flash -s "lapka_peripheral_right"` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+Вызвать `just flash` и выбрать нужную прошивку:
+
+- `lapka_dongle (xiao_ble//zmk)` - прошивка донгла на XIAO
+- `lapka_dongle (nice_nano//zmk)` - прошивка донгла на nice!nano
+- `lapka_dongle_prospector` - прошивка донгла Prospector
+- `lapka_central_left` - прошивка левой половины как основной
+- `lapka_peripheral_left` - прошивка левой половины для работы с донглом
+- `lapka_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
 ## Tester Pro Micro
 
@@ -207,7 +212,6 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Отличия:
 
 - разделение на два языка: ru и en
-- поправлен слой GUI (Cmd), чтобы как надо работали сочетания клавиш
 - добавлены иконки флажков, чтобы в системе было видно какая сейчас раскладка
 - раскладка только для macOS
 
@@ -375,6 +379,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
 - [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
 - [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
+- [miryoku](https://github.com/manna-harbour/miryoku_zmk) от @manna-harbour - универсальная раскладка под разные клавиатуры
 - [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
 - [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
 - [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender
