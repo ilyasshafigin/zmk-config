@@ -68,10 +68,10 @@ manifest:
     remote: ilyasshafigin #carrefinho
     revision: main # feat/new-status-screens
     path: modules/zmk/prospector
-  - name: zmk-dongle-display
-    remote: englmaxi
-    revision: main
-    path: modules/zmk/dongle-display
+#  - name: zmk-dongle-display
+#    remote: englmaxi
+#    revision: main
+#    path: modules/zmk/dongle-display
 #  - name: zmk-dongle-screen
 #    remote: janpfischer
 #    revision: main

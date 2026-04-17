@@ -3,7 +3,7 @@ id: lapka
 name: Lapka
 type: shield
 url: https://github.com/braindefender/lapka
-requires: [nice_nano//zmk]
+requires: [pro_micro]
 features:
   - keys
 siblings:

@@ -11,15 +11,11 @@ LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 DIR_CONFIG="$WORKSPACE/config"
 DIR_DRAW="$WORKSPACE/draw"
 DRAW_CONFIG="$DIR_DRAW/config.yaml"
+DRAW_INCLUDE_ROOTS=(
+  "$WORKSPACE/local-build/workspace/modules/zmk/helpers/include"
+)
 
 source "$LIB_COMMON"
-
-# ==========================
-# Dependencies check
-# ==========================
-need keymap
-need inkscape
-ensure_file "$DRAW_CONFIG"
 
 # ==========================
 # UI
@@ -82,15 +78,10 @@ list_keymaps() {
 
 interactive_select() {
   list_keymaps
-  while true; do
-    read -rp "Select keymap (1-${#KEYMAPS[@]}) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= ${#KEYMAPS[@]})) && {
-      SELECTED="${KEYMAPS[$((ans - 1))]}"
-      return
-    }
-  done
+  local selected_index
+
+  prompt_select_number "Select keymap (1-${#KEYMAPS[@]}) or q: " "${#KEYMAPS[@]}" selected_index
+  SELECTED="${KEYMAPS[$selected_index]}"
 }
 
 # ==========================
@@ -146,6 +137,29 @@ draw_one() {
   echo "  ✓ $png"
 }
 
+ensure_draw_deps() {
+  need keymap
+  need inkscape
+  ensure_file "$DRAW_CONFIG"
+
+  local include_root=""
+  for include_root in "${DRAW_INCLUDE_ROOTS[@]}"; do
+    [[ -d "$include_root" ]] && return 0
+  done
+
+  cat >&2 <<EOF
+Error: draw prerequisites are missing.
+
+Expected helper include root to exist:
+  - ${DRAW_INCLUDE_ROOTS[0]}
+
+This comes from draw/config.yaml. Fix it by either:
+  - running a local build first (for example: just build), or
+  - restoring the local west workspace expected by keymap-drawer.
+EOF
+  exit 1
+}
+
 # ==========================
 # Args
 # ==========================
@@ -190,6 +204,7 @@ if $LIST; then
 fi
 
 if $ALL; then
+  ensure_draw_deps
   for kb in "${KEYMAPS[@]}"; do
     draw_one "$kb"
   done
@@ -197,8 +212,10 @@ if $ALL; then
 fi
 
 if [[ -n "$KEYBOARD" ]]; then
+  ensure_draw_deps
   draw_one "$KEYBOARD"
 else
   interactive_select
+  ensure_draw_deps
   draw_one "$SELECTED"
 fi

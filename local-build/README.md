@@ -30,7 +30,7 @@ just build
 - показывает доступные варианты сборки
 - просит выбрать конфигурацию для сборки
 - запускает docker для сборки прошивки
-- выводит путь к файлу прошивки .uf2
+- выводит путь к итоговому файлу в `firmware/` (например, `lapka_dongle-xiao_ble_zmk.uf2`)
 
 ### Режим командной строки
 
@@ -42,7 +42,7 @@ just build -n 1
 just build -s "lapka_dongle"
 
 # Сборка по board и shield (точное совпадение)
-just build -b "nice_nano//zmk" -s "charybdis_dongle prospector_adapter"
+just build -b "nice_nano//zmk" -s "charybdis_peripheral_left"
 
 # Отобрахить список всех конфигураций
 just build -l
@@ -56,43 +56,43 @@ just build --clean
 just clean
 ```
 
-### Кэшерирование зависимостей
+### Кэширование зависимостей
 
 Скрипт сохраняет постоянное рабочее пространство west:
 
 - `local-build/workspace/`
 
-Этот каталог игнорируется git и содержит проверенные зависимости (`zephyr/`, `zmk/`, `modules/` и т. д.), поэтому последующие сборки не загружают все повторно.
+Этот каталог игнорируется git и содержит зависимости west (`zephyr/`, `zmk/`, `modules/` и т. д.), поэтому последующие сборки не загружают их повторно.
 
 Полезные флаги:
 
 - `--clean` (псевдоним: `--clean-deps`): удаляет оба:
-  - `local-build/workspace/` (зависимости; принудительно свежие `west update`)
-  - `local-build/artifact/` (артифакты прошивки)
-- `--update`: принудительно обновляет зависимости (вызывает `west update` независимо от того, была ли папка `zmk` закеширована)
+  - `local-build/workspace/` (зависимости; при следующей сборке будет выполнен свежий `west update`)
+  - `local-build/artifact/` (временные артефакты сборки)
+- `--update`: принудительно выполняет `west update` перед сборкой
 
 ### Как это работает
 
-Этот скрипт сохраняет git репозиторий чистотым, используя отдельное рабочее пространство west,:
+Этот скрипт сохраняет git-репозиторий чистым, используя отдельное рабочее пространство west:
 
 - `local-build/workspace/`
 
-Исключение: сборанные прошивки, они сохраняются в `firmware/` и индексируются Git, чтобы в Git репозитории всегда были актуальные прошивки.
+Итоговые прошивки сохраняются в `firmware/` и доступны как `*.uf2` файлы.
 
 Внутри контейнера Docker скрипт монтирует:
 
-- `/repo`: репозиторий (источники только для чтения для `config/`, `boards/`, `dts/`, `modules/` и `zephyr/module.yml`)
-- `/workspace`: рабочее пространство west (содержит `.west/`, `zephyr/`, `zmk/`, `modules/` и т. д.)
-- `/out`: build outputs (будет писать в `local-builds/artifact/`)
+- `/repo`: репозиторий (источники только для чтения)
+- `/workspace`: рабочее пространство west
+- `/out`: временные build outputs (на хосте это `local-build/artifact/`)
 
-Каждая сборка копирует:
+Каждая сборка копирует в `/workspace` только нужные исходники из репозитория:
 
-- `/repo/config` → `/workspace/config` (так что `west init -l` инициализируется в рабочем пространстве)
-- `/repo/boards`, `/repo/dts`, `/repo/zephyr/module.yml` → `/workspace/zmk-config/` (как правильный модуль Zephyr)
-- `/repo/modules/*` → `/workspace/modules/`
+- `/repo/config` → `/workspace/config`
+- `/repo/boards`, `/repo/dts`, `/repo/app`, `/repo/zephyr/module.yml` → `/workspace/zmk-config/`
+- для Charybdis дополнительно копируются `config/includes/layers.h` и `config/charybdis_pointer.dtsi`
 
 Затем он выполняет:
 
-- `west init -l /workspace/config` (только при необходимости)
-- `west update` (только если зависимости отсутствуют, например, первая сборка или после --clean)
+- `west init -l config` (только при необходимости)
+- `west update` (только если `zmk/` ещё нет или был указан `--update`)
 - `west build ... -DZMK_CONFIG=/workspace/config -DZMK_EXTRA_MODULES=/workspace/zmk-config`

@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.dtsi": "dts",
+        "*.keymap": "dts",
+        "*.overlay": "dts"
+    },
+    "[yaml]": {
+        "editor.formatOnSave": false
+    },
+    "shellformat.useEditorConfig": true
+}

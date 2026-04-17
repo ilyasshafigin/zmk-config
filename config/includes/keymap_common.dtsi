@@ -15,6 +15,10 @@
           ╰─────────────┴─────────────╯
 */
 
+//=========================================================
+// Behaviors
+//=========================================================
+
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)
 
@@ -42,6 +46,12 @@ ZMK_TAP_DANCE(td_mse,
     tapping-term-ms = <TAPPING_TERM_FAST_MS>;
 )
 #endif
+
+
+
+//=========================================================
+// Combos
+//=========================================================
 
 ZMK_COMBO(para_left,      &kp U_LPAR,    LT1 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(para_right,     &kp U_RPAR,    RT0 RT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
@@ -72,6 +82,13 @@ ZMK_COMBO(middle_click_l, &mkp MCLK,      LM3 LM2,    DEF SYM NAV MSE SLOW SCRL 
 ZMK_COMBO(middle_click_r, &mkp MCLK,      RM3 RM2,    DEF SYM NAV MSE SLOW SCRL CARE, COMBO_TERM, COMBO_IDLE)
 #endif
 
+
+
+
+//=========================================================
+// Defines
+//=========================================================
+
 #if defined(K_HAS_POINTER)
 #define K_PLT(layer, key) &lt layer key
 #define K_P(exp, no_exp) exp
@@ -91,6 +108,13 @@ ZMK_COMBO(middle_click_r, &mkp MCLK,      RM3 RM2,    DEF SYM NAV MSE SLOW SCRL 
 #else
 #define K_RH2(exp, no_exp) exp
 #endif
+
+
+
+
+//=========================================================
+// Layers
+//=========================================================
 
 /**
  * Default Layer - QWERTY

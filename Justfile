@@ -40,3 +40,7 @@ clean-all: clean clean-firmware
 # Draw
 draw *args:
     bash scripts/draw.sh {{ args }}
+
+# Validate repo
+validate:
+    bash scripts/validate.sh

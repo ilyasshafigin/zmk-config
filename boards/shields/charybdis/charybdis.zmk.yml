@@ -10,6 +10,6 @@ features:
 siblings:
   - charybdis_dongle
   - charybdis_dongle_prospector
-  - charybdis_central_left
+  - charybdis_central_right
   - charybdis_peripheral_left
   - charybdis_peripheral_right

@@ -6,11 +6,13 @@
 
 # MacOS
 .DS_Store
-vim-tools_notiz.vim
+**/.DS_Store
 ./*/.DS_Store
+vim-tools_notiz.vim
 
 # VC Code
-.vscode
+.vscode/*
+!.vscode/settings.json
 
 # c, cpp
 *.x

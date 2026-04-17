@@ -176,7 +176,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 **Порядок действий:**
 
-1. Прошить tester_pro_micro-nice_nano_zmk.uf2
+1. Прошить `tester_pro_micro-nice_nano_zmk.uf2`
 2. Подключить контроллер по USB к компьютеру
 3. Открыть любой текстовый редактор
 4. Замкнуть GPIO пин с GND, тот который проверяем
@@ -205,6 +205,15 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 Справка: `just draw --help`
 Список keymap: `just draw --list`
 
+### `validate.sh`
+
+Быстрая проверка репозитория.
+Запуск: `just validate`
+Проверяет справку/списки команд и базовую согласованность keymap/draw.
+
+Для `draw` нужны helper include files из `local-build/workspace/modules/zmk/helpers/include`.
+Обычно они появляются после первой локальной сборки (`just build`).
+
 ## Раскладка
 
 В папке `layout` — форк [universal-layout](https://github.com/braindefender/universal-layout).
@@ -219,7 +228,7 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 
 На macOS:
 
-1. Файл `layouts/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
+1. Файл `layout/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
 2. Перезагрузиться или перезайти в систему.
 3. Выбрать желаемую раскладку в Настройки системы > Клавиатура > Источники ввода.
 4. Удалить стандартные раскладки русского и английского языка. [Здесь](https://4te.me/post/flags-tray-macos/) описано как их удалить.

@@ -19,38 +19,14 @@ BOOT_WAIT_SEC="${BOOT_WAIT_SEC:-120}"
 source "$LIB_COMMON"
 
 # ==========================
-# Dependencies check
-# ==========================
-need yq
-
-# ==========================
 # Load builds
 # ==========================
 load_builds() {
-  ensure_file "$BUILD_YAML"
-
-  BOARDS=()
-  SHIELDS=()
-  SNIPPETS=()
-  CMAKE_ARGS=()
-
-  while IFS= read -r line; do BOARDS+=("$line"); done \
-    < <(yq '.include[].board' "$BUILD_YAML")
-
-  while IFS= read -r line; do SHIELDS+=("$line"); done \
-    < <(yq '.include[].shield' "$BUILD_YAML")
-
-  while IFS= read -r line; do SNIPPETS+=("$line"); done \
-    < <(yq '.include[].snippet // ""' "$BUILD_YAML")
-
-  while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
-    < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
+  load_build_manifest "$BUILD_YAML" BOARDS SHIELDS
 
   FIRMWARE_COUNT="${#BOARDS[@]}"
   ((FIRMWARE_COUNT > 0)) || die "No builds found in build.yaml"
   ((${#SHIELDS[@]} == FIRMWARE_COUNT)) || die "Malformed build.yaml: boards/shields count mismatch"
-  ((${#SNIPPETS[@]} == FIRMWARE_COUNT)) || die "Malformed build.yaml: boards/snippets count mismatch"
-  ((${#CMAKE_ARGS[@]} == FIRMWARE_COUNT)) || die "Malformed build.yaml: boards/cmake-args count mismatch"
 }
 
 # ==========================
@@ -107,21 +83,7 @@ list_builds() {
 
 interactive_select() {
   list_builds
-  while true; do
-    read -rp "Select firmware to flash (1-$FIRMWARE_COUNT) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= FIRMWARE_COUNT)) && {
-      SELECTED=$((ans - 1))
-      return
-    }
-  done
-}
-
-get_artifact_name() {
-  local shield="$1"
-  local board="$2"
-  echo "${shield// /+}-${board//\/\//_}"
+  prompt_select_number "Select firmware to flash (1-$FIRMWARE_COUNT) or q: " "$FIRMWARE_COUNT" SELECTED
 }
 
 resolve_mount_for_board() {
@@ -318,13 +280,17 @@ done
 # ==========================
 # Main
 # ==========================
-print_header
-load_builds
 
 if $HELP; then
+  print_header
   print_help
   exit 0
 fi
+
+need yq
+
+print_header
+load_builds
 
 if $LIST; then
   list_builds

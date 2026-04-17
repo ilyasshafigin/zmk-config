@@ -1,8 +1,5 @@
 parse_config:
   zmk_additional_includes:
-  # for ci
-  - "modules/zmk/helpers/include"
-  # for local
   - "local-build/workspace/modules/zmk/helpers/include"
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$

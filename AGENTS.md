@@ -35,6 +35,7 @@ Guidance for coding agents working in this repository.
 - Draw keymap interactively: `just draw`
 - Draw one keymap: `just draw lapka`
 - Draw all keymaps: `just draw --all`
+- Run lightweight repo validation: `just validate`
 
 ## Build, lint, and test policy
 
@@ -68,9 +69,8 @@ Broader verification examples:
 
 ## CI awareness
 
-- Build workflow: `.github/workflows/build.yml` (reuses upstream ZMK user-config workflow).
-- Draw workflow: `.github/workflows/draw-keymaps.yml` (reuses keymap-drawer workflow).
-- Keep local command usage aligned with these workflows when possible.
+- There are currently no repository-local GitHub workflow files checked in under `.github/workflows/`.
+- Prefer documenting and validating the local Just/script workflows (`just build`, `just flash`, `just draw`, `just validate`).
 
 ## Code style guidelines
 
@@ -146,10 +146,15 @@ Broader verification examples:
 
 ## Minimal validation checklist after edits
 
+- Preferred quick smoke test for repo-wide script checks:
+  - `just validate`
 - For script/CLI changes:
   - `just build --help`
   - `just flash --help`
   - `just draw --help`
+  - `just build --list`
+  - `just flash --list`
+  - `just draw --list`
 - For build-matrix or keymap changes:
   - run at least one targeted build (`just build -n <N>` or shield+board filter)
 - For draw config/keymap legend changes:

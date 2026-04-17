@@ -22,12 +22,6 @@ OUTPUT_DIR="$WORKSPACE/firmware"
 source "$LIB_COMMON"
 
 # ==========================
-# Dependencies check
-# ==========================
-need docker
-need yq
-
-# ==========================
 # Progress UI
 # ==========================
 
@@ -100,24 +94,7 @@ SNIPPETS=()
 CMAKE_ARGS=()
 
 load_builds() {
-  ensure_file "$BUILD_YAML"
-
-  BOARDS=()
-  SHIELDS=()
-  SNIPPETS=()
-  CMAKE_ARGS=()
-
-  while IFS= read -r line; do BOARDS+=("$line"); done \
-    < <(yq '.include[].board' "$BUILD_YAML")
-
-  while IFS= read -r line; do SHIELDS+=("$line"); done \
-    < <(yq '.include[].shield' "$BUILD_YAML")
-
-  while IFS= read -r line; do SNIPPETS+=("$line"); done \
-    < <(yq '.include[].snippet // ""' "$BUILD_YAML")
-
-  while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
-    < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
+  load_build_manifest "$BUILD_YAML" BOARDS SHIELDS SNIPPETS CMAKE_ARGS
 
   BUILD_COUNT="${#BOARDS[@]}"
   ((BUILD_COUNT > 0)) || die "No builds found in build.yaml"
@@ -182,22 +159,8 @@ list_builds() {
 
 interactive_select() {
   list_builds
-  while true; do
-    read -rp "Select build (1-$BUILD_COUNT) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= BUILD_COUNT)) && {
-      SELECTED=$((ans - 1))
-      FIRMWARE_COUNT=1
-      return
-    }
-  done
-}
-
-get_artifact_name() {
-  local shield="$1"
-  local board="$2"
-  echo "${shield// /+}-${board//\/\//_}"
+  prompt_select_number "Select build (1-$BUILD_COUNT) or q: " "$BUILD_COUNT" SELECTED
+  FIRMWARE_COUNT=1
 }
 
 # ==========================
@@ -264,7 +227,9 @@ run_build() {
       cp /repo/config/charybdis_pointer.dtsi zmk-config/boards/shields/charybdis/
 
       [ -d .west ] || west init -l config
-      [ \"$force_update\" != \"true\" -a -d zmk ] || west update 2>/dev/null || true
+      if [ \"$force_update\" = \"true\" ] || [ ! -d zmk ]; then
+        west update
+      fi
       west zephyr-export
 
       west build -s zmk/app -d \"$build_dir\" -b \"$board\" ${snippet:+-S \"$snippet\"} --pristine \
@@ -412,24 +377,33 @@ done
 # ==========================
 # Main
 # ==========================
-print_header
-load_builds
 
 if $HELP; then
+  print_header
   print_help
   exit 0
 fi
 
+print_header
+
+if $CLEAN; then
+  clean_deps
+  if ! $ALL && [[ -z "$NUMBER" && -z "$SHIELD" && -z "$BOARD" ]]; then
+    exit 0
+  fi
+fi
+
 if $LIST; then
+  need yq
+  load_builds
   list_builds
   exit 0
 fi
 
-if $CLEAN; then
-  clean_deps
-fi
-
 if $ALL; then
+  need docker
+  need yq
+  load_builds
   build_all
   exit 0
 fi
@@ -440,9 +414,18 @@ fi
 
 if [[ -n "$NUMBER" ]]; then
   validate_number_arg "$NUMBER" "--number"
+  need docker
+  need yq
+  load_builds
   build_by_number "$NUMBER"
 elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
+  need docker
+  need yq
+  load_builds
   build_by_criteria "$SHIELD" "$BOARD"
 else
+  need docker
+  need yq
+  load_builds
   build_by_select
 fi
