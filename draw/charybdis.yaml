@@ -72,6 +72,78 @@ layers:
   - num
   - {type: held}
   - alt
+  game:
+  - $$mdi:keyboard-esc$$
+  - Q
+  - W
+  - E
+  - R
+  - home
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-off$$
+  - {t: game, h: '$$mdi:toggle-switch$$'}
+  - $$mdi:keyboard-tab$$
+  - A
+  - S
+  - D
+  - F
+  - end
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:apple-keyboard-control$$
+  - Z
+  - X
+  - C
+  - V
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-space$$
+  - gamefn
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  gamefn:
+  - M
+  - '7'
+  - '8'
+  - '9'
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - I
+  - '4'
+  - '5'
+  - '6'
+  - G
+  - H
+  - J
+  - K
+  - L
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - B
+  - N
+  - M
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {type: held}
+  - num
+  - {t: '$$mdi:transfer$$', type: trans}
   nav:
   - ','
   - '7'
@@ -202,8 +274,8 @@ layers:
   - $$mdi:play-pause$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&dec_bri'
-  - '&inc_bri'
+  - prsptr bri-
+  - prsptr bri+
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - window next
   - space down
@@ -216,78 +288,6 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
-  game:
-  - $$mdi:keyboard-esc$$
-  - Q
-  - W
-  - E
-  - R
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:volume-low$$
-  - $$mdi:volume-high$$
-  - $$mdi:volume-off$$
-  - {t: game, h: '$$mdi:toggle-switch$$'}
-  - $$mdi:keyboard-tab$$
-  - A
-  - S
-  - D
-  - F
-  - $$mdi:mouse-scroll-wheel$$
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:apple-keyboard-control$$
-  - Z
-  - X
-  - C
-  - V
-  - $$mdi:mouse-left-click$$
-  - $$mdi:mouse-right-click$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:keyboard-space$$
-  - gamefn
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  gamefn:
-  - M
-  - '7'
-  - '8'
-  - '9'
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - I
-  - '4'
-  - '5'
-  - '6'
-  - G
-  - H
-  - J
-  - K
-  - L
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '0'
-  - '1'
-  - '2'
-  - '3'
-  - B
-  - N
-  - M
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   mouse:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -303,7 +303,7 @@ layers:
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-left-click$$
-  - Forward Click
+  - forward click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
@@ -313,7 +313,7 @@ layers:
   - caret
   - scroll
   - slow
-  - Back Click
+  - back click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: slow, h: '$$mdi:toggle-switch$$'}
   - {t: scroll, h: '$$mdi:toggle-switch$$'}
@@ -339,7 +339,7 @@ layers:
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-left-click$$
-  - Forward Click
+  - forward click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
@@ -349,7 +349,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: slow, h: '$$mdi:toggle-switch$$', type: held}
-  - Back Click
+  - back click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: slow, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -375,7 +375,7 @@ layers:
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-left-click$$
-  - Forward Click
+  - forward click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
@@ -385,7 +385,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: scroll, h: '$$mdi:toggle-switch$$', type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Back Click
+  - back click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: scroll, h: '$$mdi:toggle-switch$$', type: held alternate}
@@ -411,7 +411,7 @@ layers:
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-left-click$$
-  - Forward Click
+  - forward click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
@@ -421,7 +421,7 @@ layers:
   - {t: caret, h: '$$mdi:toggle-switch$$', type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Back Click
+  - back click
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}

@@ -41,3 +41,16 @@
     quick-tap-ms = <QUICK_TAP_MS>;
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
 };
+
+/ {
+    behaviors {
+        prspr_inc_bri: inc_bri {
+            compatible = "zmk,behavior-brightness-inc";
+            #binding-cells = <0>;
+        };
+        prspr_dec_bri: dec_bri {
+            compatible = "zmk,behavior-brightness-dec";
+            #binding-cells = <0>;
+        };
+    };
+};

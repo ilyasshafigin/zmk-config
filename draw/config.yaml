@@ -74,21 +74,24 @@ parse_config:
     "&td_mse": def mse
 
     # Others
-    "&mmv MOVE_UP": Mouse ↑
-    "&mmv MOVE_DOWN": Mouse ↓
-    "&mmv MOVE_LEFT": Mouse ←
-    "&mmv MOVE_RIGHT": Mouse →
+    "&mmv MOVE_UP": mouse ↑
+    "&mmv MOVE_DOWN": mouse ↓
+    "&mmv MOVE_LEFT": mouse ←
+    "&mmv MOVE_RIGHT": mouse →
 
-    "&msc SCRL_UP": Scroll ↑
-    "&msc SCRL_DOWN": Scroll ↓
-    "&msc SCRL_LEFT": Scroll ←
-    "&msc SCRL_RIGHT": Scroll →
+    "&msc SCRL_UP": scroll ↑
+    "&msc SCRL_DOWN": scroll ↓
+    "&msc SCRL_LEFT": scroll ←
+    "&msc SCRL_RIGHT": scroll →
 
     "&mkp LCLK": $$mdi:mouse-left-click$$
     "&mkp RCLK": $$mdi:mouse-right-click$$
     "&mkp MCLK": $$mdi:mouse-scroll-wheel$$
-    "&mkp MB4": Back Click
-    "&mkp MB5": Forward Click
+    "&mkp MB4": back click
+    "&mkp MB5": forward click
+
+    "&prspr_inc_bri": prsptr bri+
+    "&prspr_dec_bri": prsptr bri-
 
   # ZMK
   zmk_keycode_map:
@@ -429,11 +432,6 @@ parse_config:
     # Lang
     LG(F11): "ru"
     LG(F12): "en"
-
-    # Dongle
-    F22: dongle brightness tog
-    F23: dongle brightness dec
-    F24: dongle brightness inc
 
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well
