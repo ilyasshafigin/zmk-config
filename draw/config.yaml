@@ -477,6 +477,9 @@ draw_config:
   glyph_hold_size: 16
   glyph_shifted_size: 16
 
+  # Dark mode
+  dark_mode: auto
+
   n_columns: 2
 
   # Custom CSS
