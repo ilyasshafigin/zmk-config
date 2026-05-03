@@ -1,164 +1,65 @@
 # AGENTS.md
 
-Guidance for coding agents working in this repository.
+Compact repo guidance for OpenCode agents. Keep edits targeted and prefer executable config/scripts over README prose.
 
-## Scope and priorities
+## Repo shape
 
-- This repo is a ZMK user configuration with local helper scripts.
-- Primary source folders: `config/`, `boards/`, `dts/`, `app/`, `scripts/`, `draw/`.
-- Build matrix is defined in `build.yaml`.
-- West manifest and module pins are in `config/west.yml`.
-- Prefer minimal, targeted edits that preserve existing naming and layout patterns.
+- This is a ZMK user config, not an app repo; there is no local unit test suite.
+- Build targets live in `build.yaml`; west module pins live in `config/west.yml` (`self.path: config`).
+- Source inputs are `config/`, `boards/`, `dts/`, `app/`, `zephyr/module.yml`, `scripts/`, and `draw/`.
+- Generated/local outputs to avoid editing unless explicitly requested: `firmware/*.uf2`, `local-build/workspace/**`,
+  `local-build/artifact/**`, and rendered `draw/*.svg` / `draw/*.png`.
+- No repo-local `.github/workflows/`, `.pre-commit-config.yaml`, `.cursor/rules/`, `.cursorrules`,
+  `.github/copilot-instructions.md`, or OpenCode config were found.
 
-## Rule files check (Cursor/Copilot)
+## Commands that matter
 
-- Checked `.cursor/rules/`: not present.
-- Checked `.cursorrules`: not present.
-- Checked `.github/copilot-instructions.md`: not present.
-- No repository-specific Cursor/Copilot instruction files currently apply.
+- List Just recipes: `just`
+- Quick repo smoke check: `just validate`
+- Build target list: `just list` or `just build --list`
+- Build one target: `just build -n 1`
+- Build by shield substring: `just build -s "lapka_dongle"`
+- Build by exact board plus shield filter: `just build -s "lapka_dongle" -b "xiao_ble//zmk"`
+- Build all targets: `just build --all` (`--update` forces `west update` first)
+- Flash list/status: `just list-flash` or `just flash --list`
+- Flash one target: `just flash -n 1`
+- Draw keymaps: `just draw --list`, `just draw lapka`, or `just draw --all`
+- Clean cached west workspace/artifacts: `just clean`; remove UF2s too: `just clean-all`
 
-## Quick command reference
+## Build and draw quirks
 
-- List all Just recipes: `just`
-- List build targets: `just list` or `just build --list`
-- Build interactively: `just build`
-- Build one target by index: `just build -n 1`
-- Build targets by shield filter: `just build -s "lapka_dongle"`
-- Build by shield+board: `just build -s "lapka_dongle" -b "xiao_ble//zmk"`
-- Build all configured targets: `just build --all`
-- Build all and force `west update`: `just build --all --update`
-- Clean local west workspace/artifacts: `just clean` (delegates to `scripts/build.sh --clean`)
-- Flash interactively: `just flash`
-- Flash one target by index: `just flash -n 1`
-- Flash by shield+board: `just flash -s "lapka_dongle" -b "nice_nano//zmk"`
-- List flashable targets and UF2 status: `just list-flash`
-- Draw keymap interactively: `just draw`
-- Draw one keymap: `just draw lapka`
-- Draw all keymaps: `just draw --all`
-- Run lightweight repo validation: `just validate`
+- `scripts/build.sh` requires `docker` and `yq`, uses Docker image `zmkfirmware/zmk-build-arm:stable`, and writes UF2s to
+  `firmware/` with names derived from `shield` + `board`.
+- Local builds run from a cached west workspace at `local-build/workspace/`; use `just build --update ...` when module pins or
+  upstream west deps need refreshing.
+- The build script copies repo sources into the west workspace and passes `-DZMK_CONFIG=/workspace/config` plus
+  `-DZMK_EXTRA_MODULES=/workspace/zmk-config`; do not assume in-place west builds from the repo root.
+- Charybdis builds deliberately copy `config/includes/layers.h` and `config/charybdis_pointer.dtsi` into the workspace shield
+  dir before building.
+- `just draw ...` needs `keymap`, `inkscape`, `draw/config.yaml`, and helper includes under
+  `local-build/workspace/modules/zmk/helpers/include` (usually created by the first `just build`).
 
-## Build, lint, and test policy
+## Flashing quirks
 
-### Build
+- `scripts/flash.sh` maps `nice_nano//zmk` to `/Volumes/NICENANO` and `xiao_ble//zmk` to `/Volumes/XIAO-SENSE`.
+- It waits up to `BOOT_WAIT_SEC` seconds (default `120`) for the bootloader volume and rejects obvious board/volume mismatches.
+- Flashing depends on existing matching UF2s in `firmware/`; run a focused build first if `just flash --list` shows `MISSING`.
 
-- Canonical local build entrypoint: `just build ...`.
-- Under the hood this runs `scripts/build.sh` using Docker image `zmkfirmware/zmk-build-arm:stable`.
-- `scripts/build.sh` reads `build.yaml` and emits UF2 files to `firmware/`.
+## Validation expectations
 
-### Lint/format
+- For script/CLI changes, run `just validate` plus the affected `--help` / `--list` command if useful.
+- For build-matrix, board, shield, or keymap changes, run at least one focused build such as `just build -n <N>` or a
+  shield/board-filtered build.
+- For draw config or keymap legend changes, run `just draw <keymap>` after a build has populated helper includes.
+- If Docker, hardware, or GUI tools are unavailable, state exactly which command was not run.
 
-- There is no dedicated lint task (no `shellcheck`, `yamllint`, etc. configured in repo).
-- There is no autoformatter task configured in Just recipes.
-- Formatting expectations are enforced mainly by `.editorconfig` and existing style.
+## Style and conventions
 
-### Tests
-
-- There is no repository-local unit/integration test suite configured.
-- Practical verification is successful firmware build(s) and optional keymap rendering.
-- Equivalent of running a single test: build a single firmware target.
-
-Single-target verification examples:
-
-- `just build -n 1`
-- `just build -s "charybdis_central_right" -b "nice_nano//zmk"`
-
-Broader verification examples:
-
-- `just build --all`
-- `just draw --all`
-
-## CI awareness
-
-- There are currently no repository-local GitHub workflow files checked in under `.github/workflows/`.
-- Prefer documenting and validating the local Just/script workflows (`just build`, `just flash`, `just draw`, `just validate`).
-
-## Code style guidelines
-
-### Global formatting
-
-- Follow `.editorconfig` strictly:
-  - `end_of_line = lf`
-  - `charset = utf-8`
-  - `insert_final_newline = true`
-  - `trim_trailing_whitespace = true` (except Markdown)
-  - `max_line_length = 120`
-- Indentation by file type:
-  - `*.{c,h,xml,dtsi,overlay,keymap}` -> 4 spaces
-  - `*.{json,yml,sh}` -> 2 spaces
-
-### Shell scripts (`scripts/*.sh`)
-
-- Keep shebang: `#!/usr/bin/env bash`.
-- Keep strict mode near top: `set -euo pipefail`.
-- Use `snake_case` for functions and local variables.
-- Use `UPPER_SNAKE_CASE` for script-level constants/config paths.
-- Quote variable expansions unless intentional word splitting is required.
-- Prefer helper functions from `scripts/lib/common.sh`:
-  - `need` for dependency checks
-  - `ensure_file` for required files
-  - `die` / `usage_error` for consistent failures
-- Use `local` inside functions for non-global variables.
-- Preserve existing CLI UX patterns: `--help`, `--list`, interactive fallback.
-
-### YAML (`build.yaml`, workflow files, draw config)
-
-- Use 2-space indentation.
-- Keep existing key ordering and grouping where already meaningful.
-- In `build.yaml`, keep entries grouped by keyboard family and dongle/role.
-- Avoid reformatting large YAML blocks unless functionally needed.
-
-### DTSI/overlay/keymap files
-
-- Keep include directives at the top of the file.
-- Preserve current include style (`#include <...>` for external, `#include "..."` for local).
-- Use 4-space indentation and keep matrix/layout alignment readable.
-- Preserve existing macro style (`ZMK_LAYER`, `ZMK_COMBO`, `MAKE_HRM`, etc.).
-- Layer/behavior identifiers follow existing uppercase short names (e.g. `DEF`, `SYM`, `NAV`).
-- Do not rename established layer IDs or behavior names without full cross-file updates.
-
-### Naming conventions
-
-- Shell functions: `verb_object` in snake_case (example: `build_by_number`).
-- Shell constants: uppercase (example: `BUILD_YAML`, `OUTPUT_DIR`).
-- Build target naming mirrors board/shield naming in `build.yaml`.
-- Keep filenames and shield names consistent with existing underscore-separated patterns.
-
-## Error handling and reliability expectations
-
-- Fail fast on invalid args and missing dependencies/files.
-- For argument validation, prefer existing helpers (e.g. `validate_number_arg`).
-- Keep explicit non-zero exit codes semantics where present:
-  - `1` runtime failure
-  - `2` argument/usage failure
-- Preserve retry/wait logic in flashing flows unless fixing a concrete bug.
-- Do not silently swallow errors except where the code already intentionally does so.
-
-## Change discipline for agents
-
-- Do not edit generated artifacts unless explicitly requested:
-  - `firmware/*.uf2`
-  - `local-build/artifact/**`
-  - `local-build/workspace/**`
-  - `draw/*.png` and `draw/*.svg` (unless task is keymap rendering output)
-- Prefer editing source inputs (`config/`, `boards/`, `build.yaml`, `scripts/`).
-- Keep patches focused; avoid drive-by formatting-only changes.
-- If introducing a new command, wire it through `Justfile` for consistency.
-
-## Minimal validation checklist after edits
-
-- Preferred quick smoke test for repo-wide script checks:
-  - `just validate`
-- For script/CLI changes:
-  - `just build --help`
-  - `just flash --help`
-  - `just draw --help`
-  - `just build --list`
-  - `just flash --list`
-  - `just draw --list`
-- For build-matrix or keymap changes:
-  - run at least one targeted build (`just build -n <N>` or shield+board filter)
-- For draw config/keymap legend changes:
-  - run `just draw <keymap>` for the affected keymap
-
-If a requested task cannot be fully validated locally (missing dependencies/hardware),
-state what was not run and provide the exact command for a human to run.
+- Follow `.editorconfig`: LF, UTF-8, final newline, max line length 120; 4 spaces for `*.{c,h,xml,dtsi,overlay,keymap}` and
+  2 spaces for `*.{json,yml,sh}`.
+- Keep shell scripts in `scripts/` on Bash strict mode (`set -euo pipefail`), with `snake_case` functions/locals and shared
+  helpers from `scripts/lib/common.sh` (`need`, `ensure_file`, `die`, `usage_error`, `validate_number_arg`).
+- Preserve CLI UX already used by scripts: `--help`, `--list`, non-interactive flags, and interactive fallback.
+- Keep `build.yaml` entries grouped by keyboard family and preserve exact board strings like `nice_nano//zmk`.
+- In DTS/keymap files, keep includes at the top, use existing macro style (`ZMK_LAYER`, `ZMK_COMBO`, `MAKE_HRM`, etc.), and
+  do not rename layer/behavior IDs without updating all references.
