@@ -88,11 +88,21 @@ just clean
 Каждая сборка копирует в `/workspace` только нужные исходники из репозитория:
 
 - `/repo/config` → `/workspace/config`
-- `/repo/boards`, `/repo/dts`, `/repo/app`, `/repo/zephyr/module.yml` → `/workspace/zmk-config/`
-- для Charybdis дополнительно копируются `config/includes/layers.h` и `config/charybdis_pointer.dtsi`
+- `/repo/keyboards` → `/workspace/keyboards`
+
+Важно: корень репозитория не является обычным Zephyr/ZMK module. `config/` используется как ZMK user config, а
+`keyboards/` — как отдельный локальный module с shield-файлами.
 
 Затем он выполняет:
 
 - `west init -l config` (только при необходимости)
 - `west update` (только если `zmk/` ещё нет или был указан `--update`)
-- `west build ... -DZMK_CONFIG=/workspace/config -DZMK_EXTRA_MODULES=/workspace/zmk-config`
+- `west build ... -DZMK_CONFIG=/workspace/config -DZMK_EXTRA_MODULES=/workspace/keyboards -DDTS_EXTRA_CPPFLAGS=-I/workspace/config`
+
+Флаги `west build`:
+
+- `-DZMK_CONFIG=/workspace/config` — указывает ZMK user config.
+- `-DZMK_EXTRA_MODULES=/workspace/keyboards` — подключает локальный module с keyboard/shield definition files.
+- `-DDTS_EXTRA_CPPFLAGS=-I/workspace/config` — добавляет `config/` в include path devicetree-препроцессора. Это позволяет
+  shield-файлам из `keyboards/` подключать пользовательские devicetree-файлы из `config/`, например
+  `config/charybdis_pointer.dtsi`, без копирования этих файлов внутрь shield-папки.

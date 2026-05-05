@@ -1,3 +1,6 @@
+#ifndef ZMK_CONFIG_SHARED_UNIVERSAL_LAYOUT_H
+#define ZMK_CONFIG_SHARED_UNIVERSAL_LAYOUT_H
+
 #include <dt-bindings/zmk/keys.h>
 
 // На основе раскладки Universal Layout Ortho
@@ -64,3 +67,5 @@
 #define U_DARROW   LA(K)           // -> '=>'  shift: '->'
 
 #define U_NBSP     LA(SPACE)       // No-break-space
+
+#endif // ZMK_CONFIG_SHARED_UNIVERSAL_LAYOUT_H

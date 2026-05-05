@@ -8,6 +8,7 @@
 ## Оглавление
 
 - [Основные возможности](#основные-возможности)
+- [Структура проекта](#структура-проекта)
 - [Режимы работы](#режимы-работы)
 - [Модули](#модули)
 - [Прошивка](#прошивка)
@@ -28,6 +29,19 @@
 - **Общий keymap** вынесен в отдельный файл, взял идею [miryoku](https://github.com/manna-harbour/miryoku_zmk)
 - **Адаптирована для macOS**
 - **Скрипты** для сборки, прошивки, отрисовки keymap
+
+## Структура проекта
+
+Этот репозиторий устроен не как один обычный ZMK/Zephyr module в корне. Корень проекта — это кастомная обвязка, а реальные
+ZMK-сущности разделены по ролям:
+
+- `config/` — ZMK user config: `west.yml`, keymap/conf-файлы и общие include-файлы (`shared/`). В `config/west.yml`
+  намеренно используется `self.path: config`.
+- `keyboards/` — локальный Zephyr/ZMK module с shield-файлами (`keyboards/boards/shields/...`) и собственным
+  `keyboards/zephyr/module.yml`.
+- `scripts/` и `Justfile` — кастомная локальная сборка/прошивка/отрисовка.
+- `local-build` — [локальная сборка](local-build/README.md).
+- `firmware/` — генерируемые прошивки.
 
 ## Режимы работы
 
@@ -147,7 +161,8 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `charybdis_peripheral_left` - прошивка левой половины для работы с донглом
 - `charybdis_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
 
-Особенность в том, что во время сборки скрипт копирует папку `config/includes` и файл `charybdis_pointer.dtsi` в папку `<zmk config local workspace>/boards/shields/charybdis`, так как не все общие конфигурации удалось вынести.
+Shield-файлы лежат в локальном модуле `keyboards/`. Общая конфигурация указателя вынесена в
+`config/charybdis_pointer.dtsi` и подключается из Charybdis shield-файлов через `DTS_EXTRA_CPPFLAGS` include path.
 
 ### [Lapka](https://github.com/braindefender/lapka)
 

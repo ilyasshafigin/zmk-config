@@ -215,16 +215,8 @@ run_build() {
       rm -rf config
       cp -R /repo/config ./config
 
-      rm -rf zmk-config
-      mkdir -p zmk-config/zephyr
-      [ -d /repo/boards ] && cp -R /repo/boards zmk-config/
-      [ -d /repo/dts ] && cp -R /repo/dts zmk-config/
-      [ -d /repo/app ] && cp -R /repo/app zmk-config/
-      [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
-
-      mkdir zmk-config/boards/shields/charybdis/includes
-      cp /repo/config/includes/layers.h zmk-config/boards/shields/charybdis/includes/
-      cp /repo/config/charybdis_pointer.dtsi zmk-config/boards/shields/charybdis/
+      rm -rf keyboards
+      cp -R /repo/keyboards ./keyboards
 
       [ -d .west ] || west init -l config
       if [ \"$force_update\" = \"true\" ] || [ ! -d zmk ]; then
@@ -235,7 +227,8 @@ run_build() {
       west build -s zmk/app -d \"$build_dir\" -b \"$board\" ${snippet:+-S \"$snippet\"} --pristine \
         -- \
         -DZMK_CONFIG=/workspace/config \
-        -DZMK_EXTRA_MODULES=/workspace/zmk-config \
+        -DZMK_EXTRA_MODULES=/workspace/keyboards \
+        -DDTS_EXTRA_CPPFLAGS='-I/workspace/config' \
         -DSHIELD=\"$shield\" \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
         $cmake_args

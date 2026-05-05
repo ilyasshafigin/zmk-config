@@ -1,3 +1,4 @@
+name: keyboards
 build:
   settings:
     board_root: .

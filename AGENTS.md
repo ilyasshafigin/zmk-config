@@ -4,9 +4,11 @@ Compact repo guidance for OpenCode agents. Keep edits targeted and prefer execut
 
 ## Repo shape
 
-- This is a ZMK user config, not an app repo; there is no local unit test suite.
-- Build targets live in `build.yaml`; west module pins live in `config/west.yml` (`self.path: config`).
-- Source inputs are `config/`, `boards/`, `dts/`, `app/`, `zephyr/module.yml`, `scripts/`, and `draw/`.
+- This is a custom ZMK config repo, not a single root Zephyr/ZMK module and not an app repo; there is no local unit test suite.
+- The repo root is local-build glue. `config/` is the ZMK user config (`config/west.yml` has `self.path: config`), and
+  `keyboards/` is the local Zephyr/ZMK module that owns `boards/shields/**` plus `keyboards/zephyr/module.yml`.
+- Build targets live in `build.yaml`; west module pins live in `config/west.yml`.
+- Source inputs are `config/`, `keyboards/`, `scripts/`, and `draw/`.
 - Generated/local outputs to avoid editing unless explicitly requested: `firmware/*.uf2`, `local-build/workspace/**`,
   `local-build/artifact/**`, and rendered `draw/*.svg` / `draw/*.png`.
 - No repo-local `.github/workflows/`, `.pre-commit-config.yaml`, `.cursor/rules/`, `.cursorrules`,
@@ -32,10 +34,11 @@ Compact repo guidance for OpenCode agents. Keep edits targeted and prefer execut
   `firmware/` with names derived from `shield` + `board`.
 - Local builds run from a cached west workspace at `local-build/workspace/`; use `just build --update ...` when module pins or
   upstream west deps need refreshing.
-- The build script copies repo sources into the west workspace and passes `-DZMK_CONFIG=/workspace/config` plus
-  `-DZMK_EXTRA_MODULES=/workspace/zmk-config`; do not assume in-place west builds from the repo root.
-- Charybdis builds deliberately copy `config/includes/layers.h` and `config/charybdis_pointer.dtsi` into the workspace shield
-  dir before building.
+- The build script copies repo sources into the west workspace and passes `-DZMK_CONFIG=/workspace/config`,
+  `-DZMK_EXTRA_MODULES=/workspace/keyboards`, and `-DDTS_EXTRA_CPPFLAGS=-I/workspace/config`;
+  do not assume in-place west builds from the repo root.
+- Shields live in the local `keyboards/` Zephyr module. Charybdis pointer settings live in
+  `config/charybdis_pointer.dtsi` and are included from Charybdis shield files by name through `DTS_EXTRA_CPPFLAGS`.
 - `just draw ...` needs `keymap`, `inkscape`, `draw/config.yaml`, and helper includes under
   `local-build/workspace/modules/zmk/helpers/include` (usually created by the first `just build`).
 

@@ -2,8 +2,8 @@
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <scroll-snap.dtsi>
-#include "includes/layers.h"
 #include "zmk-helpers/key-labels/36.h"
+#include "shared/layers.h"
 
 &trackball_listener {
     input-processors = <&zip_xy_scaler 2 3>;

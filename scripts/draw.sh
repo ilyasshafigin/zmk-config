@@ -90,10 +90,10 @@ interactive_select() {
 get_draw_args() {
   case "$1" in
   charybdis)
-    echo "-d boards/shields/charybdis/charybdis_layouts.dtsi"
+    echo "-d keyboards/boards/shields/charybdis/charybdis_layouts.dtsi"
     ;;
   lapka)
-    echo "-d boards/shields/lapka/lapka_layouts.dtsi"
+    echo "-d keyboards/boards/shields/lapka/lapka_layouts.dtsi"
     ;;
   *)
     echo ""

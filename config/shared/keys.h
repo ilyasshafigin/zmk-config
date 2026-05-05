@@ -1,3 +1,6 @@
+#ifndef ZMK_CONFIG_SHARED_KEYS_H
+#define ZMK_CONFIG_SHARED_KEYS_H
+
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -22,3 +25,5 @@
 // Lang
 #define LANG_RU  LG(F11)
 #define LANG_EN  LG(F12)
+
+#endif // ZMK_CONFIG_SHARED_KEYS_H
