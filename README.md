@@ -2,8 +2,8 @@
 
 Конфигурация и прошивка для моих клавиатур:
 
-1. **[Charybdis Nano](#charybdis-nano)** – основная
-2. [Lapka](#lapka)
+1. **[Lapka](#lapka)** - основная
+2. [Charybdis Nano](#charybdis-nano)
 
 ## Оглавление
 
