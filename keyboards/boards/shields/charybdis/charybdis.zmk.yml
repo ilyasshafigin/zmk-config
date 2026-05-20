@@ -1,0 +1,15 @@
+file_format: "1"
+id: charybdis
+name: Charybdis
+type: shield
+url: https://github.com/bastardkb/charybdis/
+requires: [pro_micro]
+features:
+  - keys
+  - pointer
+siblings:
+  - charybdis_dongle
+  - charybdis_dongle_prospector
+  - charybdis_central_right
+  - charybdis_peripheral_left
+  - charybdis_peripheral_right

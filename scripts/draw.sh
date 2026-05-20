@@ -6,28 +6,16 @@ set -euo pipefail
 # ==========================
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
+LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 
 DIR_CONFIG="$WORKSPACE/config"
 DIR_DRAW="$WORKSPACE/draw"
 DRAW_CONFIG="$DIR_DRAW/config.yaml"
+DRAW_INCLUDE_ROOTS=(
+  "$WORKSPACE/local-build/workspace/modules/zmk/helpers/include"
+)
 
-# ==========================
-# Helpers
-# ==========================
-die() {
-  echo "Error: $*" >&2
-  exit 1
-}
-
-need() {
-  command -v "$1" >/dev/null || die "Missing dependency: $1"
-}
-
-# ==========================
-# Dependencies check
-# ==========================
-need keymap
-need inkscape
+source "$LIB_COMMON"
 
 # ==========================
 # UI
@@ -53,9 +41,14 @@ Without arguments:
     Interactive keymap selection
 
 Examples:
-    $0 totem
+    $0 lapka
     $0 --list
     $0 --all
+
+Exit codes:
+    0 success
+    1 runtime error
+    2 invalid arguments
 EOF
 }
 
@@ -85,15 +78,10 @@ list_keymaps() {
 
 interactive_select() {
   list_keymaps
-  while true; do
-    read -rp "Select keymap (1-${#KEYMAPS[@]}) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= ${#KEYMAPS[@]})) && {
-      SELECTED="${KEYMAPS[$((ans - 1))]}"
-      return
-    }
-  done
+  local selected_index
+
+  prompt_select_number "Select keymap (1-${#KEYMAPS[@]}) or q: " "${#KEYMAPS[@]}" selected_index
+  SELECTED="${KEYMAPS[$selected_index]}"
 }
 
 # ==========================
@@ -102,7 +90,10 @@ interactive_select() {
 get_draw_args() {
   case "$1" in
   charybdis)
-    echo "-d boards/shields/charybdis/charybdis_layout.dtsi"
+    echo "-d keyboards/boards/shields/charybdis/charybdis_layouts.dtsi"
+    ;;
+  lapka)
+    echo "-d keyboards/boards/shields/lapka/lapka_layouts.dtsi"
     ;;
   *)
     echo ""
@@ -122,7 +113,11 @@ draw_one() {
   local png="$DIR_DRAW/$kb.png"
   local args="$(get_draw_args "$kb")"
 
-  [[ -f "$input" ]] || die "Keymap not found: $input"
+  if [[ ! -f "$input" ]]; then
+    echo "Error: keymap not found: $input" >&2
+    echo "Hint: run '$0 --list' to view available keymaps." >&2
+    exit 1
+  fi
 
   echo
   echo "▶ Draw '$kb'"
@@ -140,6 +135,29 @@ draw_one() {
     "$svg"
 
   echo "  ✓ $png"
+}
+
+ensure_draw_deps() {
+  need keymap
+  need inkscape
+  ensure_file "$DRAW_CONFIG"
+
+  local include_root=""
+  for include_root in "${DRAW_INCLUDE_ROOTS[@]}"; do
+    [[ -d "$include_root" ]] && return 0
+  done
+
+  cat >&2 <<EOF
+Error: draw prerequisites are missing.
+
+Expected helper include root to exist:
+  - ${DRAW_INCLUDE_ROOTS[0]}
+
+This comes from draw/config.yaml. Fix it by either:
+  - running a local build first (for example: just build), or
+  - restoring the local west workspace expected by keymap-drawer.
+EOF
+  exit 1
 }
 
 # ==========================
@@ -165,6 +183,9 @@ while [[ $# -gt 0 ]]; do
     exit 0
     ;;
   *)
+    if [[ -n "$KEYBOARD" ]]; then
+      usage_error "Unexpected extra argument: $1. Use -h for help."
+    fi
     KEYBOARD="$1"
     shift
     ;;
@@ -183,6 +204,7 @@ if $LIST; then
 fi
 
 if $ALL; then
+  ensure_draw_deps
   for kb in "${KEYMAPS[@]}"; do
     draw_one "$kb"
   done
@@ -190,8 +212,10 @@ if $ALL; then
 fi
 
 if [[ -n "$KEYBOARD" ]]; then
+  ensure_draw_deps
   draw_one "$KEYBOARD"
 else
   interactive_select
+  ensure_draw_deps
   draw_one "$SELECTED"
 fi

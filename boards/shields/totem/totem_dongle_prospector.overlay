@@ -1,7 +1,0 @@
-#include "totem_dongle_common.dtsi"
-
-/ {
-    chosen {
-        zmk,prospector-theme = &prospector_green_theme;
-    };
-};

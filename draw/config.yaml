@@ -1,8 +1,5 @@
 parse_config:
   zmk_additional_includes:
-  # for ci
-  - "modules/zmk/helpers/include"
-  # for local
   - "local-build/workspace/modules/zmk/helpers/include"
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
@@ -57,7 +54,7 @@ parse_config:
     "&out OUT_BLE":
       tap: $$mdi:bluetooth$$
 
-    # Reset
+    # Power
     "&sys_reset":
       type: bootloader
       tap: $$mdi:backup-restore$$
@@ -67,33 +64,34 @@ parse_config:
       type: bootloader
       tap: $$mdi:backup-restore$$
       hold: $$mdi:progress-download$$
+    "&soft_off": $$mdi:power$$
 
     # Macros/Behaviors
     "&tabber": tab next
     "&swapper": window next
     "&studio_unlock": studio unlock
     "&td_slow_scrl": def slow scroll
-    "&double_ctrl": double ctrl
-    "&double_shft": double shift
-    "&double_gui": double gui
     "&td_mse": def mse
 
     # Others
-    "&mmv MOVE_UP": Mouse ↑
-    "&mmv MOVE_DOWN": Mouse ↓
-    "&mmv MOVE_LEFT": Mouse ←
-    "&mmv MOVE_RIGHT": Mouse →
+    "&mmv MOVE_UP": mouse ↑
+    "&mmv MOVE_DOWN": mouse ↓
+    "&mmv MOVE_LEFT": mouse ←
+    "&mmv MOVE_RIGHT": mouse →
 
-    "&msc SCRL_UP": Scroll ↑
-    "&msc SCRL_DOWN": Scroll ↓
-    "&msc SCRL_LEFT": Scroll ←
-    "&msc SCRL_RIGHT": Scroll →
+    "&msc SCRL_UP": scroll ↑
+    "&msc SCRL_DOWN": scroll ↓
+    "&msc SCRL_LEFT": scroll ←
+    "&msc SCRL_RIGHT": scroll →
 
     "&mkp LCLK": $$mdi:mouse-left-click$$
     "&mkp RCLK": $$mdi:mouse-right-click$$
     "&mkp MCLK": $$mdi:mouse-scroll-wheel$$
-    "&mkp MB4": Back Click
-    "&mkp MB5": Forward Click
+    "&mkp MB4": back click
+    "&mkp MB5": forward click
+
+    "&prspr_inc_bri": prsptr bri+
+    "&prspr_dec_bri": prsptr bri-
 
   # ZMK
   zmk_keycode_map:
@@ -128,21 +126,25 @@ parse_config:
     SLASH: "]"
     LS(SLASH): "}"
     LA(SLASH): "]"
+    RA(SLASH): "]"
     LS(LA(SLASH)): "}"
     LA(LS(SLASH)): "}"
     FSLH: "]"
     LS(FSLH): "}"
     LA(FSLH): "]"
+    RA(FSLH): "]"
     LS(LA(FSLH)): "}"
     LA(LS(FSLH)): "}"
     QUESTION: "}"
     QMARK: "}"
     BACKSLASH: "/"
     LA(BACKSLASH): "\\"
+    RA(BACKSLASH): "\\"
     LS(BACKSLASH): "|"
     LS(LA(BACKSLASH)): "¦"
     BSLH: "/"
     LA(BSLH): "\\"
+    RA(BSLH): "\\"
     LS(LA(BSLH)): "¦"
     LS(BSLH): "|"
     PIPE: "|"
@@ -154,15 +156,16 @@ parse_config:
     SEMI: "~"
     LS(SEMI): "≈"
     COLON: "≈"
-    SINGLE_QUOTE: " "
-    SQT: " "
-    APOSTROPHE: " "
-    APOS: " "
+    SINGLE_QUOTE: "KC_QUOT"
+    SQT: "KC_QUOT"
+    APOSTROPHE: "KC_QUOT"
+    APOS: "KC_QUOT"
     DOUBLE_QUOTES: " "
     DQT: " "
     DOT: "["
     LS(DOT): "{"
     LA(DOT): "["
+    RA(DOT): "["
     LS(LA(DOT)): "{"
     LA(LS(DOT)): "{"
     COMMA: "&"
@@ -190,90 +193,96 @@ parse_config:
     #NUHS: "#"
     #TILDE2: "\""
 
-    LA(Q):
+    RA(Q):
       tap: "ψ"
       shifted: "Ψ"
-    LA(W):
+    RA(W):
       tap: "ω"
       shifted: "Ω"
-    LA(E):
+    RA(E):
       tap: "€"
-    LA(R):
+    RA(R):
       tap: "®"
-    LA(T):
+    RA(T):
       tap: "ё"
       shifted: "Ë"
-    LA(Y):
+    RA(Y):
       tap: "¥"
-    LA(U):
+    RA(U):
       tap: "λ"
       shifted: "Λ"
-    LA(I):
+    RA(I):
       tap: "щ"
       shifted: "Щ"
-    LA(O):
+    RA(O):
       tap: "<"
       shifted: "≤"
-    LA(P):
+    RA(P):
       tap: ">"
       shifted: "≥"
-    LA(LBKT):
+    RA(LBKT):
       tap: ","
       shifted: ";"
-    LA(RBKT):
+    RA(RBKT):
       tap: "."
       shifted: ":"
-    LA(A):
+    RA(A):
       tap: "α"
       shifted: "Α"
-    LA(S):
+    RA(S):
       tap: "§"
       shifted: "Σ"
-    LA(D):
+    RA(D):
       tap: "°"
       shifted: "Δ"
-    LA(F):
+    RA(F):
       tap: "£"
-    LA(G):
+    RA(G):
       tap: "γ"
       shifted: "Γ"
-    LA(H):
+    RA(H):
       tap: "₽"
-    LA(J):
+    RA(J):
       tap: "ø"
       shifted: "Ø"
-    LA(K): "=>"
+    RA(K):
+      tap: "=>"
+      shifted: "->"
+    LS(RA(K)): "->"
+    LA(K):
+      tap: "=>"
+      shifted: "->"
     LS(LA(K)): "->"
-    LA(L):
+    RA(L):
       tap: "«"
       shifted: "←"
-    LA(SEMI):
+    RA(SEMI):
       tap: "»"
       shifted: "→"
-    LA(SQT):
+    RA(SQT):
       tap: " "
       shifted: " "
-    LA(Z):
+    RA(Z):
       tap: "μ"
       shifted: "Μ"
-    LA(X):
+    RA(X):
       tap: "×"
-    LA(C):
+    RA(C):
       tap: "©"
       shifted: "¢"
-    LA(V):
+    RA(V):
       tap: "√"
       shifted: "V"
-    LA(B):
+    RA(B):
       tap: "β"
       shifted: "Β"
-    LA(N):
+    RA(N):
       tap: "η"
       shifted: "Η"
-    LA(M):
+    RA(M):
       tap: "ъ"
       shifted: "Ъ"
-    LA(COMMA):
+    RA(COMMA):
       tap: "&"
       shifted: "…"
 
@@ -424,11 +433,6 @@ parse_config:
     LG(F11): "ru"
     LG(F12): "en"
 
-    # Dongle
-    F22: dongle brightness tog
-    F23: dongle brightness dec
-    F24: dongle brightness inc
-
 draw_config:
   # key dimensions, non-ortho layouts use key_h for width as well
   key_h: 80
@@ -472,6 +476,9 @@ draw_config:
   glyph_tap_size: 22
   glyph_hold_size: 16
   glyph_shifted_size: 16
+
+  # Dark mode
+  dark_mode: auto
 
   n_columns: 2
 

@@ -16,6 +16,8 @@ manifest:
     url-base: https://github.com/jfaixo
   - name: kot149
     url-base: https://github.com/kot149
+  - name: ilyasshafigin
+    url-base: https://github.com/ilyasshafigin
   - name: oleksandrmaslov
     url-base: https://github.com/oleksandrmaslov
   - name: urob
@@ -50,31 +52,31 @@ manifest:
     remote: zettaface
     revision: main
     path: modules/zmk/input-processor-keybind
-  - name: zmk-pointing-acceleration
-    remote: oleksandrmaslov
-    revision: main
-    path: modules/zmk/pointing-acceleration
-  - name: zmk-sticky-modifiers-behavior
-    remote: jfaxio
-    revision: main
-    path: modules/zmk/sticky-modifiers-behavior
+#  - name: zmk-pointing-acceleration
+#    remote: oleksandrmaslov
+#    revision: main
+#    path: modules/zmk/pointing-acceleration
   - name: zmk-scroll-snap
     remote: kot149
     revision: v1
     path: modules/zmk/scroll-snap
+#  - name: zmk-behavior-battery-percentage-printer
+#    remote: ilyasshafigin
+#    revision: main
+#    path: modules/zmk/behavior-battery-percentage-printer
 
   # Dongle
   - name: prospector-zmk-module
-    remote: carrefinho
-    revision: feat/new-status-screens #main
+    remote: ilyasshafigin #carrefinho
+    revision: main # feat/new-status-screens
     path: modules/zmk/prospector
-  - name: zmk-dongle-display
-    remote: englmaxi
-    revision: main
-    path: modules/zmk/dongle-display
-  # - name: zmk-dongle-screen
-    # remote: janpfischer
-    # revision: main
-    # path: modules/zmk/dongle-screen
+#  - name: zmk-dongle-display
+#    remote: englmaxi
+#    revision: main
+#    path: modules/zmk/dongle-display
+#  - name: zmk-dongle-screen
+#    remote: janpfischer
+#    revision: main
+#    path: modules/zmk/dongle-screen
   self:
     path: config

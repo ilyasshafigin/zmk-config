@@ -12,29 +12,14 @@ set -euo pipefail
 IMAGE="zmkfirmware/zmk-build-arm:stable"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
+LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 BUILD_YAML="$WORKSPACE/build.yaml"
 
 WEST_WS="$WORKSPACE/local-build/workspace"
 ARTIFACTS="$WORKSPACE/local-build/artifact"
 OUTPUT_DIR="$WORKSPACE/firmware"
 
-# ==========================
-# Helpers
-# ==========================
-die() {
-  echo "Error: $*" >&2
-  exit 1
-}
-
-need() {
-  command -v "$1" >/dev/null || die "Missing dependency: $1"
-}
-
-# ==========================
-# Dependencies check
-# ==========================
-need docker
-need yq
+source "$LIB_COMMON"
 
 # ==========================
 # Progress UI
@@ -109,22 +94,13 @@ SNIPPETS=()
 CMAKE_ARGS=()
 
 load_builds() {
-  [[ -f "$BUILD_YAML" ]] || die "build.yaml not found"
-
-  while IFS= read -r line; do BOARDS+=("$line"); done \
-    < <(yq '.include[].board' "$BUILD_YAML")
-
-  while IFS= read -r line; do SHIELDS+=("$line"); done \
-    < <(yq '.include[].shield' "$BUILD_YAML")
-
-  while IFS= read -r line; do SNIPPETS+=("$line"); done \
-    < <(yq '.include[].snippet // ""' "$BUILD_YAML")
-
-  while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
-    < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
+  load_build_manifest "$BUILD_YAML" BOARDS SHIELDS SNIPPETS CMAKE_ARGS
 
   BUILD_COUNT="${#BOARDS[@]}"
   ((BUILD_COUNT > 0)) || die "No builds found in build.yaml"
+  ((${#SHIELDS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/shields count mismatch"
+  ((${#SNIPPETS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/snippets count mismatch"
+  ((${#CMAKE_ARGS[@]} == BUILD_COUNT)) || die "Malformed build.yaml: boards/cmake-args count mismatch"
 }
 
 # ==========================
@@ -143,11 +119,11 @@ print_help() {
 Usage: $0 [OPTIONS]
 
 Options:
-    -n, --number N          Flash N-th build (1-based)
+    -n, --number N          Build N-th target (1-based)
     -s, --shield S          Filter by shield name (substring)
     -b, --board B           Filter by board name (exact)
-    -l, --list              List available firmwares
-    -a, --all               Build all firmwares
+    -l, --list              List available build targets
+    -a, --all               Build all targets
     --clean|--clean-deps    Clean workspace and dependencies
     --update                Force west update
     -h, --help              Show this help
@@ -158,7 +134,13 @@ Without arguments:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Build first
+    $0 -s "lapka_dongle" -b "xiao_ble//zmk"
     $0 --all --update        # Update west and build all firmwares
+
+Exit codes:
+    0 success
+    1 runtime error
+    2 invalid arguments
 EOF
 }
 
@@ -171,51 +153,14 @@ list_builds() {
     echo "$n. ${SHIELDS[$i]} (${BOARDS[$i]})"
     [[ -n "${SNIPPETS[$i]}" ]] && echo "   └─ Snippet: ${SNIPPETS[$i]}"
     [[ -n "${CMAKE_ARGS[$i]}" ]] && echo "   └─ CMake args: ${CMAKE_ARGS[$i]}"
-    echo
   done
+  echo
 }
 
 interactive_select() {
   list_builds
-  while true; do
-    read -rp "Select build (1-$BUILD_COUNT) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= BUILD_COUNT)) && {
-      SELECTED=$((ans - 1))
-      FIRMWARE_COUNT=1
-      return
-    }
-  done
-}
-
-# ==========================
-# Build selection
-# ==========================
-find_by_criteria() {
-  local shield="$1"
-  local board="$2"
-
-  local shield_lc=$(printf '%s' "$shield" | tr 'A-Z' 'a-z')
-  local board_lc=$(printf '%s' "$board" | tr 'A-Z' 'a-z')
-
-  MATCHES=()
-  for ((i = 0; i < BUILD_COUNT; i++)); do
-    s=$(printf '%s' "${SHIELDS[$i]}" | tr 'A-Z' 'a-z')
-    b=$(printf '%s' "${BOARDS[$i]}" | tr 'A-Z' 'a-z')
-
-    [[ -n "$shield_lc" && "$s" != *"$shield_lc"* ]] && continue
-    [[ -n "$board_lc" && "$b" != "$board_lc" ]] && continue
-
-    MATCHES+=("$i")
-  done
-  FIRMWARE_COUNT="${#MATCHES[@]}"
-}
-
-get_artifact_name() {
-  local shield="$1"
-  local board="$2"
-  echo "${shield// /+}-${board//\/\//_}"
+  prompt_select_number "Select build (1-$BUILD_COUNT) or q: " "$BUILD_COUNT" SELECTED
+  FIRMWARE_COUNT=1
 }
 
 # ==========================
@@ -270,25 +215,20 @@ run_build() {
       rm -rf config
       cp -R /repo/config ./config
 
-      rm -rf zmk-config
-      mkdir -p zmk-config/zephyr
-      [ -d /repo/boards ] && cp -R /repo/boards zmk-config/
-      [ -d /repo/dts ] && cp -R /repo/dts zmk-config/
-      [ -d /repo/app ] && cp -R /repo/app zmk-config/
-      [ -f /repo/zephyr/module.yml ] && cp /repo/zephyr/module.yml zmk-config/zephyr/module.yml
-
-      mkdir zmk-config/boards/shields/charybdis/includes
-      cp /repo/config/includes/layers.h zmk-config/boards/shields/charybdis/includes/
-      cp /repo/config/charybdis_pointer.dtsi zmk-config/boards/shields/charybdis/
+      rm -rf keyboards
+      cp -R /repo/keyboards ./keyboards
 
       [ -d .west ] || west init -l config
-      [ \"$force_update\" != \"true\" -a -d zmk ] || west update 2>/dev/null || true
+      if [ \"$force_update\" = \"true\" ] || [ ! -d zmk ]; then
+        west update
+      fi
       west zephyr-export
 
       west build -s zmk/app -d \"$build_dir\" -b \"$board\" ${snippet:+-S \"$snippet\"} --pristine \
         -- \
         -DZMK_CONFIG=/workspace/config \
-        -DZMK_EXTRA_MODULES=/workspace/zmk-config \
+        -DZMK_EXTRA_MODULES=/workspace/keyboards \
+        -DDTS_EXTRA_CPPFLAGS='-I/workspace/config' \
         -DSHIELD=\"$shield\" \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
         $cmake_args
@@ -345,20 +285,21 @@ build_by_number() {
 build_by_criteria() {
   local shield="$1"
   local board="$2"
+  local first
 
-  find_by_criteria "$shield" "$board"
+  find_by_criteria "$shield" "$board" "$BUILD_COUNT" SHIELDS BOARDS MATCHES
 
   if ((${#MATCHES[@]} == 0)); then
-    echo "No matches for shield=\"$shield\" board=\"$board\""
+    echo "No build targets for shield=\"$shield\" board=\"$board\"." >&2
+    echo "Hint: run '$0 -l' to inspect available targets." >&2
     exit 1
   fi
 
   echo "Will build the following configurations:"
-  for i in "${MATCHES[@]}"; do
-    echo "  $((i + 1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
-  done
+  print_matches MATCHES SHIELDS BOARDS
   echo
 
+  FIRMWARE_COUNT="${#MATCHES[@]}"
   setup_progress
   for i in "${MATCHES[@]}"; do
     run_build "$i" "$UPDATE"
@@ -387,14 +328,18 @@ HELP=false
 while [[ $# -gt 0 ]]; do
   case "$1" in
   -n | --number)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
+    validate_number_arg "$2" "$1"
     NUMBER="$2"
     shift 2
     ;;
   -s | --shield)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     SHIELD="$2"
     shift 2
     ;;
   -b | --board)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     BOARD="$2"
     shift 2
     ;;
@@ -418,39 +363,62 @@ while [[ $# -gt 0 ]]; do
     UPDATE=true
     shift
     ;;
-  *) die "Unknown argument: $1" ;;
+  *) usage_error "Unknown argument: $1. Use -h for help." ;;
   esac
 done
 
 # ==========================
 # Main
 # ==========================
-print_header
-load_builds
 
 if $HELP; then
+  print_header
   print_help
   exit 0
 fi
 
+print_header
+
+if $CLEAN; then
+  clean_deps
+  if ! $ALL && [[ -z "$NUMBER" && -z "$SHIELD" && -z "$BOARD" ]]; then
+    exit 0
+  fi
+fi
+
 if $LIST; then
+  need yq
+  load_builds
   list_builds
   exit 0
 fi
 
-if $CLEAN; then
-  clean_deps
-fi
-
 if $ALL; then
+  need docker
+  need yq
+  load_builds
   build_all
   exit 0
 fi
 
+if [[ -n "$NUMBER" && (-n "$SHIELD" || -n "$BOARD") ]]; then
+  usage_error "Use either -n or (-s/-b), not both."
+fi
+
 if [[ -n "$NUMBER" ]]; then
+  validate_number_arg "$NUMBER" "--number"
+  need docker
+  need yq
+  load_builds
   build_by_number "$NUMBER"
 elif [[ -n "$SHIELD" || -n "$BOARD" ]]; then
+  need docker
+  need yq
+  load_builds
   build_by_criteria "$SHIELD" "$BOARD"
 else
+  need docker
+  need yq
+  load_builds
   build_by_select
 fi

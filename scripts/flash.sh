@@ -6,56 +6,27 @@ set -euo pipefail
 # ==========================
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE="$(realpath "$SCRIPT_DIR/..")"
+LIB_COMMON="$SCRIPT_DIR/lib/common.sh"
 
-MOUNT_NICE="/Volumes/NICENANO"
-MOUNT_XIAO="/Volumes/XIAO-SENSE"
-BOARD_NICE="nice_nano//zmk"
-BOARD_XIAO="xiao_ble//zmk"
+BOARD_MOUNT_MAP=(
+  "nice_nano//zmk|/Volumes/NICENANO"
+  "xiao_ble//zmk|/Volumes/XIAO-SENSE"
+)
 FIRMWARE_DIR="$WORKSPACE/firmware"
 BUILD_YAML="$WORKSPACE/build.yaml"
+BOOT_WAIT_SEC="${BOOT_WAIT_SEC:-120}"
 
-# ==========================
-# Helpers
-# ==========================
-die() {
-  echo "Error: $*" >&2
-  exit 1
-}
-
-need() {
-  command -v "$1" >/dev/null || die "Missing dependency: $1"
-}
-
-# ==========================
-# Dependencies check
-# ==========================
-need yq
+source "$LIB_COMMON"
 
 # ==========================
 # Load builds
 # ==========================
 load_builds() {
-  [[ -f "$BUILD_YAML" ]] || die "build.yaml not found"
-
-  BOARDS=()
-  SHIELDS=()
-  SNIPPETS=()
-  CMAKE_ARGS=()
-
-  while IFS= read -r line; do BOARDS+=("$line"); done \
-    < <(yq '.include[].board' "$BUILD_YAML")
-
-  while IFS= read -r line; do SHIELDS+=("$line"); done \
-    < <(yq '.include[].shield' "$BUILD_YAML")
-
-  while IFS= read -r line; do SNIPPETS+=("$line"); done \
-    < <(yq '.include[].snippet // ""' "$BUILD_YAML")
-
-  while IFS= read -r line; do CMAKE_ARGS+=("$line"); done \
-    < <(yq '.include[]."cmake-args" // ""' "$BUILD_YAML")
+  load_build_manifest "$BUILD_YAML" BOARDS SHIELDS
 
   FIRMWARE_COUNT="${#BOARDS[@]}"
   ((FIRMWARE_COUNT > 0)) || die "No builds found in build.yaml"
+  ((${#SHIELDS[@]} == FIRMWARE_COUNT)) || die "Malformed build.yaml: boards/shields count mismatch"
 }
 
 # ==========================
@@ -86,6 +57,12 @@ Without arguments:
 Examples:
     $0 -l                    # List
     $0 -n 1                  # Flash first
+    $0 -s "lapka_dongle" -b "xiao_ble//zmk"
+
+Exit codes:
+    0 success
+    1 runtime error
+    2 invalid arguments
 EOF
 }
 
@@ -100,49 +77,44 @@ list_builds() {
     status="❌ MISSING"
     [[ -f "$file" ]] && status="✅ READY"
     echo "$n. ${SHIELDS[$i]} (${BOARDS[$i]}) [$status]"
-    echo
   done
+  echo
 }
 
 interactive_select() {
   list_builds
-  while true; do
-    read -rp "Select firmware to flash (1-$FIRMWARE_COUNT) or q: " ans
-    [[ "$ans" == "q" ]] && exit 0
-    [[ "$ans" =~ ^[0-9]+$ ]] || continue
-    ((ans >= 1 && ans <= FIRMWARE_COUNT)) && {
-      SELECTED=$((ans - 1))
-      return
-    }
-  done
+  prompt_select_number "Select firmware to flash (1-$FIRMWARE_COUNT) or q: " "$FIRMWARE_COUNT" SELECTED
 }
 
-# ==========================
-# Build selection
-# ==========================
-find_by_criteria() {
-  local shield="$1"
-  local board="$2"
+resolve_mount_for_board() {
+  local board="$1"
+  local entry map_board map_mount
 
-  local shield_lc=$(printf '%s' "$shield" | tr 'A-Z' 'a-z')
-  local board_lc=$(printf '%s' "$board" | tr 'A-Z' 'a-z')
-
-  MATCHES=()
-  for ((i = 0; i < FIRMWARE_COUNT; i++)); do
-    s=$(printf '%s' "${SHIELDS[$i]}" | tr 'A-Z' 'a-z')
-    b=$(printf '%s' "${BOARDS[$i]}" | tr 'A-Z' 'a-z')
-
-    [[ -n "$shield_lc" && "$s" != *"$shield_lc"* ]] && continue
-    [[ -n "$board_lc" && "$b" != "$board_lc" ]] && continue
-
-    MATCHES+=("$i")
+  for entry in "${BOARD_MOUNT_MAP[@]}"; do
+    IFS='|' read -r map_board map_mount <<<"$entry"
+    if [[ "$map_board" == "$board" ]]; then
+      echo "$map_mount"
+      return 0
+    fi
   done
+
+  return 1
 }
 
-get_artifact_name() {
-  local shield="$1"
-  local board="$2"
-  echo "${shield// /+}-${board//\/\//_}"
+check_for_mismatched_bootloader() {
+  local expected_board="$1"
+  local expected_mount="$2"
+  local entry map_board map_mount
+
+  for entry in "${BOARD_MOUNT_MAP[@]}"; do
+    IFS='|' read -r map_board map_mount <<<"$entry"
+    [[ "$map_mount" == "$expected_mount" ]] && continue
+
+    if [[ -d "$map_mount" ]]; then
+      echo
+      die "Detected bootloader for '$map_board' at '$map_mount', but selected firmware is for '$expected_board'. Choose matching firmware/controller and retry."
+    fi
+  done
 }
 
 # ==========================
@@ -156,26 +128,32 @@ flash_one() {
   local artifact="$(get_artifact_name "$shield" "$board").uf2"
   local uf2="$FIRMWARE_DIR/$artifact"
 
+  [[ -d "$FIRMWARE_DIR" ]] || die "Firmware dir not found: $FIRMWARE_DIR"
   [[ -f "$uf2" ]] || die "Firmware not found: $uf2"
 
   echo "Flash firmware for '$board' '$shield'"
 
   local mount=""
-  case "$board" in
-  "$BOARD_NICE")
-    mount="$MOUNT_NICE"
-    ;;
-  "$BOARD_XIAO")
-    mount="$MOUNT_XIAO"
-    ;;
-  *)
-    die "Unknown board ${board}"
-    ;;
-  esac
+  mount="$(resolve_mount_for_board "$board")" || {
+    die "Unknown board '$board'. Add board/mount mapping in BOARD_MOUNT_MAP."
+  }
 
+  local waited=0
   printf "Waiting for %s bootloader to appear at %s..." "$board" "$mount"
+
+  if [[ ! -d "$mount" ]]; then
+    check_for_mismatched_bootloader "$board" "$mount"
+  fi
+
   while [ ! -d "$mount" ]; do
+    check_for_mismatched_bootloader "$board" "$mount"
+
     sleep 1
+    waited=$((waited + 1))
+    if ((waited >= BOOT_WAIT_SEC)); then
+      echo
+      die "Timed out waiting for bootloader at $mount. Replug device in bootloader mode and retry."
+    fi
     printf "."
   done
   printf "\n"
@@ -229,20 +207,23 @@ flash_by_number() {
 flash_by_criteria() {
   local shield="$1"
   local board="$2"
+  local first
 
-  find_by_criteria "$shield" "$board"
+  find_by_criteria "$shield" "$board" "$FIRMWARE_COUNT" SHIELDS BOARDS MATCHES
 
   if ((${#MATCHES[@]} == 0)); then
-    echo "No matches for shield=\"$shield\" board=\"$board\""
+    echo "No matches for shield=\"$shield\" board=\"$board\"." >&2
+    echo "Hint: run '$0 -l' to inspect targets." >&2
     list_builds
     exit 1
   fi
 
   if ((${#MATCHES[@]} > 1)); then
-    echo "Multiple matches (${#MATCHES[@]}), please narrow search or use -n:"
-    for i in "${MATCHES[@]}"; do
-      echo "  $((i + 1)). ${SHIELDS[$i]} (${BOARDS[$i]})"
-    done
+    echo "Multiple matches (${#MATCHES[@]}), narrow filters or use -n:" >&2
+    print_matches MATCHES SHIELDS BOARDS
+    first="${MATCHES[0]}"
+    echo "Hint: use '$0 -n $((first + 1))' for exact target." >&2
+    echo "Hint: or narrow filters, e.g. '$0 -s \"${SHIELDS[$first]}\" -b \"${BOARDS[$first]}\"'." >&2
     exit 1
   fi
 
@@ -269,14 +250,18 @@ HELP=false
 while [[ $# -gt 0 ]]; do
   case "$1" in
   -n | --number)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
+    validate_number_arg "$2" "$1"
     NUMBER="$2"
     shift 2
     ;;
   -s | --shield)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     SHIELD="$2"
     shift 2
     ;;
   -b | --board)
+    [[ $# -ge 2 ]] || usage_error "Option '$1' requires a value."
     BOARD="$2"
     shift 2
     ;;
@@ -288,24 +273,32 @@ while [[ $# -gt 0 ]]; do
     HELP=true
     shift
     ;;
-  *) die "Unknown argument: $1. Use -h for help." ;;
+  *) usage_error "Unknown argument: $1. Use -h for help." ;;
   esac
 done
 
 # ==========================
 # Main
 # ==========================
-print_header
-load_builds
 
 if $HELP; then
+  print_header
   print_help
   exit 0
 fi
 
+need yq
+
+print_header
+load_builds
+
 if $LIST; then
   list_builds
   exit 0
+fi
+
+if [[ -n "$NUMBER" && (-n "$SHIELD" || -n "$BOARD") ]]; then
+  usage_error "Use either -n or (-s/-b), not both."
 fi
 
 if [[ -n "$NUMBER" ]]; then
