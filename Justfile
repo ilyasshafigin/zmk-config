@@ -1,9 +1,7 @@
 default:
     @just --list --unsorted
 
-dir_config := `pwd` / "config"
 dir_firmware := `pwd` / "firmware"
-dir_keymap_drawer := `pwd` / "draw"
 
 # List build targets
 list:
