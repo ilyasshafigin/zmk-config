@@ -31,8 +31,8 @@ layers:
   - '&'
   - '['
   - ']'
-  - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-space$$
   - nav
   - symbol
   - {t: '$$mdi:backspace$$', h: cmd}
@@ -68,8 +68,8 @@ layers:
   - ;
   - '-'
   - _
-  - $$mdi:apple-keyboard-command$$
-  - {t: 'Alt+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - Alt+$$mdi:keyboard-space$$
   - num
   - {type: held}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -179,8 +179,8 @@ layers:
   - page down
   - KC_QUOT
   - $$mdi:apple-keyboard-caps$$
-  - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-space$$
   - {type: held}
   - num
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -216,8 +216,8 @@ layers:
   - F2
   - F1
   - F15
-  - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-space$$
   - {type: held}
   - {type: held}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -253,8 +253,8 @@ layers:
   - {t: '&', s: …}
   - '['
   - ']'
-  - $$mdi:apple-keyboard-command$$
-  - {t: 'Alt+$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:apple-keyboard-shift$$
+  - Alt+$$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
