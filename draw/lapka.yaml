@@ -66,7 +66,7 @@ layers:
   - '}'
   - {t: ., s: ':'}
   - {t: ',', s: ;}
-  - +
+  - {t: '-', s: _}
   - {t: '=', s: +}
   - $$mdi:apple-keyboard-shift$$
   - Alt+$$mdi:keyboard-space$$
@@ -112,31 +112,31 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-option$$
   gamefn:
-  - M
-  - '7'
-  - '8'
-  - '9'
-  - T
+  - '5'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
   - Y
   - U
   - I
   - O
   - P
-  - I
-  - '4'
-  - '5'
+  - '0'
   - '6'
-  - G
+  - '7'
+  - '8'
+  - '9'
   - H
   - J
   - K
   - L
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '0'
-  - '1'
-  - '2'
-  - '3'
+  - G
   - B
+  - I
+  - M
+  - T
   - N
   - M
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -149,20 +149,20 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   nav:
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - window next
   - tab next
+  - space prev
+  - space next
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - home
   - end
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: game, h: '$$mdi:toggle-switch$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - space prev
-  - space next
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-tab$$
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:arrow-left-bold$$
