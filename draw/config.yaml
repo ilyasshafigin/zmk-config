@@ -72,6 +72,12 @@ parse_config:
     "&studio_unlock": studio unlock
     "&td_slow_scrl": def slow scroll
     "&td_mse": def mse
+    "&cm_shft": $$mdi:apple-keyboard-shift$$
+    "&cm_ctrl": $$mdi:apple-keyboard-control$$
+    "&cm_alt": $$mdi:apple-keyboard-option$$
+    "&cm_gui": $$mdi:apple-keyboard-command$$
+    "&la NAV": nav
+    "&la SYM": symbol
 
     # Others
     "&mmv MOVE_UP": mouse ↑
@@ -116,10 +122,14 @@ parse_config:
     LPAR: "9"
     RIGHT_PARENTHESIS: "0"
     RPAR: "0"
-    EQUAL: "="
+    EQUAL:
+      tap: "="
+      shifted: "+"
     LS(EQUAL): "+"
     PLUS: "+"
-    MINUS: "-"
+    MINUS:
+      tap: "-"
+      shifted: "_"
     LS(MINUS): "_"
     UNDERSCORE: "_"
     UNDER: "_"
@@ -151,9 +161,13 @@ parse_config:
     #NON_US_BACKSLASH: "\\"
     #PIPE2: "|"
     #NON_US_BSLH: "|"
-    SEMICOLON: "~"
+    SEMICOLON:
+      tap: "~"
+      shifted: "≈"
     LS(SEMICOLON): "≈"
-    SEMI: "~"
+    SEMI:
+      tap: "~"
+      shifted: "≈"
     LS(SEMI): "≈"
     COLON: "≈"
     SINGLE_QUOTE: "KC_QUOT"
@@ -175,17 +189,23 @@ parse_config:
     GT: "{"
     LEFT_BRACKET: ","
     LS(LEFT_BRACKET): ";"
-    LBKT: ","
+    LBKT:
+      tap: ","
+      shifted: ";"
     LS(LBKT): ";"
     LEFT_BRACE: ";"
     LBRC: ";"
     RIGHT_BRACKET: "."
     LS(RIGHT_BRACKET): ":"
-    RBKT: "."
+    RBKT:
+      tap: "."
+      shifted: ":"
     LS(RBKT): ":"
     RIGHT_BRACE: ":"
     RBRC: ":"
-    GRAVE: "'"
+    GRAVE:
+      tap: "'"
+      shifted: "\""
     LA(GRAVE): "`"
     LS(GRAVE): "\""
     TILDE: "\""

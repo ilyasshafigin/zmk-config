@@ -85,7 +85,7 @@ WELLUM_MODMORPH(
 )
 
 WELLUM_MODMORPH(
-    cm_sft,
+    cm_shft,
     &sticky_forever LSHIFT,
     &m_release_key_twice LSHIFT,
     MOD_LSFT,
