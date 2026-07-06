@@ -52,22 +52,22 @@ layers:
   - '`'
   - {t: '''', s: '"'}
   - '"'
-  - '['
-  - ']'
+  - {t: '-', s: _}
+  - +
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
   - ->
   - '|'
+  - ;
+  - {t: ',', s: ;}
+  - _
+  - {t: '=', s: +}
+  - {t: ., s: ':'}
+  - ':'
   - \
   - /
-  - '{'
-  - '}'
-  - {t: ., s: ':'}
-  - {t: ',', s: ;}
-  - {t: '-', s: _}
-  - {t: '=', s: +}
   - $$mdi:apple-keyboard-shift$$
   - Alt+$$mdi:keyboard-space$$
   - num

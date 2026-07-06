@@ -54,20 +54,20 @@ ZMK_TAP_DANCE(td_mse,
 // Combos
 //=========================================================
 
-ZMK_COMBO(para_left,      &kp U_LPAR,    LT1 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(para_right,     &kp U_RPAR,    RT0 RT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(brak_left,      &kp U_LBKT,    LM1 LM0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(brak_right,     &kp U_RBKT,    RM0 RM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(brace_left,     &kp U_LBRC,    LB1 LB0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(brace_right,    &kp U_RBRC,    RB0 RB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(single_quote,   &kp U_SQT,     LB2 LB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(double_quote,   &kp U_DQT,     RB1 RB2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(grave,          &kp U_GRAVE,   LT2 LT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(tilde,          &kp U_TILDE,   RT1 RT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(backslash,      &kp U_BSLH,    LM3 LM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-//ZMK_COMBO(slash,          &kp U_FSLH,    RM2 RM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(arrow,          &kp U_ARROW,   LT3 LT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
-ZMK_COMBO(double_arrow,   &kp U_DARROW,  RT2 RT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(para_left,      &kp U_LPAR,     LT1 LT0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(para_right,     &kp U_RPAR,     RT0 RT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brak_left,      &kp LA(U_LBKT), LM1 LM0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brak_right,     &kp LA(U_RBKT), RM0 RM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brace_left,     &kp LA(U_LBRC), LB1 LB0,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(brace_right,    &kp LA(U_RBRC), RB0 RB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(single_quote,   &kp U_SQT,      LB2 LB1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(double_quote,   &kp U_DQT,      RB1 RB2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(grave,          &kp U_GRAVE,    LT2 LT1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(tilde,          &kp U_TILDE,    RT1 RT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(backslash,      &kp U_BSLH,     LM3 LM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+//ZMK_COMBO(slash,          &kp U_FSLH,     RM2 RM3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(arrow,          &kp U_ARROW,    LT3 LT2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
+ZMK_COMBO(double_arrow,   &kp U_DARROW,   RT2 RT3,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_ru,        &kp LANG_RU,    LM2 LM1,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 ZMK_COMBO(lang_en,        &kp LANG_EN,    RM1 RM2,    DEF SYM,  COMBO_TERM, COMBO_IDLE)
 //ZMK_COMBO(layer_game,     &tog GAM,       RT3 RT4,    DEF,      COMBO_TERM, COMBO_IDLE)
@@ -132,7 +132,7 @@ ZMK_LAYER(base, K_MAPPING(
     _ Z,               K_PLT(CARE, X),    K_PLT(SCRL, C),    K_PLT(SLOW, V),    _ B,                _ N,            K_PLT(SLOW, M),    K_PLT(SCRL, U_AMPS),K_PLT(CARE, U_LBKT),_ U_RBKT,
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │                  │
-                                      K_P(&td_mse, _ LSHFT), _ SPACE,           &la NAV,            &la SYM,        &lt CMD BSPC,      K_RH2(&mo ALT, XXX)
+                                          _ LSHFT,       K_P(&td_mse, _ SPACE), &la NAV,            &la SYM,        &lt CMD BSPC,      K_RH2(&mo ALT, XXX)
 //                                       ╰──────────────────┴──────────────────┴───────────────╯   ╰───────────────┴──────────────────┴──────────────────╯
 ))
 
@@ -144,14 +144,14 @@ ZMK_LAYER(symbol, K_MAPPING(
 // │                ^ │                @ │                # │                $ │             ( │   │             ) │                ? │                ! │                * │                % │
     _ U_CARET,         _ U_AT,            _ U_HASH,          _ U_DLLR,          _ U_LPAR,           _ U_RPAR,       _ U_QSTM,          _ U_EXCL,          _ U_ASTRK,         _ U_PRCNT,
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
-// │              ~ Ж │                ` │                ' │                " │             [ │   │             ] │ SHIFT            │ CTRL             │ ALT              │ GUI              │
-    _ U_TILDE,         _ U_GRAVE,         _ U_SQT,           _ U_DQT,           _ LA(U_LBKT),       _ LA(U_RBKT),   &cm_shft,          &cm_ctrl,          &cm_alt,           &cm_gui,
+// │                ~ │                ` │                ' │                " │             - │   │             + │ SHIFT            │ CTRL             │ ALT              │ GUI              │
+    _ U_TILDE,         _ U_GRAVE,         _ U_SQT,           _ U_DQT,           _ U_MINUS,          _ U_PLUS,       &cm_shft,          &cm_ctrl,          &cm_alt,           &cm_gui,
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┼──────────────────┤
-// │               -> │                | │                \ │                / │             { │   │             } │                . │                , │                - │                = │
-    _ U_ARROW,         _ U_PIPE,          _ U_BSLH,          _ U_FSLH,          _ LA(U_LBRC),      _ LA(U_RBRC),    _ U_DOT,         _ U_COMMA,           _ U_MINUS,          _ U_EQUAL,
+// │               -> │                | │                ; │                , │             _ │   │             = │                . │                : │                \ │                / │
+    _ U_ARROW,         _ U_PIPE,          _ U_SEMI,          _ U_COMMA,         _ U_UNDER,          _ U_EQUAL,      _ U_DOT,           _ U_COLON,         _ U_BSLH,          _ U_FSLH,
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │                  │
-                                          K_P(XXX, _ LSHFT), _ U_NBSP,          &mo NUM,            ___,            K_RH2(_ BSPC, &mo ALT), XXX
+                                          _ LSHFT,           _ U_NBSP,          &mo NUM,            ___,            K_RH2(_ BSPC, &mo ALT), XXX
 //                                       ╰──────────────────┴──────────────────┴───────────────╯   ╰───────────────┴──────────────────┴──────────────────╯
 ))
 
@@ -197,7 +197,7 @@ ZMK_LAYER(nav, K_MAPPING(
     XXX,               XXX,               _ SPACE_D,         _ SPACE_U,         _ ENTER,            _ ENTER,        _ PG_UP,           _ PG_DN,           _ APOS,            &caps_word,
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │                  │
-                                          K_P(XXX, _ LSHFT), _ SPACE,           ___,                &mo NUM,        _ BSPC,            XXX
+                                          _ LSHFT,           _ SPACE,           ___,                &mo NUM,        _ BSPC,            XXX
 //                                       ╰──────────────────┴──────────────────┴───────────────╯   ╰───────────────┴──────────────────┴──────────────────╯
 ))
 
@@ -213,7 +213,7 @@ ZMK_LAYER(num, K_MAPPING(
     _ KP_N6,           _ KP_N7,           _ KP_N8,           _ KP_N9,           _ KP_N0,            _ F10,          _ F9,              _ F8,              _ F7,              _ F6,
 // ╰──────────────────┴──────────────────┼──────────────────┼──────────────────┼───────────────┤   ├───────────────┼──────────────────┼──────────────────┼──────────────────┴──────────────────╯
 //                                       │                  │                  │               │   │               │                  │                  │
-                                          K_P(XXX, _ LSHFT), _ SPACE,           ___,                ___,            _ BSPC,            XXX
+                                          _ LSHFT,           _ SPACE,           ___,                ___,            _ BSPC,            XXX
 //                                       ╰──────────────────┴──────────────────┴───────────────╯   ╰───────────────┴──────────────────┴──────────────────╯
 ))
 
@@ -228,7 +228,7 @@ ZMK_LAYER(alt, K_MAPPING(
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     _ RA(Z),        _ RA(X),        _ RA(C),        _ RA(V),        _ RA(B),            _ RA(N),        _ RA(M),        _ RA(U_AMPS),   _ RA(U_LBKT),   _ RA(U_RBKT),
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                  K_P(XXX, _ LSHFT),_ U_NBSP,       XXX,                K_RH2(XXX, ___), K_RH2(_ BSPC, ___), K_RH2(___, XXX)
+                                    _ LSHFT,        _ U_NBSP,       XXX,                K_RH2(XXX, ___),K_RH2(_ BSPC, ___),K_RH2(___, XXX)
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 ))
 
@@ -259,7 +259,7 @@ ZMK_LAYER(mouse, K_MAPPING(
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX,            &mo CARE,       &mo SCRL,       &mo SLOW,       &mkp MB4,           XXX,            &tog SLOW,      &tog SCRL,      &tog CARE,      XXX,
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___,            _ SPACE,        XXX,                XXX,            _ BSPC,         XXX
+                                    _ LSHFT,        _ SPACE,        XXX,                XXX,            _ BSPC,         XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 ))
 
@@ -274,7 +274,7 @@ ZMK_LAYER(slow, K_MAPPING(
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX,            XXX,            XXX,            &tog SLOW,      &mkp MB4,           XXX,            &tog SLOW,      XXX,            XXX,            XXX,
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___,            _ SPACE,        XXX,                XXX,            _ BSPC,         XXX
+                                    _ LSHFT,        ___,            XXX,                XXX,            _ BSPC,         XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 ))
 
@@ -289,7 +289,7 @@ ZMK_LAYER(scroll, K_MAPPING(
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX,            XXX,            &tog SCRL,      XXX,            &mkp MB4,           XXX,            XXX,            &tog SCRL,      XXX,            XXX,
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___,            _ SPACE,        XXX,                XXX,            _ BSPC,         XXX
+                                    _ LSHFT,        ___,            XXX,                XXX,            _ BSPC,         XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 ))
 
@@ -304,7 +304,7 @@ ZMK_LAYER(caret, K_MAPPING(
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     XXX,            &tog CARE,      XXX,            XXX,            &mkp MB4,           XXX,            XXX,            XXX,            &tog CARE,      XXX,
 // ╰───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┴───────────────╯
-                                    ___,            _ SPACE,        XXX,                XXX,            _ BSPC,         XXX
+                                    _ LSHFT,        ___,            XXX,                XXX,            _ BSPC,         XXX
 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
 ))
 #endif

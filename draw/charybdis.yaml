@@ -31,8 +31,8 @@ layers:
   - {t: '&', h: scroll}
   - {t: '[', h: caret}
   - ']'
+  - $$mdi:apple-keyboard-shift$$
   - def mse
-  - $$mdi:keyboard-space$$
   - nav
   - symbol
   - {t: '$$mdi:backspace$$', h: cmd}
@@ -51,23 +51,23 @@ layers:
   - '`'
   - {t: '''', s: '"'}
   - '"'
-  - '['
-  - ']'
+  - {t: '-', s: _}
+  - +
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
   - ->
   - '|'
+  - ;
+  - {t: ',', s: ;}
+  - _
+  - {t: '=', s: +}
+  - {t: ., s: ':'}
+  - ':'
   - \
   - /
-  - '{'
-  - '}'
-  - {t: ., s: ':'}
-  - {t: ',', s: ;}
-  - {t: '-', s: _}
-  - {t: '=', s: +}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - Alt+$$mdi:keyboard-space$$
   - num
   - {t: '$$mdi:transfer$$', type: trans}
@@ -175,7 +175,7 @@ layers:
   - page down
   - KC_QUOT
   - $$mdi:apple-keyboard-caps$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
   - num
@@ -211,7 +211,7 @@ layers:
   - F8
   - F7
   - F6
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - {type: held}
   - {type: held alternate}
@@ -247,7 +247,7 @@ layers:
   - {t: '&', s: …}
   - '['
   - ']'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - Alt+$$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -319,7 +319,7 @@ layers:
   - {t: scroll, h: '$$mdi:toggle-switch$$'}
   - {t: caret, h: '$$mdi:toggle-switch$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -355,8 +355,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -391,8 +391,8 @@ layers:
   - {t: scroll, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -427,8 +427,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: caret, h: '$$mdi:toggle-switch$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
