@@ -100,13 +100,13 @@ WELLUM_MACRO_TWO_PARAM(
         &macro_param_2to1 &kp PARAM_2
 )
 
-// WELLUM_MODMORPH(
-//     tabber,
-//     &m_hold_mod_press_key LCTRL TAB,
-//     &kp TAB,
-//     MOD_LCTL,
-//     MOD_LCTL
-// )
+WELLUM_MODMORPH(
+    tabber,
+    &m_hold_mod_press_key LCTRL TAB,
+    &kp TAB,
+    MOD_LCTL,
+    MOD_LCTL
+)
 
 // WELLUM_MODMORPH(
 //     swapper_win,
@@ -116,13 +116,13 @@ WELLUM_MACRO_TWO_PARAM(
 //     MOD_LALT
 // )
 
-// WELLUM_MODMORPH(
-//     swapper_mac,
-//     &m_hold_mod_press_key LGUI TAB,
-//     &kp TAB,
-//     MOD_LGUI,
-//     MOD_LGUI
-// )
+WELLUM_MODMORPH(
+    swapper,
+    &m_hold_mod_press_key LGUI TAB,
+    &kp TAB,
+    MOD_LGUI,
+    MOD_LGUI
+)
 
 WELLUM_MACRO_ONE_PARAM(
     la,
