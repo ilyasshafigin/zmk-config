@@ -1,108 +1,116 @@
-# Локальная сборка
+# Local builds
 
-## Что нужно
+## Requirements
 
-Установить и включить Docker Desktop. Для macOs:
+Install and start Docker Desktop. On macOS:
 
 ```shell
 brew install --cask docker
 ```
 
-Установить зависимости yq и just:
+Install `yq` and `just`:
 
 ```shell
 brew install just yq
 ```
 
-## Как пользоваться
+## Usage
 
-Все команды нужно вызывать из корневой папки проекта.
+Run all commands from the project root.
 
-### Интерактивный режим
+### Interactive mode
 
 ```shell
 just build
 ```
 
-Сценарий скрипта:
+The script:
 
-- читает конфигурацию из build.yaml
-- показывает доступные варианты сборки
-- просит выбрать конфигурацию для сборки
-- запускает docker для сборки прошивки
-- выводит путь к итоговому файлу в `firmware/` (например, `lapka_dongle-xiao_ble_zmk.uf2`)
+- reads configuration from `build.yaml`
+- displays available build targets
+- prompts you to select a build target
+- starts Docker to build the firmware
+- prints the path to the resulting file in `firmware/`, for example `lapka_dongle-xiao_ble_zmk.uf2`
 
-### Режим командной строки
+### Command-line mode
 
 ```shell
-# Сборка по номеру их списка конфигураций
+# Build by target number from the configuration list
 just build -n 1
 
-# Сборка по названию shield (можно по частичному совпадению)
+# Build by shield name (partial matches are supported)
 just build -s "lapka_dongle"
 
-# Сборка по board и shield (точное совпадение)
+# Build by exact board and shield
 just build -b "nice_nano//zmk" -s "charybdis_peripheral_left"
 
-# Отобрахить список всех конфигураций
+# Display all build targets
 just build -l
 just list
 
-# Отобразить справку
+# Display help
 just build -h
 
-# Очистить зависимости
+# Remove cached dependencies
 just build --clean
 just clean
 ```
 
-### Кэширование зависимостей
+### Dependency caching
 
-Скрипт сохраняет постоянное рабочее пространство west:
-
-- `local-build/workspace/`
-
-Этот каталог игнорируется git и содержит зависимости west (`zephyr/`, `zmk/`, `modules/` и т. д.), поэтому последующие сборки не загружают их повторно.
-
-Полезные флаги:
-
-- `--clean` (псевдоним: `--clean-deps`): удаляет оба:
-  - `local-build/workspace/` (зависимости; при следующей сборке будет выполнен свежий `west update`)
-  - `local-build/artifact/` (временные артефакты сборки)
-- `--update`: принудительно выполняет `west update` перед сборкой
-
-### Как это работает
-
-Этот скрипт сохраняет git-репозиторий чистым, используя отдельное рабочее пространство west:
+The script keeps a persistent west workspace at:
 
 - `local-build/workspace/`
 
-Итоговые прошивки сохраняются в `firmware/` и доступны как `*.uf2` файлы.
+This directory is ignored by Git and contains west dependencies (`zephyr/`, `zmk/`, `modules/`, and others), so later
+builds do not download them again.
 
-Внутри контейнера Docker скрипт монтирует:
+Useful flags:
 
-- `/repo`: репозиторий (источники только для чтения)
-- `/workspace`: рабочее пространство west
-- `/out`: временные build outputs (на хосте это `local-build/artifact/`)
+- `--clean` (alias: `--clean-deps`): removes both:
+  - `local-build/workspace/` (dependencies; the next build runs a fresh `west update`)
+  - `local-build/artifact/` (temporary build artifacts)
+- `--update`: forces `west update` before building
 
-Каждая сборка копирует в `/workspace` только нужные исходники из репозитория:
+### How it works
+
+The script keeps the Git repository clean by using a separate west workspace:
+
+- `local-build/workspace/`
+
+Resulting firmware is saved in `firmware/` as `*.uf2` files.
+
+Inside the Docker container, the script mounts:
+
+- `/repo`: repository sources, read-only
+- `/workspace`: west workspace
+- `/out`: temporary build output (`local-build/artifact/` on the host)
+
+Each build copies only the required source directories from the repository into `/workspace`:
 
 - `/repo/config` → `/workspace/config`
 - `/repo/keyboards` → `/workspace/keyboards`
 
-Важно: корень репозитория не является обычным Zephyr/ZMK module. `config/` используется как ZMK user config, а
-`keyboards/` — как отдельный локальный module с shield-файлами.
+Important: the repository root is not a conventional Zephyr/ZMK module. `config/` serves as the ZMK user config, while
+`keyboards/` is a separate local module containing shield files.
 
-Затем он выполняет:
+The script then runs:
 
-- `west init -l config` (только при необходимости)
-- `west update` (только если `zmk/` ещё нет или был указан `--update`)
-- `west build ... -DZMK_CONFIG=/workspace/config -DZMK_EXTRA_MODULES=/workspace/keyboards -DDTS_EXTRA_CPPFLAGS=-I/workspace/config`
+- `west init -l config` (only when required)
+- `west update` (only when `zmk/` is missing or `--update` was specified)
+- `west build`:
 
-Флаги `west build`:
+  ```shell
+  west build ... \
+    -DZMK_CONFIG=/workspace/config \
+    -DZMK_EXTRA_MODULES=/workspace/keyboards \
+    -DDTS_EXTRA_CPPFLAGS=-I/workspace/config
+  ```
 
-- `-DZMK_CONFIG=/workspace/config` — указывает ZMK user config.
-- `-DZMK_EXTRA_MODULES=/workspace/keyboards` — подключает локальный module с keyboard/shield definition files.
-- `-DDTS_EXTRA_CPPFLAGS=-I/workspace/config` — добавляет `config/` в include path devicetree-препроцессора. Это позволяет
-  shield-файлам из `keyboards/` подключать пользовательские devicetree-файлы из `config/`, например
-  `config/charybdis_pointer.dtsi`, без копирования этих файлов внутрь shield-папки.
+`west build` flags:
+
+- `-DZMK_CONFIG=/workspace/config` - points to the ZMK user config.
+- `-DZMK_EXTRA_MODULES=/workspace/keyboards` - adds the local module containing keyboard and shield definitions.
+- `-DDTS_EXTRA_CPPFLAGS=-I/workspace/config` - adds `config/` to the devicetree preprocessor include path. This lets
+  shield files from `keyboards/` include custom devicetree files from `config/`, such as
+  `config/charybdis_pointer.dtsi`, without copying them into the shield directory.

@@ -1,260 +1,283 @@
 # ZMK Config
 
-Конфигурация и прошивка для моих клавиатур:
+English | [Русский](README.ru.md)
 
-1. **[Lapka](#lapka)** - основная
+Configuration and firmware for my keyboards:
+
+1. **[Lapka](#lapka)** - primary
 2. [Charybdis Nano](#charybdis-nano)
 
-## Оглавление
+## Table of contents
 
-- [Основные возможности](#основные-возможности)
-- [Структура проекта](#структура-проекта)
-- [Режимы работы](#режимы-работы)
-- [Модули](#модули)
-- [Прошивка](#прошивка)
+- [Key features](#key-features)
+- [Project structure](#project-structure)
+- [Operating modes](#operating-modes)
+- [Modules](#modules)
+- [Firmware](#firmware)
 - [FAQ](#faq)
-- [Клавиатуры](#клавиатуры)
+- [Keyboards](#keyboards)
 - [Tester Pro Micro](#tester-pro-micro)
-- [Скрипты](#скрипты)
-- [Раскладка](#раскладка)
-- [Дополнительные настройки ОС](#дополнительные-настройки-ос)
-- [Ссылки](#ссылки)
+- [Scripts](#scripts)
+- [Layout](#layout)
+- [Additional OS configuration](#additional-os-configuration)
+- [References](#references)
 
-## Основные возможности
+## Key features
 
 - **Home-Row Mods**
-- **Локальная сборка** через Docker, актуальные прошивки в папке `firmware/`
-- **Универсальная раскладка** [universal-layout](https://github.com/braindefender/universal-layout) и [wellum](https://github.com/braindefender/wellum) (без OSSM)
-- **Гибкая схема работы**: с донглом или без (одна половинка — главная)
-- **Общий keymap** вынесен в отдельный файл, взял идею [miryoku](https://github.com/manna-harbour/miryoku_zmk)
-- **Адаптирована для macOS**
-- **Скрипты** для сборки, прошивки, отрисовки keymap
+- **Local builds** via Docker, with current firmware files in `firmware/`
+- **Universal layout** based on [universal-layout](https://github.com/braindefender/universal-layout) and
+  [wellum](https://github.com/braindefender/wellum)
+- **Flexible setup**: with or without a dongle (one half acts as central)
+- **Shared keymap** extracted into a separate file, inspired by [miryoku](https://github.com/manna-harbour/miryoku_zmk)
+- **Adapted for macOS**
+- **Scripts** for building, flashing, and rendering keymaps
 
-## Структура проекта
+## Project structure
 
-Этот репозиторий устроен не как один обычный ZMK/Zephyr module в корне. Корень проекта — это кастомная обвязка, а реальные
-ZMK-сущности разделены по ролям:
+This repository is not structured as a single conventional ZMK/Zephyr module at its root. The project root contains
+custom tooling, while actual ZMK components are separated by role:
 
-- `config/` — ZMK user config: `west.yml`, keymap/conf-файлы и общие include-файлы (`shared/`). В `config/west.yml`
-  намеренно используется `self.path: config`.
-- `keyboards/` — локальный Zephyr/ZMK module с shield-файлами (`keyboards/boards/shields/...`) и собственным
+- `config/` - ZMK user config: `west.yml`, keymap/conf files, and shared include files (`shared/`). `config/west.yml`
+  intentionally uses `self.path: config`.
+- `keyboards/` - local Zephyr/ZMK module containing shield files (`keyboards/boards/shields/...`) and its own
   `keyboards/zephyr/module.yml`.
-- `scripts/` и `Justfile` — кастомная локальная сборка/прошивка/отрисовка.
-- `local-build` — [локальная сборка](local-build/README.md).
-- `firmware/` — генерируемые прошивки.
+- `scripts/` and `Justfile` - custom local build, flashing, and rendering tools.
+- `local-build` - [local build documentation](local-build/README.md).
+- `firmware/` - generated firmware files.
 
-## Режимы работы
+## Operating modes
 
-**Без донгла (standalone):**
+**Without a dongle (standalone):**
 
-Одна половинка — главная (по Bluetooth к ПК). Вторая подключается по Bluetooth к ней.
-Для Charybdis главная — правая половина (там трекбол).
+One half acts as central and connects to the computer over Bluetooth. The other half connects to it over Bluetooth.
+For Charybdis, the right half is central because it contains the trackball.
 
-**С донглом (dongle mode):**
+**With a dongle (dongle mode):**
 
-Донгл — главный (USB/Bluetooth к ПК). Обе половинки — периферия (Bluetooth к донглу).
+The dongle acts as central and connects to the computer over USB or Bluetooth. Both halves act as peripherals and
+connect to the dongle over Bluetooth.
 
-**Варианты донглов:**
+**Dongle options:**
 
-- nice!nano v2 / Seeeduino XIAO BLE — просто плата с USB
-- Prospector Dongle — экран: слой, батарея, статус, модификаторы; на базе XIAO BLE
-- Dongle Display — мини-OLED (128x32 / 128x64); на базе nice!nano
+- nice!nano v2 / Seeeduino XIAO BLE - bare USB board
+- Prospector Dongle - screen showing layer, battery, status, and modifiers; based on XIAO BLE
+- Dongle Display - mini OLED (128x32 / 128x64); based on nice!nano
 
-## Модули
+## Modules
 
 ### Helpers
 
-- [zmk-helpers](https://github.com/urob/zmk-helpers) - полезные макросы.
+- [zmk-helpers](https://github.com/urob/zmk-helpers) - useful macros.
 
 ### Drivers
 
-- [zmk-pmw3610-driver](https://github.com/badjeff/zmk-pmw3610-driver) - модуль драйвера для сенсора PMW3610. Нужен для трекбола в клавиатуре Charybdis.
+- [zmk-pmw3610-driver](https://github.com/badjeff/zmk-pmw3610-driver) - driver module for the PMW3610 sensor.
+  Required for the Charybdis trackball.
 
 ### Behaviors & Input processors
 
-- [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle) - модуль для "smart toggle". В проекте используется для `swapper` и `tabber`.
-- [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind) - модуль, который преобразует движения трекбола в нажатия стрелок. Полезно так двигать каретку в полях ввода. Нужен для трекбола в клавиатуре Charybdis.
-- [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) - добавляет привязку прокрутки трекбола к осям X или Y.
-- ~~[zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) - добавляет ускорение трекбола.~~
-- ~~[zmk-behavior-battery-percentage-printer](https://github.com/ilyasshafigin/zmk-behavior-battery-percentage-printer) - форк [badjeff/zmk-behavior-battery-percentage-printer](https://github.com/badjeff/zmk-behavior-battery-percentage-printer). Печатает процент заряда батареи (`&bapp`) и поддерживает настройку keycode для цифр/точки/пробела/знака процента под кастомные раскладки (например Universal Layout).~~
+- [zmk-smart-toggle](https://github.com/caksoylar/zmk-smart-toggle) - module providing smart-toggle behavior.
+  Used for `swapper` and `tabber`.
+- [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind) - module that converts
+  trackball movement into arrow-key presses. Useful for moving the caret in input fields. Required for the Charybdis
+  trackball.
+- [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) - constrains trackball scrolling to the X or Y axis.
+- ~~[zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration)~~
+  ~~- adds trackball acceleration.~~
+- ~~[zmk-behavior-battery-percentage-printer][bapp]~~
+  ~~- fork of~~
+  ~~[badjeff/zmk-behavior-battery-percentage-printer][bapp-upstream].~~
+  ~~Types the battery percentage (`&bapp`) and supports configurable keycodes for digits, decimal point, space, and~~
+  ~~percent sign when using custom layouts such as Universal Layout.~~
 
 ### Dongle
 
-- [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module) - модуль для донгла Prospector.
-- ~~[zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - модуль для донгла с OLED-экраном.~~
+- [prospector-zmk-module](https://github.com/carrefinho/prospector-zmk-module) - module for the Prospector dongle.
+- ~~[zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display) - module for a dongle with an OLED display.~~
 
-## Прошивка
+## Firmware
 
-### Сборка
+### Building
 
-Подробнее о локальной сборке в [local-build](local-build/README.md).
+See [local-build](local-build/README.md) for details about local builds.
 
-### Загрузка прошивки
+### Flashing
 
-Чтобы перевести половинку или донгл в режим прошивки, нужно нажать кнопку Reset дважды или, если ее нет, замкнуть пины RST и GND дважды.
+To put a keyboard half or dongle into bootloader mode, press Reset twice. If there is no Reset button, short the RST and
+GND pins twice.
 
-Стабильная процедура первичной привязки половинок к донглу. Используйте ее, когда половинки еще не привязаны или есть проблемы с подключением:
+Reliable procedure for initially pairing keyboard halves with a dongle. Use it when the halves have not been paired yet
+or when connection problems occur:
 
-1. Подключить донгл и прошить в него файл `settings_reset.uf2`
-2. Отключить донгл от провода и отложить в сторону
-3. Подключить левую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_left.uf2`
-4. Подключить правую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_right.uf2`
-5. Подключить донгл и прошить в него `dongle.uf2`
-6. Включить донгл, затем левую половину, затем правую половину (именно в таком порядке)
+1. Connect the dongle and flash `settings_reset.uf2`
+2. Disconnect the dongle from the cable and set it aside
+3. Connect the left half and flash `settings_reset.uf2`, then `peripheral_left.uf2`
+4. Connect the right half and flash `settings_reset.uf2`, then `peripheral_right.uf2`
+5. Connect the dongle and flash `dongle.uf2`
+6. Turn on the dongle, then the left half, then the right half, in that exact order
 
-Когда нет донгла, левая половина является основной (если правая, то меняем местами):
+Without a dongle, the left half acts as central. If the right half should be central, swap left and right in these
+steps:
 
-1. Подключить правую половинку и прошить в неё сначала `settings_reset.uf2`, затем `peripheral_right.uf2`
-2. Подключить левую половинку и прошить в неё сначала `settings_reset.uf2`, затем `central_left.uf2`
+1. Connect the right half and flash `settings_reset.uf2`, then `peripheral_right.uf2`
+2. Connect the left half and flash `settings_reset.uf2`, then `central_left.uf2`
 
-Если половины уже привязаны к донглу и была изменена только dongle.uf2, то достаточно прошить только ее.
+If the halves are already paired with the dongle and only `dongle.uf2` changed, flashing only that file is sufficient.
 
 ## FAQ
 
-### На экране донгла индикаторы аккумуляторов половин перепутаны
+### Battery indicators for the keyboard halves are swapped on the dongle display
 
-Нужно заново привязать клавиатуры к донглу: перепрошить половины и донгл прошивкой сброса, как описано выше.
-Порядок включения: донгл, затем левая (!) половина, затем правая половина.
+Pair the keyboards with the dongle again: flash the reset firmware to both halves and the dongle as described above.
+Power-on order: dongle, then left (!) half, then right half.
 
-### В IntelliJ IDEA и VS Code некорректно работают сочетания `Cmd+[`/`Cmd+]` на ru-раскладке
+### `Cmd+[`/`Cmd+]` shortcuts behave incorrectly in IntelliJ IDEA and VS Code with the Russian layout
 
-Частично решается через Karabiner-Elements: добавьте правило Complex Modifications из раздела ниже
+Karabiner-Elements partially fixes this issue. Add the Complex Modifications rule from the section below
 (`Universal Layout fixes for GUI layer`).
 
-### UF2-накопитель не появляется после двойного reset
+### UF2 drive does not appear after a double reset
 
-Проверьте кабель: для прошивки нужен USB-кабель с передачей данных, а не только питание.
-Если накопитель не появился, повторите двойной reset с меньшим интервалом и попробуйте другой USB-порт.
+Check the cable: flashing requires a USB data cable, not a power-only cable.
+If the drive still does not appear, repeat the double reset with a shorter interval and try another USB port.
 
-### После прошивки половинки не связываются по BLE
+### Keyboard halves do not connect over BLE after flashing
 
-Сбросьте связи на всех устройствах через `settings_reset.uf2` и повторите привязку по инструкции из раздела
-"Загрузка прошивки". В режиме с донглом соблюдайте порядок включения: донгл, затем левая, затем правая половина.
+Reset connections on every device with `settings_reset.uf2`, then repeat the pairing procedure from
+[Flashing](#flashing). In dongle mode, follow this power-on order: dongle, left half, right half.
 
-## Клавиатуры
+## Keyboards
 
 ### [Charybdis Nano](https://github.com/bastardkb/charybdis/)
 
-Заказывал kit у продавца на AliExpress, плата hot-swap, поэтому в прошивке есть отличия от оригинальной:
+I ordered a hot-swap kit from an AliExpress seller, so its firmware differs from the original:
 
-- Для каждого свитча отдельная платка, все они соединяются проводками. Пока что не нашел какой форк [SU120](https://github.com/e3w2q/su120-keyboard) они использовали
-- Изменены пины колонок и строк
-- Изменено направление диодов: я припаял диоды так как было показано на плате, в итоге оказалось для совместимости с оригинальной прошивкой надо было наоборот
-- Изменен matrix transform
+- Each switch has a separate small board, with all boards connected by wires. I have not identified which
+  [SU120](https://github.com/e3w2q/su120-keyboard) fork the seller used
+- Column and row pins differ
+- Diode direction differs: I soldered the diodes as shown on the PCB, but compatibility with the original firmware
+  required the opposite direction
+- Matrix transform differs
 
-**Особенности:**
+**Features:**
 
-- Используется модуль [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), который позволяет трекболом двигать каретку в полях ввода
-- ~~Используется модуль [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration) для ускорения трекбола~~
-- Используется модуль [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) для привязки движения каретки к осям X и Y.
-- В режиме без донгла основной половиной будет правая (central_right)
+- Uses [zmk-input-processor-keybind](https://github.com/zettaface/zmk-input-processor-keybind), which allows moving
+  the caret in input fields with the trackball
+- ~~Uses [zmk-pointing-acceleration](https://github.com/oleksandrmaslov/zmk-pointing-acceleration)~~
+  ~~for trackball acceleration~~
+- Uses [zmk-scroll-snap](https://github.com/kot149/zmk-scroll-snap) to constrain caret movement to the X or Y axis.
+- In standalone mode, the right half is central (`central_right`)
 
 ![Charybdis keymap](./draw/charybdis.svg?raw=true "Charybdis keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-**Прошивка:**
+**Firmware:**
 
-Вызвать `just flash` и выбрать нужную прошивку:
+Run `just flash` and select the required firmware:
 
-- `charybdis_dongle_prospector` - прошивка донгла Prospector (XIAO + prospector_adapter)
-- `charybdis_central_right` - прошивка правой половины как основной
-- `charybdis_peripheral_left` - прошивка левой половины для работы с донглом
-- `charybdis_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+- `charybdis_dongle_prospector` - firmware for the Prospector dongle (XIAO + prospector_adapter)
+- `charybdis_central_right` - firmware for the right half acting as central
+- `charybdis_peripheral_left` - firmware for the left half in dongle mode
+- `charybdis_peripheral_right` - firmware for the right half, both in dongle mode and when the left half acts as central
 
-Shield-файлы лежат в локальном модуле `keyboards/`. Общая конфигурация указателя вынесена в
-`config/charybdis_pointer.dtsi` и подключается из Charybdis shield-файлов через `DTS_EXTRA_CPPFLAGS` include path.
+Shield files are stored in the local `keyboards/` module. Shared pointing-device configuration lives in
+`config/charybdis_pointer.dtsi` and is included from the Charybdis shield files through the `DTS_EXTRA_CPPFLAGS` include
+path.
 
 ### [Lapka](https://github.com/braindefender/lapka)
 
 ![Lapka keymap](./draw/lapka.svg?raw=true "Lapka keymap")
 _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
 
-**Прошивка:**
+**Firmware:**
 
-Вызвать `just flash` и выбрать нужную прошивку:
+Run `just flash` and select the required firmware:
 
-- `lapka_dongle (xiao_ble//zmk)` - прошивка донгла на XIAO
-- `lapka_dongle (nice_nano//zmk)` - прошивка донгла на nice!nano
-- `lapka_dongle_prospector` - прошивка донгла Prospector
-- `lapka_central_left` - прошивка левой половины как основной
-- `lapka_peripheral_left` - прошивка левой половины для работы с донглом
-- `lapka_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+- `lapka_dongle (xiao_ble//zmk)` - firmware for a XIAO-based dongle
+- `lapka_dongle (nice_nano//zmk)` - firmware for a nice!nano-based dongle
+- `lapka_dongle_prospector` - firmware for the Prospector dongle
+- `lapka_central_left` - firmware for the left half acting as central
+- `lapka_peripheral_left` - firmware for the left half in dongle mode
+- `lapka_peripheral_right` - firmware for the right half, both in dongle mode and when the left half acts as central
 
 ## Tester Pro Micro
 
-Прошивка для проверки пинов на плате ProMicro nRF52840 (aka nice!nano и других клонов). Копия из [репозитория](https://github.com/choovick/zmk-config-charybdis) @choovick.
-В прошивке отключен Bluetooth, работает только по USB.
+Firmware for testing pins on ProMicro nRF52840 boards, including nice!nano and other clones. Copied from
+[@choovick's repository](https://github.com/choovick/zmk-config-charybdis).
+Bluetooth is disabled in this firmware; it works over USB only.
 
-**Прошивка:**
+**Firmware:**
 
 `just flash -s "tester_pro_micro"`
 
-**Порядок действий:**
+**Procedure:**
 
-1. Прошить `tester_pro_micro-nice_nano_zmk.uf2`
-2. Подключить контроллер по USB к компьютеру
-3. Открыть любой текстовый редактор
-4. Замкнуть GPIO пин с GND, тот который проверяем
-5. В текстовом редакторе должно напечататься "pin X", где X - номер пина
-6. Проверить все пины
+1. Flash `tester_pro_micro-nice_nano_zmk.uf2`
+2. Connect the controller to the computer over USB
+3. Open any text editor
+4. Short the GPIO pin being tested to GND
+5. The text editor should receive `pin X`, where X is the pin number
+6. Test every pin
 
-## Скрипты
+## Scripts
 
-Все в папке `scripts`. Для упрощения используется [Just](https://github.com/casey/just).
+All scripts are in `scripts/`. [Just](https://github.com/casey/just) provides convenient commands.
 
 ### `build.sh`
 
-Локальная сборка прошивок, подробнее в [local-build](local-build/README.md).
-Справка: `just build --help`
-Список таргетов: `just build --list`
+Builds firmware locally. See [local-build](local-build/README.md) for details.
+Help: `just build --help`
+Target list: `just build --list`
 
 ### `flash.sh`
 
-Прошивка клавиатур.
-Справка: `just flash --help`
-Список прошивок: `just flash --list`
+Flashes keyboard firmware.
+Help: `just flash --help`
+Firmware list: `just flash --list`
 
 ### `draw.sh`
 
-Отрисовка keymap.
-Справка: `just draw --help`
-Список keymap: `just draw --list`
+Renders keymaps.
+Help: `just draw --help`
+Keymap list: `just draw --list`
 
 ### `validate.sh`
 
-Быстрая проверка репозитория.
-Запуск: `just validate`
-Проверяет справку/списки команд и базовую согласованность keymap/draw.
+Runs a quick repository validation.
+Command: `just validate`
+Checks command help/list output and basic keymap/draw consistency.
 
-Для `draw` нужны helper include files из `local-build/workspace/modules/zmk/helpers/include`.
-Обычно они появляются после первой локальной сборки (`just build`).
+`draw` requires helper include files from `local-build/workspace/modules/zmk/helpers/include`.
+They are usually created by the first local build (`just build`).
 
-## Раскладка
+## Layout
 
-В папке `layout` — форк [universal-layout](https://github.com/braindefender/universal-layout).
+The `layout` directory contains a fork of [universal-layout](https://github.com/braindefender/universal-layout).
 
-Отличия:
+Differences:
 
-- разделение на два языка: ru и en
-- добавлены иконки флажков, чтобы в системе было видно какая сейчас раскладка
-- раскладка только для macOS
+- split into two languages: Russian and English
+- flag icons added so the active layout is visible in the system
+- macOS only
 
-### Установка Universal Layout
+### Installing Universal Layout
 
-На macOS:
+On macOS:
 
-1. Файл `layout/macOS/Universal.bundle` скопировать в `~/Library/Keyboard Layouts`.
-2. Перезагрузиться или перезайти в систему.
-3. Выбрать желаемую раскладку в Настройки системы > Клавиатура > Источники ввода.
-4. Удалить стандартные раскладки русского и английского языка. [Здесь](https://4te.me/post/flags-tray-macos/) описано как их удалить.
-5. Снова перезагрузиться или перезайти в систему.
+1. Copy `layout/macOS/Universal.bundle` to `~/Library/Keyboard Layouts`.
+2. Restart the computer or sign out and back in.
+3. Select the desired layout in System Settings > Keyboard > Input Sources.
+4. Remove the standard Russian and English layouts. [This guide](https://4te.me/post/flags-tray-macos/) explains how.
+5. Restart the computer or sign out and back in again.
 
-## Дополнительные настройки ОС
+## Additional OS configuration
 
 ### Karabiner-Elements
 
-Для поддержки переключения языка через сочетание клавиш (Cmd+F11/F12) нужно установить программу [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements).
-В настройках Complex Modifications добавьте свое правило и вставьте этот код:
+To support language switching with Cmd+F11/F12, install
+[Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements).
+In Complex Modifications, add a custom rule containing this code:
 
 ```json
 {
@@ -286,8 +309,8 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 }
 ```
 
-Для того чтобы сочетания `Cmd+[`, `Cmd+]` и другие работали одинаково на раскладках ru и en в IntelliJ IDEA и VS Code, нужно добавить правило Complex Modifications.
-В нем происходят преобразования:
+To make `Cmd+[`, `Cmd+]`, and other shortcuts behave consistently with both Russian and English layouts in IntelliJ IDEA
+and VS Code, add a Complex Modifications rule with these mappings:
 
 - `.` -> `[`
 - `/` -> `]`
@@ -383,27 +406,34 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 }
 ```
 
-## Ссылки
+## References
 
 ### Charybdis
 
-- [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio) от @devpew – Charybdis + ZMK Studio
-- [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) от @280Zo – Charybdis, home-row mods, скрипты для локальной сборки
-- [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless) от @aystream – Charybdis
-- [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) от @nophramel – Charybdis
-- [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) от @choovick – Charybdis, локальная сборка, tester pro micro
-- [charybdis-zmk](https://github.com/vloth/charybdis-zmk) от @vloth – Charybdis
+- [charybdis-3-5-dongle-prospector-studio](https://github.com/devpew/charybdis-3-5-dongle-prospector-studio)
+  by @devpew - Charybdis + ZMK Studio
+- [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware)
+  by @280Zo - Charybdis, home-row mods, local build scripts
+- [zmk-config-charybdis-mini-wireless](https://github.com/aystream/zmk-config-charybdis-mini-wireless)
+  by @aystream - Charybdis
+- [charybdis_zmk](https://github.com/nophramel/charybdis_zmk) by @nophramel - Charybdis
+- [zmk-config-charybdis](https://github.com/choovick/zmk-config-charybdis) by @choovick - Charybdis, local builds,
+  Tester Pro Micro
+- [charybdis-zmk](https://github.com/vloth/charybdis-zmk) by @vloth - Charybdis
 
 ### Lapka
 
-- [lapka-zmk-config](https://github.com/braindefender/lapka-zmk-config) – официальный репозиторий прошивки для Lapka
+- [lapka-zmk-config](https://github.com/braindefender/lapka-zmk-config) - official Lapka firmware repository
 
-### Другие
+### Other
 
-- [zmk-config](https://github.com/urob/zmk-config) от @urob – home-row mods
-- [zmk-config](https://github.com/minusfive/zmk-config) от @minusfive – кастомные стили для keymap-drawer
-- [zmk-config](https://github.com/mctechnology17/zmk-config) от @mctechnology17 – локальная сборка и makefile
-- [miryoku](https://github.com/manna-harbour/miryoku_zmk) от @manna-harbour - универсальная раскладка под разные клавиатуры
-- [keymap-drawer](https://github.com/caksoylar/keymap-drawer) – отрисовка keymap
-- [universal-layout](https://github.com/braindefender/universal-layout) – универсальная раскладка от @braindefender
-- [wellum](https://github.com/braindefender/wellum) – универсальная раскладка для split-клавиатур от @braindefender
+- [zmk-config](https://github.com/urob/zmk-config) by @urob - home-row mods
+- [zmk-config](https://github.com/minusfive/zmk-config) by @minusfive - custom keymap-drawer styles
+- [zmk-config](https://github.com/mctechnology17/zmk-config) by @mctechnology17 - local builds and Makefile
+- [miryoku](https://github.com/manna-harbour/miryoku_zmk) by @manna-harbour - universal layout for different keyboards
+- [keymap-drawer](https://github.com/caksoylar/keymap-drawer) - keymap rendering
+- [universal-layout](https://github.com/braindefender/universal-layout) - universal layout by @braindefender
+- [wellum](https://github.com/braindefender/wellum) - universal layout for split keyboards by @braindefender
+
+[bapp]: https://github.com/ilyasshafigin/zmk-behavior-battery-percentage-printer
+[bapp-upstream]: https://github.com/badjeff/zmk-behavior-battery-percentage-printer
