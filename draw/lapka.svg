@@ -1361,9 +1361,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">9</text>
 </g>
-<g transform="translate(430, 94) rotate(12.0)" class="key none keypos-4">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(430, 94) rotate(12.0)" class="key keypos-4">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-esc"/>
 </g>
 <g transform="translate(692, 94) rotate(-12.0)" class="key none keypos-5">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
@@ -1402,9 +1402,9 @@ rect.combo {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">6</text>
 </g>
-<g transform="translate(414, 174) rotate(12.0)" class="key none keypos-14">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-11" y="-11" height="22" width="22.0" class="key none tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(414, 174) rotate(12.0)" class="key keypos-14">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:keyboard-tab"/>
 </g>
 <g transform="translate(708, 174) rotate(-12.0)" class="key none keypos-15">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key none"/>

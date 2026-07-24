@@ -227,7 +227,7 @@ layers:
   - '7'
   - '8'
   - '9'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -237,7 +237,7 @@ layers:
   - '4'
   - '5'
   - '6'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-tab$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
