@@ -1,0 +1,14 @@
+config SHIELD_TEMPORAL_DONGLE
+    def_bool $(shields_list_contains,temporal_dongle)
+
+config SHIELD_TEMPORAL_DONGLE_PROSPECTOR
+    def_bool $(shields_list_contains,temporal_dongle_prospector)
+
+config SHIELD_TEMPORAL_CENTRAL_LEFT
+    def_bool $(shields_list_contains,temporal_central_left)
+
+config SHIELD_TEMPORAL_PERIPHERAL_LEFT
+    def_bool $(shields_list_contains,temporal_peripheral_left)
+
+config SHIELD_TEMPORAL_PERIPHERAL_RIGHT
+    def_bool $(shields_list_contains,temporal_peripheral_right)

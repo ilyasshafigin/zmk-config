@@ -28,5 +28,18 @@ include:
   shield: lapka_peripheral_right
 
 - board: nice_nano//zmk
+  shield: temporal_dongle
+- board: xiao_ble//zmk
+  shield: temporal_dongle
+- board: xiao_ble//zmk
+  shield: temporal_dongle_prospector prospector_adapter
+- board: nice_nano//zmk
+  shield: temporal_central_left
+- board: nice_nano//zmk
+  shield: temporal_peripheral_left
+- board: nice_nano//zmk
+  shield: temporal_peripheral_right
+
+- board: nice_nano//zmk
   shield: tester_pro_micro
   format: bt

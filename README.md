@@ -6,6 +6,7 @@ Configuration and firmware for my keyboards:
 
 1. **[Lapka](#lapka)** - primary
 2. [Charybdis Nano](#charybdis-nano)
+3. [Temporal](#temporal)
 
 ## Table of contents
 
@@ -52,6 +53,7 @@ custom tooling, while actual ZMK components are separated by role:
 
 One half acts as central and connects to the computer over Bluetooth. The other half connects to it over Bluetooth.
 For Charybdis, the right half is central because it contains the trackball.
+For Lapka and Temporal, the left half is central.
 
 **With a dongle (dongle mode):**
 
@@ -200,6 +202,27 @@ Run `just flash` and select the required firmware:
 - `lapka_central_left` - firmware for the left half acting as central
 - `lapka_peripheral_left` - firmware for the left half in dongle mode
 - `lapka_peripheral_right` - firmware for the right half, both in dongle mode and when the left half acts as central
+
+### [Temporal](https://github.com/curbol/temporal)
+
+I use the 36-key variant with two encoders.
+
+**Encoders:**
+
+| Layers | Left encoder | Right encoder |
+| --- | --- | --- |
+| DEF, SYM, NUM, NFN, ALT, GAM, GFN | Horizontal scroll | Vertical scroll |
+| NAV | Horizontal scroll | Previous/next tab |
+| CMD | Volume | Vertical scroll |
+
+**Firmware:**
+
+- `temporal_dongle (xiao_ble//zmk)` - XIAO-based dongle
+- `temporal_dongle (nice_nano//zmk)` - nice!nano-based dongle
+- `temporal_dongle_prospector` - Prospector dongle (XIAO + prospector_adapter)
+- `temporal_central_left` - left half acting as central
+- `temporal_peripheral_left` - left half in dongle mode
+- `temporal_peripheral_right` - right half in both standalone and dongle modes
 
 ## Tester Pro Micro
 

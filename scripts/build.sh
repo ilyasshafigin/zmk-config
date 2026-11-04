@@ -200,10 +200,11 @@ run_build() {
 
   mkdir -p "$WEST_WS" "$ARTIFACTS" "$OUTPUT_DIR"
 
+  local docker_status=0
   docker run --rm \
     -v "$WORKSPACE:/repo" \
     -v "$WEST_WS:/workspace" \
-    -v "$ARTIFACTS:/out" \
+    -v "$ARTIFACTS:/artifacts" \
     -w /workspace \
     "$IMAGE" \
     sh -c "
@@ -224,6 +225,7 @@ run_build() {
       fi
       west zephyr-export
 
+      build_status=0
       west build -s zmk/app -d \"$build_dir\" -b \"$board\" ${snippet:+-S \"$snippet\"} --pristine \
         -- \
         -DZMK_CONFIG=/workspace/config \
@@ -231,7 +233,21 @@ run_build() {
         -DDTS_EXTRA_CPPFLAGS='-I/workspace/config' \
         -DSHIELD=\"$shield\" \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-        $cmake_args
+        $cmake_args || build_status=\$?
+
+      # Export only after west stops writing; retain partial trees for diagnostics.
+      export_status=0
+      if [ -d \"$build_dir\" ]; then
+        rm -rf \"/artifacts/$shield_dir\" &&
+          cp -R \"$build_dir\" \"/artifacts/$shield_dir\" || export_status=\$?
+      else
+        export_status=1
+      fi
+      if [ \"\$export_status\" -ne 0 ]; then
+        echo 'Failed to export build artifacts' >&2
+      fi
+      [ \"\$build_status\" -eq 0 ] || exit \"\$build_status\"
+      exit \"\$export_status\"
     " 2>&1 | while IFS= read -r line; do
     if parse_ninja_progress "$line"; then
       draw_progress "$shield" "$board"
@@ -239,7 +255,12 @@ run_build() {
       printf "\r\033[K%s\n" "$line"
       draw_progress "$shield" "$board"
     fi
-  done
+  done || docker_status=$?
+
+  # Never publish an old host UF2 after a failed build or export.
+  if ((docker_status != 0)); then
+    return "$docker_status"
+  fi
 
   local uf2="$ARTIFACTS/$shield_dir/zephyr/zmk.uf2"
   if [[ -f "$uf2" ]]; then

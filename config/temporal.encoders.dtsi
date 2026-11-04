@@ -1,0 +1,54 @@
+#include <dt-bindings/zmk/pointing.h>
+
+// 100 units/s at 10 ms yields an integer scroll step per tick.
+// Hold for 15 ms so the first scheduled tick occurs before release.
+&msc {
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
+/ {
+    behaviors {
+        temporal_hscroll: temporal_hscroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            // Wheel-positive means left: clockwise is right.
+            bindings = <&msc MOVE_X(-100)>, <&msc MOVE_X(100)>;
+            tap-ms = <15>;
+        };
+
+        temporal_vscroll: temporal_vscroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            // Wheel-positive means up: clockwise is down.
+            bindings = <&msc MOVE_Y(-100)>, <&msc MOVE_Y(100)>;
+            tap-ms = <15>;
+        };
+
+        temporal_tabs: temporal_tabs {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp TAB_N>, <&kp TAB_P>;
+            tap-ms = <5>;
+        };
+
+        temporal_volume: temporal_volume {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+            tap-ms = <5>;
+        };
+    };
+};
+
+// Sensor order is always left, right. No pointer-only shared layers are enabled.
+&{/keymap/layer_base}   { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_symbol} { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_game}   { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_gamefn} { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_nav}    { sensor-bindings = <&temporal_hscroll &temporal_tabs>; };
+&{/keymap/layer_num}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_nfn}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_alt}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
+&{/keymap/layer_cmd}    { sensor-bindings = <&temporal_volume &temporal_vscroll>; };

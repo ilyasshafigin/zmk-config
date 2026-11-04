@@ -95,6 +95,9 @@ get_draw_args() {
   lapka)
     echo "-d keyboards/boards/shields/lapka/lapka_layouts.dtsi"
     ;;
+  temporal)
+    echo "-d keyboards/boards/shields/temporal/temporal_layouts.dtsi"
+    ;;
   *)
     echo ""
     ;;

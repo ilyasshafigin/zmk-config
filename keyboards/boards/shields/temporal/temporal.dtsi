@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2024 Curtis Bollinger
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Adapted from curbol/temporal-zmk, revision
+ * 306ef1f91f27a7ce5f407be3719d508489bb53da.
+ * Breakoff columns removed; encoder push switches not populated.
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "temporal_layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &temporal36_layout;
+    };
+
+    temporal36_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <4>;
+        // Preserve electrical coordinates and the author's GPIO scan order.
+        map = <
+            RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)     RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10)
+            RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)     RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
+            RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)     RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
+                            RC(3,3) RC(3,4) RC(3,5)     RC(3,6) RC(3,7) RC(3,8)
+        >;
+    };
+
+    kscan0: kscan {
+        wakeup-source;
+    };
+
+    // Stable split sensor identities: left = 0, right = 1 in every role.
+    // Only half overlays supply GPIOs and enable their local device.
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        steps = <60>;
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        steps = <60>;
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
+        // Must stay enabled on dongles to receive forwarded sensor events.
+        status = "okay";
+    };
+};
+
+&temporal36_layout {
+    transform = <&temporal36_transform>;
+};

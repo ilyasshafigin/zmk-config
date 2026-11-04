@@ -1,0 +1,15 @@
+file_format: "1"
+id: temporal
+name: Temporal
+type: shield
+url: https://github.com/curbol/temporal-zmk
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
+siblings:
+  - temporal_dongle
+  - temporal_dongle_prospector
+  - temporal_central_left
+  - temporal_peripheral_left
+  - temporal_peripheral_right

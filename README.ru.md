@@ -6,6 +6,7 @@
 
 1. **[Lapka](#lapka)** - основная
 2. [Charybdis Nano](#charybdis-nano)
+3. [Temporal](#temporal)
 
 ## Оглавление
 
@@ -51,6 +52,7 @@ ZMK-сущности разделены по ролям:
 
 Одна половинка — главная (по Bluetooth к ПК). Вторая подключается по Bluetooth к ней.
 Для Charybdis главная — правая половина (там трекбол).
+Для Lapka и Temporal главная — левая половина.
 
 **С донглом (dongle mode):**
 
@@ -181,6 +183,27 @@ _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoyl
 - `lapka_central_left` - прошивка левой половины как основной
 - `lapka_peripheral_left` - прошивка левой половины для работы с донглом
 - `lapka_peripheral_right` - прошивка правой половины (как для работы с донглом, так и когда левая основная)
+
+### [Temporal](https://github.com/curbol/temporal)
+
+В проекте использую вариацию на 36 клавиш и два энкодера.
+
+**Энкодеры:**
+
+| Слои | Левый энкодер | Правый энкодер |
+| --- | --- | --- |
+| DEF, SYM, NUM, NFN, ALT, GAM, GFN | Горизонтальная прокрутка | Вертикальная прокрутка |
+| NAV | Горизонтальная прокрутка | Предыдущая/следующая вкладка |
+| CMD | Громкость | Вертикальная прокрутка |
+
+**Прошивка:**
+
+- `temporal_dongle (xiao_ble//zmk)` — донгл на XIAO
+- `temporal_dongle (nice_nano//zmk)` — донгл на nice!nano
+- `temporal_dongle_prospector` — донгл Prospector (XIAO + prospector_adapter)
+- `temporal_central_left` — левая половина как основная
+- `temporal_peripheral_left` — левая половина для работы с донглом
+- `temporal_peripheral_right` — правая половина для обоих режимов
 
 ## Tester Pro Micro
 

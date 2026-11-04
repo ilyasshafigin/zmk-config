@@ -1,0 +1,18 @@
+#include "temporal_half.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH> // col_extra (breakoff removed)
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // col_pinky
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // col_ring
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // col_middle
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col_index
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col_inner
+        ;
+};
+
+&left_encoder {
+    a-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    status = "okay";
+};

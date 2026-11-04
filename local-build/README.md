@@ -82,9 +82,16 @@ Resulting firmware is saved in `firmware/` as `*.uf2` files.
 
 Inside the Docker container, the script mounts:
 
-- `/repo`: repository sources, read-only
+- `/repo`: repository sources
 - `/workspace`: west workspace
-- `/out`: temporary build output (`local-build/artifact/` on the host)
+- `/artifacts`: exported build output (`local-build/artifact/` on the host)
+
+The active build directory, `/out`, is inside the container rather than a host bind mount. This avoids writing
+intermediate CMake/Ninja files through Docker Desktop's host file-sharing layer, where corrupted generated files
+were observed on macOS. After the build, its output is copied to `/artifacts/`; only a successful build
+publishes a UF2 to `firmware/`. The container and its internal build directory are removed on exit.
+If `west build` fails, its partial output is exported when available for diagnostics; the previous firmware is left
+unchanged and the command returns an error.
 
 Each build copies only the required source directories from the repository into `/workspace`:
 

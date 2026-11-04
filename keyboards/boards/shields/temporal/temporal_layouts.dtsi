@@ -1,0 +1,57 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    temporal36_layout: temporal36_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Temporal 36";
+
+        // Switch centers and angles from curbol/temporal's generated temporal PCB.
+        // Dimensions use the PCB's 17.5 x 16.5 mm keycaps, in 19.05 mm units.
+        // The right half is mirrored; the distance between halves is illustrative.
+        keys
+            // Top: left pinky to inner, right inner to pinky
+            = <&key_physical_attrs 92 87    4 125  (-900)   50 169>
+            , <&key_physical_attrs 92 87  106  47  (-400)  152  91>
+            , <&key_physical_attrs 92 87  213   6       0  259  50>
+            , <&key_physical_attrs 92 87  308  37       0  354  81>
+            , <&key_physical_attrs 92 87  402  51       0  448  95>
+            , <&key_physical_attrs 92 87  776  51       0  822  95>
+            , <&key_physical_attrs 92 87  870  37       0  916  81>
+            , <&key_physical_attrs 92 87  965   6       0 1011  50>
+            , <&key_physical_attrs 92 87 1072  47     400 1118  91>
+            , <&key_physical_attrs 92 87 1174 125     900 1220 169>
+
+            // Home
+            , <&key_physical_attrs 92 87   18 213  (-900)   64 257>
+            , <&key_physical_attrs 92 87  112 136  (-400)  158 180>
+            , <&key_physical_attrs 92 87  213  95       0  259 139>
+            , <&key_physical_attrs 92 87  308 126       0  354 170>
+            , <&key_physical_attrs 92 87  402 140       0  448 184>
+            , <&key_physical_attrs 92 87  776 140       0  822 184>
+            , <&key_physical_attrs 92 87  870 126       0  916 170>
+            , <&key_physical_attrs 92 87  965  95       0 1011 139>
+            , <&key_physical_attrs 92 87 1066 136     400 1112 180>
+            , <&key_physical_attrs 92 87 1160 213     900 1206 257>
+
+            // Bottom
+            , <&key_physical_attrs 92 87   32 302  (-900)   78 346>
+            , <&key_physical_attrs 92 87  119 225  (-400)  165 269>
+            , <&key_physical_attrs 92 87  213 184       0  259 228>
+            , <&key_physical_attrs 92 87  308 216       0  354 260>
+            , <&key_physical_attrs 92 87  402 229       0  448 273>
+            , <&key_physical_attrs 92 87  776 229       0  822 273>
+            , <&key_physical_attrs 92 87  870 216       0  916 260>
+            , <&key_physical_attrs 92 87  965 184       0 1011 228>
+            , <&key_physical_attrs 92 87 1059 225     400 1105 269>
+            , <&key_physical_attrs 92 87 1146 302     900 1192 346>
+
+            // Thumbs: left near/mid/far, right far/mid/near; encoders omitted
+            , <&key_physical_attrs 92 87  351 319    1500  397 363>
+            , <&key_physical_attrs 92 87  447 359    3000  493 403>
+            , <&key_physical_attrs 92 87  530 423    4500  576 467>
+            , <&key_physical_attrs 92 87  648 423 (-4500)  694 467>
+            , <&key_physical_attrs 92 87  731 359 (-3000)  777 403>
+            , <&key_physical_attrs 92 87  827 319 (-1500)  873 363>
+            ;
+    };
+};
