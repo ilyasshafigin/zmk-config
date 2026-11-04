@@ -64,16 +64,23 @@ config ZMK_SLEEP
 endif
 
 
-# PMW3610 Driver
+# Pointing input
 if SHIELD_CHARYBDIS_DONGLE || SHIELD_CHARYBDIS_DONGLE_PROSPECTOR || SHIELD_CHARYBDIS_CENTRAL_RIGHT || SHIELD_CHARYBDIS_PERIPHERAL_RIGHT
 
-config SPI
-    default y
 config INPUT
     default y
 config ZMK_MOUSE
     default y
 config ZMK_POINTING
+    default y
+
+endif
+
+
+# PMW3610 Driver
+if SHIELD_CHARYBDIS_CENTRAL_RIGHT || SHIELD_CHARYBDIS_PERIPHERAL_RIGHT
+
+config SPI
     default y
 config PMW3610_ALT
     default y

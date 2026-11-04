@@ -1,0 +1,23 @@
+#include "charybdis.dtsi"
+#include "charybdis_pmw3610.dtsi"
+#include "charybdis_input.dtsi"
+#include "charybdis_pointer.dtsi"
+
+&charybdis_3x5_transform {
+    col-offset = <5>;
+};
+
+&charybdis_3x6_transform {
+    col-offset = <6>;
+};
+
+#include "charybdis_half.dtsi"
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_split {
+    status = "okay";
+    device = <&trackball>;
+};

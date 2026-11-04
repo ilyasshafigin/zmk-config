@@ -26,13 +26,6 @@
             tap-ms = <15>;
         };
 
-        temporal_tabs: temporal_tabs {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp TAB_N>, <&kp TAB_P>;
-            tap-ms = <5>;
-        };
-
         temporal_volume: temporal_volume {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -47,7 +40,7 @@
 &{/keymap/layer_symbol} { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
 &{/keymap/layer_game}   { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
 &{/keymap/layer_gamefn} { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
-&{/keymap/layer_nav}    { sensor-bindings = <&temporal_hscroll &temporal_tabs>; };
+&{/keymap/layer_nav}    { sensor-bindings = <&temporal_hscroll &temporal_hscroll>; };
 &{/keymap/layer_num}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
 &{/keymap/layer_nfn}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
 &{/keymap/layer_alt}    { sensor-bindings = <&temporal_hscroll &temporal_vscroll>; };
