@@ -1,0 +1,1 @@
+/* Board-specific SPI wiring is defined in boards/nice_nano_nrf52840_zmk.overlay. */

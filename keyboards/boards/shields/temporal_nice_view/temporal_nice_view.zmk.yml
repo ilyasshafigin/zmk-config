@@ -1,0 +1,6 @@
+file_format: "1"
+id: temporal_nice_view
+name: Temporal nice!view adapter
+type: shield
+requires: [pro_micro]
+exposes: [nice_view_header]

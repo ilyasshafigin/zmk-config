@@ -39,6 +39,12 @@ include:
   shield: temporal_peripheral_left
 - board: nice_nano//zmk
   shield: temporal_peripheral_right
+- board: nice_nano//zmk
+  shield: temporal_central_left temporal_nice_view nice_view
+- board: nice_nano//zmk
+  shield: temporal_peripheral_left temporal_nice_view nice_view_battery
+- board: nice_nano//zmk
+  shield: temporal_peripheral_right temporal_nice_view nice_view_battery
 
 - board: nice_nano//zmk
   shield: tester_pro_micro

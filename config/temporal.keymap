@@ -12,4 +12,4 @@
             LH2 LH1 LH0    RH0 RH1 RH2
 
 #include "shared/keymap_common.dtsi"
-#include "temporal.encoders.dtsi"
+#include "temporal_encoders.dtsi"
